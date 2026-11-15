@@ -67,7 +67,7 @@ export const stores: StoreItem[] = [
     name: 'TAYLOR MADE FARM',
     category: 'Inksoft · Corporate',
     description: 'Completed the Taylor Made Farm project by adding and customizing products, organizing product listings, and designing the InkSoft online store homepage.',
-    image: '/public/portfolio/Taylor_made_farm.png',
+    image: 'https://github.com/Fahad42150/dancing-llama-3e1cb2/blob/52d7f190bd1e5d1b48e88107f0782b62dd56306a/public/portfolio/Taylor_made_farm.png',
     liveUrl: 'https://stores.inksoft.com/taylormadefarm/shop/home',
   },
   {
