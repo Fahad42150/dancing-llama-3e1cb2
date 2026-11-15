@@ -70,6 +70,7 @@ export default function Navbar() {
           ))}
           <a href="/inksoft-store-management/" className="rounded-lg px-3 py-2 text-sm font-medium text-charcoal-600 transition-colors hover:bg-parrot-50 hover:text-charcoal-900">InkSoft</a>
           <a href="/inksoft-product-catalog-management/" className="rounded-lg px-3 py-2 text-sm font-medium text-charcoal-600 transition-colors hover:bg-parrot-50 hover:text-charcoal-900">Catalog</a>
+          <a href="/ecommerce-virtual-assistant/" className="rounded-lg px-3 py-2 text-sm font-medium text-charcoal-600 transition-colors hover:bg-parrot-50 hover:text-charcoal-900">Virtual Assistant</a>
           <a
             href="#contact"
             onClick={(e) => {
@@ -108,6 +109,7 @@ export default function Navbar() {
               </a>
             ))}
             <a href="/inksoft-store-management/" className="rounded-lg px-4 py-3 text-sm font-medium text-charcoal-700 transition-colors hover:bg-parrot-50">InkSoft Store Management</a>
+            <a href="/ecommerce-virtual-assistant/" className="rounded-lg px-4 py-3 text-sm font-medium text-charcoal-700 transition-colors hover:bg-parrot-50">eCommerce Virtual Assistant</a>
             <a href="/inksoft-product-catalog-management/" className="rounded-lg px-4 py-3 text-sm font-medium text-charcoal-700 transition-colors hover:bg-parrot-50">Product Catalog Management</a>
             <a href="/inksoft-store-setup/" className="rounded-lg px-4 py-3 text-sm font-medium text-charcoal-700 transition-colors hover:bg-parrot-50">InkSoft Store Setup</a>
             <a href="/ecommerce-store-management/" className="rounded-lg px-4 py-3 text-sm font-medium text-charcoal-700 transition-colors hover:bg-parrot-50">eCommerce Store Management</a>
