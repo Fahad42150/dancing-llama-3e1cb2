@@ -15,6 +15,9 @@ const servicePages = [
   { label: 'Team Store Management', href: '/team-store-management/' },
   { label: 'eCommerce Social Media Management', href: '/ecommerce-social-media-management/' },
   { label: 'eCommerce Bookkeeping & Accounting Support', href: '/ecommerce-bookkeeping-accounting/' },
+  { label: 'eCommerce Business Process Outsourcing', href: '/ecommerce-business-process-outsourcing/' },
+  { label: 'Cost-Effective eCommerce Store Support', href: '/cost-effective-ecommerce-store-support/' },
+  { label: 'Remote eCommerce Store Support Assistant', href: '/remote-ecommerce-store-support-assistant/' },
   { label: 'Shopify Store Management', href: '/shopify-store-management/' },
   { label: 'WooCommerce & WordPress Store Management', href: '/woocommerce-wordpress-store-management/' },
   { label: 'Chipply Store Management', href: '/chipply-store-management/' },
@@ -37,12 +40,11 @@ export default function Services() {
             Our Services
           </h2>
           <p className="mt-4 text-lg text-charcoal-500">
-            Practical support for online store setup, product catalog
-            management, product data entry and daily store administration.
-            InkSoft is our primary specialty, with additional platform support
-            scoped for Shopify, WooCommerce and Chipply. We support apparel
-            decorators, screen printers, team dealers and promotional product
-            businesses serving the USA and Canada.
+            Remote eCommerce operations support including product catalog management,
+            product data entry, order processing, inventory updates and daily store
+            administration. InkSoft is our primary specialty for apparel businesses,
+            alongside general platform-independent eCommerce support for online
+            retailers in the USA and Canada.
           </p>
         </div>
 
