@@ -94,21 +94,21 @@ export const services: ServiceItem[] = [
     icon: ShoppingCart,
     title: 'Professional InkSoft Store Setup Product Catalog Management Services',
     description: 'We provide professional InkSoft store setup, customization, and product catalog management services. Our services include complete store setup, product uploads, catalog updates, pricing and size management, product images, artwork setup, store maintenance, and ongoing support. We help USA and Canda businesses create professional, organized, and user-friendly InkSoft stores.',
-    features: ['Store design & branding', 'Product catalog management', 'Pricing & variant setup' 'Manual Products and Manufacturer additions' 'Much More'],
+    features: ['Store design & branding', 'Product catalog management', 'Pricing & variant setup', 'Manual Products and Manufacturer additions', 'Much More'],
   },
   {
     id: 'service-2',
     icon: ShoppingBag,
     title: 'Professional Shopify Store Management Services',
     description: 'FJX Studio provides professional Shopify store management services, including product uploads, catalog management, inventory updates, order management, and ongoing eCommerce support for businesses in the USA and Canada.',
-    features: ['Shopify virtual assistant', 'Shopify product management', 'Shopify catalog management' 'Shopify eCommerce management'],
+    features: ['Shopify virtual assistant', 'Shopify product management', 'Shopify catalog management', 'Shopify eCommerce management'],
   },
   {
     id: 'service-3',
     icon: Package,
     title: 'Data Entry Services for eCommerce Businesses of USA and canada',
     description: 'FJX Studio provides professional data entry services for USA and Canadian businesses, including eCommerce product data entry, bulk uploads, catalog updates, and product information management..',
-    features: ['Product Data Entry', 'eCommerce Product Uploads', 'Product Information Management' 'SKU & Inventory Data Entry' 'Product Image & Description Entry' 'Much More'],
+    features: ['Product Data Entry', 'eCommerce Product Uploads', 'Product Information Management', 'SKU & Inventory Data Entry', 'Product Image & Description Entry', 'Much More'],
   },
   {
     id: 'service-4',
@@ -129,7 +129,7 @@ export const services: ServiceItem[] = [
     icon: Settings,
     title: 'Professional eCommerce Support Services',
     description: 'FJX Studio provides reliable eCommerce support services for USA and Canadian businesses, including store management, product updates, catalog management, and daily online store operations. 24/7.',
-    features: ['Order Processing Support', 'Product Catalog Management', 'Inventory Updates' 'eCommerce Administrative Support' 'eCommerce Virtual Assistant'],
+    features: ['Order Processing Support', 'Product Catalog Management', 'Inventory Updates', 'eCommerce Administrative Support', 'eCommerce Virtual Assistant'],
   },
 ];
 
