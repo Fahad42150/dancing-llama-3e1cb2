@@ -59,7 +59,7 @@ export const stores: StoreItem[] = [
     name: 'Truker Though',
     category: 'InkSoft · Print-on-Demand',
     description: 'A full InkSoft store setup with product catalog management, custom design studio, and wholesale ordering.',
-    image: '/public/portfolio/Trucker_though.png',
+    image: '/portfolio/truck.png',
     liveUrl: 'https://stores.inksoft.com/truck/shop/',
   },
   {
@@ -67,7 +67,7 @@ export const stores: StoreItem[] = [
     name: 'TAYLOR MADE FARM',
     category: 'Inksoft · Corporate',
     description: 'Completed the Taylor Made Farm project by adding and customizing products, organizing product listings, and designing the InkSoft online store homepage.',
-    image: 'https://github.com/Fahad42150/dancing-llama-3e1cb2/blob/52d7f190bd1e5d1b48e88107f0782b62dd56306a/public/portfolio/Taylor_made_farm.png',
+    image: '/portfolio/taylormadefarm.png',
     liveUrl: 'https://stores.inksoft.com/taylormadefarm/shop/home',
   },
   {
@@ -75,7 +75,7 @@ export const stores: StoreItem[] = [
     name: 'BETH CENTER SKI CLUB',
     category: 'Inksoft · Club',
     description: 'Successfully completed the InkSoft online store setup and updated the product catalog, ensuring products are organized and ready for customer browsing and ordering.',
-    image: '/public/portfolio/Beth-ski-club.png',
+    image: '/public/portfolio/bethcentercheer.png',
     liveUrl: 'https://stores.inksoft.com/bethcentercheer/shop/home',
   },
   {
@@ -83,7 +83,7 @@ export const stores: StoreItem[] = [
     name: 'FALCON GYMNASTICS',
     category: 'Inksoft · Fund raising',
     description: 'Created and configured the Falcon Gymnastics Charity merchandise webstore using InkSoft, showcasing charity merchandise and enabling customers to browse and place orders online.',
-    image: 'https://github.com/Fahad42150/dancing-llama-3e1cb2/blob/873c75b117fe8cf180835e42094775e74b8a7fbd/public/portfolio/Beth-ski-club.png',
+    image: '/public/portfolio/falcon.png',
     liveUrl: 'https://stores.inksoft.com/FalconGymnastics/shop/home',
   },
 ];
