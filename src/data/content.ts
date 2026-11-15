@@ -92,7 +92,7 @@ export const services: ServiceItem[] = [
   {
     id: 'service-1',
     icon: ShoppingCart,
-    title: 'Professional InkSoft Store Setup Product Catalog Management Services USA and Canada',
+    title: 'Professional InkSoft Store Setup Product Catalog Management Services',
     description: 'We provide professional InkSoft store setup, customization, and product catalog management services. Our services include complete store setup, product uploads, catalog updates, pricing and size management, product images, artwork setup, store maintenance, and ongoing support. We help USA and Canda businesses create professional, organized, and user-friendly InkSoft stores.',
     features: ['Store design & branding', 'Product catalog management', 'Pricing & variant setup' 'Manual Products and Manufacturer additions' 'Much More'],
   },
