@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://www.fjxstudio.com/</loc>
-  </url>
+  <url><loc>https://www.fjxstudio.com/</loc><lastmod>2026-11-16</lastmod><changefreq>monthly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://www.fjxstudio.com/inksoft-store-management/</loc><lastmod>2026-11-16</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.fjxstudio.com/inksoft-product-catalog-management/</loc><lastmod>2026-11-16</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.fjxstudio.com/inksoft-store-setup/</loc><lastmod>2026-11-16</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.fjxstudio.com/ecommerce-store-management/</loc><lastmod>2026-11-16</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
 </urlset>
