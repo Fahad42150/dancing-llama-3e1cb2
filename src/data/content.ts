@@ -83,7 +83,7 @@ export const stores: StoreItem[] = [
     name: 'FALCON GYMNASTICS',
     category: 'Inksoft · Fund raising',
     description: 'Created and configured the Falcon Gymnastics Charity merchandise webstore using InkSoft, showcasing charity merchandise and enabling customers to browse and place orders online.',
-    image: 'public/portfolio/falcon.png,
+    image: '/portfolio/falcon.png',
     liveUrl: 'https://stores.inksoft.com/FalconGymnastics/shop/home',
   },
 ];
