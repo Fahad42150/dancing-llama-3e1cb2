@@ -2,6 +2,17 @@ import { CheckCircle2, ArrowRight } from 'lucide-react';
 import { services } from '@/data/content';
 import { useReveal } from '@/hooks/useReveal';
 
+const servicePages = [
+  { label: 'InkSoft Store Management', href: '/inksoft-store-management/' },
+  { label: 'InkSoft Product Catalog Management', href: '/inksoft-product-catalog-management/' },
+  { label: 'InkSoft Store Setup', href: '/inksoft-store-setup/' },
+  { label: 'eCommerce Store Management', href: '/ecommerce-store-management/' },
+  { label: 'eCommerce Virtual Assistant', href: '/ecommerce-virtual-assistant/' },
+  { label: 'Shopify Store Management', href: '/shopify-store-management/' },
+  { label: 'WooCommerce & WordPress Store Management', href: '/woocommerce-wordpress-store-management/' },
+  { label: 'Chipply Store Management', href: '/chipply-store-management/' },
+];
+
 export default function Services() {
   const { ref, isVisible } = useReveal();
 
@@ -16,12 +27,13 @@ export default function Services() {
             What We Do
           </div>
           <h2 className="font-display text-3xl font-extrabold tracking-tight text-charcoal-900 sm:text-4xl">
-            Services Built for eCommerce Growth
+            InkSoft Store Management & eCommerce Support Services
           </h2>
           <p className="mt-4 text-lg text-charcoal-500">
-            Everything you need to launch, manage, and scale your online store —
-            all under one roof. From store setup to bookkeeping and social media,
-            we've got you covered.
+            Practical support for online store setup, product catalog
+            management, product data entry and daily store administration.
+            InkSoft is our primary specialty, with additional platform support
+            scoped for Shopify, WooCommerce and Chipply.
           </p>
         </div>
 
@@ -31,13 +43,36 @@ export default function Services() {
           ))}
         </div>
 
+        <div className="mt-14 rounded-3xl border border-charcoal-100 bg-white px-8 py-10">
+          <h3 className="font-display text-2xl font-bold text-charcoal-900">
+            Explore our store management services
+          </h3>
+          <p className="mt-2 max-w-3xl text-charcoal-500">
+            Choose the service that matches your platform and the work your
+            team needs to delegate.
+          </p>
+          <div className="mt-6 grid gap-x-8 gap-y-4 sm:grid-cols-2 lg:grid-cols-3">
+            {servicePages.map((page) => (
+              <a
+                key={page.href}
+                href={page.href}
+                className="inline-flex items-center gap-2 text-sm font-semibold text-charcoal-700 underline decoration-parrot-400 underline-offset-4 transition-colors hover:text-parrot-700"
+              >
+                {page.label}
+                <ArrowRight size={15} aria-hidden="true" />
+              </a>
+            ))}
+          </div>
+        </div>
+
         <div className="mt-14 flex flex-col items-center gap-4 rounded-3xl bg-charcoal-900 px-8 py-12 text-center sm:flex-row sm:justify-between sm:text-left">
           <div>
             <h3 className="font-display text-2xl font-bold text-white">
-              Ready to grow your store?
+              Need reliable help with your online store?
             </h3>
             <p className="mt-2 text-charcoal-300">
-              Get a free consultation and discover how we can scale your eCommerce business.
+              Share your platform, catalog requirements and recurring tasks to
+              discuss a practical support plan.
             </p>
           </div>
           <a
@@ -48,7 +83,7 @@ export default function Services() {
             }}
             className="group inline-flex shrink-0 items-center gap-2 rounded-xl bg-parrot-400 px-7 py-4 text-base font-semibold text-charcoal-900 transition-all hover:bg-parrot-300 hover:-translate-y-0.5"
           >
-            Start Your Project
+            Discuss Your Project
             <ArrowRight size={20} className="transition-transform group-hover:translate-x-1" />
           </a>
         </div>
@@ -68,11 +103,9 @@ function ServiceCard({
   const Icon = service.icon;
 
   return (
-    <div
+    <article
       ref={ref}
-      className={`reveal group rounded-2xl border border-charcoal-100 bg-white p-7 shadow-soft transition-all duration-500 hover:shadow-card-hover hover:-translate-y-1 hover:border-parrot-200 ${
-        isVisible ? 'is-visible' : ''
-      }`}
+      className={`reveal group rounded-2xl border border-charcoal-100 bg-white p-7 shadow-soft transition-all duration-500 hover:shadow-card-hover hover:-translate-y-1 hover:border-parrot-200 ${isVisible ? 'is-visible' : ''}`}
       style={{ transitionDelay: `${index * 70}ms` }}
     >
       <div className="mb-5 flex h-14 w-14 items-center justify-center rounded-2xl bg-parrot-50 transition-colors group-hover:bg-parrot-400">
@@ -95,6 +128,6 @@ function ServiceCard({
           </li>
         ))}
       </ul>
-    </div>
+    </article>
   );
 }
