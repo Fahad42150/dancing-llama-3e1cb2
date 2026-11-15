@@ -1,6 +1,16 @@
+import { useState } from 'react';
 import { Star, Quote } from 'lucide-react';
 import { testimonials } from '@/data/content';
 import { useReveal } from '@/hooks/useReveal';
+
+function getInitials(name: string) {
+  return name
+    .split(/\s+/)
+    .filter(Boolean)
+    .slice(0, 2)
+    .map((part) => part[0].toUpperCase())
+    .join('');
+}
 
 export default function Testimonials() {
   const { ref, isVisible } = useReveal();
@@ -43,6 +53,7 @@ function TestimonialCard({
   index: number;
 }) {
   const { ref, isVisible } = useReveal();
+  const [avatarFailed, setAvatarFailed] = useState(false);
 
   return (
     <div
@@ -65,12 +76,22 @@ function TestimonialCard({
       </p>
 
       <div className="mt-6 flex items-center gap-4">
-        <img
-          src={testimonial.avatar}
-          alt={testimonial.name}
-          className="h-12 w-12 rounded-full object-cover ring-2 ring-parrot-400/30"
-          loading="lazy"
-        />
+        {testimonial.avatar && !avatarFailed ? (
+          <img
+            src={testimonial.avatar}
+            alt={testimonial.name}
+            className="h-12 w-12 rounded-full object-cover ring-2 ring-parrot-400/30"
+            loading="lazy"
+            onError={() => setAvatarFailed(true)}
+          />
+        ) : (
+          <div
+            className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-parrot-400/20 font-display text-sm font-bold text-parrot-300 ring-2 ring-parrot-400/30"
+            aria-hidden="true"
+          >
+            {getInitials(testimonial.name)}
+          </div>
+        )}
         <div>
           <div className="font-semibold text-white">{testimonial.name}</div>
           <div className="text-xs text-charcoal-400">{testimonial.role}</div>
