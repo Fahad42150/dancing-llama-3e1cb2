@@ -25,9 +25,10 @@ export default function Contact() {
             Let's Build Your Store Together
           </h2>
           <p className="mt-4 text-lg text-charcoal-500">
-            Whether you need a new store built from scratch or want expert
-            management for an existing one, we're here to help. Reach out via
-            WhatsApp or email — we usually respond within 24 hours.
+            Tell us which platform you use, the store tasks you want to delegate and
+            your expected workflow. Contact FJX Studio about InkSoft store
+            management, product catalog updates or eCommerce operations support
+            for businesses serving the USA and Canada.
           </p>
         </div>
 
