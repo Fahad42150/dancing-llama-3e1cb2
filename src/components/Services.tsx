@@ -8,6 +8,9 @@ const servicePages = [
   { label: 'InkSoft Store Setup', href: '/inksoft-store-setup/' },
   { label: 'eCommerce Store Management', href: '/ecommerce-store-management/' },
   { label: 'eCommerce Virtual Assistant', href: '/ecommerce-virtual-assistant/' },
+  { label: 'eCommerce Product Upload Services', href: '/ecommerce-product-upload-services/' },
+  { label: 'eCommerce Order Management', href: '/ecommerce-order-management/' },
+  { label: 'Apparel Store Management', href: '/apparel-store-management/' },
   { label: 'Shopify Store Management', href: '/shopify-store-management/' },
   { label: 'WooCommerce & WordPress Store Management', href: '/woocommerce-wordpress-store-management/' },
   { label: 'Chipply Store Management', href: '/chipply-store-management/' },
@@ -33,7 +36,9 @@ export default function Services() {
             Practical support for online store setup, product catalog
             management, product data entry and daily store administration.
             InkSoft is our primary specialty, with additional platform support
-            scoped for Shopify, WooCommerce and Chipply.
+            scoped for Shopify, WooCommerce and Chipply. We support apparel
+            decorators, screen printers, team dealers and promotional product
+            businesses serving the USA and Canada.
           </p>
         </div>
 
