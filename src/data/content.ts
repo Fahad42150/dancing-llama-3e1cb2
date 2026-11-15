@@ -59,7 +59,7 @@ export const stores: StoreItem[] = [
     name: 'Truker Though',
     category: 'InkSoft · Print-on-Demand',
     description: 'A full InkSoft store setup with product catalog management, custom design studio, and wholesale ordering.',
-    image: 'public/portfolio/Trucker_though.png',
+    image: '/public/portfolio/Trucker_though.png',
     liveUrl: 'https://stores.inksoft.com/truck/shop/',
   },
   {
@@ -67,7 +67,7 @@ export const stores: StoreItem[] = [
     name: 'TAYLOR MADE FARM',
     category: 'Inksoft · Corporate',
     description: 'Completed the Taylor Made Farm project by adding and customizing products, organizing product listings, and designing the InkSoft online store homepage.',
-    image: 'public/portfolio/Taylor_made_farm.png',
+    image: '/public/portfolio/Taylor_made_farm.png',
     liveUrl: 'https://stores.inksoft.com/taylormadefarm/shop/home',
   },
   {
@@ -75,7 +75,7 @@ export const stores: StoreItem[] = [
     name: 'BETH CENTER SKI CLUB',
     category: 'Inksoft · Club',
     description: 'Successfully completed the InkSoft online store setup and updated the product catalog, ensuring products are organized and ready for customer browsing and ordering.',
-    image: 'public/portfolio/Beth-ski-club.png',
+    image: '/public/portfolio/Beth-ski-club.png',
     liveUrl: 'https://stores.inksoft.com/bethcentercheer/shop/home',
   },
   {
