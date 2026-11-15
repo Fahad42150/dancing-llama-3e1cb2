@@ -84,7 +84,7 @@ export default function Hero() {
           <div className="relative animate-float">
             <div className="overflow-hidden rounded-3xl border border-charcoal-100 shadow-card-hover">
               <img
-                src="https://drive.google.com/file/d/1X5X-i1aGGfj72A3j6NbJuOh4SYADQ4w4/view?usp=sharing"
+                src="https://images.pexels.com/photos/6214474/pexels-photo-6214474.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
                 alt="eCommerce store dashboard"
                 className="h-[460px] w-full object-cover"
                 loading="eager"
