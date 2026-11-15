@@ -101,7 +101,7 @@ export const services: ServiceItem[] = [
     icon: ShoppingBag,
     title: 'Professional Shopify Store Management Services',
     description: 'FJX Studio provides professional Shopify store management services, including product uploads, catalog management, inventory updates, order management, and ongoing eCommerce support for businesses in the USA and Canada.',
-    features: ['Shopify virtual assistant', 'Shopify product management', 'Shopify catalog management', 'Shopify eCommerce management'],
+    features: ['Shopify virtual assistant', 'Shopify product management', 'Shopify catalog management', 'Shopify eCommerce management', 'Much More'],
   },
   {
     id: 'service-3',
@@ -115,21 +115,21 @@ export const services: ServiceItem[] = [
     icon: BookOpen,
     title: 'Bookkeeping & Accounting',
     description: 'Professional e-commerce bookkeeping — sales tracking, expense management, and financial reporting to keep your store profitable.',
-    features: ['Sales & expense tracking', 'Monthly financial reports', 'Tax-ready bookkeeping'],
+    features: ['Sales & expense tracking', 'Monthly financial reports', 'Tax-ready bookkeeping', 'Much More'],
   },
   {
     id: 'service-5',
     icon: Share2,
     title: 'Social Media Management',
     description: 'Grow your brand with strategic social media management — content creation, scheduling, and community engagement.',
-    features: ['Content calendar & posting', 'Brand-consistent creatives', 'Community engagement'],
+    features: ['Content calendar & posting', 'Brand-consistent creatives', 'Community engagement', 'Much More'],
   },
   {
     id: 'service-6',
     icon: Settings,
     title: 'Professional eCommerce Support Services',
     description: 'FJX Studio provides reliable eCommerce support services for USA and Canadian businesses, including store management, product updates, catalog management, and daily online store operations. 24/7.',
-    features: ['Order Processing Support', 'Product Catalog Management', 'Inventory Updates', 'eCommerce Administrative Support', 'eCommerce Virtual Assistant'],
+    features: ['Order Processing Support', 'Product Catalog Management', 'Inventory Updates', 'eCommerce Administrative Support', 'eCommerce Virtual Assistant', 'Much More'],
   },
 ];
 
