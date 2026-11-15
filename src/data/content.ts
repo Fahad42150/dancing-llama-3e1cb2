@@ -75,7 +75,7 @@ export const stores: StoreItem[] = [
     name: 'BETH CENTER SKI CLUB',
     category: 'Inksoft · Club',
     description: 'Successfully completed the InkSoft online store setup and updated the product catalog, ensuring products are organized and ready for customer browsing and ordering.',
-    image: '/beth-center-ski-club.jpg',
+    image: 'public/portfolio/Beth-ski-club.png',
     liveUrl: 'https://stores.inksoft.com/bethcentercheer/shop/home',
   },
   {
