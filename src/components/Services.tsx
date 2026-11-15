@@ -27,7 +27,7 @@ export default function Services() {
             What We Do
           </div>
           <h2 className="font-display text-3xl font-extrabold tracking-tight text-charcoal-900 sm:text-4xl">
-            InkSoft Store Management & eCommerce Support Services
+            Our Services
           </h2>
           <p className="mt-4 text-lg text-charcoal-500">
             Practical support for online store setup, product catalog
@@ -45,7 +45,7 @@ export default function Services() {
 
         <div className="mt-14 rounded-3xl border border-charcoal-100 bg-white px-8 py-10">
           <h3 className="font-display text-2xl font-bold text-charcoal-900">
-            Explore our store management services
+            Explore More Services
           </h3>
           <p className="mt-2 max-w-3xl text-charcoal-500">
             Choose the service that matches your platform and the work your
