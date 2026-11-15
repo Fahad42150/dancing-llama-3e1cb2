@@ -1,4 +1,5 @@
-import { ExternalLink, FolderGit2 } from 'lucide-react';
+import { useState } from 'react';
+import { ExternalLink, FolderGit2, ShoppingBag } from 'lucide-react';
 import { stores } from '@/data/content';
 import { useReveal } from '@/hooks/useReveal';
 
@@ -46,6 +47,7 @@ function StoreCard({
   index: number;
 }) {
   const { ref, isVisible } = useReveal();
+  const [imageFailed, setImageFailed] = useState(false);
 
   return (
     <article
@@ -57,12 +59,22 @@ function StoreCard({
     >
       {/* Screenshot */}
       <div className="relative h-56 overflow-hidden">
-        <img
-          src={store.image}
-          alt={store.name}
-          className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
-          loading="lazy"
-        />
+        {store.image && !imageFailed ? (
+          <img
+            src={store.image}
+            alt={`${store.name} store homepage screenshot`}
+            className="h-full w-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
+            loading="lazy"
+            onError={() => setImageFailed(true)}
+          />
+        ) : (
+          <div className="flex h-full w-full flex-col items-center justify-center gap-3 bg-charcoal-900 px-6 text-center">
+            <ShoppingBag size={36} className="text-parrot-400" aria-hidden="true" />
+            <span className="font-display text-2xl font-extrabold tracking-tight text-white">
+              {store.name}
+            </span>
+          </div>
+        )}
         <div className="absolute inset-0 bg-gradient-to-t from-charcoal-900/30 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
         <span className="absolute left-4 top-4 rounded-lg bg-white/90 px-3 py-1.5 text-xs font-semibold text-charcoal-800 backdrop-blur-sm">
           {store.category}

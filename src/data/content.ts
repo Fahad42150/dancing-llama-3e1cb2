@@ -35,14 +35,15 @@ export interface TestimonialItem {
 }
 
 // To add a new store, copy a block below and update the fields.
-// Replace `image` with your screenshot URL and `liveUrl` with the real store link.
+// Put screenshots in /public and reference them from the site root (e.g. '/portfolio/store.png'). Leave `image` empty to show a branded placeholder.
+// Replace `image` with your screenshot path and `liveUrl` with the real store link.
 export const stores: StoreItem[] = [
   {
     id: 'store-1',
     name: 'WU SOFTBALL',
     category: 'Inksoft · Sports team',
     description: 'Completed the WU Softball project by adding products, customizing product designs, and organizing featured products on the InkSoft online store homepage.',
-    image: '/public/beth-center-ski-club.jpg',
+    image: '/portfolio/wu-softball.png',
     liveUrl: 'https://stores.inksoft.com/wusoftball/shop/home',
   },
   {
@@ -50,7 +51,7 @@ export const stores: StoreItem[] = [
     name: 'DBG BASKETBALL',
     category: 'Inksoft · Sports team',
     description: 'Added and customized basketball products, organized product listings, and showcased featured items on the DBG Basketball inksoft online store homepage.',
-    image: 'https://res.cloudinary.com/dtz0urit6/image/upload/q_auto:best,f_jpg/cloudinary-tools-uploads/kjeb7ckkzqc1plmi2ju7',
+    image: '/portfolio/dbg-basketball.png',
     liveUrl: 'https://shop.arelistores.com/dbg_basketball/shop/home',
   },
   {
@@ -58,7 +59,7 @@ export const stores: StoreItem[] = [
     name: 'Truker Though',
     category: 'InkSoft · Print-on-Demand',
     description: 'A full InkSoft store setup with product catalog management, custom design studio, and wholesale ordering.',
-    image: 'https://res.cloudinary.com/dtz0urit6/image/upload/q_auto:eco,f_jpg/cloudinary-tools-uploads/bpmpbrff7siedlpjfhtr',
+    image: '',
     liveUrl: 'https://stores.inksoft.com/truck/shop/',
   },
   {
@@ -66,7 +67,7 @@ export const stores: StoreItem[] = [
     name: 'TAYLOR MADE FARM',
     category: 'Inksoft · Corporate',
     description: 'Completed the Taylor Made Farm project by adding and customizing products, organizing product listings, and designing the InkSoft online store homepage.',
-    image: 'public/123.jpg',
+    image: '/123.jpg',
     liveUrl: 'https://stores.inksoft.com/taylormadefarm/shop/home',
   },
   {
@@ -74,7 +75,7 @@ export const stores: StoreItem[] = [
     name: 'BETH CENTER SKI CLUB',
     category: 'Inksoft · Club',
     description: 'Successfully completed the InkSoft online store setup and updated the product catalog, ensuring products are organized and ready for customer browsing and ordering.',
-    image: 'https://res.cloudinary.com/dtz0urit6/image/upload/q_auto:best,f_jpg/cloudinary-tools-uploads/iw4p0rpw9kozrnhwexen',
+    image: '/beth-center-ski-club.jpg',
     liveUrl: 'https://stores.inksoft.com/bethcentercheer/shop/home',
   },
   {
@@ -82,7 +83,7 @@ export const stores: StoreItem[] = [
     name: 'FALCON GYMNASTICS',
     category: 'Inksoft · Fund raising',
     description: 'Created and configured the Falcon Gymnastics Charity merchandise webstore using InkSoft, showcasing charity merchandise and enabling customers to browse and place orders online.',
-    image: 'https://res.cloudinary.com/dtz0urit6/image/upload/q_auto:eco,f_jpg/cloudinary-tools-uploads/lrtnuanem3sdbxmc2hby',
+    image: '/portfolio/falcon.png',
     liveUrl: 'https://stores.inksoft.com/FalconGymnastics/shop/home',
   },
 ];
@@ -137,7 +138,7 @@ export const testimonials: TestimonialItem[] = [
     id: 't1',
     name: 'Theo',
     role: 'Owner, Areli Sportswear.',
-    avatar: 'https://res.cloudinary.com/dtz0urit6/image/upload/q_auto:eco,f_jpg/cloudinary-tools-uploads/mqfk6pycbbqejhimvqw9',
+    avatar: '',
     rating: 5,
     text: 'FJX Studio answered all of my questions and provided professional work and a prompt delivery. Highly recommended.',
   },
@@ -145,7 +146,7 @@ export const testimonials: TestimonialItem[] = [
     id: 't2',
     name: 'Frederick',
     role: 'Founder, Anchor Design',
-    avatar: 'https://res.cloudinary.com/dtz0urit6/image/upload/q_auto:best,f_jpg/cloudinary-tools-uploads/yxfeudkebs1kjyqz6msv',
+    avatar: '',
     rating: 5,
     text: 'Excellent experience working with FJX!. Highly recommended for InkSoft store setup and product upload services.',
   },
@@ -153,7 +154,7 @@ export const testimonials: TestimonialItem[] = [
     id: 't3',
     name: 'Davis',
     role: 'Vice President, Bee Graphics',
-    avatar: 'https://res.cloudinary.com/dtz0urit6/image/upload/q_auto:eco,f_jpg/cloudinary-tools-uploads/upp7qobfgfvegivckoco',
+    avatar: '',
     rating: 5,
     text: 'The InkSoft store setup was seamless. They handled everything from product catalog to the design studio. Our wholesale orders have never been easier.',
   },
@@ -161,7 +162,7 @@ export const testimonials: TestimonialItem[] = [
     id: 't4',
     name: 'April sinclair',
     role: 'Director, April Designs',
-    avatar: 'https://res.cloudinary.com/dtz0urit6/image/upload/q_auto:eco,f_jpg/cloudinary-tools-uploads/ji1jcbpdsqwqcqalgsx5',
+    avatar: '',
     rating: 5,
     text: 'Done Great Job on inksoft store setup and catalog.',
   },
