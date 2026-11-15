@@ -65,7 +65,7 @@ export default function Hero() {
             </div>
             <div className="h-10 w-px bg-charcoal-100" />
             <div>
-              <div className="font-display text-3xl font-extrabold text-charcoal-900">1000+</div>
+              <div className="font-display text-3xl font-extrabold text-charcoal-900">100+</div>
               <div className="text-sm text-charcoal-500">Stores Managed</div>
             </div>
             <div className="h-10 w-px bg-charcoal-100" />
