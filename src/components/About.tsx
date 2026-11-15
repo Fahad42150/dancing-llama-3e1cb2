@@ -3,7 +3,7 @@ import { useReveal } from '@/hooks/useReveal';
 
 const stats = [
   { icon: Award, value: '8+', label: 'Years in eCommerce' },
-  { icon: Users, value: '100+', label: 'Happy Clients' },
+  { icon: Users, value: '200+', label: 'Happy Clients' },
   { icon: Globe, value: '2', label: 'Countries Served' },
   { icon: TrendingUp, value: '40%', label: 'Avg. Sales Growth' },
 ];
