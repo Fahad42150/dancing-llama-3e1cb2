@@ -1,18 +1,4 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "outputDirectory": "dist",
-  "rewrites": [
-    {
-      "source": "/usa-canada-team-store-setup-management",
-      "destination": "/usa-canada-team-store-setup-management/index.html"
-    },
-    {
-      "source": "/usa-canada-team-store-setup-management/",
-      "destination": "/usa-canada-team-store-setup-management/index.html"
-    },
-    {
-      "source": "/(.*)",
-      "destination": "/index.html"
-    }
-  ]
+  "outputDirectory": "dist"
 }
