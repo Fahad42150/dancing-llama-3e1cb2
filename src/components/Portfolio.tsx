@@ -19,12 +19,12 @@ export default function Portfolio() {
             Our Portfolio
           </div>
           <h2 className="font-display text-3xl font-extrabold tracking-tight text-charcoal-900 sm:text-4xl">
-            Inksoft Stores We've Built & Managed
+            InkSoft Stores We've Worked On
           </h2>
           <p className="mt-4 text-lg text-charcoal-500">
-            A selection of eCommerce stores we've designed, developed, and
-            managed across Shopify, WooCommerce, and InkSoft platforms. Click
-            through to explore each live store.
+            A selection of InkSoft store projects involving product uploads, catalog
+            organization, storefront setup and product customization. Open each
+            example to view the customer-facing store; project scope varies by client.
           </p>
         </div>
 
