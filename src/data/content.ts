@@ -42,7 +42,7 @@ export const stores: StoreItem[] = [
     name: 'WU SOFTBALL',
     category: 'Inksoft · Sports team',
     description: 'Completed the WU Softball project by adding products, customizing product designs, and organizing featured products on the InkSoft online store homepage.',
-    image: 'https://res.cloudinary.com/dtz0urit6/image/upload/q_auto:eco,f_jpg/cloudinary-tools-uploads/dxb6xl2gnbvdh2fonddw',
+    image: '/public/beth-center-ski-club.jpg',
     liveUrl: 'https://stores.inksoft.com/wusoftball/shop/home',
   },
   {
