@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="800" viewBox="0 0 1400 800" role="img" aria-labelledby="title desc">
+<title id="title">Team sports and custom apparel</title><desc id="desc">Illustration of a group of athletes in coordinated team uniforms on a sports field.</desc>
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#102b46"/><stop offset="1" stop-color="#267b83"/></linearGradient>
+<linearGradient id="field" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#6fb28a"/><stop offset="1" stop-color="#286d5c"/></linearGradient>
+</defs>
+<rect width="1400" height="800" fill="url(#bg)"/><circle cx="1120" cy="140" r="210" fill="#fff" opacity=".06"/><circle cx="220" cy="110" r="170" fill="#fff" opacity=".05"/>
+<path d="M0 475 Q350 400 700 470 T1400 450 V800 H0Z" fill="url(#field)"/>
+<path d="M0 610 Q350 535 700 600 T1400 580" fill="none" stroke="#d7f1df" stroke-width="5" opacity=".65"/>
+<path d="M700 480 V800 M280 550 Q700 420 1120 550" fill="none" stroke="#d7f1df" stroke-width="4" opacity=".45"/>
+<g stroke="#102b46" stroke-width="9" stroke-linejoin="round">
+<g transform="translate(260 220)"><circle cx="100" cy="75" r="54" fill="#b97955"/><path d="M48 66 Q52 4 108 18 Q154 24 153 74 Q112 48 48 66" fill="#172c3e" stroke="none"/><path d="M38 145 Q100 110 162 145 L195 340 H5Z" fill="#f1f4f6"/><path d="M38 145 L100 185 L162 145 L177 260 H23Z" fill="#e2a53a"/><path d="M70 190 L100 220 L130 190" fill="none"/><path d="M35 340 L18 505 H83 L105 340 M112 340 L130 505 H195 L165 340" fill="#253e59"/><path d="M18 505 H82 M130 505 H195" stroke="#f1f4f6" stroke-width="15"/></g>
+<g transform="translate(570 175)"><circle cx="100" cy="75" r="54" fill="#8f5d43"/><path d="M47 66 Q60 10 110 18 Q160 26 154 78 Q110 48 47 66" fill="#2b1e1a" stroke="none"/><path d="M38 145 Q100 110 162 145 L195 340 H5Z" fill="#eaf1f4"/><path d="M38 145 L100 185 L162 145 L177 260 H23Z" fill="#2d78a7"/><path d="M100 200 V300" stroke="#fff" stroke-width="7"/><path d="M35 340 L18 505 H83 L105 340 M112 340 L130 505 H195 L165 340" fill="#f1f4f6"/><path d="M18 505 H82 M130 505 H195" stroke="#253e59" stroke-width="15"/></g>
+<g transform="translate(880 220)"><circle cx="100" cy="75" r="54" fill="#d39a70"/><path d="M46 72 Q42 14 105 17 Q160 22 155 80 Q114 48 46 72" fill="#5a3528" stroke="none"/><path d="M38 145 Q100 110 162 145 L195 340 H5Z" fill="#eaf1f4"/><path d="M38 145 L100 185 L162 145 L177 260 H23Z" fill="#cf5c50"/><path d="M70 195 L100 225 L130 195" fill="none"/><path d="M35 340 L18 505 H83 L105 340 M112 340 L130 505 H195 L165 340" fill="#253e59"/><path d="M18 505 H82 M130 505 H195" stroke="#f1f4f6" stroke-width="15"/></g>
+</g>
+<g fill="#fff" opacity=".95"><text x="700" y="95" text-anchor="middle" font-family="Arial,sans-serif" font-size="34" font-weight="700" letter-spacing="8">ONE TEAM. ONE STORE.</text><text x="700" y="145" text-anchor="middle" font-family="Arial,sans-serif" font-size="20" letter-spacing="4">CUSTOM TEAM APPAREL &amp; SPIRIT WEAR</text></g>
+</svg>
