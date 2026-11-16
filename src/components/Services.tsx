@@ -34,6 +34,17 @@ const servicePages = [
   { label: 'eCommerce Inventory Management Services', href: '/ecommerce-inventory-management/' },
   { label: 'eCommerce Customer Support Virtual Assistant', href: '/ecommerce-customer-support-virtual-assistant/' },
   { label: 'eCommerce Product Listing Management', href: '/ecommerce-product-listing-management/' },
+  { label: 'eCommerce Customer Support Services', href: '/ecommerce-customer-support-services/' },
+  { label: 'Live Chat Support Services', href: '/live-chat-support-services/' },
+  { label: 'Email Support Services', href: '/email-support-services/' },
+  { label: 'Outsourced Customer Support', href: '/outsourced-customer-support/' },
+  { label: 'Email Management Virtual Assistant', href: '/email-management-virtual-assistant/' },
+  { label: 'Canva Graphic Design Services', href: '/canva-graphic-design-services/' },
+  { label: 'Canva Social Media Design Services', href: '/canva-social-media-design/' },
+  { label: 'Custom Canva Templates for Businesses', href: '/custom-canva-templates-design/' },
+  { label: 'eCommerce Graphic Design Services', href: '/ecommerce-graphic-design-services/' },
+  { label: 'Canva Presentation and Marketing Design', href: '/canva-presentation-marketing-design/' },
+  { label: 'Canva Virtual Assistant Services', href: '/canva-virtual-assistant/' },
 ];
 
 export default function Services() {
