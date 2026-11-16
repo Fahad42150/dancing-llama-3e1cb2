@@ -21,6 +21,19 @@ const servicePages = [
   { label: 'Shopify Store Management', href: '/shopify-store-management/' },
   { label: 'WooCommerce & WordPress Store Management', href: '/woocommerce-wordpress-store-management/' },
   { label: 'Chipply Store Management', href: '/chipply-store-management/' },
+  { label: 'InkSoft Product and Artwork Setup Services', href: '/inksoft-product-artwork-setup-services/' },
+  { label: 'School Spirit Wear and Fundraising Store Setup', href: '/school-spirit-wear-fundraising-store-setup/' },
+  { label: 'Team Dealer eCommerce Support', href: '/team-dealer-ecommerce-support/' },
+  { label: 'Embroidery Business Virtual Assistant', href: '/embroidery-business-virtual-assistant/' },
+  { label: 'Promotional Products Store Management', href: '/promotional-products-store-management/' },
+  { label: 'Screen Printing Shop Virtual Assistant', href: '/screen-printing-shop-virtual-assistant/' },
+  { label: 'eCommerce Data Entry Services', href: '/ecommerce-data-entry-services/' },
+  { label: 'Marketplace Management Services', href: '/marketplace-management-services/' },
+  { label: 'Dedicated eCommerce Virtual Assistant', href: '/dedicated-ecommerce-virtual-assistant/' },
+  { label: 'eCommerce Order Processing Virtual Assistant', href: '/ecommerce-order-processing-virtual-assistant/' },
+  { label: 'eCommerce Inventory Management Services', href: '/ecommerce-inventory-management/' },
+  { label: 'eCommerce Customer Support Virtual Assistant', href: '/ecommerce-customer-support-virtual-assistant/' },
+  { label: 'eCommerce Product Listing Management', href: '/ecommerce-product-listing-management/' },
 ];
 
 export default function Services() {
