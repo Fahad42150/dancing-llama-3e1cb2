@@ -5,6 +5,9 @@ import { useReveal } from '@/hooks/useReveal';
 const servicePages = [
   { label: 'InkSoft Store Management', href: '/inksoft-store-management/' },
   { label: 'InkSoft Product Catalog Management', href: '/inksoft-product-catalog-management/' },
+  { label: 'InkSoft Team & Fundraising Store Setup', href: '/inksoft-team-fundraising-store-setup/' },
+  { label: 'InkSoft Bulk Product Upload & Supplier Sync', href: '/inksoft-bulk-product-upload-supplier-sync/' },
+  { label: 'Seasonal & Peak Season Store Support', href: '/seasonal-peak-season-store-support/' },
   { label: 'InkSoft Store Setup', href: '/inksoft-store-setup/' },
   { label: 'eCommerce Store Management', href: '/ecommerce-store-management/' },
   { label: 'eCommerce Virtual Assistant', href: '/ecommerce-virtual-assistant/' },
