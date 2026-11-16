@@ -84,38 +84,44 @@ export default function Hero() {
           </div>
         </div>
 
-        <div className="relative hidden lg:block">
-          <div className="relative animate-float">
-            <div className="overflow-hidden rounded-3xl border border-charcoal-100 shadow-card-hover">
+        <div className="relative mx-auto w-full max-w-xl lg:block">
+          <div className="pointer-events-none absolute -inset-5 rounded-[2.5rem] bg-parrot-100/70 blur-2xl" />
+          <div className="absolute -inset-x-3 inset-y-5 -rotate-3 rounded-[2rem] bg-gradient-to-br from-[#9FE870] via-[#c9f5a9] to-[#f5fbeF] opacity-90" />
+          <div className="group relative animate-float overflow-hidden rounded-[2rem] border border-white/80 bg-white p-2 shadow-[0_28px_80px_rgba(45,70,25,0.18)] ring-1 ring-[#9FE870]/30">
+            <div className="relative aspect-[5/4] overflow-hidden rounded-[1.55rem] bg-parrot-50">
               <img
                 src="https://images.pexels.com/photos/41045670/pexels-photo-41045670.jpeg"
                 alt="Online store management workspace and eCommerce dashboard"
-                className="h-[460px] w-full object-cover"
+                className="h-full min-h-[300px] w-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-[1.035]"
                 loading="eager"
                 fetchPriority="high"
                 decoding="async"
               />
-            </div>
-            <div className="absolute -left-6 top-12 rounded-2xl border border-charcoal-100 bg-white p-4 shadow-card">
-              <div className="flex items-center gap-3">
-                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-parrot-100">
-                  <Zap size={20} className="text-parrot-600" />
-                </div>
-                <div>
-                  <div className="text-sm font-semibold text-charcoal-900">InkSoft Store Support</div>
-                  <div className="text-xs text-charcoal-500">Setup & ongoing maintenance</div>
-                </div>
+              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-charcoal-900/25 via-transparent to-white/10" />
+              <div className="absolute bottom-4 left-4 rounded-full border border-white/60 bg-white/90 px-3 py-1.5 text-xs font-semibold tracking-wide text-charcoal-800 shadow-lg backdrop-blur-md">
+                eCommerce operations, organized
               </div>
             </div>
-            <div className="absolute -right-4 bottom-10 rounded-2xl border border-charcoal-100 bg-white p-4 shadow-card">
-              <div className="flex items-center gap-3">
-                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-parrot-100">
-                  <PackageCheck size={20} className="text-parrot-600" />
-                </div>
-                <div>
-                  <div className="text-sm font-semibold text-charcoal-900">Product Catalog Care</div>
-                  <div className="text-xs text-charcoal-500">Listings, variants & updates</div>
-                </div>
+          </div>
+          <div className="absolute -left-5 top-10 rounded-2xl border border-white/80 bg-white/95 p-3.5 shadow-[0_14px_40px_rgba(35,55,20,0.14)] backdrop-blur-md sm:-left-8 sm:p-4">
+            <div className="flex items-center gap-3">
+              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-parrot-100">
+                <Zap size={20} className="text-parrot-600" />
+              </div>
+              <div>
+                <div className="text-sm font-semibold text-charcoal-900">InkSoft Store Support</div>
+                <div className="text-xs text-charcoal-500">Setup & ongoing maintenance</div>
+              </div>
+            </div>
+          </div>
+          <div className="absolute -bottom-5 right-0 rounded-2xl border border-white/80 bg-white/95 p-3.5 shadow-[0_14px_40px_rgba(35,55,20,0.14)] backdrop-blur-md sm:-right-5 sm:p-4">
+            <div className="flex items-center gap-3">
+              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-parrot-100">
+                <PackageCheck size={20} className="text-parrot-600" />
+              </div>
+              <div>
+                <div className="text-sm font-semibold text-charcoal-900">Product Catalog Care</div>
+                <div className="text-xs text-charcoal-500">Listings, variants & updates</div>
               </div>
             </div>
           </div>
