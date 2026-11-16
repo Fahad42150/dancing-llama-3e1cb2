@@ -89,6 +89,14 @@
     {
       "source": "/canva-virtual-assistant/",
       "destination": "/canva-virtual-assistant/index.html"
+    },
+    {
+      "source": "/hire-inksoft-virtual-assistant-product-upload",
+      "destination": "/hire-inksoft-virtual-assistant-product-upload/index.html"
+    },
+    {
+      "source": "/hire-inksoft-virtual-assistant-product-upload/",
+      "destination": "/hire-inksoft-virtual-assistant-product-upload/index.html"
     }
   ]
 }
