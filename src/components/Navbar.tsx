@@ -17,6 +17,13 @@ const serviceLinks = [
   { label: 'InkSoft Store Setup', href: '/inksoft-store-setup/' },
   { label: 'eCommerce Store Management', href: '/ecommerce-store-management/' },
   { label: 'eCommerce Virtual Assistant', href: '/ecommerce-virtual-assistant/' },
+  { label: 'Freelance Virtual Assistant Services', href: '/freelance-virtual-assistant-services/' },
+  { label: 'Virtual Assistant USA', href: '/virtual-assistant-usa/' },
+  { label: 'Virtual Assistant Canada', href: '/virtual-assistant-canada/' },
+  { label: 'Shopify Virtual Assistant USA', href: '/shopify-virtual-assistant-usa/' },
+  { label: 'eCommerce Virtual Assistant USA', href: '/ecommerce-virtual-assistant-usa/' },
+  { label: 'Virtual Assistant for Website', href: '/virtual-assistant-for-website/' },
+  { label: 'Freelancer in USA', href: '/freelancer-in-usa/' },
 ];
 
 export default function Navbar() {
