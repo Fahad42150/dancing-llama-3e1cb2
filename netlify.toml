@@ -13,6 +13,116 @@
   status = 200
 
 [[redirects]]
+  from = "/ecommerce-customer-support-services"
+  to = "/ecommerce-customer-support-services/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/ecommerce-customer-support-services/"
+  to = "/ecommerce-customer-support-services/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/live-chat-support-services"
+  to = "/live-chat-support-services/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/live-chat-support-services/"
+  to = "/live-chat-support-services/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/email-support-services"
+  to = "/email-support-services/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/email-support-services/"
+  to = "/email-support-services/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/outsourced-customer-support"
+  to = "/outsourced-customer-support/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/outsourced-customer-support/"
+  to = "/outsourced-customer-support/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/email-management-virtual-assistant"
+  to = "/email-management-virtual-assistant/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/email-management-virtual-assistant/"
+  to = "/email-management-virtual-assistant/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/canva-graphic-design-services"
+  to = "/canva-graphic-design-services/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/canva-graphic-design-services/"
+  to = "/canva-graphic-design-services/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/canva-social-media-design"
+  to = "/canva-social-media-design/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/canva-social-media-design/"
+  to = "/canva-social-media-design/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/custom-canva-templates-design"
+  to = "/custom-canva-templates-design/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/custom-canva-templates-design/"
+  to = "/custom-canva-templates-design/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/ecommerce-graphic-design-services"
+  to = "/ecommerce-graphic-design-services/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/ecommerce-graphic-design-services/"
+  to = "/ecommerce-graphic-design-services/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/canva-presentation-marketing-design"
+  to = "/canva-presentation-marketing-design/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/canva-presentation-marketing-design/"
+  to = "/canva-presentation-marketing-design/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/canva-virtual-assistant"
+  to = "/canva-virtual-assistant/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/canva-virtual-assistant/"
+  to = "/canva-virtual-assistant/index.html"
+  status = 200
+
+[[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
