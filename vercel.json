@@ -1,4 +1,94 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "outputDirectory": "dist"
+  "outputDirectory": "dist",
+  "rewrites": [
+    {
+      "source": "/ecommerce-customer-support-services",
+      "destination": "/ecommerce-customer-support-services/index.html"
+    },
+    {
+      "source": "/ecommerce-customer-support-services/",
+      "destination": "/ecommerce-customer-support-services/index.html"
+    },
+    {
+      "source": "/live-chat-support-services",
+      "destination": "/live-chat-support-services/index.html"
+    },
+    {
+      "source": "/live-chat-support-services/",
+      "destination": "/live-chat-support-services/index.html"
+    },
+    {
+      "source": "/email-support-services",
+      "destination": "/email-support-services/index.html"
+    },
+    {
+      "source": "/email-support-services/",
+      "destination": "/email-support-services/index.html"
+    },
+    {
+      "source": "/outsourced-customer-support",
+      "destination": "/outsourced-customer-support/index.html"
+    },
+    {
+      "source": "/outsourced-customer-support/",
+      "destination": "/outsourced-customer-support/index.html"
+    },
+    {
+      "source": "/email-management-virtual-assistant",
+      "destination": "/email-management-virtual-assistant/index.html"
+    },
+    {
+      "source": "/email-management-virtual-assistant/",
+      "destination": "/email-management-virtual-assistant/index.html"
+    },
+    {
+      "source": "/canva-graphic-design-services",
+      "destination": "/canva-graphic-design-services/index.html"
+    },
+    {
+      "source": "/canva-graphic-design-services/",
+      "destination": "/canva-graphic-design-services/index.html"
+    },
+    {
+      "source": "/canva-social-media-design",
+      "destination": "/canva-social-media-design/index.html"
+    },
+    {
+      "source": "/canva-social-media-design/",
+      "destination": "/canva-social-media-design/index.html"
+    },
+    {
+      "source": "/custom-canva-templates-design",
+      "destination": "/custom-canva-templates-design/index.html"
+    },
+    {
+      "source": "/custom-canva-templates-design/",
+      "destination": "/custom-canva-templates-design/index.html"
+    },
+    {
+      "source": "/ecommerce-graphic-design-services",
+      "destination": "/ecommerce-graphic-design-services/index.html"
+    },
+    {
+      "source": "/ecommerce-graphic-design-services/",
+      "destination": "/ecommerce-graphic-design-services/index.html"
+    },
+    {
+      "source": "/canva-presentation-marketing-design",
+      "destination": "/canva-presentation-marketing-design/index.html"
+    },
+    {
+      "source": "/canva-presentation-marketing-design/",
+      "destination": "/canva-presentation-marketing-design/index.html"
+    },
+    {
+      "source": "/canva-virtual-assistant",
+      "destination": "/canva-virtual-assistant/index.html"
+    },
+    {
+      "source": "/canva-virtual-assistant/",
+      "destination": "/canva-virtual-assistant/index.html"
+    }
+  ]
 }
