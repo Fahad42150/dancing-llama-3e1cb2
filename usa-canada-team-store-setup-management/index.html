@@ -31,6 +31,9 @@
 .hero-image img{display:block;width:100%;height:clamp(220px,38vw,430px);object-fit:cover}
 .sport-list{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}.sport-list span{padding:7px 12px;border:1px solid var(--line);border-radius:999px;background:#fff;font-size:14px}
 @media(max-width:600px){.hero{padding:48px 0}.section{padding:38px 0}}
+
+/* Compact paired hero media: photo and video */
+.hero-media-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;align-items:stretch;width:min(920px,100%);margin:32px auto 0}.hero-media-grid .hero-image{display:block;width:100%;max-width:none;height:auto;aspect-ratio:16/9;margin:0;overflow:hidden;border-radius:16px}.hero-media-grid .hero-image img{display:block;width:100%;height:100%;object-fit:cover;border-radius:16px}.hero-video-card{position:relative;width:100%;aspect-ratio:16/9;min-width:0;overflow:hidden;border:1px solid var(--line,#e6e9e2);border-radius:16px;background:#111;box-shadow:0 12px 32px rgba(32,35,38,.09)}.hero-video-card iframe{position:absolute;inset:0;width:100%;height:100%;border:0}@media(max-width:640px){.hero-media-grid{grid-template-columns:1fr;gap:16px;width:min(520px,100%);margin-top:24px}}
 </style>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Service","name":"USA and Canada Store Setup and Management","serviceType":"Online team store setup, sports apparel store management, school spirit wear and team fundraising store support","description":"Remote setup and ongoing administration for online sports team stores, school spirit wear stores, club apparel stores and team fundraising stores across the United States and Canada.","url":"https://www.fjxstudio.com/usa-canada-team-store-setup-management/","provider":{"@type":"ProfessionalService","name":"FJX Studio","url":"https://www.fjxstudio.com/"},"areaServed":[{"@type":"Country","name":"United States"},{"@type":"Country","name":"Canada"}]}
@@ -54,9 +57,9 @@
 <h1>USA and Canada Store Setup and Management for Schools, Clubs and Sports Teams</h1>
 <p class="lead">FJX Studio helps apparel decorators, screen printers, team dealers, schools and sports organizations set up and maintain online team stores across the United States and Canada. From football team stores and volleyball team stores to school spirit wear shops and sports fundraising stores, we support the product catalog, store content and ongoing administration that keep each store organized. InkSoft is a primary area of focus.</p>
 <a class="cta" href="/#contact">Request Team Store Setup Support</a>
-<figure class="hero-image"><img src="/images/team-store-hero.svg" alt="Sports team members gathered together before a team activity" width="1400" height="800" loading="eager" fetchpriority="high" decoding="async"></figure>
+<div class="hero-media-grid"><figure class="hero-image"><img src="/images/team-store-hero.svg" alt="Sports team members gathered together before a team activity" width="1400" height="800" loading="eager" fetchpriority="high" decoding="async"></figure><div class="hero-video-card"><iframe src="https://www.youtube-nocookie.com/embed/SjJHmcJUK7c" title="FJX Studio service overview video" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;border:0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div></div>
 </div></section>
-<section aria-label="FJX Studio video overview" style="padding:18px 0 54px;background:#fff"><div style="width:min(920px,calc(100% - 40px));margin:0 auto"><div style="position:relative;width:100%;aspect-ratio:16/9;overflow:hidden;border-radius:18px;border:1px solid #e6e9e2;box-shadow:0 18px 48px rgba(32,35,38,.10);background:#111"><iframe src="https://www.youtube-nocookie.com/embed/SjJHmcJUK7c" title="FJX Studio service overview video" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;border:0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div></div></section>
+
 
 <section class="section"><div class="wrap">
 <h2>Team store setup services</h2>
