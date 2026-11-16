@@ -2,54 +2,6 @@ import { CheckCircle2, ArrowRight } from 'lucide-react';
 import { services } from '@/data/content';
 import { useReveal } from '@/hooks/useReveal';
 
-const servicePages = [
-  { label: 'InkSoft Store Management', href: '/inksoft-store-management/' },
-  { label: 'InkSoft Product Catalog Management', href: '/inksoft-product-catalog-management/' },
-  { label: 'InkSoft Team & Fundraising Store Setup', href: '/inksoft-team-fundraising-store-setup/' },
-  { label: 'InkSoft Bulk Product Upload & Supplier Sync', href: '/inksoft-bulk-product-upload-supplier-sync/' },
-  { label: 'Seasonal & Peak Season Store Support', href: '/seasonal-peak-season-store-support/' },
-  { label: 'InkSoft Store Setup', href: '/inksoft-store-setup/' },
-  { label: 'eCommerce Store Management', href: '/ecommerce-store-management/' },
-  { label: 'eCommerce Virtual Assistant', href: '/ecommerce-virtual-assistant/' },
-  { label: 'eCommerce Product Upload Services', href: '/ecommerce-product-upload-services/' },
-  { label: 'eCommerce Order Management', href: '/ecommerce-order-management/' },
-  { label: 'Apparel Store Management', href: '/apparel-store-management/' },
-  { label: 'Custom Apparel Store Management', href: '/custom-apparel-store-management/' },
-  { label: 'Team Store Management', href: '/team-store-management/' },
-  { label: 'eCommerce Social Media Management', href: '/ecommerce-social-media-management/' },
-  { label: 'eCommerce Bookkeeping & Accounting Support', href: '/ecommerce-bookkeeping-accounting/' },
-  { label: 'eCommerce Business Process Outsourcing', href: '/ecommerce-business-process-outsourcing/' },
-  { label: 'Cost-Effective eCommerce Store Support', href: '/cost-effective-ecommerce-store-support/' },
-  { label: 'Remote eCommerce Store Support Assistant', href: '/remote-ecommerce-store-support-assistant/' },
-  { label: 'Shopify Store Management', href: '/shopify-store-management/' },
-  { label: 'WooCommerce & WordPress Store Management', href: '/woocommerce-wordpress-store-management/' },
-  { label: 'Chipply Store Management', href: '/chipply-store-management/' },
-  { label: 'InkSoft Product and Artwork Setup Services', href: '/inksoft-product-artwork-setup-services/' },
-  { label: 'School Spirit Wear and Fundraising Store Setup', href: '/school-spirit-wear-fundraising-store-setup/' },
-  { label: 'Team Dealer eCommerce Support', href: '/team-dealer-ecommerce-support/' },
-  { label: 'Embroidery Business Virtual Assistant', href: '/embroidery-business-virtual-assistant/' },
-  { label: 'Promotional Products Store Management', href: '/promotional-products-store-management/' },
-  { label: 'Screen Printing Shop Virtual Assistant', href: '/screen-printing-shop-virtual-assistant/' },
-  { label: 'eCommerce Data Entry Services', href: '/ecommerce-data-entry-services/' },
-  { label: 'Marketplace Management Services', href: '/marketplace-management-services/' },
-  { label: 'Dedicated eCommerce Virtual Assistant', href: '/dedicated-ecommerce-virtual-assistant/' },
-  { label: 'eCommerce Order Processing Virtual Assistant', href: '/ecommerce-order-processing-virtual-assistant/' },
-  { label: 'eCommerce Inventory Management Services', href: '/ecommerce-inventory-management/' },
-  { label: 'eCommerce Customer Support Virtual Assistant', href: '/ecommerce-customer-support-virtual-assistant/' },
-  { label: 'eCommerce Product Listing Management', href: '/ecommerce-product-listing-management/' },
-  { label: 'eCommerce Customer Support Services', href: '/ecommerce-customer-support-services/' },
-  { label: 'Live Chat Support Services', href: '/live-chat-support-services/' },
-  { label: 'Email Support Services', href: '/email-support-services/' },
-  { label: 'Outsourced Customer Support', href: '/outsourced-customer-support/' },
-  { label: 'Email Management Virtual Assistant', href: '/email-management-virtual-assistant/' },
-  { label: 'Canva Graphic Design Services', href: '/canva-graphic-design-services/' },
-  { label: 'Canva Social Media Design Services', href: '/canva-social-media-design/' },
-  { label: 'Custom Canva Templates for Businesses', href: '/custom-canva-templates-design/' },
-  { label: 'eCommerce Graphic Design Services', href: '/ecommerce-graphic-design-services/' },
-  { label: 'Canva Presentation and Marketing Design', href: '/canva-presentation-marketing-design/' },
-  { label: 'Canva Virtual Assistant Services', href: '/canva-virtual-assistant/' },
-];
-
 export default function Services() {
   const { ref, isVisible } = useReveal();
 
@@ -81,26 +33,14 @@ export default function Services() {
           ))}
         </div>
 
-        <div className="mt-14 rounded-3xl border border-charcoal-100 bg-white px-8 py-10">
-          <h3 className="font-display text-2xl font-bold text-charcoal-900">
-            Explore More Services
-          </h3>
-          <p className="mt-2 max-w-3xl text-charcoal-500">
-            Choose the service that matches your platform and the work your
-            team needs to delegate.
-          </p>
-          <div className="mt-6 grid gap-x-8 gap-y-4 sm:grid-cols-2 lg:grid-cols-3">
-            {servicePages.map((page) => (
-              <a
-                key={page.href}
-                href={page.href}
-                className="inline-flex items-center gap-2 text-sm font-semibold text-charcoal-700 underline decoration-parrot-400 underline-offset-4 transition-colors hover:text-parrot-700"
-              >
-                {page.label}
-                <ArrowRight size={15} aria-hidden="true" />
-              </a>
-            ))}
-          </div>
+        <div className="mt-12 flex justify-center">
+          <a
+            href="/services/"
+            className="group inline-flex items-center gap-3 rounded-xl bg-parrot-400 px-8 py-4 text-base font-bold text-charcoal-900 shadow-soft transition-all hover:-translate-y-0.5 hover:bg-parrot-300 hover:shadow-card-hover"
+          >
+            View More Services
+            <ArrowRight size={20} aria-hidden="true" className="transition-transform group-hover:translate-x-1" />
+          </a>
         </div>
 
         <div className="mt-14 flex flex-col items-center gap-4 rounded-3xl bg-charcoal-900 px-8 py-12 text-center sm:flex-row sm:justify-between sm:text-left">
