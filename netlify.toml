@@ -434,6 +434,47 @@
   to = "/inksoft-inventory-management-support/index.html"
   status = 200
 
+
+[[redirects]]
+  from = "/deconetwork-store-setup-management"
+  to = "/deconetwork-store-setup-management/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/deconetwork-store-setup-management/"
+  to = "/deconetwork-store-setup-management/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/ordermygear-store-management"
+  to = "/ordermygear-store-management/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/ordermygear-store-management/"
+  to = "/ordermygear-store-management/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/custom-apparel-quoting-customer-support"
+  to = "/custom-apparel-quoting-customer-support/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/custom-apparel-quoting-customer-support/"
+  to = "/custom-apparel-quoting-customer-support/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/screen-printing-embroidery-artwork-preparation"
+  to = "/screen-printing-embroidery-artwork-preparation/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/screen-printing-embroidery-artwork-preparation/"
+  to = "/screen-printing-embroidery-artwork-preparation/index.html"
+  status = 200
+
 [[redirects]]
   from = "/*"
   to = "/index.html"
