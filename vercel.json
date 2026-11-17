@@ -233,6 +233,14 @@
     {
       "source": "/ecommerce-outsourcing-company-usa-canada/",
       "destination": "/ecommerce-outsourcing-company-usa-canada/index.html"
+    },
+    {
+      "source": "/blog/2026-us-ecommerce-printing-industry-news-operations-trends",
+      "destination": "/blog/2026-us-ecommerce-printing-industry-news-operations-trends/index.html"
+    },
+    {
+      "source": "/blog/2026-us-ecommerce-printing-industry-news-operations-trends/",
+      "destination": "/blog/2026-us-ecommerce-printing-industry-news-operations-trends/index.html"
     }
   ]
 }
