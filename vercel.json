@@ -3,6 +3,30 @@
   "outputDirectory": "dist",
   "rewrites": [
     {
+      "source": "/print-shop-quoting-estimating-support/",
+      "destination": "/print-shop-quoting-estimating-support/index.html"
+    },
+    {
+      "source": "/print-shop-quoting-estimating-support",
+      "destination": "/print-shop-quoting-estimating-support/index.html"
+    },
+    {
+      "source": "/corporate-company-store-management/",
+      "destination": "/corporate-company-store-management/index.html"
+    },
+    {
+      "source": "/corporate-company-store-management",
+      "destination": "/corporate-company-store-management/index.html"
+    },
+    {
+      "source": "/promotional-products-order-management/",
+      "destination": "/promotional-products-order-management/index.html"
+    },
+    {
+      "source": "/promotional-products-order-management",
+      "destination": "/promotional-products-order-management/index.html"
+    },
+    {
       "source": "/screen-printing-embroidery-artwork-preparation/",
       "destination": "/screen-printing-embroidery-artwork-preparation/index.html"
     },
