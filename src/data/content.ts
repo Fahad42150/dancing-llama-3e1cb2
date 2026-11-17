@@ -163,20 +163,5 @@ export const testimonials: TestimonialItem[] = [
     rating: 5,
     text: 'Done Great Job on inksoft store setup and catalog.',
   },
-  {
-    id: 't5',
-    name: 'David Thompson',
-    role: 'Owner, Luxe Home Decor',
-    avatar: 'https://images.pexels.com/photos/6102841/pexels-photo-6102841.jpeg?auto=compress&cs=tinysrgb&h=200&w=200',
-    rating: 5,
-    text: 'Working with FJX Studio was the best decision for our business. They understand the USA and Canadian markets perfectly. Highly recommended.',
-  },
-  {
-    id: 't6',
-    name: 'Emily Roberts',
-    role: 'Founder, ActiveFit Gear',
-    avatar: 'https://images.pexels.com/photos/14950779/pexels-photo-14950779.jpeg?auto=compress&cs=tinysrgb&h=200&w=200',
-    rating: 5,
-    text: 'Professional, reliable, and incredibly talented. They rebuilt our WooCommerce store and the difference in speed and conversions is night and day.',
-  },
+
 ];
