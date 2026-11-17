@@ -202,6 +202,17 @@
   to = "/canva-virtual-assistant/index.html"
   status = 200
 
+
+[[redirects]]
+  from = "/blog/2026-us-ecommerce-printing-industry-news-operations-trends"
+  to = "/blog/2026-us-ecommerce-printing-industry-news-operations-trends/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/blog/2026-us-ecommerce-printing-industry-news-operations-trends/"
+  to = "/blog/2026-us-ecommerce-printing-industry-news-operations-trends/index.html"
+  status = 200
+
 [[redirects]]
   from = "/*"
   to = "/index.html"
