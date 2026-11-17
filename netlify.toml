@@ -225,6 +225,66 @@
   status = 200
 
 [[redirects]]
+  from = "/blog/small-business-owners-overwhelmed-daily-tasks-usa-canada"
+  to = "/blog/small-business-owners-overwhelmed-daily-tasks-usa-canada/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/blog/small-business-owners-overwhelmed-daily-tasks-usa-canada/"
+  to = "/blog/small-business-owners-overwhelmed-daily-tasks-usa-canada/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/blog/cost-of-hiring-employees-usa-canada"
+  to = "/blog/cost-of-hiring-employees-usa-canada/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/blog/cost-of-hiring-employees-usa-canada/"
+  to = "/blog/cost-of-hiring-employees-usa-canada/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/blog/outsourcing-administrative-work-canada-usa"
+  to = "/blog/outsourcing-administrative-work-canada-usa/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/blog/outsourcing-administrative-work-canada-usa/"
+  to = "/blog/outsourcing-administrative-work-canada-usa/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/blog/customer-service-outsourcing-small-business-usa-canada"
+  to = "/blog/customer-service-outsourcing-small-business-usa-canada/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/blog/customer-service-outsourcing-small-business-usa-canada/"
+  to = "/blog/customer-service-outsourcing-small-business-usa-canada/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/blog/remote-administrative-support-usa-canada"
+  to = "/blog/remote-administrative-support-usa-canada/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/blog/remote-administrative-support-usa-canada/"
+  to = "/blog/remote-administrative-support-usa-canada/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/blog/reduce-business-operating-costs-small-business-usa-canada"
+  to = "/blog/reduce-business-operating-costs-small-business-usa-canada/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/blog/reduce-business-operating-costs-small-business-usa-canada/"
+  to = "/blog/reduce-business-operating-costs-small-business-usa-canada/index.html"
+  status = 200
+
+[[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
