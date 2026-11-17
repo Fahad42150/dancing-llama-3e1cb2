@@ -3,6 +3,14 @@
   "outputDirectory": "dist",
   "rewrites": [
     {
+      "source": "/articles/",
+      "destination": "/articles/index.html"
+    },
+    {
+      "source": "/articles",
+      "destination": "/articles/index.html"
+    },
+    {
       "source": "/blog/2026-usa-canada-company-operations-trade-uncertainty-and-customer-service/",
       "destination": "/blog/2026-usa-canada-company-operations-trade-uncertainty-and-customer-service/index.html"
     },
