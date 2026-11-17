@@ -509,3 +509,33 @@
   from = "/*"
   to = "/index.html"
   status = 200
+
+[[redirects]]
+  from = "/school-spirit-wear-store-management"
+  to = "/school-spirit-wear-store-management/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/school-spirit-wear-store-management/"
+  to = "/school-spirit-wear-store-management/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/sports-team-club-store-management"
+  to = "/sports-team-club-store-management/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/sports-team-club-store-management/"
+  to = "/sports-team-club-store-management/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/fundraising-group-order-store-management"
+  to = "/fundraising-group-order-store-management/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/fundraising-group-order-store-management/"
+  to = "/fundraising-group-order-store-management/index.html"
+  status = 200
