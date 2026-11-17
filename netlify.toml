@@ -213,6 +213,17 @@
   to = "/blog/2026-us-ecommerce-printing-industry-news-operations-trends/index.html"
   status = 200
 
+
+[[redirects]]
+  from = "/blog/virtual-assistant-vs-employee-small-business-usa-canada-2026"
+  to = "/blog/virtual-assistant-vs-employee-small-business-usa-canada-2026/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/blog/virtual-assistant-vs-employee-small-business-usa-canada-2026/"
+  to = "/blog/virtual-assistant-vs-employee-small-business-usa-canada-2026/index.html"
+  status = 200
+
 [[redirects]]
   from = "/*"
   to = "/index.html"
