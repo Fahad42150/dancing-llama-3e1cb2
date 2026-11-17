@@ -3,6 +3,30 @@
   "outputDirectory": "dist",
   "rewrites": [
     {
+      "source": "/fundraising-group-order-store-management",
+      "destination": "/fundraising-group-order-store-management/index.html"
+    },
+    {
+      "source": "/fundraising-group-order-store-management/",
+      "destination": "/fundraising-group-order-store-management/index.html"
+    },
+    {
+      "source": "/sports-team-club-store-management",
+      "destination": "/sports-team-club-store-management/index.html"
+    },
+    {
+      "source": "/sports-team-club-store-management/",
+      "destination": "/sports-team-club-store-management/index.html"
+    },
+    {
+      "source": "/school-spirit-wear-store-management",
+      "destination": "/school-spirit-wear-store-management/index.html"
+    },
+    {
+      "source": "/school-spirit-wear-store-management/",
+      "destination": "/school-spirit-wear-store-management/index.html"
+    },
+    {
       "source": "/print-shop-quoting-estimating-support/",
       "destination": "/print-shop-quoting-estimating-support/index.html"
     },
