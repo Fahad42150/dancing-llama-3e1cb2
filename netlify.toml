@@ -476,6 +476,36 @@
   status = 200
 
 [[redirects]]
+  from = "/promotional-products-order-management"
+  to = "/promotional-products-order-management/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/promotional-products-order-management/"
+  to = "/promotional-products-order-management/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/corporate-company-store-management"
+  to = "/corporate-company-store-management/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/corporate-company-store-management/"
+  to = "/corporate-company-store-management/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/print-shop-quoting-estimating-support"
+  to = "/print-shop-quoting-estimating-support/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/print-shop-quoting-estimating-support/"
+  to = "/print-shop-quoting-estimating-support/index.html"
+  status = 200
+
+[[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
