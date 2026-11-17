@@ -2,6 +2,8 @@ import { ArrowRight, BookOpen, Newspaper } from 'lucide-react';
 import { useReveal } from '@/hooks/useReveal';
 
 const latestArticles = [
+  { category: 'U.S. Industry News · November 2026', title: '2026 U.S. eCommerce and Printing Industry News', description: 'Latest U.S. developments in inventory, delivery, AI, freight, apparel decoration and print-shop operations.', href: '/blog/2026-us-ecommerce-printing-industry-news-operations-trends/' },
+
   { category: 'InkSoft · Chipply', title: 'InkSoft vs Chipply: Apparel Team Store Management Guide', description: 'Compare apparel-store workflows, supplier catalogs, product data and team-store order coordination.', href: '/blog/inksoft-chipply-apparel-team-store-management-guide/' },
   { category: 'Printavo · Screen Printing', title: 'Printavo for Screen Printing Shops', description: 'Organize quotes, artwork approvals, production schedules, job tracking and customer updates.', href: '/blog/printavo-screen-printing-shop-workflow-management/' },
   { category: 'Print on Demand', title: 'Printful vs Printify: Choosing a POD Partner', description: 'Compare POD fulfillment models, product samples, supplier choices and store operations.', href: '/blog/printful-printify-print-on-demand-supplier-comparison/' },
