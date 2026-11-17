@@ -70,7 +70,7 @@ export default function Footer() {
                 <li key={link.href}>
                   <a
                     href={link.href}
-                    onClick={(e) => { e.preventDefault(); scrollTo(link.href); }}
+                    onClick={(e) => { if (link.href.startsWith('#')) { e.preventDefault(); scrollTo(link.href); } }}
                     className="text-sm text-charcoal-500 transition-colors hover:text-parrot-600"
                   >
                     {link.label}
