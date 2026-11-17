@@ -3,6 +3,38 @@
   "outputDirectory": "dist",
   "rewrites": [
     {
+      "source": "/inksoft-inventory-management-support/",
+      "destination": "/inksoft-inventory-management-support/index.html"
+    },
+    {
+      "source": "/inksoft-inventory-management-support",
+      "destination": "/inksoft-inventory-management-support/index.html"
+    },
+    {
+      "source": "/inksoft-order-management-support/",
+      "destination": "/inksoft-order-management-support/index.html"
+    },
+    {
+      "source": "/inksoft-order-management-support",
+      "destination": "/inksoft-order-management-support/index.html"
+    },
+    {
+      "source": "/inksoft-storefront-design-customization/",
+      "destination": "/inksoft-storefront-design-customization/index.html"
+    },
+    {
+      "source": "/inksoft-storefront-design-customization",
+      "destination": "/inksoft-storefront-design-customization/index.html"
+    },
+    {
+      "source": "/inksoft-pricing-matrix-setup/",
+      "destination": "/inksoft-pricing-matrix-setup/index.html"
+    },
+    {
+      "source": "/inksoft-pricing-matrix-setup",
+      "destination": "/inksoft-pricing-matrix-setup/index.html"
+    },
+    {
       "source": "/articles/",
       "destination": "/articles/index.html"
     },
