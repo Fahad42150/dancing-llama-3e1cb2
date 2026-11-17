@@ -3,6 +3,86 @@
   publish = "dist"
 
 [[redirects]]
+  from = "/blog/2026-usa-canada-company-operations-trade-uncertainty-and-customer-service/"
+  to = "/blog/2026-usa-canada-company-operations-trade-uncertainty-and-customer-service/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/blog/2026-usa-canada-company-operations-trade-uncertainty-and-customer-service"
+  to = "/blog/2026-usa-canada-company-operations-trade-uncertainty-and-customer-service/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/blog/2026-canada-small-business-hiring-retention-and-workforce-pressure/"
+  to = "/blog/2026-canada-small-business-hiring-retention-and-workforce-pressure/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/blog/2026-canada-small-business-hiring-retention-and-workforce-pressure"
+  to = "/blog/2026-canada-small-business-hiring-retention-and-workforce-pressure/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/blog/2026-usa-small-business-cost-tariff-and-ecommerce-operations/"
+  to = "/blog/2026-usa-small-business-cost-tariff-and-ecommerce-operations/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/blog/2026-usa-small-business-cost-tariff-and-ecommerce-operations"
+  to = "/blog/2026-usa-small-business-cost-tariff-and-ecommerce-operations/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/blog/2026-ecommerce-customer-support-order-management/"
+  to = "/blog/2026-ecommerce-customer-support-order-management/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/blog/2026-ecommerce-customer-support-order-management"
+  to = "/blog/2026-ecommerce-customer-support-order-management/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/blog/2026-apparel-team-store-trends-usa-canada/"
+  to = "/blog/2026-apparel-team-store-trends-usa-canada/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/blog/2026-apparel-team-store-trends-usa-canada"
+  to = "/blog/2026-apparel-team-store-trends-usa-canada/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/blog/2026-ecommerce-trends-canada/"
+  to = "/blog/2026-ecommerce-trends-canada/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/blog/2026-ecommerce-trends-canada"
+  to = "/blog/2026-ecommerce-trends-canada/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/blog/2026-ecommerce-trends-usa/"
+  to = "/blog/2026-ecommerce-trends-usa/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/blog/2026-ecommerce-trends-usa"
+  to = "/blog/2026-ecommerce-trends-usa/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/blog/"
+  to = "/blog/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/blog"
+  to = "/blog/index.html"
+  status = 200
+
+[[redirects]]
   from = "/usa-canada-team-store-setup-management"
   to = "/usa-canada-team-store-setup-management/index.html"
   status = 200

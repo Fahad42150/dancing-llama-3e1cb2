@@ -3,6 +3,70 @@
   "outputDirectory": "dist",
   "rewrites": [
     {
+      "source": "/blog/2026-usa-canada-company-operations-trade-uncertainty-and-customer-service/",
+      "destination": "/blog/2026-usa-canada-company-operations-trade-uncertainty-and-customer-service/index.html"
+    },
+    {
+      "source": "/blog/2026-usa-canada-company-operations-trade-uncertainty-and-customer-service",
+      "destination": "/blog/2026-usa-canada-company-operations-trade-uncertainty-and-customer-service/index.html"
+    },
+    {
+      "source": "/blog/2026-canada-small-business-hiring-retention-and-workforce-pressure/",
+      "destination": "/blog/2026-canada-small-business-hiring-retention-and-workforce-pressure/index.html"
+    },
+    {
+      "source": "/blog/2026-canada-small-business-hiring-retention-and-workforce-pressure",
+      "destination": "/blog/2026-canada-small-business-hiring-retention-and-workforce-pressure/index.html"
+    },
+    {
+      "source": "/blog/2026-usa-small-business-cost-tariff-and-ecommerce-operations/",
+      "destination": "/blog/2026-usa-small-business-cost-tariff-and-ecommerce-operations/index.html"
+    },
+    {
+      "source": "/blog/2026-usa-small-business-cost-tariff-and-ecommerce-operations",
+      "destination": "/blog/2026-usa-small-business-cost-tariff-and-ecommerce-operations/index.html"
+    },
+    {
+      "source": "/blog/2026-ecommerce-customer-support-order-management/",
+      "destination": "/blog/2026-ecommerce-customer-support-order-management/index.html"
+    },
+    {
+      "source": "/blog/2026-ecommerce-customer-support-order-management",
+      "destination": "/blog/2026-ecommerce-customer-support-order-management/index.html"
+    },
+    {
+      "source": "/blog/2026-apparel-team-store-trends-usa-canada/",
+      "destination": "/blog/2026-apparel-team-store-trends-usa-canada/index.html"
+    },
+    {
+      "source": "/blog/2026-apparel-team-store-trends-usa-canada",
+      "destination": "/blog/2026-apparel-team-store-trends-usa-canada/index.html"
+    },
+    {
+      "source": "/blog/2026-ecommerce-trends-canada/",
+      "destination": "/blog/2026-ecommerce-trends-canada/index.html"
+    },
+    {
+      "source": "/blog/2026-ecommerce-trends-canada",
+      "destination": "/blog/2026-ecommerce-trends-canada/index.html"
+    },
+    {
+      "source": "/blog/2026-ecommerce-trends-usa/",
+      "destination": "/blog/2026-ecommerce-trends-usa/index.html"
+    },
+    {
+      "source": "/blog/2026-ecommerce-trends-usa",
+      "destination": "/blog/2026-ecommerce-trends-usa/index.html"
+    },
+    {
+      "source": "/blog/",
+      "destination": "/blog/index.html"
+    },
+    {
+      "source": "/blog",
+      "destination": "/blog/index.html"
+    },
+    {
       "source": "/ecommerce-customer-support-services",
       "destination": "/ecommerce-customer-support-services/index.html"
     },
