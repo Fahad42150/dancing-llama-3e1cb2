@@ -395,6 +395,46 @@
   status = 200
 
 [[redirects]]
+  from = "/inksoft-pricing-matrix-setup"
+  to = "/inksoft-pricing-matrix-setup/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/inksoft-pricing-matrix-setup/"
+  to = "/inksoft-pricing-matrix-setup/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/inksoft-storefront-design-customization"
+  to = "/inksoft-storefront-design-customization/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/inksoft-storefront-design-customization/"
+  to = "/inksoft-storefront-design-customization/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/inksoft-order-management-support"
+  to = "/inksoft-order-management-support/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/inksoft-order-management-support/"
+  to = "/inksoft-order-management-support/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/inksoft-inventory-management-support"
+  to = "/inksoft-inventory-management-support/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/inksoft-inventory-management-support/"
+  to = "/inksoft-inventory-management-support/index.html"
+  status = 200
+
+[[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
