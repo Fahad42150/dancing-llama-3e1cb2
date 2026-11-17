@@ -2,6 +2,8 @@ import { ArrowRight, BookOpen, Newspaper } from 'lucide-react';
 import { useReveal } from '@/hooks/useReveal';
 
 const latestArticles = [
+  { category: 'USA & Canada · Small Business', title: 'Virtual Assistant vs Employee: Managing Costs and Workload in 2026', description: 'Research-backed advice on hiring pressure, outsourcing, remote admin support and when a virtual assistant may help.', href: '/blog/virtual-assistant-vs-employee-small-business-usa-canada-2026/' },
+
   { category: 'U.S. Industry News · November 2026', title: '2026 U.S. eCommerce and Printing Industry News', description: 'Latest U.S. developments in inventory, delivery, AI, freight, apparel decoration and print-shop operations.', href: '/blog/2026-us-ecommerce-printing-industry-news-operations-trends/' },
 
   { category: 'InkSoft · Chipply', title: 'InkSoft vs Chipply: Apparel Team Store Management Guide', description: 'Compare apparel-store workflows, supplier catalogs, product data and team-store order coordination.', href: '/blog/inksoft-chipply-apparel-team-store-management-guide/' },
