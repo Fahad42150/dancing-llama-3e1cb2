@@ -3,6 +3,22 @@
   "outputDirectory": "dist",
   "rewrites": [
     {
+      "source": "/custom-merchandise-store-setup-management",
+      "destination": "/custom-merchandise-store-setup-management/index.html"
+    },
+    {
+      "source": "/custom-merchandise-store-setup-management/",
+      "destination": "/custom-merchandise-store-setup-management/index.html"
+    },
+    {
+      "source": "/custom-apparel-artwork-mascot-design",
+      "destination": "/custom-apparel-artwork-mascot-design/index.html"
+    },
+    {
+      "source": "/custom-apparel-artwork-mascot-design/",
+      "destination": "/custom-apparel-artwork-mascot-design/index.html"
+    },
+    {
       "source": "/fundraising-group-order-store-management",
       "destination": "/fundraising-group-order-store-management/index.html"
     },
