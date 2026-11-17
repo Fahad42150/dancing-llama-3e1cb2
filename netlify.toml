@@ -345,6 +345,46 @@
   status = 200
 
 [[redirects]]
+  from = "/printify-pod-store-setup-product-upload-usa"
+  to = "/printify-pod-store-setup-product-upload-usa/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/printify-pod-store-setup-product-upload-usa/"
+  to = "/printify-pod-store-setup-product-upload-usa/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/website-updates-catalog-update-assistance-usa"
+  to = "/website-updates-catalog-update-assistance-usa/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/website-updates-catalog-update-assistance-usa/"
+  to = "/website-updates-catalog-update-assistance-usa/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/printful-store-setup-assistance-usa-canada"
+  to = "/printful-store-setup-assistance-usa-canada/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/printful-store-setup-assistance-usa-canada/"
+  to = "/printful-store-setup-assistance-usa-canada/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/etsy-shop-setup-product-upload-usa-canada"
+  to = "/etsy-shop-setup-product-upload-usa-canada/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/etsy-shop-setup-product-upload-usa-canada/"
+  to = "/etsy-shop-setup-product-upload-usa-canada/index.html"
+  status = 200
+
+[[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
