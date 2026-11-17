@@ -3,6 +3,38 @@
   "outputDirectory": "dist",
   "rewrites": [
     {
+      "source": "/screen-printing-embroidery-artwork-preparation/",
+      "destination": "/screen-printing-embroidery-artwork-preparation/index.html"
+    },
+    {
+      "source": "/screen-printing-embroidery-artwork-preparation",
+      "destination": "/screen-printing-embroidery-artwork-preparation/index.html"
+    },
+    {
+      "source": "/custom-apparel-quoting-customer-support/",
+      "destination": "/custom-apparel-quoting-customer-support/index.html"
+    },
+    {
+      "source": "/custom-apparel-quoting-customer-support",
+      "destination": "/custom-apparel-quoting-customer-support/index.html"
+    },
+    {
+      "source": "/ordermygear-store-management/",
+      "destination": "/ordermygear-store-management/index.html"
+    },
+    {
+      "source": "/ordermygear-store-management",
+      "destination": "/ordermygear-store-management/index.html"
+    },
+    {
+      "source": "/deconetwork-store-setup-management/",
+      "destination": "/deconetwork-store-setup-management/index.html"
+    },
+    {
+      "source": "/deconetwork-store-setup-management",
+      "destination": "/deconetwork-store-setup-management/index.html"
+    },
+    {
       "source": "/inksoft-inventory-management-support/",
       "destination": "/inksoft-inventory-management-support/index.html"
     },
