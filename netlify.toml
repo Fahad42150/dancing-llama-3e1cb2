@@ -539,3 +539,22 @@
   from = "/fundraising-group-order-store-management/"
   to = "/fundraising-group-order-store-management/index.html"
   status = 200
+[[redirects]]
+  from = "/custom-merchandise-store-setup-management"
+  to = "/custom-merchandise-store-setup-management/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/custom-merchandise-store-setup-management/"
+  to = "/custom-merchandise-store-setup-management/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/custom-apparel-artwork-mascot-design"
+  to = "/custom-apparel-artwork-mascot-design/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/custom-apparel-artwork-mascot-design/"
+  to = "/custom-apparel-artwork-mascot-design/index.html"
+  status = 200
