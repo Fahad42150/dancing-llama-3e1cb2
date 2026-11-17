@@ -1,11 +1,6 @@
-import { Mail, MessageCircle, Phone, MapPin } from 'lucide-react';
+import { Mail, MapPin } from 'lucide-react';
 import { useReveal } from '@/hooks/useReveal';
 
-const WHATSAPP_NUMBER = '923024702011';
-const WHATSAPP_MESSAGE = encodeURIComponent(
-  "Hi FJX Studio! I'd like to discuss an eCommerce project."
-);
-const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=${WHATSAPP_MESSAGE}`;
 const EMAIL_ADDRESS = 'sales@fjxstudio.com';
 
 export default function Contact() {
@@ -32,29 +27,7 @@ export default function Contact() {
           </p>
         </div>
 
-        <div className="grid gap-6 lg:grid-cols-3">
-          {/* WhatsApp CTA */}
-          <a
-            href={WHATSAPP_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group flex flex-col items-start rounded-3xl border border-charcoal-100 bg-white p-8 shadow-soft transition-all duration-300 hover:shadow-card-hover hover:-translate-y-1 hover:border-parrot-200"
-          >
-            <div className="mb-5 flex h-14 w-14 items-center justify-center rounded-2xl bg-parrot-400 transition-transform group-hover:scale-110">
-              <MessageCircle size={26} className="text-charcoal-900" />
-            </div>
-            <h3 className="font-display text-xl font-bold text-charcoal-900">
-              Chat on WhatsApp
-            </h3>
-            <p className="mt-2 text-sm text-charcoal-500">
-              The fastest way to reach us. Send a message and we'll get back to
-              you right away.
-            </p>
-            <span className="mt-5 inline-flex items-center gap-2 rounded-xl bg-parrot-50 px-5 py-3 text-sm font-semibold text-parrot-700 transition-colors group-hover:bg-parrot-400 group-hover:text-charcoal-900">
-              Open WhatsApp
-            </span>
-          </a>
-
+        <div className="grid gap-6 lg:grid-cols-2">
           {/* Email CTA */}
           <a
             href={`mailto:${EMAIL_ADDRESS}?subject=Project%20Inquiry%20-%20FJX%20Studio`}
@@ -75,10 +48,10 @@ export default function Contact() {
             </span>
           </a>
 
-          {/* Info card */}
+          {/* Business details */}
           <div className="flex flex-col items-start rounded-3xl border border-charcoal-100 bg-charcoal-50 p-8">
             <div className="mb-5 flex h-14 w-14 items-center justify-center rounded-2xl bg-parrot-100">
-              <Phone size={26} className="text-parrot-600" />
+              <MapPin size={26} className="text-parrot-600" />
             </div>
             <h3 className="font-display text-xl font-bold text-charcoal-900">
               Business Details
@@ -91,10 +64,6 @@ export default function Contact() {
               <li className="flex items-center gap-3">
                 <MapPin size={18} className="text-parrot-500" />
                 Serving USA & Canadian Markets
-              </li>
-              <li className="flex items-center gap-3">
-                <MessageCircle size={18} className="text-parrot-500" />
-                WhatsApp: +92 302 4702011
               </li>
             </ul>
           </div>
