@@ -7,6 +7,21 @@ BOOK_URL = "https://calendar.app.google/S23mhjJCcXo7M2HE7"
 FLOAT_MARKER = 'id="fjx-book-now-sitewide"'
 NAV_MARKER = 'id="fjx-book-now-nav"'
 
+TAWK_WIDGET = """<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/6afdc8e5723f713cce6b7ad0/1k7nlhgh1';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
+"""
+
 FLOAT_CTA = f"""
 <a {FLOAT_MARKER} href="{BOOK_URL}" target="_blank" rel="noopener noreferrer"
    aria-label="Book Now - opens the FJX Studio booking calendar"
@@ -53,4 +68,4 @@ for path in targets:
         path.write_text(html, encoding="utf-8")
 
 print(f"Added Book Now navigation links to {nav_changed} HTML pages.")
-print(f"Added floating Book Now links to {floating_changed} additional HTML pages.")
+print(f"Added floating Book Now links to {floating_changed} additional HTML pages.")\nprint("Ensured the Tawk.to chat widget is installed on every HTML page.")
