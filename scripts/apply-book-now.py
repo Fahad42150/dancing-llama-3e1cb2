@@ -60,10 +60,10 @@ for path in targets:
             nav_changed += 1
 
     if "embed.tawk.to/6afdc8e5723f713cce6b7ad0/1k7nlhgh1" not in html:
-        body_matches = list(re.finditer(r"</body\\s*>", html, flags=re.IGNORECASE))
+        body_matches = list(re.finditer(r"</body\s*>", html, flags=re.IGNORECASE))
         if body_matches:
             body_end = body_matches[-1]
-            html = html[:body_end.start()] + TAWK_WIDGET + "\\n" + html[body_end.start():]
+            html = html[:body_end.start()] + TAWK_WIDGET + "\n" + html[body_end.start():]
 
     if FLOAT_MARKER not in html and re.search(r"</body\s*>", html, flags=re.IGNORECASE):
         body_end = list(re.finditer(r"</body\s*>", html, flags=re.IGNORECASE))[-1]
