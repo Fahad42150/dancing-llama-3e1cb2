@@ -1,0 +1,79 @@
+name: Optimize public images
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "public/**"
+      - "src/**"
+      - ".github/workflows/optimize-public-images.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  optimize:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install image optimizer
+        run: python -m pip install Pillow
+      - name: Convert local raster images to WebP and update references
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          from PIL import Image, ImageOps
+          import urllib.parse
+
+          root = Path(".")
+          public = root / "public"
+          replacements = []
+          extensions = {".png", ".jpg", ".jpeg"}
+
+          for image_path in public.rglob("*"):
+              if not image_path.is_file() or image_path.suffix.lower() not in extensions:
+                  continue
+              webp_path = image_path.with_suffix(".webp")
+              with Image.open(image_path) as source:
+                  image = ImageOps.exif_transpose(source)
+                  if image.mode not in ("RGB", "RGBA"):
+                      image = image.convert("RGBA" if "transparency" in image.info else "RGB")
+                  image.save(webp_path, "WEBP", quality=82, method=6)
+              old = "/" + image_path.relative_to(public).as_posix()
+              new = "/" + webp_path.relative_to(public).as_posix()
+              replacements.append((old, new, urllib.parse.quote(old, safe="/"), urllib.parse.quote(new, safe="/")))
+
+          text_exts = {".html", ".tsx", ".ts", ".jsx", ".js", ".css", ".json", ".md"}
+          for folder in (public, root / "src"):
+              if not folder.exists():
+                  continue
+              for file in folder.rglob("*"):
+                  if not file.is_file() or file.suffix.lower() not in text_exts:
+                      continue
+                  try:
+                      content = file.read_text(encoding="utf-8")
+                  except UnicodeDecodeError:
+                      continue
+                  updated = content
+                  for old, new, old_encoded, new_encoded in replacements:
+                      updated = updated.replace(old, new).replace(old_encoded, new_encoded)
+                  if updated != content:
+                      file.write_text(updated, encoding="utf-8")
+
+          print(f"Generated {len(replacements)} WebP image variants and updated local references.")
+          PY
+      - name: Commit optimized images
+        run: |
+          if [[ -n "$(git status --porcelain)" ]]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add public src
+            git commit -m "Optimize local public images to WebP"
+            git push
+          else
+            echo "No image changes required."
+          fi
