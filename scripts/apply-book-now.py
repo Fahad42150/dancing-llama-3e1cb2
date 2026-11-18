@@ -25,7 +25,7 @@ s0.parentNode.insertBefore(s1,s0);
 FLOAT_CTA = f"""
 <a {FLOAT_MARKER} href="{BOOK_URL}" target="_blank" rel="noopener noreferrer"
    aria-label="Book Now - opens the FJX Studio booking calendar"
-   style="position:fixed;right:22px;bottom:22px;z-index:2147483000;display:inline-flex;align-items:center;justify-content:center;padding:14px 24px;border-radius:999px;background:#b7e43b;color:#17210b;font:700 15px/1.2 Arial,sans-serif;text-decoration:none;box-shadow:0 8px 24px rgba(0,0,0,.22);">
+   style="position:fixed;left:22px;right:auto;bottom:22px;z-index:2147483000;display:inline-flex;align-items:center;justify-content:center;padding:14px 24px;border-radius:999px;background:#b7e43b;color:#17210b;font:700 15px/1.2 Arial,sans-serif;text-decoration:none;box-shadow:0 8px 24px rgba(0,0,0,.22);">
   Book Now
 </a>
 """
@@ -72,6 +72,14 @@ for path in targets:
         body_end = list(re.finditer(r"</body\s*>", html, flags=re.IGNORECASE))[-1]
         html = html[:body_end.start()] + FLOAT_CTA + "\n" + html[body_end.start():]
         floating_changed += 1
+    elif FLOAT_MARKER in html:
+        # Keep the floating Book Now CTA on the left, opposite the Tawk.to launcher.
+        html = re.sub(
+            r'(<a\s+id="fjx-book-now-sitewide"[^>]*style=")[^"]*(")',
+            r'\g<1>position:fixed;left:22px;right:auto;bottom:22px;z-index:2147483000;display:inline-flex;align-items:center;justify-content:center;padding:14px 24px;border-radius:999px;background:#b7e43b;color:#17210b;font:700 15px/1.2 Arial,sans-serif;text-decoration:none;box-shadow:0 8px 24px rgba(0,0,0,.22);\g<2>',
+            html,
+            flags=re.IGNORECASE,
+        )
 
     if html != original:
         path.write_text(html, encoding="utf-8")
