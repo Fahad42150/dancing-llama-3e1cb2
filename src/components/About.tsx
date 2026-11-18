@@ -16,11 +16,11 @@ export default function About() {
       <div className="mx-auto max-w-7xl px-6">
         <div className="grid gap-14 lg:grid-cols-2 lg:items-center">
           <div className="relative order-2 lg:order-1">
-            <div className="overflow-hidden rounded-3xl border border-charcoal-100 shadow-card">
+            <div className="flex w-full items-center justify-center overflow-hidden rounded-3xl border border-charcoal-100 bg-white p-3 shadow-card">
               <img
-                src="https://images.pexels.com/photos/7792836/pexels-photo-7792836.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
-                alt="eCommerce operations team reviewing online store work"
-                className="h-[420px] w-full object-cover"
+                src="https://images.pexels.com/photos/41108027/pexels-photo-41108027.jpeg"
+                alt="FJX Studio supporting eCommerce store operations"
+                className="block h-auto max-h-[520px] w-full object-contain"
                 loading="lazy"
                 decoding="async"
               />
