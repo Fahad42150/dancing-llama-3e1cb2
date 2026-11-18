@@ -40,7 +40,7 @@ export const stores: StoreItem[] = [
     name: 'WU SOFTBALL',
     category: 'InkSoft · Sports team',
     description: 'Product uploads, product design customization and featured product organization for an InkSoft team store.',
-    image: '/portfolio/wu-softball.png',
+    image: '/portfolio/wu-softball.webp',
     liveUrl: 'https://stores.inksoft.com/wusoftball/shop/home',
   },
   {
@@ -48,7 +48,7 @@ export const stores: StoreItem[] = [
     name: 'DBG BASKETBALL',
     category: 'InkSoft · Sports team',
     description: 'Basketball product setup, listing updates and featured product organization for an InkSoft team store.',
-    image: '/portfolio/dbg-basketball.png',
+    image: '/portfolio/dbg-basketball.webp',
     liveUrl: 'https://shop.arelistores.com/dbg_basketball/shop/home',
   },
   {
@@ -56,7 +56,7 @@ export const stores: StoreItem[] = [
     name: 'Truker Though',
     category: 'InkSoft · Print-on-Demand',
     description: 'InkSoft store setup support, product catalog management, design studio configuration and wholesale ordering workflow.',
-    image: '/portfolio/truck.png',
+    image: '/portfolio/truck.webp',
     liveUrl: 'https://stores.inksoft.com/truck/shop/',
   },
   {
@@ -64,7 +64,7 @@ export const stores: StoreItem[] = [
     name: 'TAYLOR MADE FARM',
     category: 'InkSoft · Corporate',
     description: 'Product setup, catalog organization and storefront content updates for an InkSoft corporate store.',
-    image: '/portfolio/taylormadefarm.png',
+    image: '/portfolio/taylormadefarm.webp',
     liveUrl: 'https://stores.inksoft.com/taylormadefarm/shop/home',
   },
   {
@@ -72,7 +72,7 @@ export const stores: StoreItem[] = [
     name: 'BETH CENTER SKI CLUB',
     category: 'InkSoft · Club',
     description: 'InkSoft store setup assistance and product catalog organization for a club merchandise store.',
-    image: '/portfolio/bethcentercheer.png',
+    image: '/portfolio/bethcentercheer.webp',
     liveUrl: 'https://stores.inksoft.com/bethcentercheer/shop/home',
   },
   {
@@ -80,7 +80,7 @@ export const stores: StoreItem[] = [
     name: 'FALCON GYMNASTICS',
     category: 'InkSoft · Fundraising',
     description: 'InkSoft merchandise store setup and product organization for a gymnastics fundraising store.',
-    image: '/portfolio/falcon.png',
+    image: '/portfolio/falcon.webp',
     liveUrl: 'https://stores.inksoft.com/FalconGymnastics/shop/home',
   },
 ];
