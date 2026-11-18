@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react';
 import { Menu, X } from 'lucide-react';
 
+const BOOK_NOW_URL = 'https://calendar.app.google/S23mhjJCcXo7M2HE7';
+
 const navLinks = [
   { label: 'About', href: '#about' },
   { label: 'Services', href: '/services/' },
@@ -47,8 +49,8 @@ export default function Navbar() {
               {link.label}
             </a>
           ))}
-          <a href="#contact" onClick={(e) => { e.preventDefault(); navigate('#contact'); }} className="ml-2 rounded-xl bg-parrot-400 px-5 py-2.5 text-sm font-semibold text-charcoal-900 shadow-parrot transition-all hover:-translate-y-0.5 hover:bg-parrot-500">
-            Get a Quote
+          <a href={BOOK_NOW_URL} target="_blank" rel="noopener noreferrer" className="ml-2 rounded-xl bg-parrot-400 px-5 py-2.5 text-sm font-semibold text-charcoal-900 shadow-parrot transition-all hover:-translate-y-0.5 hover:bg-parrot-500">
+            Book Now
           </a>
         </div>
         <button className="flex items-center justify-center rounded-lg p-2 text-charcoal-700 md:hidden" onClick={() => setMobileOpen((v) => !v)} aria-label={mobileOpen ? 'Close menu' : 'Open menu'} aria-expanded={mobileOpen} aria-controls="mobile-navigation">
@@ -63,8 +65,8 @@ export default function Navbar() {
                 {link.label}
               </a>
             ))}
-            <a href="#contact" onClick={(e) => { e.preventDefault(); navigate('#contact'); }} className="mt-2 rounded-xl bg-parrot-400 px-4 py-3 text-center text-sm font-semibold text-charcoal-900">
-              Get a Quote
+            <a href={BOOK_NOW_URL} target="_blank" rel="noopener noreferrer" className="mt-2 rounded-xl bg-parrot-400 px-4 py-3 text-center text-sm font-semibold text-charcoal-900">
+              Book Now
             </a>
           </div>
         </div>
