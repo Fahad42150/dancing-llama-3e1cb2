@@ -68,4 +68,5 @@ for path in targets:
         path.write_text(html, encoding="utf-8")
 
 print(f"Added Book Now navigation links to {nav_changed} HTML pages.")
-print(f"Added floating Book Now links to {floating_changed} additional HTML pages.")\nprint("Ensured the Tawk.to chat widget is installed on every HTML page.")
+print(f"Added floating Book Now links to {floating_changed} additional HTML pages.")
+print("Ensured the Tawk.to chat widget is installed on every HTML page.")
