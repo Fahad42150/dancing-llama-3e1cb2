@@ -49,6 +49,9 @@ export default function Navbar() {
               {link.label}
             </a>
           ))}
+          <a href="#contact" onClick={(e) => { e.preventDefault(); navigate('#contact'); }} className="ml-2 rounded-xl border border-charcoal-300 px-4 py-2.5 text-sm font-semibold text-charcoal-800 transition-colors hover:border-parrot-500 hover:bg-parrot-50">
+            Get a Quote
+          </a>
           <a href={BOOK_NOW_URL} target="_blank" rel="noopener noreferrer" className="ml-2 rounded-xl bg-parrot-400 px-5 py-2.5 text-sm font-semibold text-charcoal-900 shadow-parrot transition-all hover:-translate-y-0.5 hover:bg-parrot-500">
             Book Now
           </a>
@@ -65,7 +68,10 @@ export default function Navbar() {
                 {link.label}
               </a>
             ))}
-            <a href={BOOK_NOW_URL} target="_blank" rel="noopener noreferrer" className="mt-2 rounded-xl bg-parrot-400 px-4 py-3 text-center text-sm font-semibold text-charcoal-900">
+            <a href="#contact" onClick={(e) => { e.preventDefault(); navigate('#contact'); }} className="mt-2 rounded-xl border border-charcoal-300 px-4 py-3 text-center text-sm font-semibold text-charcoal-800 transition-colors hover:border-parrot-500 hover:bg-parrot-50">
+              Get a Quote
+            </a>
+            <a href={BOOK_NOW_URL} target="_blank" rel="noopener noreferrer" className="rounded-xl bg-parrot-400 px-4 py-3 text-center text-sm font-semibold text-charcoal-900">
               Book Now
             </a>
           </div>
