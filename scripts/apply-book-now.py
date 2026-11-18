@@ -38,7 +38,10 @@ NAV_CTA = f"""
 """
 
 root = Path(__file__).resolve().parents[1]
-targets = [root / "index.html", *sorted((root / "public").rglob("*.html"))]
+targets = sorted(
+    path for path in root.rglob("*.html")
+    if not any(part in {".git", "node_modules", "dist"} for part in path.relative_to(root).parts)
+)
 nav_changed = 0
 floating_changed = 0
 
