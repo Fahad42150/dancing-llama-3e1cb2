@@ -97,13 +97,60 @@ const inksoftVideos = [
   { id: "pdkPa9gzAVw", title: "InkSoft Video Guide 2" }
 ];
 
+const videoTargetSlugs = new Set([
+  "sanmar-integration-ecommerce",
+  "ss-activewear-store-integration",
+  "alphabroder-catalog-integration",
+  "inksoft-support",
+  "inksoft-help",
+  "screen-printing-shop-management-software",
+  "embroidery-order-management-system",
+  "print-shop-quoting-software",
+  "promotional-products-ecommerce-platform",
+  "merch-store-design-develop-managment-update-virtual-assistant",
+  "inksoft-store-management",
+  "inksoft-product-catalog-management",
+  "inksoft-team-fundraising-store-setup",
+  "inksoft-bulk-product-upload-supplier-sync",
+  "hire-inksoft-virtual-assistant-product-upload",
+  "seasonal-peak-season-store-support",
+  "inksoft-store-setup",
+  "apparel-store-management",
+  "custom-apparel-store-management",
+  "team-store-management",
+  "inksoft-product-artwork-setup-services",
+  "inksoft-pricing-matrix-setup",
+  "inksoft-storefront-design-customization",
+  "inksoft-order-management-support",
+  "inksoft-inventory-management-support",
+  "school-spirit-wear-fundraising-store-setup",
+  "team-dealer-ecommerce-support",
+  "embroidery-business-virtual-assistant",
+  "promotional-products-store-management",
+  "screen-printing-shop-virtual-assistant",
+  "chipply-store-management",
+  "deconetwork-store-setup-management",
+  "ordermygear-store-management",
+  "custom-apparel-quoting-customer-support",
+  "promotional-products-order-management",
+  "corporate-company-store-management",
+  "print-shop-quoting-estimating-support",
+  "school-spirit-wear-store-management",
+  "sports-team-club-store-management",
+  "fundraising-group-order-store-management",
+  "custom-merchandise-store-setup-management",
+  "custom-apparel-artwork-mascot-design",
+  "screen-printing-embroidery-artwork-preparation",
+  "usa-canada-team-store-setup-management"
+]);
+
 function ensureInksoftVideos(file) {
   let html = fs.readFileSync(file, "utf8");
   if (html.includes('id="fjx-inksoft-videos"')) return;
   const slug = path.basename(path.dirname(file));
   const heading = html.match(/<h1\b[^>]*>([\s\S]*?)<\/h1>/i)?.[1] || "";
   const pageTitle = html.match(/<title[^>]*>([\s\S]*?)<\/title>/i)?.[1] || "";
-  if (!/inksoft/i.test(slug + " " + heading + " " + pageTitle)) return;
+  if (!videoTargetSlugs.has(slug) && !/inksoft/i.test(slug + " " + heading + " " + pageTitle)) return;
 
   const players = inksoftVideos.map(video =>
     '<article class="fjx-inksoft-video-card">' +
