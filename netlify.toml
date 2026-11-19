@@ -505,10 +505,6 @@
   to = "/print-shop-quoting-estimating-support/index.html"
   status = 200
 
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
 
 [[redirects]]
   from = "/school-spirit-wear-store-management"
@@ -557,4 +553,359 @@
 [[redirects]]
   from = "/custom-apparel-artwork-mascot-design/"
   to = "/custom-apparel-artwork-mascot-design/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/inksoft-spirit-wear-fundraising-online-store-setup-manage-design-product-update-upload-catalog-management"
+  to = "/inksoft-spirit-wear-fundraising-online-store-setup-manage-design-product-update-upload-catalog-management/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/inksoft-spirit-wear-fundraising-online-store-setup-manage-design-product-update-upload-catalog-management/"
+  to = "/inksoft-spirit-wear-fundraising-online-store-setup-manage-design-product-update-upload-catalog-management/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/team-uniform-store-builder-online-store-setup-manage-design-product-update-upload-catalog-management"
+  to = "/team-uniform-store-builder-online-store-setup-manage-design-product-update-upload-catalog-management/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/team-uniform-store-builder-online-store-setup-manage-design-product-update-upload-catalog-management/"
+  to = "/team-uniform-store-builder-online-store-setup-manage-design-product-update-upload-catalog-management/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/inksoft-pop-up-merch-store-online-store-setup-manage-design-product-update-upload-catalog-management"
+  to = "/inksoft-pop-up-merch-store-online-store-setup-manage-design-product-update-upload-catalog-management/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/inksoft-pop-up-merch-store-online-store-setup-manage-design-product-update-upload-catalog-management/"
+  to = "/inksoft-pop-up-merch-store-online-store-setup-manage-design-product-update-upload-catalog-management/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/inksoft-support"
+  to = "/inksoft-support/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/inksoft-support/"
+  to = "/inksoft-support/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/inksoft-help"
+  to = "/inksoft-help/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/inksoft-help/"
+  to = "/inksoft-help/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/screen-printing-shop-management-software"
+  to = "/screen-printing-shop-management-software/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/screen-printing-shop-management-software/"
+  to = "/screen-printing-shop-management-software/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/embroidery-order-management-system"
+  to = "/embroidery-order-management-system/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/embroidery-order-management-system/"
+  to = "/embroidery-order-management-system/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/promotional-products-ecommerce-platform"
+  to = "/promotional-products-ecommerce-platform/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/promotional-products-ecommerce-platform/"
+  to = "/promotional-products-ecommerce-platform/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/print-shop-quoting-software"
+  to = "/print-shop-quoting-software/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/print-shop-quoting-software/"
+  to = "/print-shop-quoting-software/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/merch-store-design-develop-managment-update-virtual-assistant"
+  to = "/merch-store-design-develop-managment-update-virtual-assistant/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/merch-store-design-develop-managment-update-virtual-assistant/"
+  to = "/merch-store-design-develop-managment-update-virtual-assistant/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/sanmar-integration-ecommerce"
+  to = "/sanmar-integration-ecommerce/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/sanmar-integration-ecommerce/"
+  to = "/sanmar-integration-ecommerce/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/ss-activewear-store-integration"
+  to = "/ss-activewear-store-integration/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/ss-activewear-store-integration/"
+  to = "/ss-activewear-store-integration/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/alphabroder-catalog-integration"
+  to = "/alphabroder-catalog-integration/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/alphabroder-catalog-integration/"
+  to = "/alphabroder-catalog-integration/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/blog/how-to-set-up-an-inksoft-store"
+  to = "/blog/how-to-set-up-an-inksoft-store/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/blog/how-to-set-up-an-inksoft-store/"
+  to = "/blog/how-to-set-up-an-inksoft-store/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/blog/inksoft-screen-print-pricing-grid"
+  to = "/blog/inksoft-screen-print-pricing-grid/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/blog/inksoft-screen-print-pricing-grid/"
+  to = "/blog/inksoft-screen-print-pricing-grid/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/blog/inksoft-digital-print-pricing"
+  to = "/blog/inksoft-digital-print-pricing/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/blog/inksoft-digital-print-pricing/"
+  to = "/blog/inksoft-digital-print-pricing/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/blog/how-to-connect-stripe-to-inksoft"
+  to = "/blog/how-to-connect-stripe-to-inksoft/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/blog/how-to-connect-stripe-to-inksoft/"
+  to = "/blog/how-to-connect-stripe-to-inksoft/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/blog/how-to-set-up-inksoft-pricing-grid"
+  to = "/blog/how-to-set-up-inksoft-pricing-grid/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/blog/how-to-set-up-inksoft-pricing-grid/"
+  to = "/blog/how-to-set-up-inksoft-pricing-grid/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/blog/how-to-add-products-manually-in-inksoft"
+  to = "/blog/how-to-add-products-manually-in-inksoft/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/blog/how-to-add-products-manually-in-inksoft/"
+  to = "/blog/how-to-add-products-manually-in-inksoft/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/blog/how-to-add-supplier-and-manufacturer-in-inksoft"
+  to = "/blog/how-to-add-supplier-and-manufacturer-in-inksoft/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/blog/how-to-add-supplier-and-manufacturer-in-inksoft/"
+  to = "/blog/how-to-add-supplier-and-manufacturer-in-inksoft/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/blog/how-to-add-products-in-inksoft"
+  to = "/blog/how-to-add-products-in-inksoft/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/blog/how-to-add-products-in-inksoft/"
+  to = "/blog/how-to-add-products-in-inksoft/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/blog/inksoft-vector-art-requirements"
+  to = "/blog/inksoft-vector-art-requirements/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/blog/inksoft-vector-art-requirements/"
+  to = "/blog/inksoft-vector-art-requirements/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/blog/inksoft-pricing-cost-plans"
+  to = "/blog/inksoft-pricing-cost-plans/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/blog/inksoft-pricing-cost-plans/"
+  to = "/blog/inksoft-pricing-cost-plans/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/blog/inksoft-reviews-pros-and-cons"
+  to = "/blog/inksoft-reviews-pros-and-cons/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/blog/inksoft-reviews-pros-and-cons/"
+  to = "/blog/inksoft-reviews-pros-and-cons/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/blog/what-is-inksoft"
+  to = "/blog/what-is-inksoft/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/blog/what-is-inksoft/"
+  to = "/blog/what-is-inksoft/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/blog/inksoft-standard-vs-unlimited"
+  to = "/blog/inksoft-standard-vs-unlimited/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/blog/inksoft-standard-vs-unlimited/"
+  to = "/blog/inksoft-standard-vs-unlimited/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/blog/inksoft-integrations"
+  to = "/blog/inksoft-integrations/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/blog/inksoft-integrations/"
+  to = "/blog/inksoft-integrations/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/blog/inksoft-alternatives-best-inksoft-alternative"
+  to = "/blog/inksoft-alternatives-best-inksoft-alternative/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/blog/inksoft-alternatives-best-inksoft-alternative/"
+  to = "/blog/inksoft-alternatives-best-inksoft-alternative/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/blog/deconetwork-vs-inksoft"
+  to = "/blog/deconetwork-vs-inksoft/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/blog/deconetwork-vs-inksoft/"
+  to = "/blog/deconetwork-vs-inksoft/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/blog/inksoft-vs-printavo"
+  to = "/blog/inksoft-vs-printavo/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/blog/inksoft-vs-printavo/"
+  to = "/blog/inksoft-vs-printavo/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/blog/inksoft-vs-shopify"
+  to = "/blog/inksoft-vs-shopify/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/blog/inksoft-vs-shopify/"
+  to = "/blog/inksoft-vs-shopify/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/blog/inksoft-vs-custom-ink"
+  to = "/blog/inksoft-vs-custom-ink/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/blog/inksoft-vs-custom-ink/"
+  to = "/blog/inksoft-vs-custom-ink/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/blog/inksoft-vs-ordermygear"
+  to = "/blog/inksoft-vs-ordermygear/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/blog/inksoft-vs-ordermygear/"
+  to = "/blog/inksoft-vs-ordermygear/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/blog/inksoft-vs-chipply"
+  to = "/blog/inksoft-vs-chipply/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/blog/inksoft-vs-chipply/"
+  to = "/blog/inksoft-vs-chipply/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/blog/inksoft-vs-graphicsflow"
+  to = "/blog/inksoft-vs-graphicsflow/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/blog/inksoft-vs-graphicsflow/"
+  to = "/blog/inksoft-vs-graphicsflow/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
   status = 200
