@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
   <url><loc>https://www.fjxstudio.com/</loc><lastmod>2026-11-16</lastmod><changefreq>monthly</changefreq><priority>1.0</priority></url>
   <url><loc>https://www.fjxstudio.com/inksoft-store-management/</loc><lastmod>2026-11-16</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
   <url><loc>https://www.fjxstudio.com/inksoft-product-catalog-management/</loc><lastmod>2026-11-16</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
@@ -204,4 +204,24 @@
   <url><loc>https://www.fjxstudio.com/blog/inksoft-vs-ordermygear/</loc><lastmod>2026-11-19</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
   <url><loc>https://www.fjxstudio.com/blog/inksoft-vs-chipply/</loc><lastmod>2026-11-19</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
   <url><loc>https://www.fjxstudio.com/blog/inksoft-vs-graphicsflow/</loc><lastmod>2026-11-19</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url>
+    <loc>https://www.fjxstudio.com/videos/team-store-and-inksoft-support/</loc>
+    <lastmod>2026-11-19</lastmod>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/UNZnBJAXynU/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>FJX Studio Team Store &amp; InkSoft Support Video</video:title>
+      <video:description>Watch FJX Studio's overview of team dealer eCommerce support, school spirit wear fundraising stores, and InkSoft product and artwork setup workflows for businesses in the USA and Canada.</video:description>
+      <video:player_loc allow_embed="yes">https://www.youtube-nocookie.com/embed/UNZnBJAXynU</video:player_loc>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://www.fjxstudio.com/videos/ecommerce-data-entry-services/</loc>
+    <lastmod>2026-11-19</lastmod>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/SjJHmcJUK7c/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>FJX Studio eCommerce Data Entry Services Video</video:title>
+      <video:description>Watch FJX Studio's overview of eCommerce data entry support, including product information entry, catalog updates, listing maintenance, and online store administration.</video:description>
+      <video:player_loc allow_embed="yes">https://www.youtube-nocookie.com/embed/SjJHmcJUK7c</video:player_loc>
+    </video:video>
+  </url>
 </urlset>

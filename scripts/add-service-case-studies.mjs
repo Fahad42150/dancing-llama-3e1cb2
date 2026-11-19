@@ -33,6 +33,7 @@ function walk(dir) {
   for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
     const full = path.join(dir, entry.name);
     if (entry.isDirectory()) {
+      if (entry.name === "videos") continue;
       if (dir === root && excluded.has(entry.name)) continue;
       walk(full);
     } else if (entry.isFile() && entry.name === "index.html") {
@@ -145,6 +146,7 @@ const videoTargetSlugs = new Set([
 ]);
 
 function ensureInksoftVideos(file) {
+  if (path.relative(root, file).split(path.sep)[0] === "videos") return;
   let html = fs.readFileSync(file, "utf8");
   if (html.includes('id="fjx-inksoft-videos"')) return;
   const slug = path.basename(path.dirname(file));
@@ -176,7 +178,10 @@ function ensureInksoftVideos(file) {
 function walkAll(dir) {
   for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
     const full = path.join(dir, entry.name);
-    if (entry.isDirectory()) walkAll(full);
+    if (entry.isDirectory()) {
+      if (entry.name === "videos") continue;
+      walkAll(full);
+    }
     else if (entry.isFile() && entry.name === "index.html") { ensureFooterStyles(full); ensureInksoftVideos(full); }
   }
 }
