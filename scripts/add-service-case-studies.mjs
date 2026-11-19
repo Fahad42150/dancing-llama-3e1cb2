@@ -91,11 +91,46 @@ function ensureFooterStyles(file) {
   fs.writeFileSync(file, html);
 }
 
+
+const inksoftVideos = [
+  { id: "UNZnBJAXynU", title: "InkSoft Video Guide 1" },
+  { id: "pdkPa9gzAVw", title: "InkSoft Video Guide 2" }
+];
+
+function ensureInksoftVideos(file) {
+  let html = fs.readFileSync(file, "utf8");
+  if (html.includes('id="fjx-inksoft-videos"')) return;
+  const slug = path.basename(path.dirname(file));
+  const heading = html.match(/<h1\b[^>]*>([\s\S]*?)<\/h1>/i)?.[1] || "";
+  const pageTitle = html.match(/<title[^>]*>([\s\S]*?)<\/title>/i)?.[1] || "";
+  if (!/inksoft/i.test(slug + " " + heading + " " + pageTitle)) return;
+
+  const players = inksoftVideos.map(video =>
+    '<article class="fjx-inksoft-video-card">' +
+    '<h3>' + video.title + '</h3>' +
+    '<div class="fjx-inksoft-video-frame">' +
+    '<iframe src="https://www.youtube-nocookie.com/embed/' + video.id + '" title="' + video.title + '" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>' +
+    '</div><a href="https://youtu.be/' + video.id + '" target="_blank" rel="noopener noreferrer">Watch on YouTube</a></article>'
+  ).join("");
+
+  const section = '<section id="fjx-inksoft-videos" class="fjx-inksoft-videos" aria-labelledby="fjx-inksoft-videos-title">' +
+    '<div class="fjx-inksoft-videos-inner"><p class="fjx-inksoft-videos-eyebrow">INKSOFT VIDEO RESOURCES</p>' +
+    '<h2 id="fjx-inksoft-videos-title">InkSoft Video Guides</h2>' +
+    '<p>Watch these video resources for additional visual guidance related to InkSoft and online store workflows.</p>' +
+    '<div class="fjx-inksoft-video-grid">' + players + '</div></div></section>' +
+    '<style>.fjx-inksoft-videos{padding:48px 20px;background:#f5f8ef;color:#202326}.fjx-inksoft-videos-inner{max-width:1100px;margin:0 auto}.fjx-inksoft-videos-eyebrow{margin:0 0 8px;color:#64812a;font-size:12px;font-weight:800;letter-spacing:.1em}.fjx-inksoft-videos h2{margin:0 0 10px;font-size:clamp(25px,4vw,34px);line-height:1.2}.fjx-inksoft-videos-inner>p:not(.fjx-inksoft-videos-eyebrow){color:#5c6569}.fjx-inksoft-video-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;margin-top:22px}.fjx-inksoft-video-card{min-width:0;padding:16px;background:#fff;border:1px solid #e4e9dd;border-radius:14px}.fjx-inksoft-video-card h3{margin:0 0 12px;font-size:17px}.fjx-inksoft-video-frame{position:relative;width:100%;aspect-ratio:16/9;overflow:hidden;border-radius:10px;background:#111}.fjx-inksoft-video-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}.fjx-inksoft-video-card>a{display:inline-block;margin-top:12px;color:#426d20;font-weight:700}@media(max-width:680px){.fjx-inksoft-video-grid{grid-template-columns:1fr}}</style>';
+
+  if (/<footer\b/i.test(html)) html = html.replace(/<footer\b/i, section + "\n<footer");
+  else if (/<\/main>/i.test(html)) html = html.replace(/<\/main>/i, section + "\n</main>");
+  else html = html.replace(/<\/body>/i, section + "\n</body>");
+  fs.writeFileSync(file, html);
+}
+
 function walkAll(dir) {
   for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
     const full = path.join(dir, entry.name);
     if (entry.isDirectory()) walkAll(full);
-    else if (entry.isFile() && entry.name === "index.html") ensureFooterStyles(full);
+    else if (entry.isFile() && entry.name === "index.html") { ensureFooterStyles(full); ensureInksoftVideos(full); }
   }
 }
 
