@@ -45,7 +45,7 @@ function addCaseStudy(file) {
   let html = fs.readFileSync(file, "utf8");
   if (/id=["']fjx-service-case-study["']/.test(html)) return;
   const slug = path.basename(path.dirname(file));
-  const titleMatch = html.match(/<h1\\b[^>]*>([\\s\\S]*?)<\\/h1>/i);
+  const titleMatch = html.match(/<h1\b[^>]*>([\s\S]*?)<\/h1>/i);
   const title = (titleMatch?.[1] || slug.replace(/-/g, " "))
     .replace(/<[^>]+>/g, " ").replace(/&amp;/g, "&").replace(/\s+/g, " ").trim();
   const playbook = playbooks.find(item => item.test.test(slug)) || playbooks[playbooks.length - 1];
@@ -72,9 +72,12 @@ function addCaseStudy(file) {
 </style>`;
   const contact = /<section\b[^>]*id=["']contact["'][^>]*>/i;
   const mainClose = /<\/main>/i;
-  if (contact.test(html)) html = html.replace(contact, section + "\\n$&");
+  if (contact.test(html)) html = html.replace(contact, section + "\nif (contact.test(html)) html = html.replace(contact, section + "\\n$&");
   else if (mainClose.test(html)) html = html.replace(mainClose, section + "\\n</main>");
   else html = html.replace(/<\/body>/i, section + "\\n</body>");
+  fs.writeFileSync");
+  else if (mainClose.test(html)) html = html.replace(mainClose, section + "\n</main>");
+  else html = html.replace(/<\/body>/i, section + "\n</body>");
   fs.writeFileSync(file, html);
 }
 
