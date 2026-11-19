@@ -45,9 +45,9 @@ function addCaseStudy(file) {
   let html = fs.readFileSync(file, "utf8");
   if (/id=["']fjx-service-case-study["']/.test(html)) return;
   const slug = path.basename(path.dirname(file));
-  const titleMatch = html.match(/<h1\\b[^>]*>([\\s\\S]*?)<\\/h1>/i);
+  const titleMatch = html.match(/<h1\b[^>]*>([\s\\S]*?)<\/h1>/i);
   const title = (titleMatch?.[1] || slug.replace(/-/g, " "))
-    .replace(/<[^>]+>/g, " ").replace(/&amp;/g, "&").replace(/\\s+/g, " ").trim();
+    .replace(/<[^>]+>/g, " ").replace(/&amp;/g, "&").replace(/\s+/g, " ").trim();
   const playbook = playbooks.find(item => item.test.test(slug)) || playbooks[playbooks.length - 1];
   const [business, location] = businesses[hash(slug) % businesses.length];
   const cta = slug.match(/inksoft|chipply|ordermygear|deconetwork|printavo|team-store|spirit-wear/) ? "Plan Your Store Setup" : /logo|graphic|design|video/.test(slug) ? "Discuss Your Design Project" : /email|mailchimp|klaviyo|brevo/.test(slug) ? "Plan Your Email Support" : /customer|support|chat/.test(slug) ? "Improve Your Customer Support" : "Discuss Your Project";
@@ -70,11 +70,11 @@ function addCaseStudy(file) {
 <style>
 .fjx-case-study{padding:64px 20px;background:#f5f8ef;color:#202326}.fjx-case-wrap{max-width:1080px;margin:0 auto}.fjx-case-eyebrow{font-size:12px;letter-spacing:.09em;font-weight:800;color:#5b7d2d}.fjx-case-study h2{font-size:clamp(26px,4vw,36px);line-height:1.2;margin:10px 0 12px}.fjx-case-intro{font-size:17px;color:#626b70;max-width:760px}.fjx-case-meta{margin:22px 0;padding:14px 18px;background:#fff;border:1px solid #e1e8d8;border-radius:12px}.fjx-case-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin:18px 0 24px}.fjx-case-grid article{background:#fff;border:1px solid #e1e8d8;border-radius:14px;padding:20px}.fjx-case-grid h3{font-size:17px;margin:0 0 8px}.fjx-case-grid p{margin:0;color:#626b70;line-height:1.65}.fjx-case-cta{display:inline-flex;gap:12px;align-items:center;background:#a6df65;color:#17210f;text-decoration:none;font-weight:800;padding:14px 21px;border-radius:10px}.fjx-case-cta:hover{background:#95d34e}.fjx-case-disclaimer{font-size:12px;color:#68716a;margin:18px 0 0;max-width:850px}@media(max-width:600px){.fjx-case-study{padding:46px 18px}}
 </style>`;
-  const contact = /<section\\b[^>]*id=["']contact["'][^>]*>/i;
-  const mainClose = /<\\/main>/i;
+  const contact = /<section\b[^>]*id=["']contact["'][^>]*>/i;
+  const mainClose = /<\/main>/i;
   if (contact.test(html)) html = html.replace(contact, section + "\\n$&");
   else if (mainClose.test(html)) html = html.replace(mainClose, section + "\\n</main>");
-  else html = html.replace(/<\\/body>/i, section + "\\n</body>");
+  else html = html.replace(/<\/body>/i, section + "\\n</body>");
   fs.writeFileSync(file, html);
 }
 
