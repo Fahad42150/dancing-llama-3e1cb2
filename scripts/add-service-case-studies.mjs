@@ -72,10 +72,7 @@ function addCaseStudy(file) {
 </style>`;
   const contact = /<section\b[^>]*id=["']contact["'][^>]*>/i;
   const mainClose = /<\/main>/i;
-  if (contact.test(html)) html = html.replace(contact, section + "\nif (contact.test(html)) html = html.replace(contact, section + "\\n$&");
-  else if (mainClose.test(html)) html = html.replace(mainClose, section + "\\n</main>");
-  else html = html.replace(/<\/body>/i, section + "\\n</body>");
-  fs.writeFileSync");
+  if (contact.test(html)) html = html.replace(contact, section + "\n$&");
   else if (mainClose.test(html)) html = html.replace(mainClose, section + "\n</main>");
   else html = html.replace(/<\/body>/i, section + "\n</body>");
   fs.writeFileSync(file, html);
