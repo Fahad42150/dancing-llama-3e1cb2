@@ -84,6 +84,80 @@ function escapeHtml(value) { return String(value).replace(/&/g, "&amp;").replace
 
 const footerStyle = '<style id="fjx-site-footer-style">.fjx-site-footer{border-top:1px solid #e8e9e7;background:#fff;color:#687078;font-family:inherit}.fjx-site-footer *{box-sizing:border-box}.fjx-footer-wrap{max-width:1280px;margin:0 auto;padding:56px 24px 28px}.fjx-footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:40px}.fjx-footer-brand{max-width:440px}.fjx-footer-logo{display:inline-flex;align-items:center;gap:9px;color:#202522;text-decoration:none;font-size:22px;font-weight:800}.fjx-footer-mark{display:inline-flex;width:38px;height:38px;align-items:center;justify-content:center;border-radius:12px;background:#9fe870;color:#202522;font-size:14px;font-weight:900}.fjx-footer-logo span:last-child{color:#78bd43}.fjx-footer-copy{margin:16px 0 0;max-width:420px;font-size:14px;line-height:1.8;color:#687078}.fjx-footer-social{display:flex;gap:10px;margin-top:22px}.fjx-footer-social a{display:inline-flex;width:40px;height:40px;align-items:center;justify-content:center;border:1px solid #e8e9e7;border-radius:12px;color:#333;text-decoration:none;font-size:12px;font-weight:700}.fjx-footer-social a:hover{background:#9fe870;border-color:#9fe870}.fjx-footer-heading{margin:4px 0 16px;color:#202522;font-size:13px;font-weight:800;letter-spacing:.08em;text-transform:uppercase}.fjx-footer-links{display:grid;gap:12px;margin:0;padding:0;list-style:none}.fjx-footer-links a,.fjx-footer-contact a{color:#687078;text-decoration:none;font-size:14px}.fjx-footer-links a:hover,.fjx-footer-contact a:hover{color:#5b9c2e}.fjx-footer-contact{display:grid;gap:12px;margin:0;padding:0;list-style:none;font-size:14px;line-height:1.6}.fjx-footer-bottom{display:flex;align-items:center;justify-content:space-between;gap:18px;margin-top:44px;padding-top:24px;border-top:1px solid #e8e9e7}.fjx-footer-bottom p{margin:0;color:#92999e;font-size:13px}.fjx-footer-top{display:inline-flex;align-items:center;gap:8px;padding:10px 15px;border:1px solid #e8e9e7;border-radius:12px;color:#424a45;text-decoration:none;font-size:13px;font-weight:600}.fjx-footer-top:hover{background:#f3faee;border-color:#ccebb7}@media(max-width:760px){.fjx-footer-wrap{padding:42px 20px 24px}.fjx-footer-grid{grid-template-columns:1fr 1fr;gap:30px}.fjx-footer-brand{grid-column:1/-1}}@media(max-width:480px){.fjx-footer-grid{grid-template-columns:1fr;gap:26px}.fjx-footer-brand{grid-column:auto}.fjx-footer-bottom{align-items:flex-start;flex-direction:column;margin-top:32px}}</style>';
 
+
+const responsiveStyle = `<style id="fjx-responsive-layout">
+/* Shared responsive safeguards for the standalone service, article and blog pages. */
+html { -webkit-text-size-adjust: 100%; }
+body { min-width: 320px; max-width: 100%; overflow-x: clip; }
+img, picture, video, canvas, svg { max-width: 100%; }
+iframe { max-width: 100%; }
+pre { max-width: 100%; overflow-x: auto; }
+.hero-media-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: stretch;
+}
+.hero-media-grid > .hero-image,
+.hero-media-grid > .hero-video-card {
+  position: relative;
+  display: block;
+  width: 100%;
+  min-width: 0;
+  max-width: none;
+  height: auto;
+  aspect-ratio: 16 / 9;
+}
+.hero-media-grid > .hero-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  object-fit: cover;
+}
+.hero-media-grid > .hero-video-card iframe,
+.video iframe,
+.video-frame iframe {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+.video, .video-frame {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+}
+.table-wrap { max-width: 100%; overflow-x: auto; }
+@media (max-width: 640px) {
+  .hero-media-grid {
+    grid-template-columns: minmax(0, 1fr);
+    width: min(520px, 100%);
+    gap: 16px;
+  }
+}
+</style>`;
+
+function ensureResponsiveLayout(file) {
+  let html = fs.readFileSync(file, "utf8");
+  if (!html.includes('id="fjx-responsive-layout"')) {
+    html = html.replace(/<\/head>/i, responsiveStyle + "\\n</head>");
+  }
+  if (!/<meta[^>]+name=["']viewport["']/i.test(html)) {
+    html = html.replace(/<head([^>]*)>/i, '<head$1><meta name="viewport" content="width=device-width, initial-scale=1">');
+  }
+  const canonical = html.match(/<link[^>]+rel=["']canonical["'][^>]+href=["']([^"']+)["']/i)
+    || html.match(/<link[^>]+href=["']([^"']+)["'][^>]+rel=["']canonical["']/i);
+  if (canonical) {
+    const canonicalUrl = canonical[1];
+    html = html.replace(/<meta property=["']og:url["'] content=["'][^"']*["']\s*\/?\s*>/i,
+      '<meta property="og:url" content="' + canonicalUrl + '">');
+  }
+  fs.writeFileSync(file, html);
+}
+
 function ensureFooterStyles(file) {
   let html = fs.readFileSync(file, "utf8");
   if (!html.includes('class="fjx-site-footer"') || html.includes('id="fjx-site-footer-style"')) return;
@@ -177,9 +251,10 @@ function walkAll(dir) {
   for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
     const full = path.join(dir, entry.name);
     if (entry.isDirectory()) walkAll(full);
-    else if (entry.isFile() && entry.name === "index.html") { ensureFooterStyles(full); ensureInksoftVideos(full); }
+    else if (entry.isFile() && entry.name === "index.html") { ensureResponsiveLayout(full); ensureFooterStyles(full); ensureInksoftVideos(full); }
   }
 }
 
 walkAll(root);
+ensureResponsiveLayout(path.resolve("index.html"));
 walk(root);
