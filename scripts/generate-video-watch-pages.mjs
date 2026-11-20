@@ -48,17 +48,17 @@ const known=new Map(videos.map(v=>[v.id,v]));
 function slugify(value){return String(value).toLowerCase().replace(/&amp;/g," and ").replace(/<[^>]*>/g," ").replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"").slice(0,70)||"video";}
 htmlFiles.forEach(file=>{
   const html=fs.readFileSync(file,"utf8");
-  const pageTitle=(html.match(/<title[^>]*>([\\s\\S]*?)<\\/title>/i)||[])[1]||"FJX Studio Video";
+  const pageTitle=(html.match(/<title[^>]*>([\s\S]*?)<\/title>/i)||[])[1]||"FJX Studio Video";
   const pageDescription=(html.match(/<meta[^>]+name=["']description["'][^>]+content=["']([^"']*)/i)||[])[1]||"Video resource from FJX Studio.";
-  const tags=html.match(/<iframe\\b[^>]*>/gi)||[];
+  const tags=html.match(/<iframe\b[^>]*>/gi)||[];
   tags.forEach(tag=>{
-    const src=(tag.match(/\\bsrc=["']([^"']+)["']/i)||[])[1]||"";
-    const id=(src.match(/youtube(?:-nocookie)?\\.com\\/embed\\/([A-Za-z0-9_-]{11})/i)||[])[1];
+    const src=(tag.match(/\bsrc=["']([^"']+)["']/i)||[])[1]||"";
+    const id=(src.match(/youtube(?:-nocookie)?\.com\/embed\/([A-Za-z0-9_-]{11})/i)||[])[1];
     if(!id||known.has(id))return;
-    let frameTitle=(tag.match(/\\btitle=["']([^"']+)["']/i)||[])[1]||"";
+    let frameTitle=(tag.match(/\btitle=["']([^"']+)["']/i)||[])[1]||"";
     if(!frameTitle||/youtube video player/i.test(frameTitle))frameTitle=pageTitle.replace(/<[^>]*>/g," ").trim();
-    const cleanTitle=frameTitle.replace(/&amp;/g,"&").replace(/\\s+/g," ").trim();
-    const cleanDescription=pageDescription.replace(/&amp;/g,"&").replace(/\\s+/g," ").trim();
+    const cleanTitle=frameTitle.replace(/&amp;/g,"&").replace(/\s+/g," ").trim();
+    const cleanDescription=pageDescription.replace(/&amp;/g,"&").replace(/\s+/g," ").trim();
     known.set(id,{id,slug:slugify(cleanTitle)+"-"+id.toLowerCase(),title:cleanTitle,description:cleanDescription});
   });
 });
