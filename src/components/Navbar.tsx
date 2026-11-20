@@ -43,7 +43,7 @@ export default function Navbar() {
           <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-parrot-400 font-display text-sm font-extrabold text-charcoal-900">FJ</span>
           FJX <span className="text-parrot-500">Studio</span>
         </a>
-        <div className="hidden items-center gap-1 md:flex">
+        <div className="hidden items-center gap-1 xl:flex">
           {navLinks.map((link) => (
             <a key={link.label} href={link.href} onClick={(e) => { e.preventDefault(); navigate(link.href); }} className="rounded-lg px-3 py-2 text-sm font-medium text-charcoal-600 transition-colors hover:bg-parrot-50 hover:text-charcoal-900">
               {link.label}
@@ -56,12 +56,12 @@ export default function Navbar() {
             Book Now
           </a>
         </div>
-        <button className="flex items-center justify-center rounded-lg p-2 text-charcoal-700 md:hidden" onClick={() => setMobileOpen((v) => !v)} aria-label={mobileOpen ? 'Close menu' : 'Open menu'} aria-expanded={mobileOpen} aria-controls="mobile-navigation">
+        <button className="flex items-center justify-center rounded-lg p-2 text-charcoal-700 xl:hidden" onClick={() => setMobileOpen((v) => !v)} aria-label={mobileOpen ? 'Close menu' : 'Open menu'} aria-expanded={mobileOpen} aria-controls="mobile-navigation">
           {mobileOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
       </nav>
       {mobileOpen && (
-        <div id="mobile-navigation" className="mx-4 mt-3 rounded-2xl border border-charcoal-100 bg-white p-4 shadow-card md:hidden">
+        <div id="mobile-navigation" className="mx-4 mt-3 rounded-2xl border border-charcoal-100 bg-white p-4 shadow-card xl:hidden">
           <div className="flex flex-col gap-1">
             {navLinks.map((link) => (
               <a key={link.label} href={link.href} onClick={(e) => { e.preventDefault(); navigate(link.href); }} className="rounded-lg px-4 py-3 text-sm font-medium text-charcoal-700 transition-colors hover:bg-parrot-50">
