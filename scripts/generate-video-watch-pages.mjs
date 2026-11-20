@@ -41,7 +41,10 @@ fs.writeFileSync(file,html);
 }
 fs.mkdirSync(WATCH,{recursive:true});
 videos.forEach(v=>{const d=path.join(WATCH,v.slug);fs.mkdirSync(d,{recursive:true});fs.writeFileSync(path.join(d,"index.html"),page(v));});
-const htmlFiles=collect(PUBLIC,[]);htmlFiles.forEach(linkPage);
+const htmlFiles=collect(PUBLIC,[]);
+const rootIndex=path.resolve("index.html");
+if(fs.existsSync(rootIndex))htmlFiles.push(rootIndex);
+htmlFiles.forEach(linkPage);
 const entries=videos.map(v=>"<url><loc>"+SITE+"/watch/"+v.slug+"/</loc><video:video><video:thumbnail_loc>https://i.ytimg.com/vi/"+v.id+"/hqdefault.jpg</video:thumbnail_loc><video:title><![CDATA["+v.title+"]]></video:title><video:description><![CDATA["+v.description+"]]></video:description><video:player_loc>https://www.youtube-nocookie.com/embed/"+v.id+"</video:player_loc></video:video></url>").join("\n");
 fs.writeFileSync(path.join(PUBLIC,"video-sitemap.xml"),"<?xml version='1.0' encoding='UTF-8'?>\n<urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9' xmlns:video='http://www.google.com/schemas/sitemap-video/1.1'>\n"+entries+"\n</urlset>\n");
 const smPath=path.join(PUBLIC,"sitemap.xml");
