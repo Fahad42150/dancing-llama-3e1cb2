@@ -59,21 +59,21 @@ const changes = [];
 const missing = [];
 const decode = s => s.replace(/&amp;/g, "&").replace(/&quot;/g, '"').replace(/&#39;/g, "'");
 const esc = s => s.replace(/&/g, "&amp;").replace(/"/g, "&quot;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
-const plain = s => decode(s.replace(/<[^>]*>/g, " ").replace(/\\s+/g, " ").trim());
+const plain = s => decode(s.replace(/<[^>]*>/g, " ").replace(/\s+/g, " ").trim());
 const pretty = s => s.split("/").pop().split("-").map(w => w.length <= 3 ? w.toUpperCase() : w[0].toUpperCase() + w.slice(1)).join(" ");
 function meta(html, key, value, attr) {
   const a = attr || "name";
-  const re = new RegExp("<meta\\s+[^>]*" + a + "=[\"']" + key + "[\"'][^>]*>", "i");
+  const re = new RegExp("<meta\s+[^>]*" + a + "=[\"']" + key + "[\"'][^>]*>", "i");
   const tag = "<meta " + a + "=\"" + key + "\" content=\"" + esc(value) + "\">";
-  return re.test(html) ? html.replace(re, tag) : html.replace(/<head([^>]*)>/i, "<head$1>\\n  " + tag);
+  return re.test(html) ? html.replace(re, tag) : html.replace(/<head([^>]*)>/i, "<head$1>\n  " + tag);
 }
 function canonical(html, url) {
   const tag = '<link rel="canonical" href="' + url + '">';
-  const re = /<link\\s+[^>]*rel=["']canonical["'][^>]*>/i;
-  return re.test(html) ? html.replace(re, tag) : html.replace(/<head([^>]*)>/i, "<head$1>\\n  " + tag);
+  const re = /<link\s+[^>]*rel=["']canonical["'][^>]*>/i;
+  return re.test(html) ? html.replace(re, tag) : html.replace(/<head([^>]*)>/i, "<head$1>\n  " + tag);
 }
 function fixJsonLd(html, url) {
-  return html.replace(/<script\\b([^>]*type=["']application\\/ld\\+json["'][^>]*)>([\\s\\S]*?)<\\/script>/gi, (whole, attrs, raw) => {
+  return html.replace(/<script\b([^>]*type=["']application\/ld\+json["'][^>]*)>([\s\S]*?)<\/script>/gi, (whole, attrs, raw) => {
     try {
       const data = JSON.parse(raw.trim());
       let changed = false;
@@ -89,7 +89,7 @@ function fixJsonLd(html, url) {
         Object.values(node).forEach(walk);
       };
       walk(data);
-      return changed ? "<script" + attrs + ">\\n" + JSON.stringify(data, null, 2) + "\\n</script>" : whole;
+      return changed ? "<script" + attrs + ">\n" + JSON.stringify(data, null, 2) + "\n</script>" : whole;
     } catch {
       changes.push({ url, issue: "Unparseable JSON-LD left unchanged for manual review" });
       return whole;
@@ -102,17 +102,17 @@ for (const slug of slugs) {
   if (!fs.existsSync(file)) { missing.push(slug); continue; }
   const before = fs.readFileSync(file, "utf8");
   let html = before;
-  const h1 = plain((html.match(/<h1\\b[^>]*>([\\s\\S]*?)<\\/h1>/i) || [,""])[1] || "");
+  const h1 = plain((html.match(/<h1\b[^>]*>([\s\S]*?)<\/h1>/i) || [,""])[1] || "");
   const fallbackTitle = (h1 || pretty(slug)) + " | FJX Studio";
-  const tm = html.match(/<title[^>]*>([\\s\\S]*?)<\\/title>/i);
+  const tm = html.match(/<title[^>]*>([\s\S]*?)<\/title>/i);
   let title = tm ? plain(tm[1]) : "";
   if (!title || titleSeen.has(title.toLowerCase())) {
     title = fallbackTitle;
     if (titleSeen.has(title.toLowerCase())) title = pretty(slug) + " Support | FJX Studio";
-    html = tm ? html.replace(/<title[^>]*>[\\s\\S]*?<\\/title>/i, "<title>" + esc(title) + "</title>") : html.replace(/<head([^>]*)>/i, "<head$1>\\n<title>" + esc(title) + "</title>");
+    html = tm ? html.replace(/<title[^>]*>[\s\S]*?<\/title>/i, "<title>" + esc(title) + "</title>") : html.replace(/<head([^>]*)>/i, "<head$1>\n<title>" + esc(title) + "</title>");
   }
   titleSeen.add(title.toLowerCase());
-  const dm = html.match(/<meta\\s+name=["']description["']\\s+content=["']([^"']*)["'][^>]*>/i);
+  const dm = html.match(/<meta\s+name=["']description["']\s+content=["']([^"']*)["'][^>]*>/i);
   let description = dm ? decode(dm[1]).trim() : "";
   if (!description || descSeen.has(description.toLowerCase())) {
     description = (h1 || pretty(slug)) + ": practical remote support from FJX Studio for eCommerce and business teams in the USA and Canada. Explore the scope, workflow and ways to get help.";
@@ -120,10 +120,10 @@ for (const slug of slugs) {
   }
   descSeen.add(description.toLowerCase());
   html = canonical(html, url);
-  const robots = html.match(/<meta\\s+name=["']robots["']\\s+content=["']([^"']*)["'][^>]*>/i);
+  const robots = html.match(/<meta\s+name=["']robots["']\s+content=["']([^"']*)["'][^>]*>/i);
   if (!robots || /noindex/i.test(robots[1])) html = meta(html, "robots", "index,follow,max-image-preview:large");
   html = meta(html, "og:url", url, "property");
-  html = html.replace(/<meta\\s+name=["']twitter:url["'][^>]*>/i, '<meta name="twitter:url" content="' + url + '">');
+  html = html.replace(/<meta\s+name=["']twitter:url["'][^>]*>/i, '<meta name="twitter:url" content="' + url + '">');
   html = fixJsonLd(html, url);
   if (html !== before) {
     fs.writeFileSync(file, html);
@@ -137,7 +137,7 @@ if (fs.existsSync(sitemap)) {
   for (const slug of slugs) {
     const url = origin + "/" + slug + "/";
     if (!xml.includes(url)) {
-      xml = xml.replace(/<\\/urlset>\\s*$/i, "  <url><loc>" + url + "</loc></url>\\n</urlset>");
+      xml = xml.replace(/<\/urlset>\s*$/i, "  <url><loc>" + url + "</loc></url>\n</urlset>");
       added++;
     }
   }
