@@ -125,7 +125,6 @@ pre { max-width: 100%; overflow-x: auto; }
 }
 .video, .video-frame {
   position: relative;
-  width: 100%;
   max-width: 100%;
   aspect-ratio: 16 / 9;
   overflow: hidden;
