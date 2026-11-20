@@ -143,7 +143,7 @@ pre { max-width: 100%; overflow-x: auto; }
 function ensureResponsiveLayout(file) {
   let html = fs.readFileSync(file, "utf8");
   if (!html.includes('id="fjx-responsive-layout"')) {
-    html = html.replace(/<\/head>/i, responsiveStyle + "\\n</head>");
+    html = html.replace(/<\/head>/i, responsiveStyle + "\n</head>");
   }
   if (!/<meta[^>]+name=["']viewport["']/i.test(html)) {
     html = html.replace(/<head([^>]*)>/i, '<head$1><meta name="viewport" content="width=device-width, initial-scale=1">');
