@@ -121,7 +121,7 @@ for (const slug of slugs) {
   descSeen.add(description.toLowerCase());
   html = canonical(html, url);
   const robots = html.match(/<meta\s+name=["']robots["']\s+content=["']([^"']*)["'][^>]*>/i);
-  if (!robots || /noindex/i.test(robots[1])) html = meta(html, "robots", "index,follow,max-image-preview:large");
+  if (!robots) html = meta(html, "robots", "index,follow,max-image-preview:large");
   html = meta(html, "og:url", url, "property");
   html = html.replace(/<meta\s+name=["']twitter:url["'][^>]*>/i, '<meta name="twitter:url" content="' + url + '">');
   html = fixJsonLd(html, url);
@@ -136,12 +136,24 @@ if (fs.existsSync(sitemap)) {
   let added = 0;
   for (const slug of slugs) {
     const url = origin + "/" + slug + "/";
-    if (!xml.includes(url)) {
+    if (fs.existsSync(path.join(root, slug, "index.html")) && !xml.includes(url)) {
       xml = xml.replace(/<\/urlset>\s*$/i, "  <url><loc>" + url + "</loc></url>\n</urlset>");
       added++;
     }
   }
-  if (added) { fs.writeFileSync(sitemap, xml); changes.push({ issue: "Added " + added + " missing canonical URL(s) to sitemap.xml" }); }
+  const seenUrls = new Set();
+  const beforeDedup = xml;
+  xml = xml.replace(/<url>\\s*[\\s\\S]*?<\\/url>/gi, block => {
+    const loc = (block.match(/<loc>([\\s\\S]*?)<\\/loc>/i) || [])[1];
+    if (!loc) return block;
+    if (seenUrls.has(loc.trim())) return "";
+    seenUrls.add(loc.trim());
+    return block;
+  });
+  if (added || xml !== beforeDedup) {
+    fs.writeFileSync(sitemap, xml);
+    changes.push({ issue: "Added " + added + " existing canonical URL(s) and removed duplicate sitemap entries" });
+  }
 } else changes.push({ issue: "public/sitemap.xml missing; sitemap reconciliation skipped" });
 console.log("[SEO] Audited " + slugs.length + " target URLs; changed " + changes.length + " item(s); missing source pages: " + missing.length + ".");
 for (const item of changes) console.log("[SEO]", JSON.stringify(item));
