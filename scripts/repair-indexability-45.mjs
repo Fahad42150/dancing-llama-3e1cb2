@@ -143,8 +143,8 @@ if (fs.existsSync(sitemap)) {
   }
   const seenUrls = new Set();
   const beforeDedup = xml;
-  xml = xml.replace(/<url>\\s*[\\s\\S]*?<\\/url>/gi, block => {
-    const loc = (block.match(/<loc>([\\s\\S]*?)<\\/loc>/i) || [])[1];
+  xml = xml.replace(/<url>\s*[\s\S]*?<\/url>/gi, block => {
+    const loc = (block.match(/<loc>([\s\S]*?)<\/loc>/i) || [])[1];
     if (!loc) return block;
     if (seenUrls.has(loc.trim())) return "";
     seenUrls.add(loc.trim());
