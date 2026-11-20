@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "node scripts/add-service-case-studies.mjs && node scripts/generate-video-watch-pages.mjs && vite build",
+    "build": "node scripts/add-service-case-studies.mjs && node scripts/generate-video-watch-pages.mjs && node scripts/repair-indexability-45.mjs && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
     "typecheck": "tsc --noEmit -p tsconfig.app.json"
