@@ -280,7 +280,7 @@ function updateExistingMetadata(page) {
   html = html.replace(/<meta property="og:description"[^>]*>/i, '<meta property="og:description" content="' + description + '">');
   html = html.replace(/<meta name="twitter:title"[^>]*>/i, '<meta name="twitter:title" content="' + title + '">');
   html = html.replace(/<meta name="twitter:description"[^>]*>/i, '<meta name="twitter:description" content="' + description + '">');
-  html = html.replace(/(<h1\\b[^>]*>)[\\s\\S]*?(<\\/h1>)/i, "$1" + esc(page.h1) + "$2");
+  html = html.replace(/(<h1\b[^>]*>)[\s\S]*?(<\/h1>)/i, "$1" + esc(page.h1) + "$2");
   fs.writeFileSync(file, html);
 }
 
