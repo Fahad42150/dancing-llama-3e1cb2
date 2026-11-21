@@ -265,7 +265,7 @@ function renderPage(template, page) {
   html = html.replace(/<main>[\s\S]*?<\/main>/i, main);
   html = html.replace(/<h2>Let's Build Your Store Together<\/h2>/, "<h2>Let's Discuss Your Project</h2>");
   html = html.replace(/Tell us which platform you use,[\s\S]*?USA and Canada\./, "Tell us about your store, product catalog, design or SEO requirements. FJX Studio can review the requested work and confirm a suitable scope for businesses serving the USA and Canada.");
-  html = html.replace("</head>", '<style id="fjx-seo-video-layout">.fjx-video-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:20px}.fjx-video-frame{position:relative;aspect-ratio:16/9;overflow:hidden;border-radius:10px;background:#111}.fjx-video-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}.fjx-video-library .item p{margin:12px 0 0}.fjx-video-library .item a{font-weight:700;color:#547d2b}@media(max-width:760px){.fjx-video-grid{grid-template-columns:1fr}}</style>\n</head>");
+  html = html.replace("</head>", '<style id="fjx-seo-video-layout">.fjx-video-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:20px}.fjx-video-frame{position:relative;aspect-ratio:16/9;overflow:hidden;border-radius:10px;background:#111}.fjx-video-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}.fjx-video-library .item p{margin:12px 0 0}.fjx-video-library .item a{font-weight:700;color:#547d2b}@media(max-width:760px){.fjx-video-grid{grid-template-columns:1fr}}</style>\n</head>');
   return html;
 }
 
