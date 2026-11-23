@@ -43,7 +43,14 @@ function walk(dir) {
 
 function addCaseStudy(file) {
   let html = fs.readFileSync(file, "utf8");
-  if (/id=["']fjx-service-case-study["']/.test(html)) return;
+  if (/id=["']fjx-service-case-study["']/.test(html)) {
+    const revised = html
+      .replace(/<p class="fjx-case-eyebrow">ILLUSTRATIVE SERVICE CASE STUDY/g, '<p class="fjx-case-eyebrow">Illustrative scenario')
+      .replace(/<strong>Example business:<\/strong>/g, '<strong>Business scenario:</strong>')
+      .replace(/<p class="fjx-case-disclaimer">This is a fictional, illustrative example for service explanation\. The business name and scenario are not actual clients, completed engagements, testimonials, or measured results\.<\/p>/g, "");
+    if (revised !== html) fs.writeFileSync(file, revised);
+    return;
+  }
   const slug = path.basename(path.dirname(file));
   const titleMatch = html.match(/<h1\b[^>]*>([\s\S]*?)<\/h1>/i);
   const title = (titleMatch?.[1] || slug.replace(/-/g, " "))
@@ -54,10 +61,10 @@ function addCaseStudy(file) {
   const section = `
 <section id="fjx-service-case-study" class="fjx-case-study" aria-labelledby="fjx-case-title">
   <div class="fjx-case-wrap">
-    <p class="fjx-case-eyebrow">ILLUSTRATIVE SERVICE CASE STUDY · ${escapeHtml(playbook.label)}</p>
+    <p class="fjx-case-eyebrow">Illustrative scenario · ${escapeHtml(playbook.label)}</p>
     <h2 id="fjx-case-title">How ${escapeHtml(title)} Can Support a Growing Business</h2>
     <p class="fjx-case-intro">A sample project scenario showing how this service could support a business in the USA or Canada.</p>
-    <div class="fjx-case-meta"><strong>Example business:</strong> ${escapeHtml(business)} <span aria-hidden="true">·</span> ${escapeHtml(location)}</div>
+    <div class="fjx-case-meta"><strong>Business scenario:</strong> ${escapeHtml(business)} <span aria-hidden="true">·</span> ${escapeHtml(location)}</div>
     <div class="fjx-case-grid">
       <article><h3>Business challenge</h3><p>${escapeHtml(playbook.challenge)}</p></article>
       <article><h3>FJX Studio approach</h3><p>${escapeHtml(playbook.solution)}</p></article>
@@ -68,7 +75,7 @@ function addCaseStudy(file) {
   </div>
 </section>
 <style>
-.fjx-case-study{padding:64px 20px;background:#f5f8ef;color:#202326}.fjx-case-wrap{max-width:1080px;margin:0 auto}.fjx-case-eyebrow{font-size:12px;letter-spacing:.09em;font-weight:800;color:#5b7d2d}.fjx-case-study h2{font-size:clamp(26px,4vw,36px);line-height:1.2;margin:10px 0 12px}.fjx-case-intro{font-size:17px;color:#626b70;max-width:760px}.fjx-case-meta{margin:22px 0;padding:14px 18px;background:#fff;border:1px solid #e1e8d8;border-radius:12px}.fjx-case-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin:18px 0 24px}.fjx-case-grid article{background:#fff;border:1px solid #e1e8d8;border-radius:14px;padding:20px}.fjx-case-grid h3{font-size:17px;margin:0 0 8px}.fjx-case-grid p{margin:0;color:#626b70;line-height:1.65}.fjx-case-cta{display:inline-flex;gap:12px;align-items:center;background:#a6df65;color:#17210f;text-decoration:none;font-weight:800;padding:14px 21px;border-radius:10px}.fjx-case-cta:hover{background:#95d34e}.fjx-case-disclaimer{font-size:12px;color:#68716a;margin:18px 0 0;max-width:850px}@media(max-width:600px){.fjx-case-study{padding:46px 18px}}
+.fjx-case-study{padding:64px 20px;background:#f5f8ef;color:#202326}.fjx-case-wrap{max-width:1080px;margin:0 auto}.fjx-case-eyebrow{font-size:12px;letter-spacing:.09em;font-weight:800;color:#5b7d2d}.fjx-case-study h2{font-size:clamp(26px,4vw,36px);line-height:1.2;margin:10px 0 12px}.fjx-case-intro{font-size:17px;color:#626b70;max-width:760px}.fjx-case-meta{margin:22px 0;padding:14px 18px;background:#fff;border:1px solid #e1e8d8;border-radius:12px}.fjx-case-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin:18px 0 24px}.fjx-case-grid article{background:#fff;border:1px solid #e1e8d8;border-radius:14px;padding:20px}.fjx-case-grid h3{font-size:17px;margin:0 0 8px}.fjx-case-grid p{margin:0;color:#626b70;line-height:1.65}.fjx-case-cta{display:inline-flex;gap:12px;align-items:center;background:#a6df65;color:#17210f;text-decoration:none;font-weight:800;padding:14px 21px;border-radius:10px}.fjx-case-cta:hover{background:#95d34e}@media(max-width:600px){.fjx-case-study{padding:46px 18px}}
 </style>`;
   const contact = /<section\b[^>]*id=["']contact["'][^>]*>/i;
   const mainClose = /<\/main>/i;
