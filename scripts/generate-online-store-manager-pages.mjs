@@ -46,13 +46,13 @@ const extract = (regex, label) => {
   if (!match) throw new Error("Could not extract " + label + " from eCommerce reference page");
   return match[0];
 };
-const styles = (reference.match(/<style\\b[^>]*>[\\s\\S]*?<\\/style>/gi) || []).join("\\n");
-const header = extract(/<header class="top">[\\s\\S]*?<\\/header>/, "header");
-const footer = extract(/<footer class="fjx-site-footer">[\\s\\S]*?<\\/footer>/, "footer")
+const styles = (reference.match(/<style\b[^>]*>[\s\S]*?<\/style>/gi) || []).join("\n");
+const header = extract(/<header class="top">[\s\S]*?<\/header>/, "header");
+const footer = extract(/<footer class="fjx-site-footer">[\s\S]*?<\/footer>/, "footer")
   .replaceAll('href="/#contact"', 'href="#contact"');
-const floating = extract(/<a id="fjx-book-now-sitewide"[\\s\\S]*?<\\/a>/, "floating Book Now CTA");
-const chat = extract(/<!--Start of Tawk\\.to Script-->[\\s\\S]*?<!--End of Tawk\\.to Script-->/, "Tawk.to live chat");
-const media = extract(/<div class="hero-media-grid">[\\s\\S]*?<\\/div>\\s*<\\/div>/, "hero image and video");
+const floating = extract(/<a id="fjx-book-now-sitewide"[\s\S]*?<\/a>/, "floating Book Now CTA");
+const chat = extract(/<!--Start of Tawk\.to Script-->[\s\S]*?<!--End of Tawk\.to Script-->/, "Tawk.to live chat");
+const media = extract(/<div class="hero-media-grid">[\s\S]*?<\/div>\s*<\/div>/, "hero image and video");
 if (!styles) throw new Error("Reference page CSS was not found");
 
 const escapeHtml = (value) => String(value).replaceAll("&", "&amp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;").replaceAll('"', "&quot;");
@@ -170,7 +170,7 @@ if (fs.existsSync(sitemapPath)) {
   let sitemap = fs.readFileSync(sitemapPath,"utf8");
   for (const page of pages) {
     if (!sitemap.includes("<loc>"+page.url+"</loc>")) {
-      sitemap = sitemap.replace("</urlset>", "  <url><loc>"+page.url+"</loc><lastmod>2026-11-23</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>\\n</urlset>");
+      sitemap = sitemap.replace("</urlset>", "  <url><loc>"+page.url+"</loc><lastmod>2026-11-23</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>\n</urlset>");
     }
   }
   fs.writeFileSync(sitemapPath,sitemap,"utf8");
