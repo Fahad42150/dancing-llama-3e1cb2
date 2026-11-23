@@ -335,4 +335,110 @@ main .fjx-featured-service-section .fjx-featured-button-grid > a:focus-visible {
 }
 </style>
 
+
+<style id="fjx-services-card-final-normalization">
+/* Final normalization: the arrow is CSS-generated so every service link renders identically,
+   even if a card's original HTML uses a different arrow span or legacy class. */
+main .grid,
+main .fjx-featured-button-grid {
+  display:grid !important;
+  grid-template-columns:repeat(3,minmax(0,1fr)) !important;
+  grid-auto-rows:1fr !important;
+  align-items:stretch !important;
+  gap:16px !important;
+}
+main .grid > a,
+main .fjx-featured-button-grid > a {
+  box-sizing:border-box !important;
+  display:flex !important;
+  flex-direction:row !important;
+  align-items:center !important;
+  justify-content:space-between !important;
+  width:100% !important;
+  min-width:0 !important;
+  min-height:76px !important;
+  height:100% !important;
+  margin:0 !important;
+  padding:17px 20px !important;
+  gap:14px !important;
+  border:1px solid #dfe6d9 !important;
+  border-radius:13px !important;
+  background:#fff !important;
+  color:#202326 !important;
+  font:700 15px/1.45 Inter,Arial,sans-serif !important;
+  text-align:left !important;
+  text-decoration:none !important;
+  white-space:normal !important;
+  overflow-wrap:anywhere !important;
+  word-break:normal !important;
+  box-shadow:0 2px 8px rgba(32,35,38,.05) !important;
+  transition:background-color .18s ease,border-color .18s ease,box-shadow .18s ease,transform .18s ease !important;
+}
+main .grid > a > span:first-child,
+main .fjx-featured-button-grid > a > span:first-child {
+  display:block !important;
+  flex:1 1 auto !important;
+  min-width:0 !important;
+  margin:0 !important;
+  padding:0 !important;
+  white-space:normal !important;
+  overflow-wrap:anywhere !important;
+}
+/* Hide legacy arrow markup; a single consistent arrow is rendered for every card. */
+main .grid > a > .arrow,
+main .fjx-featured-button-grid > a > .button-arrow {
+  display:none !important;
+}
+main .grid > a::after,
+main .fjx-featured-button-grid > a::after {
+  content:"→" !important;
+  display:inline-flex !important;
+  flex:0 0 22px !important;
+  width:22px !important;
+  height:22px !important;
+  align-items:center !important;
+  justify-content:center !important;
+  margin-left:auto !important;
+  color:#5b8b30 !important;
+  font:400 22px/1 Arial,sans-serif !important;
+}
+main .grid > a:hover,
+main .fjx-featured-button-grid > a:hover {
+  border-color:#9fce79 !important;
+  background:#f6faef !important;
+  color:#202326 !important;
+  box-shadow:0 8px 20px rgba(32,35,38,.09) !important;
+  transform:translateY(-2px);
+}
+main .grid > a:focus-visible,
+main .fjx-featured-button-grid > a:focus-visible {
+  outline:3px solid #679d37 !important;
+  outline-offset:3px !important;
+  box-shadow:0 0 0 5px rgba(103,157,55,.12) !important;
+}
+@media(max-width:900px) {
+  main .grid,main .fjx-featured-button-grid {
+    grid-template-columns:repeat(2,minmax(0,1fr)) !important;
+    gap:14px !important;
+  }
+}
+@media(max-width:600px) {
+  main .grid,main .fjx-featured-button-grid {
+    grid-template-columns:minmax(0,1fr) !important;
+    grid-auto-rows:auto !important;
+    gap:11px !important;
+  }
+  main .grid > a,main .fjx-featured-button-grid > a {
+    min-height:62px !important;
+    height:auto !important;
+    padding:15px 16px !important;
+    font-size:14px !important;
+  }
+}
+@media(prefers-reduced-motion:reduce) {
+  main .grid > a,main .fjx-featured-button-grid > a {transition:none !important}
+  main .grid > a:hover,main .fjx-featured-button-grid > a:hover {transform:none}
+}
+</style>
+
 </body></html>
