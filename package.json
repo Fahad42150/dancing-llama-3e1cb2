@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "node scripts/generate-virtual-assistant-pages.mjs && vite build",
+    "build": "node scripts/generate-virtual-assistant-pages.mjs && node scripts/generate-virtual-assistant-blogs.mjs && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
     "typecheck": "tsc --noEmit -p tsconfig.app.json"
