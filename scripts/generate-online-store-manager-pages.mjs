@@ -41,24 +41,37 @@ const topics = [
 ["woolworths-online-manager","Woolworths Online Manager Role and Store Operations Support","An overview of online grocery retail management workflows associated with Woolworths Online. FJX Studio is independent and is not affiliated with Woolworths."]
 ];
 
-const extract = (regex, label) => {
-  const match = reference.match(regex);
-  if (!match) throw new Error("Could not extract " + label + " from eCommerce reference page");
-  return match[0];
+const extractBetween = (startMarker, endMarker, label, from = 0) => {
+  const start = reference.indexOf(startMarker, from);
+  if (start < 0) throw new Error("Could not find " + label + " start in eCommerce reference page");
+  const end = reference.indexOf(endMarker, start);
+  if (end < 0) throw new Error("Could not find " + label + " end in eCommerce reference page");
+  return reference.slice(start, end + endMarker.length);
 };
-const styles = (reference.match(/<style\b[^>]*>[\s\S]*?<\/style>/gi) || []).join("\n");
-const header = extract(/<header class="top">[\s\S]*?<\/header>/, "header");
-const footer = extract(/<footer class="fjx-site-footer">[\s\S]*?<\/footer>/, "footer")
+const styleBlocks = [];
+let styleCursor = 0;
+while (true) {
+  const styleStart = reference.indexOf("<style", styleCursor);
+  if (styleStart < 0) break;
+  const styleOpenEnd = reference.indexOf(">", styleStart);
+  const styleEnd = reference.indexOf("</style>", styleOpenEnd);
+  if (styleOpenEnd < 0 || styleEnd < 0) throw new Error("Malformed style block in eCommerce reference page");
+  styleBlocks.push(reference.slice(styleStart, styleEnd + "</style>".length));
+  styleCursor = styleEnd + "</style>".length;
+}
+const styles = styleBlocks.join("\n");
+const header = extractBetween('<header class="top">', "</header>", "header");
+const footer = extractBetween('<footer class="fjx-site-footer">', "</footer>", "footer")
   .replaceAll('href="/#contact"', 'href="#contact"');
-const floating = extract(/<a id="fjx-book-now-sitewide"[\s\S]*?<\/a>/, "floating Book Now CTA");
-const chat = extract(/<!--Start of Tawk\.to Script-->[\s\S]*?<!--End of Tawk\.to Script-->/, "Tawk.to live chat");
-const media = extract(/<div class="hero-media-grid">[\s\S]*?<\/div>\s*<\/div>/, "hero image and video");
+const floating = extractBetween('<a id="fjx-book-now-sitewide"', "</a>", "floating Book Now CTA");
+const chat = extractBetween("<!--Start of Tawk.to Script-->", "<!--End of Tawk.to Script-->", "Tawk.to live chat");
+const media = extractBetween('<div class="hero-media-grid">', "</div>", "hero image and video");
 if (!styles) throw new Error("Reference page CSS was not found");
 
 const escapeHtml = (value) => String(value).replaceAll("&", "&amp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;").replaceAll('"', "&quot;");
 const baseUrl = "https://www.fjxstudio.com";
 const pages = topics.map(([tail, title, description]) => {
-  const slug = "best-" + tail.replace(/^best-/, "") + "-services-usa-canada";
+  const slug = "best-" + (tail.startsWith("best-") ? tail.slice(5) : tail) + "-services-usa-canada";
   const url = baseUrl + "/" + slug + "/";
   const schema = {
     "@context": "https://schema.org",
@@ -156,7 +169,7 @@ ${footer}
 ${floating}
 ${chat}
 </body></html>`;
-  return {slug,url,title,html};
+  return {slug,url,title,description,html};
 });
 
 for (const page of pages) {
@@ -180,7 +193,7 @@ const servicesPath = path.join(publicDir,"services","index.html");
 if (fs.existsSync(servicesPath)) {
   let services = fs.readFileSync(servicesPath,"utf8");
   const marker = "<!-- online-store-manager-keyword-services -->";
-  const cards = pages.map(page => '<article class="item"><h3><a href="/'+page.slug+'/">'+escapeHtml(page.title)+'</a></h3><p>'+escapeHtml(topics.find(t => "best-"+t[0]+"-services-usa-canada" === page.slug)[2])+'</p></article>').join("");
+  const cards = pages.map(page => '<article class="item"><h3><a href="/'+page.slug+'/">'+escapeHtml(page.title)+'</a></h3><p>'+escapeHtml(page.description)+'</p></article>').join("");
   const section = marker+'<section class="section"><div class="wrap"><h2>Online Store Management Services for the USA &amp; Canada</h2><p class="lead">Explore focused eCommerce store, inventory and marketplace operations support.</p><div class="grid">'+cards+'</div></div></section>';
   const markerIndex = services.indexOf(marker);
   if (markerIndex >= 0) {
