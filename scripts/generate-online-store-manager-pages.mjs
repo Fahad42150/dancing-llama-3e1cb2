@@ -158,6 +158,12 @@ ${styles}
 .service-detail-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
 .service-detail-card{height:100%;padding:24px;border:1px solid var(--line,#e5e7eb);border-radius:18px;background:#fff;box-sizing:border-box}
 .service-detail-card h3{margin:0 0 10px}.service-detail-card p{line-height:1.75;color:var(--muted,#687078)}
+.service-detail-link{position:relative;display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-start;min-height:190px;padding:24px 58px 24px 24px;color:var(--ink,#202326);text-decoration:none;transition:border-color .18s ease,background-color .18s ease,box-shadow .18s ease,transform .18s ease}
+.service-detail-link::after{content:"→";position:absolute;right:22px;top:50%;transform:translateY(-50%);display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;color:#5b8b30;font:400 24px/1 Arial,sans-serif}
+.service-detail-link:hover{border-color:#9fce79;background:#f6faef;box-shadow:0 8px 20px rgba(32,35,38,.09);transform:translateY(-2px)}
+.service-detail-link:focus-visible{outline:3px solid #679d37;outline-offset:3px}
+.service-detail-link h3{color:inherit}
+.service-detail-link p{color:var(--muted,#687078)}
 .service-cta-row{display:flex;flex-wrap:wrap;gap:14px;margin-top:24px}
 @media(max-width:800px){.service-detail-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:600px){.service-detail-grid{grid-template-columns:1fr}.hero{padding-top:44px}.hero h1{font-size:clamp(30px,8vw,42px)}.service-detail-card{padding:20px}}
@@ -179,9 +185,9 @@ ${media}
 <h2>${escapeHtml(title)}: what support can include</h2>
 <p class="lead">${safeDescription} The exact scope is tailored to your store platform, channels, task volume and internal approval process.</p>
 <div class="service-detail-grid">
-<article class="service-detail-card"><h3>Store and catalog administration</h3><p>Maintain product information, categories, variants, images and storefront content using your approved instructions and quality checklist.</p></article>
-<article class="service-detail-card"><h3>Inventory and order workflows</h3><p>Update stock records, review order status, coordinate routine handoffs and flag discrepancies or exceptions for approval.</p></article>
-<article class="service-detail-card"><h3>Reporting and quality checks</h3><p>Keep task records organized, review completed updates and share concise progress reports against agreed service expectations.</p></article>
+<a class="service-detail-card service-detail-link" href="#contact" aria-label="Discuss store and catalog administration"><h3>Store and catalog administration</h3><p>Maintain product information, categories, variants, images and storefront content using your approved instructions and quality checklist.</p></a>
+<a class="service-detail-card service-detail-link" href="#contact" aria-label="Discuss inventory and order workflows"><h3>Inventory and order workflows</h3><p>Update stock records, review order status, coordinate routine handoffs and flag discrepancies or exceptions for approval.</p></a>
+<a class="service-detail-card service-detail-link" href="#contact" aria-label="Discuss reporting and quality checks"><h3>Reporting and quality checks</h3><p>Keep task records organized, review completed updates and share concise progress reports against agreed service expectations.</p></a>
 </div>
 </div></section>
 <section class="section band"><div class="wrap">
