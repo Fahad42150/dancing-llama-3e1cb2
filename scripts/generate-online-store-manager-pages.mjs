@@ -58,7 +58,7 @@ if (!styles) throw new Error("Reference page CSS was not found");
 const escapeHtml = (value) => String(value).replaceAll("&", "&amp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;").replaceAll('"', "&quot;");
 const baseUrl = "https://www.fjxstudio.com";
 const pages = topics.map(([tail, title, description]) => {
-  const slug = "best-" + tail + "-services-usa-canada";
+  const slug = "best-" + tail.replace(/^best-/, "") + "-services-usa-canada";
   const url = baseUrl + "/" + slug + "/";
   const schema = {
     "@context": "https://schema.org",
