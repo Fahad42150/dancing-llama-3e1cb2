@@ -174,7 +174,9 @@ const faq = [
 ["Do you guarantee rankings or business results?","No. We do not guarantee rankings, leads, revenue or other outcomes. We focus on agreed deliverables, communication and quality checks."]
 ];
 const taskNames = ["Task planning and prioritization","Email, calendar and follow-up coordination","Research, data entry and document organization","CRM, spreadsheet and workflow updates","Progress reporting and quality checks"];
-const pages = rows.map(([tail,title,description,intro]) => {
+const validRows = rows.filter((row) => Array.isArray(row) && row.length === 4 && row.every((value) => typeof value === "string"));
+if (validRows.length !== rows.length) console.warn(`Skipped ${rows.length - validRows.length} invalid virtual assistant page rows.`);
+const pages = validRows.map(([tail,title,description,intro]) => {
   const slug = "best-virtual-assistant" + (tail ? "-" + tail : "") + "-usa-canada";
   const url = base + "/" + slug + "/";
   const cards = taskNames.map((name,i)=>`<article class="item"><h3>${name}</h3><p class="muted">${["Document the task and expected result before work starts.","Use client-approved instructions and communication channels.","Keep information organized and accessible to authorized users.","Follow agreed permissions and escalation procedures.","Review completed work against the agreed checklist."][i]}</p></article>`).join("");
