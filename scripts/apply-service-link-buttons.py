@@ -160,19 +160,34 @@ for path in sorted((root / "public").glob("*/index.html")):
         skipped += 1
         continue
     html = path.read_text(encoding="utf-8")
-    # Only target service pages that actually contain a related-links collection.
-    if not re.search(r'class=["\'][^"\']*\blinks\b[^"\']*["\']', html, flags=re.IGNORECASE):
-        continue
     original = html
     if path.parent.name == "services":
         html = re.sub(
-            rf'<style\\b[^>]*id=["\\']{re.escape(DIRECTORY_STYLE_ID)}["\\'][^>]*>[\\s\\S]*?</style\\s*>',
+            rf'<style\b[^>]*id=["\']{re.escape(DIRECTORY_STYLE_ID)}["\'][^>]*>[\s\S]*?</style\s*>',
             '',
             html,
             flags=re.IGNORECASE,
         )
-        if re.search(r'<main\\b', html, flags=re.IGNORECASE):
-            head_end_for_directory = re.search(r'</head\\s*>', html, flags=re.IGNORECASE)
+        if re.search(r'<main\b', html, flags=re.IGNORECASE):
+            head_end_for_directory = re.search(r'</head\s*>', html, flags=re.IGNORECASE)
+            if head_end_for_directory:
+                html = html[:head_end_for_directory.start()] + DIRECTORY_STYLE + "\n" + html[head_end_for_directory.start():]
+        if html != original:
+            path.write_text(html, encoding="utf-8")
+            updated += 1
+        continue
+    # Only target standalone service pages with related-service link collections.
+    if not re.search(r'class=["\'][^"\']*\blinks\b[^"\']*["\']', html, flags=re.IGNORECASE):
+        continue
+    if path.parent.name == "services":
+        html = re.sub(
+            rf'<style\b[^>]*id=["\']{re.escape(DIRECTORY_STYLE_ID)}["\'][^>]*>[\s\S]*?</style\s*>',
+            '',
+            html,
+            flags=re.IGNORECASE,
+        )
+        if re.search(r'<main\b', html, flags=re.IGNORECASE):
+            head_end_for_directory = re.search(r'</head\s*>', html, flags=re.IGNORECASE)
             if head_end_for_directory:
                 html = html[:head_end_for_directory.start()] + DIRECTORY_STYLE + "\\n" + html[head_end_for_directory.start():]
         if html != original:
