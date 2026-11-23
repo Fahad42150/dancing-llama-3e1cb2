@@ -29,6 +29,30 @@ const rows = [
 ["online-assistant","Online Assistant","Remote support for business administration, research, customer follow-up and digital task coordination.","Online assistance is most effective when tasks, deadlines and communication channels are documented. We support agreed workflows for businesses operating in the USA and Canada."],
 ["online-personal-assistant","Online Personal Assistant","Remote help with everyday scheduling, research, reminders and personal administration.","Agree the tasks, access permissions and approval limits before delegating personal administration. Sensitive accounts and financial decisions remain under your direct control."],
 ["websites","Virtual Assistant Websites","A practical checklist for comparing virtual assistant websites, service descriptions and provider credibility.","Look for transparent service scope, verifiable reviews, clear contact details, privacy practices, onboarding information and realistic claims. A polished website alone is not proof of quality."]
+,
+["freelance-virtual-assistant","Freelance Virtual Assistant","Flexible freelance virtual assistant support for businesses that need defined remote administrative tasks.","Freelance support can suit project-based or recurring work. Agree deliverables, turnaround, communication, confidentiality and payment terms before work starts."],
+["social-media-virtual-assistant","Social Media Virtual Assistant","Operational support for social media calendars, scheduling, community administration and performance reporting.","A social media assistant can help maintain publishing workflows and organize engagement. Brand voice, claims, moderation rules and final approvals should be supplied by the client."],
+["find-a-virtual-assistant","Find a Virtual Assistant","A practical checklist for finding and evaluating a virtual assistant for your workload.","Start by listing recurring tasks, required tools, expected response times and the level of experience needed. Compare providers using relevant examples, clear scope and secure onboarding."],
+["become-a-virtual-assistant","Become a Virtual Assistant","An introductory guide to building the skills, service offer and work processes for a virtual assistant career.","People exploring virtual assistant work should identify a service niche, build practical tool skills, create work samples, set clear service terms and learn client communication and data-handling practices."],
+["best-virtual-assistant-websites","Best Virtual Assistant Websites","How to evaluate virtual assistant websites, service quality signals and provider transparency.","Compare websites by clear service descriptions, verifiable testimonials, privacy information, contact details, onboarding steps and realistic claims. FJX Studio does not claim to be ranked the best provider."],
+["amazon-virtual-assistant","Amazon Virtual Assistant","Administrative and eCommerce operations support for businesses selling on Amazon.","FJX Studio is independent and not affiliated with or endorsed by Amazon. We can discuss seller-side administrative workflows such as catalog data organization, inventory spreadsheet updates and reporting preparation; account access and marketplace compliance remain the seller’s responsibility."],
+["time-etc-virtual-assistant","Time Etc Virtual Assistant","A neutral guide to evaluating Time Etc and comparing virtual assistant service options.","Time Etc is a separate provider. FJX Studio is not affiliated with or endorsed by Time Etc. Compare providers by service scope, pricing, onboarding, continuity, communication and data protection."],
+["cheap-virtual-assistant","Affordable Virtual Assistant Support","How to assess affordable virtual assistant support without overlooking quality, security or scope.","Compare total cost alongside experience, turnaround, task complexity, onboarding and quality review. The lowest hourly rate may not be the lowest-cost option when work needs repeated corrections."],
+["remote-personal-assistant","Remote Personal Assistant","Remote help with personal scheduling, research, reminders and routine organization.","Set clear boundaries for personal information, purchases and approvals. Sensitive accounts and financial decisions remain under your direct control."],
+["fiverr-virtual-assistant","Fiverr Virtual Assistant","A neutral guide to sourcing freelance virtual assistant services through Fiverr.","Fiverr is a separate freelance marketplace. FJX Studio is not affiliated with or endorsed by Fiverr and does not act as its agent. Review seller portfolios, gig scope, reviews, delivery terms and platform policies before hiring."],
+["personal-assistant-services","Personal Assistant Services","Remote personal-assistant services for scheduling, research, correspondence and everyday administration.","Personal-assistant services should have clear task boundaries, approval rules and privacy practices. FJX Studio can discuss a defined remote support scope."],
+["virtual-office-assistant","Virtual Office Assistant","Remote office administration for scheduling, documents, records, inboxes and routine coordination.","A virtual office assistant can help keep recurring processes organized using client-approved tools, documented instructions and clear escalation paths."],
+["virtual-secretary-services","Virtual Secretary Services","Remote secretarial services for correspondence, scheduling, document preparation and office coordination.","Agree which communications can be handled independently, which require approval and how confidential documents should be shared and stored."],
+["digital-assistant","Digital Assistant","Remote digital task support for research, information organization, online administration and workflow coordination.","Digital assistance can combine human support with approved tools to keep online tasks organized. Define permissions, data handling and review responsibilities in advance."],
+["byron-virtual-assistant","Byron Virtual Assistant","A neutral guide for people searching for Byron virtual assistant services and comparing providers.","FJX Studio is an independent service provider and is not affiliated with or endorsed by any company named Byron. Verify the exact provider you intend to contact and compare its official service scope, terms and contact details."],
+["wing-virtual-assistant","Wing Virtual Assistant","A neutral guide to evaluating Wing and comparing virtual assistant providers.","Wing is a separate provider. FJX Studio is not affiliated with or endorsed by Wing. Compare task fit, service model, onboarding, supervision, pricing and data-handling policies."],
+["remote-virtual-assistant","Remote Virtual Assistant","Remote administrative and operational assistance for distributed businesses and professionals.","Remote support works best with written instructions, agreed communication windows, secure access and measurable task outcomes."],
+["part-time-virtual-assistant","Part-Time Virtual Assistant","Part-time remote support for businesses with a defined recurring workload or limited weekly task volume.","Part-time support can be structured around agreed weekly hours, task priorities and turnaround expectations. Confirm coverage and backup arrangements before onboarding."],
+["part-time-personal-assistant","Part-Time Personal Assistant","Part-time remote personal-assistant support for scheduling, research and routine organization.","Define the weekly workload, preferred working windows, urgent-task expectations and approval boundaries before delegating personal administration."],
+["virtual-assistant-business","Virtual Assistant Business","Guidance for planning and operating a virtual assistant business, from service definition to client workflows.","A sustainable virtual assistant business needs a focused service offer, clear pricing and scope, repeatable processes, secure client onboarding and consistent delivery standards."],
+["airbnb-virtual-assistant","Airbnb Virtual Assistant","Administrative support for short-term rental hosts and property management workflows.","Support may include guest-message drafting, calendar and listing data updates, cleaner coordination and review tracking. Hosts remain responsible for local regulations, guest safety, pricing decisions and platform compliance."],
+["healthcare-virtual-assistant","Healthcare Virtual Assistant","Non-clinical administrative workflow support for healthcare organizations and practices.","FJX Studio can discuss non-clinical administrative tasks only. We do not provide medical advice, diagnosis, clinical triage or treatment. Protected health information requires an explicitly compliant arrangement and safeguards."],
+["virtual-assistant-cost","Virtual Assistant Cost","Understand the factors that affect virtual assistant costs, including task complexity, experience, hours and service model.","Pricing varies with task specialization, workload, working hours, provider location, supervision and required tools. FJX Studio’s published starting rate is $30 USD per hour; a project estimate depends on the agreed scope."]
 ];
 
 const escapeHtml = (s) => s.replaceAll("&","&amp;").replaceAll("<","&lt;").replaceAll(">","&gt;").replaceAll('"',"&quot;");
@@ -65,20 +89,18 @@ const servicesPath=path.join(publicDir,"services","index.html");
 if(fs.existsSync(servicesPath)){
  let services=fs.readFileSync(servicesPath,"utf8");
  const marker="<!-- virtual-assistant-keyword-pages -->";
- if(!services.includes(marker)){
-  const section=marker+`<section class="section"><div class="wrap"><h2>Virtual Assistant Services for the USA &amp; Canada</h2><p class="lead">Explore focused remote support services and practical provider guides from FJX Studio.</p><div class="grid">`+pages.map(p=>`<a class="service-card" href="/${p.slug}/"><span>${p.title}</span><span aria-hidden="true">→</span></a>`).join("")+`</div></div></section>`;
-  services=services.replace("</main>",section+"</main>");
-  fs.writeFileSync(servicesPath,services,"utf8");
- }
+ const section=marker+`<section class="section"><div class="wrap"><h2>Virtual Assistant Services for the USA &amp; Canada</h2><p class="lead">Explore focused remote support services and practical provider guides from FJX Studio.</p><div class="grid">`+pages.map(p=>`<a class="service-card" href="/${p.slug}/"><span>${p.title}</span><span aria-hidden="true">→</span></a>`).join("")+`</div></div></section>`;
+ if(services.includes(marker)) services=services.slice(0,services.indexOf(marker))+section+services.slice(services.indexOf("</section>",services.indexOf(marker))+10);
+ else services=services.replace("</main>",section+"</main>");
+ fs.writeFileSync(servicesPath,services,"utf8");
 }
 const redirectsPath=path.join(publicDir,"_redirects");
 if(fs.existsSync(redirectsPath)){
  let redirects=fs.readFileSync(redirectsPath,"utf8");
  const marker="# Virtual assistant keyword pages";
- if(!redirects.includes(marker)){
-  const block=marker+"\n"+pages.map(p=>`/${p.slug} /${p.slug}/index.html 200\n/${p.slug}/ /${p.slug}/index.html 200`).join("\n")+"\n";
-  redirects=redirects.replace(/\n\/\* \/index\.html 200/, "\n"+block+"\n/* /index.html 200");
-  fs.writeFileSync(redirectsPath,redirects,"utf8");
- }
+ const block=marker+"\n"+pages.map(p=>`/${p.slug} /${p.slug}/index.html 200\n/${p.slug}/ /${p.slug}/index.html 200`).join("\n")+"\n";
+ if(redirects.includes(marker)) redirects=redirects.slice(0,redirects.indexOf(marker))+block+redirects.slice(redirects.indexOf("\n/* /index.html 200",redirects.indexOf(marker)));
+ else redirects=redirects.replace(/\n\/\* \/index\.html 200/, "\n"+block+"\n/* /index.html 200");
+ fs.writeFileSync(redirectsPath,redirects,"utf8");
 }
 console.log(`Generated ${pages.length} virtual assistant landing pages.`);
