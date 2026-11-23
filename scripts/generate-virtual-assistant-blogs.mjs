@@ -192,9 +192,12 @@ const indexPath=path.join(blogDir,"index.html");
 let index=fs.readFileSync(indexPath,"utf8");
 const marker="<!-- virtual-assistant-keyword-blogs -->";
 const cards=keywords.map(k=>{const s=slug(k),t=title(k);return '<article class="item"><h2><a href="/blog/'+s+'/">'+esc(t)+': A Practical Guide</a></h2><p>A practical guide to '+esc(k)+', including role scope, workflow planning, security and provider evaluation.</p><a class="read" href="/blog/'+s+'/">Read blog →</a></article>';}).join("");
-const block=marker+cards;
-if(index.includes(marker)){const a=index.indexOf(marker),b=index.indexOf("</div></section>",a);index=index.slice(0,a)+block+index.slice(b);}
-else index=index.replace("</div></section><section class=\"wrap bottom\">",block+"</div></section><section class=\"wrap bottom\">");
+const gridStart=index.indexOf('<div class="grid">');
+const gridEnd=gridStart===-1 ? -1 : index.indexOf("</div></section>",gridStart);
+if(gridStart===-1 || gridEnd===-1) throw new Error("Could not find the existing blog listing grid in public/blog/index.html");
+const markerStart=index.indexOf(marker,gridStart);
+if(markerStart>=0 && markerStart<gridEnd) index=index.slice(0,markerStart)+marker+cards+index.slice(gridEnd);
+else index=index.slice(0,gridEnd)+marker+cards+index.slice(gridEnd);
 fs.writeFileSync(indexPath,index,"utf8");
 const sitemapPath=path.join(publicDir,"sitemap.xml");
 let sitemap=fs.readFileSync(sitemapPath,"utf8");
