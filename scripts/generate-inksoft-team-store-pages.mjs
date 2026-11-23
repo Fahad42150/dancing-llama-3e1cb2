@@ -328,7 +328,21 @@ const footer = extractBetween('<footer class="fjx-site-footer">', "</footer>", "
   .replaceAll('href="/#contact"', 'href="#contact"');
 const floating = extractBetween('<a id="fjx-book-now-sitewide"', "</a>", "floating Book Now CTA");
 const chat = extractBetween("<!--Start of Tawk.to Script-->", "<!--End of Tawk.to Script-->", "Tawk.to live chat");
-const media = extractBetween('<div class="hero-media-grid">', "</div>", "hero image and video");
+// Extract the complete media wrapper, including its nested image/video divs.
+const mediaStart = reference.indexOf('<div class="hero-media-grid">');
+if (mediaStart < 0) throw new Error("Hero image/video wrapper is missing from the InkSoft reference page");
+const divTokens = /<div\b[^>]*>|<\/div\s*>/gi;
+divTokens.lastIndex = mediaStart;
+let divDepth = 0;
+let mediaEnd = -1;
+let divToken;
+while ((divToken = divTokens.exec(reference)) !== null) {
+  if (/^<\/div/i.test(divToken[0])) divDepth--;
+  else divDepth++;
+  if (divDepth === 0) { mediaEnd = divTokens.lastIndex; break; }
+}
+if (mediaEnd < 0) throw new Error("Hero image/video wrapper has unbalanced div tags");
+const media = reference.slice(mediaStart, mediaEnd);
 if (!styles) throw new Error("Reference page CSS was not found");
 
 const escapeHtml = (value) => String(value).replaceAll("&", "&amp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;").replaceAll('"', "&quot;");
@@ -349,13 +363,15 @@ for (const [slug] of topics) {
 
 const pages = topics.map(([tail, title, description]) => {
   if (!tail || !title || !description) throw new Error("Missing topic data for " + String(tail));
-  const slug = "best-" + (tail.startsWith("best-") ? tail.slice(5) : tail) + "-services-usa-canada";
+  const normalizedTail = tail.replace(/^best-/, "").replace(/-services?$/, "");
+  const slug = "best-" + normalizedTail + "-services-usa-canada";
   const url = baseUrl + "/" + slug + "/";
   const schema = {
     "@context": "https://schema.org",
     "@graph": [
       {"@type":"Service","name":title,"serviceType":title,"description":description,"url":url,"provider":{"@type":"Organization","name":"FJX Studio","url":baseUrl+"/"},"areaServed":[{"@type":"Country","name":"United States"},{"@type":"Country","name":"Canada"}]},
-      {"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":baseUrl+"/"},{"@type":"ListItem","position":2,"name":"Services","item":baseUrl+"/services/"},{"@type":"ListItem","position":3,"name":title,"item":url}]}
+      {"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":baseUrl+"/"},{"@type":"ListItem","position":2,"name":"Services","item":baseUrl+"/services/"},{"@type":"ListItem","position":3,"name":title,"item":url}]},
+      {"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does this service include?","acceptedAnswer":{"@type":"Answer","text":description+" Scope, tools and deliverables are confirmed before work begins."}},{"@type":"Question","name":"Can FJX Studio support businesses in the USA and Canada?","acceptedAnswer":{"@type":"Answer","text":"Yes. FJX Studio provides remote support for businesses serving the United States and Canada. Working hours, access and project scope are agreed in advance."}},{"@type":"Question","name":"Which tools and platforms can be supported?","acceptedAnswer":{"@type":"Answer","text":"Tools and platforms depend on the project requirements and client access. The relevant tools are listed in the service description and verified during project scoping."}}]}
     ]
   };
   const pageTitle = "Best " + title + " in the USA and Canada | FJX Studio";
