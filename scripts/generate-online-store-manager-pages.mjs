@@ -108,6 +108,18 @@ if (!styles) throw new Error("Reference page CSS was not found");
 
 const escapeHtml = (value) => String(value).replaceAll("&", "&amp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;").replaceAll('"', "&quot;");
 const baseUrl = "https://www.fjxstudio.com";
+topics.forEach((topic, index) => {
+  if (!Array.isArray(topic) || topic.length !== 3 || topic.some(value => typeof value !== "string" || !value.trim())) {
+    throw new Error("Invalid online-store topic at index " + index + "; expected [slug, title, description].");
+  }
+});
+const topicSlugs = new Set();
+for (const [slug] of topics) {
+  if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(slug)) throw new Error("Invalid online-store topic slug: " + slug);
+  if (topicSlugs.has(slug)) throw new Error("Duplicate online-store topic slug: " + slug);
+  topicSlugs.add(slug);
+}
+
 const pages = topics.map(([tail, title, description]) => {
   const slug = "best-" + (tail.startsWith("best-") ? tail.slice(5) : tail) + "-services-usa-canada";
   const url = baseUrl + "/" + slug + "/";
