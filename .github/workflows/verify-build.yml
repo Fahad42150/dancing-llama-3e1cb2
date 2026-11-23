@@ -1,0 +1,31 @@
+name: Verify production build
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - name: Install dependencies
+        run: npm ci
+      - name: Check generator syntax
+        run: |
+          node --check scripts/generate-ecommerce-management-pages.mjs
+          node --check scripts/generate-online-store-manager-pages.mjs
+          node --check scripts/generate-inksoft-team-store-pages.mjs
+          node --check scripts/generate-virtual-assistant-website-guides.mjs
+          node --check scripts/generate-virtual-assistant-pages.mjs
+          node --check scripts/generate-virtual-assistant-blogs.mjs
+      - name: Run production build
+        run: npm run build
