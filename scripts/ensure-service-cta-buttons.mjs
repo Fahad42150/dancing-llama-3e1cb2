@@ -25,29 +25,29 @@ for (const entry of fs.readdirSync(root, { withFileTypes: true })) {
   if (!fs.existsSync(file)) continue;
 
   let html = fs.readFileSync(file, "utf8");
-  if (!/<main\\b/i.test(html)) { skipped++; continue; }
+  if (!/<main\b/i.test(html)) { skipped++; continue; }
   if (/id=["']fjx-service-primary-cta["']/.test(html)) { alreadyHasCta++; continue; }
 
-  const mainMatch = html.match(/<main\\b[^>]*>([\\s\\S]*?)<\\/main>/i);
+  const mainMatch = html.match(/<main\b[^>]*>([\s\S]*?)<\/main>/i);
   if (!mainMatch) { skipped++; continue; }
   const main = mainMatch[1];
 
   const hasPrimaryCta =
-    /<a\\b[^>]*class=["'][^"']*(?:\\bcta\\b|\\bbtn\\b|\\bbutton\\b|fjx-price-cta)[^"']*["'][^>]*>/i.test(main) ||
-    /<a\\b[^>]*href=["'](?:#contact|\\/contact\\/?)(?:["'])[^>]*>[^<]*(?:request|contact|discuss|get started|book|start|talk|quote|consult)/i.test(main);
+    /<a\b[^>]*class=["'][^"']*(?:\bcta\b|\bbtn\b|\bbutton\b|fjx-price-cta)[^"']*["'][^>]*>/i.test(main) ||
+    /<a\b[^>]*href=["'](?:#contact|\/contact\/?)(?:["'])[^>]*>[^<]*(?:request|contact|discuss|get started|book|start|talk|quote|consult)/i.test(main);
 
   if (hasPrimaryCta) { alreadyHasCta++; continue; }
 
-  const h1 = html.match(/<h1\\b[^>]*>([\\s\\S]*?)<\\/h1>/i);
+  const h1 = html.match(/<h1\b[^>]*>([\s\S]*?)<\/h1>/i);
   const pageTitle = (h1?.[1] || entry.name.replace(/-/g, " "))
     .replace(/<[^>]+>/g, " ")
     .replace(/&amp;/g, "&")
     .replace(/&#39;/g, "'")
     .replace(/&quot;/g, '"')
-    .replace(/\\s+/g, " ")
+    .replace(/\s+/g, " ")
     .trim();
 
-  const contactAnchor = /<section\\b[^>]*id=["']contact["'][^>]*>/i.test(main);
+  const contactAnchor = /<section\b[^>]*id=["']contact["'][^>]*>/i.test(main);
   const destination = contactAnchor ? "#contact" : "/contact/";
   const cta = `
 <section id="fjx-service-primary-cta" class="fjx-service-primary-cta" aria-label="Discuss this service">
@@ -60,14 +60,14 @@ for (const entry of fs.readdirSync(root, { withFileTypes: true })) {
 
   let updatedMain;
   if (contactAnchor) {
-    updatedMain = main.replace(/<section\\b[^>]*id=["']contact["'][^>]*>/i, cta + "\\n$&");
+    updatedMain = main.replace(/<section\b[^>]*id=["']contact["'][^>]*>/i, cta + "\n$&");
   } else {
-    updatedMain = main + "\\n" + cta + "\\n";
+    updatedMain = main + "\n" + cta + "\n";
   }
   html = html.replace(mainMatch[0], mainMatch[0].replace(main, updatedMain));
 
   if (!/id=["']fjx-service-primary-cta-style["']/.test(html)) {
-    html = html.replace(/<\\/head>/i, STYLE + "\\n</head>");
+    html = html.replace(/<\/head>/i, STYLE + "\n</head>");
   }
 
   fs.writeFileSync(file, html);
