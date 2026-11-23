@@ -167,7 +167,7 @@ s0.parentNode.insertBefore(s1,s0);
 
 <style id="fjx-services-page-unified-button-system">
 /* Unified service-link button system: covers every linked card in every service grid. */
-main .section .grid,
+main .grid,
 main .fjx-featured-service-section .fjx-featured-button-grid {
   display:grid !important;
   grid-template-columns:repeat(3,minmax(0,1fr)) !important;
@@ -175,7 +175,7 @@ main .fjx-featured-service-section .fjx-featured-button-grid {
   align-items:stretch !important;
   gap:16px !important;
 }
-main .section .grid > a,
+main .grid > a,
 main .fjx-featured-service-section .fjx-featured-button-grid > a {
   box-sizing:border-box !important;
   display:flex !important;
@@ -205,7 +205,7 @@ main .fjx-featured-service-section .fjx-featured-button-grid > a {
   box-shadow:0 2px 8px rgba(32,35,38,.05) !important;
   transition:background-color .18s ease,border-color .18s ease,box-shadow .18s ease,transform .18s ease !important;
 }
-main .section .grid > a > span:first-child,
+main .grid > a > span:first-child,
 main .fjx-featured-service-section .fjx-featured-button-grid > a > span:first-child {
   display:block !important;
   flex:1 1 auto !important;
@@ -216,7 +216,7 @@ main .fjx-featured-service-section .fjx-featured-button-grid > a > span:first-ch
   overflow-wrap:anywhere !important;
   word-break:normal !important;
 }
-main .section .grid > a > span:last-child,
+main .grid > a > span:last-child,
 main .fjx-featured-service-section .fjx-featured-button-grid > a > span:last-child {
   display:inline-flex !important;
   flex:0 0 22px !important;
@@ -231,7 +231,7 @@ main .fjx-featured-service-section .fjx-featured-button-grid > a > span:last-chi
   font-size:20px !important;
   line-height:1 !important;
 }
-main .section .grid > a:hover,
+main .grid > a:hover,
 main .fjx-featured-service-section .fjx-featured-button-grid > a:hover {
   border-color:#9fce79 !important;
   background:#f6faef !important;
@@ -239,27 +239,27 @@ main .fjx-featured-service-section .fjx-featured-button-grid > a:hover {
   box-shadow:0 8px 20px rgba(32,35,38,.09) !important;
   transform:translateY(-2px);
 }
-main .section .grid > a:focus-visible,
+main .grid > a:focus-visible,
 main .fjx-featured-service-section .fjx-featured-button-grid > a:focus-visible {
   outline:3px solid #679d37 !important;
   outline-offset:3px !important;
   box-shadow:0 0 0 5px rgba(103,157,55,.12) !important;
 }
 @media (max-width:900px) {
-  main .section .grid,
+  main .grid,
   main .fjx-featured-service-section .fjx-featured-button-grid {
     grid-template-columns:repeat(2,minmax(0,1fr)) !important;
     gap:14px !important;
   }
 }
 @media (max-width:600px) {
-  main .section .grid,
+  main .grid,
   main .fjx-featured-service-section .fjx-featured-button-grid {
     grid-template-columns:minmax(0,1fr) !important;
     grid-auto-rows:auto;
     gap:11px !important;
   }
-  main .section .grid > a,
+  main .grid > a,
   main .fjx-featured-service-section .fjx-featured-button-grid > a {
     min-height:62px !important;
     height:auto !important;
@@ -268,11 +268,11 @@ main .fjx-featured-service-section .fjx-featured-button-grid > a:focus-visible {
   }
 }
 @media (prefers-reduced-motion:reduce) {
-  main .section .grid > a,
+  main .grid > a,
   main .fjx-featured-service-section .fjx-featured-button-grid > a {
     transition:none !important;
   }
-  main .section .grid > a:hover,
+  main .grid > a:hover,
   main .fjx-featured-service-section .fjx-featured-button-grid > a:hover {
     transform:none;
   }
