@@ -97,22 +97,22 @@ function html(k) {
 <script type="text/javascript">var Tawk_API=Tawk_API||{},Tawk_LoadStart=new Date();(function(){var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];s1.async=true;s1.src="https://embed.tawk.to/6afdc8e5723f713cce6b7ad0/1k7nlhgh1";s1.charset="UTF-8";s1.setAttribute("crossorigin","*");s0.parentNode.insertBefore(s1,s0);})();</script></body></html>`;
 }
 
-const publicDir=path.resolve("public"), blogDir=publicDir;
-fs.mkdirSync(blogDir,{recursive:true});
-const indexPath=path.join(blogDir,"index.html");
-let index=fs.readFileSync(indexPath,"utf8");
-const marker="<!-- virtual-assistant-keyword-blogs -->";
-const cards=keywords.map(k=>{const s=slug(k),t=title(k);return '<article class="item"><h2><a href="/'+s+'/">'+esc(t)+': A Practical Guide</a></h2><p>A practical guide to '+esc(k)+', including role scope, workflow planning, security and provider evaluation.</p><a class="read" href="/'+s+'/">Read blog →</a></article>';}).join("");
-const gridStart=index.indexOf('<div class="grid">');
-const gridEnd=gridStart===-1 ? -1 : index.indexOf("</div></section>",gridStart);
-if(gridStart===-1 || gridEnd===-1) throw new Error("Could not find the existing blog listing grid in public/blog/index.html");
-const markerStart=index.indexOf(marker,gridStart);
-if(markerStart>=0 && markerStart<gridEnd) index=index.slice(0,markerStart)+marker+cards+index.slice(gridEnd);
-else index=index.slice(0,gridEnd)+marker+cards+index.slice(gridEnd);
-fs.writeFileSync(indexPath,index,"utf8");
+const publicDir=path.resolve("public"), pageRoot=publicDir;
+fs.mkdirSync(pageRoot,{recursive:true});
+const servicesPath=path.join(publicDir,"services","index.html");
+if (!fs.existsSync(servicesPath)) throw new Error("Existing services index not found: "+servicesPath);
+let servicesIndex=fs.readFileSync(servicesPath,"utf8");
+const marker="<!-- virtual-assistant-website-service-guides -->";
+const cards=keywords.map(k=>{const s=slug(k),t=title(k);return '<article class="item"><h3><a href="/'+s+'/">'+esc(t)+'</a></h3><p>Explore this guide to '+esc(k)+', including platform research, service options, workflow planning and practical considerations.</p><a class="read" href="/'+s+'/">View guide →</a></article>';}).join("");
+const section=marker+'<section class="section"><div class="wrap"><h2>Virtual Assistant Websites and Platforms</h2><p class="lead">Explore our guides to virtual assistant websites, freelance platforms, personal assistant sites and website assistant tools.</p><div class="grid">'+cards+'</div></div></section>';
+const existing=servicesIndex.indexOf(marker);
+if(existing>=0){const next=servicesIndex.indexOf("</section>",existing);servicesIndex=servicesIndex.slice(0,existing)+section+servicesIndex.slice(next>=0?next+10:existing+marker.length);}
+else if(servicesIndex.includes("</main>")) servicesIndex=servicesIndex.replace("</main>",section+"</main>");
+else throw new Error("Could not locate insertion point in services index");
+fs.writeFileSync(servicesPath,servicesIndex,"utf8");
 const sitemapPath=path.join(publicDir,"sitemap.xml");
 let sitemap=fs.readFileSync(sitemapPath,"utf8");
 for(const k of keywords){const u=base+"/"+slug(k)+"/";if(!sitemap.includes("<loc>"+u+"</loc>"))sitemap=sitemap.replace("</urlset>",'  <url><loc>'+u+'</loc><lastmod>'+date+'</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>\n</urlset>');}
 fs.writeFileSync(sitemapPath,sitemap,"utf8");
-for(const k of keywords){const d=path.join(blogDir,slug(k));fs.mkdirSync(d,{recursive:true});fs.writeFileSync(path.join(d,"index.html"),html(k),"utf8");}
+for(const k of keywords){const d=path.join(pageRoot,slug(k));fs.mkdirSync(d,{recursive:true});fs.writeFileSync(path.join(d,"index.html"),html(k),"utf8");}
 console.log("Generated "+keywords.length+" virtual assistant website guide pages.");
