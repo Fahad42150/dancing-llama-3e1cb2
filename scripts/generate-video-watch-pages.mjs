@@ -84,7 +84,7 @@ function discoverVideos(files) {
         continue;
       }
       const baseSlug = slugify(title) || "video";
-      const slug = frameIndex > 1 ? baseSlug + "-" + id.toLowerCase() : baseSlug;
+      const slug = baseSlug + "-" + id.toLowerCase();
       found.set(id, { id, slug, title, description, sourceUrl: pageUrl });
     }
   }
