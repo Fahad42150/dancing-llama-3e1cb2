@@ -3,6 +3,16 @@
   publish = "dist"
 
 [[redirects]]
+  from = "/service"
+  to = "/services/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/service/"
+  to = "/services/index.html"
+  status = 200
+
+[[redirects]]
   from = "/blog/2026-usa-canada-company-operations-trade-uncertainty-and-customer-service/"
   to = "/blog/2026-usa-canada-company-operations-trade-uncertainty-and-customer-service/index.html"
   status = 200
