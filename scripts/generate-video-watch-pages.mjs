@@ -65,7 +65,8 @@ function discoverVideos(files) {
     const html = fs.readFileSync(file, "utf8");
     const pageTitle = plain((html.match(/<title\b[^>]*>([\s\S]*?)<\/title>/i) || [])[1]);
     const pageDescription = plain(metaContent(html, "description"));
-    const pageUrl = SITE + "/" + path.relative(PUBLIC, path.dirname(file)).split(path.sep).filter(Boolean).join("/") + "/";
+    const relativeDirectory = path.relative(PUBLIC, path.dirname(file));
+    const pageUrl = file === rootIndex || relativeDirectory === "." ? SITE + "/" : SITE + "/" + relativeDirectory.split(path.sep).filter(Boolean).join("/") + "/";
     const frames = html.match(/<iframe\b[^>]*>/gi) || [];
     let frameIndex = 0;
     for (const frame of frames) {
