@@ -66,10 +66,10 @@ main .links a:focus-visible {
   box-shadow: 0 0 0 5px rgba(103, 157, 55, .12);
 }
 @media (max-width: 900px) {
-  main main .links { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; gap: 12px !important; }
+  main .links { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; gap: 12px !important; }
 }
 @media (max-width: 600px) {
-  main main .links { grid-template-columns: minmax(0, 1fr) !important; grid-auto-rows: auto; gap: 10px !important; }
+  main .links { grid-template-columns: minmax(0, 1fr) !important; grid-auto-rows: auto; gap: 10px !important; }
   main .links a { min-height: 60px; height: auto; padding: 14px 16px !important; }
 }
 @media (prefers-reduced-motion: reduce) {
