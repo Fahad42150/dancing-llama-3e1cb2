@@ -3272,7 +3272,7 @@ const keywordExpansion = [
         "Check scheduled and published posts, flag errors and provide a simple publishing activity report."
       ]
     ]
-  }
+  },
   {
     "key": "bookkeeping-cleanup-catch-up-services",
     "name": "Bookkeeping",
