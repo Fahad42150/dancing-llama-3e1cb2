@@ -2683,6 +2683,285 @@ const keywordExpansion = [
         "Maintain update logs, review agreed catalog fields on a schedule and report recurring data issues or channel mismatches."
       ]
     ]
+  },
+  {
+    "key": "virtual-assistant-data-entry-services",
+    "name": "Virtual Assistant",
+    "prefix": "virtual-assistant",
+    "generalUrl": "/virtual-assistant-services/",
+    "serviceName": "Virtual Assistant Data Entry Services",
+    "shortDescription": "Accurate remote data entry services for businesses, including spreadsheet data entry, database updates, CRM records, product information, document conversion, data cleanup and routine administrative record keeping.",
+    "audience": "US and Canadian small businesses, entrepreneurs, agencies, online retailers and busy teams seeking dependable remote data entry support",
+    "cards": [
+      [
+        "Spreadsheet and database data entry",
+        "Enter and update information in Excel, Google Sheets, databases and business systems using client-provided sources and formatting rules."
+      ],
+      [
+        "CRM and contact data updates",
+        "Add and update contact, company and lead records, check required fields and flag possible duplicates."
+      ],
+      [
+        "Document and PDF data processing",
+        "Transfer information from approved PDFs, forms and documents into structured spreadsheets or databases and identify unreadable entries."
+      ],
+      [
+        "Data cleanup and formatting",
+        "Standardize dates, names, categories and formats, remove confirmed duplicates and flag missing or conflicting records."
+      ],
+      [
+        "Quality checks and progress reporting",
+        "Use agreed validation steps, maintain source references where needed and provide completion reports with unresolved exceptions."
+      ]
+    ]
+  },
+  {
+    "key": "general-virtual-assistant-administrative-support",
+    "name": "Virtual Assistant",
+    "prefix": "virtual-assistant",
+    "generalUrl": "/virtual-assistant-services/",
+    "serviceName": "General Virtual Assistant & Administrative Support Services",
+    "shortDescription": "Remote general virtual assistant services for everyday business administration, document preparation, file organization, task tracking, online research, data entry and recurring back-office support.",
+    "audience": "Small business owners, consultants, entrepreneurs, professional service firms and growing teams across the USA and Canada",
+    "cards": [
+      [
+        "Daily administrative assistance",
+        "Handle agreed recurring admin tasks, prepare documents, update records and organize routine business information."
+      ],
+      [
+        "File and document organization",
+        "Maintain shared folders, rename and organize files, format documents and keep working records easy to find."
+      ],
+      [
+        "Task and deadline tracking",
+        "Update task boards, monitor due dates, record action items and send reminders based on the client's workflow."
+      ],
+      [
+        "Online research and information gathering",
+        "Collect requested public information, compare options and organize findings with source links for review."
+      ],
+      [
+        "Remote coordination and reporting",
+        "Provide clear daily or weekly updates, track pending requests and escalate items that require client decisions."
+      ]
+    ]
+  },
+  {
+    "key": "virtual-assistant-email-calendar-management",
+    "name": "Virtual Assistant",
+    "prefix": "virtual-assistant",
+    "generalUrl": "/virtual-assistant-services/",
+    "serviceName": "Virtual Assistant Email & Calendar Management Services",
+    "shortDescription": "Remote email and calendar management support for inbox organization, message triage, appointment scheduling, meeting coordination, reminders, follow-ups and daily schedule administration.",
+    "audience": "Business owners, executives, consultants, real estate professionals and distributed teams needing remote scheduling support",
+    "cards": [
+      [
+        "Inbox organization and triage",
+        "Sort messages into agreed folders or labels, flag priorities and prepare draft replies using approved response guidance."
+      ],
+      [
+        "Calendar and appointment scheduling",
+        "Coordinate meeting times, invitations and calendar updates according to availability and scheduling rules."
+      ],
+      [
+        "Meeting preparation and follow-up",
+        "Prepare agendas, collect relevant documents, record action items and send approved follow-up reminders."
+      ],
+      [
+        "Deadline and reminder management",
+        "Track important dates, recurring tasks and follow-ups and notify the responsible person before deadlines."
+      ],
+      [
+        "Confidentiality and access practices",
+        "Use client-approved accounts and permissions, follow information-handling procedures and escalate sensitive messages for owner review."
+      ]
+    ]
+  },
+  {
+    "key": "virtual-assistant-customer-service-support",
+    "name": "Virtual Assistant",
+    "prefix": "virtual-assistant",
+    "generalUrl": "/virtual-assistant-services/",
+    "serviceName": "Virtual Assistant Customer Service & Support Services",
+    "shortDescription": "Remote customer service virtual assistant support for email, live chat, helpdesk tickets, customer questions, order status requests, appointment inquiries, returns coordination and service follow-ups.",
+    "audience": "Online stores, service businesses, agencies and small companies serving customers in the United States and Canada",
+    "cards": [
+      [
+        "Email and ticket support",
+        "Monitor assigned inboxes or helpdesk queues, categorize requests and respond using approved support procedures."
+      ],
+      [
+        "Live chat and customer inquiries",
+        "Answer routine questions, share approved information and route complex or sensitive cases to the right team member."
+      ],
+      [
+        "Order and appointment follow-ups",
+        "Check permitted order or booking information, provide status updates and coordinate next steps under client policies."
+      ],
+      [
+        "Returns and complaint coordination",
+        "Record customer concerns, collect required details and escalate refund, replacement or exception decisions for authorization."
+      ],
+      [
+        "Customer records and service reporting",
+        "Update CRM or support records, track unresolved cases and report recurring questions and response trends."
+      ]
+    ]
+  },
+  {
+    "key": "virtual-assistant-lead-generation-crm-management",
+    "name": "Virtual Assistant",
+    "prefix": "virtual-assistant",
+    "generalUrl": "/virtual-assistant-services/",
+    "serviceName": "Virtual Assistant Lead Generation & CRM Management Services",
+    "shortDescription": "Remote lead generation and CRM virtual assistant support for prospect research, business contact list building, data enrichment, CRM updates, pipeline administration, follow-up tracking and appointment coordination.",
+    "audience": "B2B companies, consultants, agencies, sales teams and service businesses seeking organized prospecting support",
+    "cards": [
+      [
+        "Prospect and company research",
+        "Identify potential businesses or contacts using client-defined criteria and publicly available business information."
+      ],
+      [
+        "Lead list building and data entry",
+        "Build structured prospect lists with relevant company details, role information and source notes."
+      ],
+      [
+        "CRM data management",
+        "Create and update contact records, apply agreed tags, record interactions and maintain pipeline fields."
+      ],
+      [
+        "Lead follow-up and appointment coordination",
+        "Track assigned follow-ups, send client-approved outreach and coordinate meeting availability."
+      ],
+      [
+        "Pipeline hygiene and reporting",
+        "Identify incomplete or stale records, maintain activity notes and prepare regular pipeline summaries for the sales owner."
+      ]
+    ]
+  },
+  {
+    "key": "virtual-assistant-online-research-services",
+    "name": "Virtual Assistant",
+    "prefix": "virtual-assistant",
+    "generalUrl": "/virtual-assistant-services/",
+    "serviceName": "Virtual Assistant Online Research & Data Collection Services",
+    "shortDescription": "Remote online research services for competitor research, market research, supplier and product research, contact research, information gathering, data collection and organized research summaries with source links.",
+    "audience": "Entrepreneurs, consultants, agencies, researchers, online retailers and business teams needing structured online research",
+    "cards": [
+      [
+        "Market and competitor research",
+        "Collect public information about competitors, offerings, positioning and visible customer-facing details."
+      ],
+      [
+        "Supplier and product research",
+        "Research potential suppliers, products, specifications and publicly listed business terms for client comparison."
+      ],
+      [
+        "Contact and company research",
+        "Find relevant publicly available company and professional contact details based on agreed prospect criteria."
+      ],
+      [
+        "Data collection and source tracking",
+        "Organize findings in spreadsheets or documents with source URLs, dates checked and notes on missing information."
+      ],
+      [
+        "Research summaries and handover",
+        "Prepare concise comparison tables and findings summaries while separating verified facts from observations."
+      ]
+    ]
+  },
+  {
+    "key": "virtual-assistant-social-media-management",
+    "name": "Virtual Assistant",
+    "prefix": "virtual-assistant",
+    "generalUrl": "/virtual-assistant-services/",
+    "serviceName": "Virtual Assistant Social Media Management Services",
+    "shortDescription": "Remote social media virtual assistant support for content scheduling, post formatting, caption preparation, community inbox monitoring, comment moderation, content calendars and performance reporting.",
+    "audience": "Small businesses, creators, consultants, online brands and agencies seeking consistent social media administration",
+    "cards": [
+      [
+        "Content calendar and scheduling",
+        "Organize approved posts in a content calendar and schedule them using the client's selected social platforms or tools."
+      ],
+      [
+        "Post formatting and publishing",
+        "Format supplied captions and creative assets, add approved links and publish or schedule content with authorization."
+      ],
+      [
+        "Community and inbox monitoring",
+        "Monitor assigned comments and messages, respond to routine inquiries using approved guidance and escalate sensitive issues."
+      ],
+      [
+        "Engagement and moderation support",
+        "Review comments, hide or report content only under the client's moderation rules and maintain an activity log."
+      ],
+      [
+        "Performance reporting",
+        "Collect available post and account metrics and prepare regular summaries without promising follower or engagement growth."
+      ]
+    ]
+  },
+  {
+    "key": "virtual-assistant-bookkeeping-invoice-administration",
+    "name": "Virtual Assistant",
+    "prefix": "virtual-assistant",
+    "generalUrl": "/virtual-assistant-services/",
+    "serviceName": "Virtual Assistant Bookkeeping & Invoice Administration Support",
+    "shortDescription": "Remote bookkeeping administration support for invoice preparation, expense data entry, receipt organization, accounts payable and receivable tracking, payment reminders and records preparation for a business owner or accountant.",
+    "audience": "Small businesses, independent professionals, consultants and growing companies needing organized finance administration",
+    "cards": [
+      [
+        "Invoice preparation and tracking",
+        "Prepare invoices from approved details, maintain invoice logs and track due dates for owner review."
+      ],
+      [
+        "Expense and receipt data entry",
+        "Enter supplied expense information, organize receipts and categorize records according to the client's chart or instructions."
+      ],
+      [
+        "Accounts receivable follow-up",
+        "Track outstanding invoices and prepare or send approved payment reminders using the client's policies."
+      ],
+      [
+        "Accounts payable administration",
+        "Organize supplier invoices, record due dates and prepare payment lists without independently authorizing payments."
+      ],
+      [
+        "Bookkeeping records and accountant handover",
+        "Maintain supporting documents and structured records for review by the business owner or qualified accounting professional."
+      ]
+    ]
+  },
+  {
+    "key": "virtual-executive-assistant-project-coordination",
+    "name": "Virtual Assistant",
+    "prefix": "virtual-assistant",
+    "generalUrl": "/virtual-assistant-services/",
+    "serviceName": "Virtual Executive Assistant & Project Coordination Services",
+    "shortDescription": "Remote executive assistant and project coordination services for calendar support, meeting preparation, action item tracking, travel research, project updates, vendor follow-ups and organized executive administration.",
+    "audience": "Founders, executives, consultants, agency owners and distributed teams across the USA and Canada",
+    "cards": [
+      [
+        "Executive calendar and meeting support",
+        "Coordinate calendars, schedule meetings, prepare agendas and organize meeting materials based on executive preferences."
+      ],
+      [
+        "Meeting notes and action tracking",
+        "Capture agreed notes, assign action owners and monitor follow-up dates in the client's project tools."
+      ],
+      [
+        "Project and task coordination",
+        "Update project boards, check milestone progress and remind contributors about agreed deadlines."
+      ],
+      [
+        "Travel and vendor research",
+        "Research travel options, prepare itinerary comparisons and coordinate vendor communications for approval."
+      ],
+      [
+        "Executive reporting and communication",
+        "Prepare status summaries, organize documents and route time-sensitive items to the executive for decisions."
+      ]
+    ]
   }];
 
 for (const item of keywordExpansion) {
@@ -2849,7 +3128,7 @@ if (fs.existsSync(servicesPath)) {
   ).join("");
   const section = marker +
     '<section class="section"><div class="wrap"><h2>Platform Store and Print-Shop Services — USA &amp; Canada</h2>' +
-    '<p class="lead">Explore eCommerce product catalog management, product listing, bulk upload and data entry services, alongside Shopify, WordPress, WooCommerce and platform-specific store support, with country-specific pages for the United States and Canada.</p>' +
+    '<p class="lead">Explore virtual assistant services for data entry, administration, email and calendar management, customer support, lead generation, online research, social media, bookkeeping administration and executive assistance, alongside eCommerce and website support, with country-specific pages for the United States and Canada.</p>' +
     '<div class="grid">' + cards + '</div></div></section>';
   const markerIndex = services.indexOf(marker);
   if (markerIndex >= 0) {
