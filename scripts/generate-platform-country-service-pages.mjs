@@ -2435,6 +2435,99 @@ const keywordExpansion = [
         "Test key order and failure scenarios, document dependencies and provide a maintainable handover."
       ]
     ]
+  },
+  {
+    "key": "shopify-virtual-assistant-services",
+    "name": "Shopify",
+    "prefix": "shopify",
+    "generalUrl": "/shopify-store-management/",
+    "serviceName": "Shopify Virtual Assistant & Remote Store Management Services",
+    "shortDescription": "Remote Shopify virtual assistant services for day-to-day store administration, product listings, order updates, inventory records, customer inquiries, catalog maintenance and operational follow-up.",
+    "audience": "Shopify store owners, DTC brands, online retailers and eCommerce teams seeking reliable remote administrative support",
+    "cards": [
+      [
+        "Product listing and catalog assistance",
+        "Upload and update supplied product details, descriptions, images, variants, tags and collections using the store's approved catalog standards."
+      ],
+      [
+        "Order and fulfillment coordination",
+        "Review order information, update permitted statuses, follow tracking details and route fulfillment exceptions to the merchant's team."
+      ],
+      [
+        "Inventory and stock updates",
+        "Maintain approved stock records, flag low-stock items and reconcile supplied inventory information without making purchasing decisions."
+      ],
+      [
+        "Customer service administration",
+        "Organize customer inquiries, prepare or send approved email and chat responses, and track unresolved cases using the client's policies."
+      ],
+      [
+        "Store maintenance and daily reporting",
+        "Complete recurring storefront checks, update approved content and provide task logs, pending items and escalation notes."
+      ]
+    ]
+  },
+  {
+    "key": "wordpress-virtual-assistant-services",
+    "name": "WordPress",
+    "prefix": "wordpress",
+    "generalUrl": "/wordpress-website-management/",
+    "serviceName": "WordPress Virtual Assistant & Remote Website Management Services",
+    "shortDescription": "Remote WordPress virtual assistant support for website content updates, blog publishing, page edits, media uploads, WooCommerce administration, plugin update coordination and routine website checks.",
+    "audience": "Small businesses, agencies, publishers, professional services firms and WooCommerce store owners needing remote website support",
+    "cards": [
+      [
+        "Website content and page updates",
+        "Edit approved page content, format headings, update images, maintain links and make routine changes within the existing WordPress setup."
+      ],
+      [
+        "Blog publishing and media uploads",
+        "Format supplied articles, add featured images, organize media, apply categories and tags, and schedule posts with authorization."
+      ],
+      [
+        "WooCommerce product and order administration",
+        "Assist with product information, catalog updates, order record checks and customer follow-up within the client's procedures."
+      ],
+      [
+        "Plugin, theme and website maintenance coordination",
+        "Track available updates, follow the agreed backup and staging process, and escalate technical or compatibility issues when needed."
+      ],
+      [
+        "Website checks and task reporting",
+        "Review key pages, forms and navigation, maintain a task list and provide regular summaries of completed work and outstanding issues."
+      ]
+    ]
+  },
+  {
+    "key": "remote-ecommerce-virtual-assistant-services",
+    "name": "Remote eCommerce",
+    "prefix": "remote",
+    "generalUrl": "/shopify-store-management/",
+    "serviceName": "Remote eCommerce Virtual Assistant Services",
+    "shortDescription": "Remote eCommerce virtual assistant support for Shopify, WooCommerce and online store operations, including product data, order administration, inventory updates, customer support, research and recurring back-office tasks.",
+    "audience": "Online retailers, growing eCommerce brands, small business owners and agencies looking for flexible remote operations assistance",
+    "cards": [
+      [
+        "Multi-platform store administration",
+        "Support agreed daily tasks across Shopify, WooCommerce and connected store tools using documented processes and client-controlled access."
+      ],
+      [
+        "Product data and catalog maintenance",
+        "Organize product information, images, descriptions, categories, SKUs and approved catalog changes across selected channels."
+      ],
+      [
+        "Order, shipping and returns follow-up",
+        "Track order status, delivery questions and return requests, then route exceptions and approval decisions to the responsible merchant."
+      ],
+      [
+        "Customer inbox and administrative support",
+        "Organize email and chat inquiries, maintain customer records, update spreadsheets and follow approved response templates."
+      ],
+      [
+        "Remote coordination and reporting",
+        "Maintain task boards, spreadsheets, recurring checklists and handover notes, with clear working hours and escalation contacts."
+      ]
+    ]
   }];
 
 for (const item of keywordExpansion) {
@@ -2601,7 +2694,7 @@ if (fs.existsSync(servicesPath)) {
   ).join("");
   const section = marker +
     '<section class="section"><div class="wrap"><h2>Platform Store and Print-Shop Services — USA &amp; Canada</h2>' +
-    '<p class="lead">Explore dedicated Shopify, WordPress and WooCommerce setup, design, development, migration and store administration services, alongside platform-specific print-shop support, with country-specific pages for the United States and Canada.</p>' +
+    '<p class="lead">Explore Shopify and WordPress virtual assistant services, remote eCommerce operations, store setup, design, development, migration and administration, alongside platform-specific print-shop support, with country-specific pages for the United States and Canada.</p>' +
     '<div class="grid">' + cards + '</div></div></section>';
   const markerIndex = services.indexOf(marker);
   if (markerIndex >= 0) {
