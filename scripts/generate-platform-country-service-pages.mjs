@@ -2528,6 +2528,161 @@ const keywordExpansion = [
         "Maintain task boards, spreadsheets, recurring checklists and handover notes, with clear working hours and escalation contacts."
       ]
     ]
+  },
+  {
+    "key": "ecommerce-product-catalog-management",
+    "name": "eCommerce",
+    "prefix": "ecommerce",
+    "generalUrl": "/ecommerce-product-catalog-management/",
+    "serviceName": "eCommerce Product Catalog Management Services",
+    "shortDescription": "Professional eCommerce product catalog management services for organizing, creating, updating and maintaining accurate product information across online stores and marketplaces. Support includes product data entry, catalog organization, bulk uploads, variants, SKUs, images and ongoing catalog updates.",
+    "audience": "US and Canadian online retailers, eCommerce brands, wholesalers, distributors, marketplace sellers and growing product businesses",
+    "cards": [
+      [
+        "Product catalog setup and organization",
+        "Create and organize product records, categories, collections, attributes, options and product relationships using client-supplied information."
+      ],
+      [
+        "Product data entry and enrichment",
+        "Enter and standardize product titles, descriptions, specifications, dimensions, materials, identifiers and other verified product details."
+      ],
+      [
+        "SKU, variants and attributes management",
+        "Organize SKUs, barcodes, sizes, colors, product options and variant relationships using the merchant's catalog rules."
+      ],
+      [
+        "Product images and media management",
+        "Upload and organize supplied product photos, documents and media; prepare descriptive alt text and flag missing assets."
+      ],
+      [
+        "Ongoing catalog maintenance",
+        "Update approved product information, pricing and availability fields, identify duplicates and maintain change logs across the agreed catalog."
+      ]
+    ]
+  },
+  {
+    "key": "ecommerce-product-listing-services",
+    "name": "eCommerce",
+    "prefix": "ecommerce",
+    "generalUrl": "/ecommerce-product-catalog-management/",
+    "serviceName": "eCommerce Product Listing Services",
+    "shortDescription": "eCommerce product listing services for creating, editing and maintaining product pages on online stores and marketplaces, including titles, descriptions, images, categories, attributes, variants and listing quality checks.",
+    "audience": "Online store owners, marketplace sellers, retailers, manufacturers and brands selling products online in the United States and Canada",
+    "cards": [
+      [
+        "Product listing creation",
+        "Build product listings from approved supplier sheets, product documents, spreadsheets, images and merchant-provided details."
+      ],
+      [
+        "Product titles and descriptions",
+        "Format clear, accurate product titles, descriptions, feature bullets and specifications based on verified source information."
+      ],
+      [
+        "Categories and product attributes",
+        "Map products to relevant categories and complete required attributes, specifications, tags and product types."
+      ],
+      [
+        "Images, variations and pricing fields",
+        "Upload supplied images and configure approved variants, options, SKU details and price fields."
+      ],
+      [
+        "Listing review and corrections",
+        "Check listings for missing fields, inconsistent data, duplicate records, image issues and platform-specific upload errors."
+      ]
+    ]
+  },
+  {
+    "key": "ecommerce-bulk-product-upload",
+    "name": "eCommerce",
+    "prefix": "ecommerce",
+    "generalUrl": "/ecommerce-product-catalog-management/",
+    "serviceName": "Bulk eCommerce Product Upload & Data Import Services",
+    "shortDescription": "Bulk product upload services for eCommerce stores and marketplaces, including CSV and spreadsheet product imports, product data mapping, variant setup, image assignment, SKU checks and post-upload validation.",
+    "audience": "Retailers, marketplace sellers, wholesalers and eCommerce businesses launching or updating large product catalogs",
+    "cards": [
+      [
+        "Bulk product data preparation",
+        "Review product spreadsheets and source files, identify required fields and prepare clean import templates for the selected platform."
+      ],
+      [
+        "CSV and spreadsheet imports",
+        "Map columns and product fields, prepare CSV or XLSX data and coordinate bulk imports using the platform's supported workflow."
+      ],
+      [
+        "Variant and SKU mapping",
+        "Match product options, parent and child variants, SKUs, barcodes and attributes to the correct catalog records."
+      ],
+      [
+        "Image and category assignment",
+        "Organize supplied image files and map products to the agreed categories, collections and media assets."
+      ],
+      [
+        "Import validation and error correction",
+        "Review import results, check sample records, identify failed rows and correct agreed data issues before final handover."
+      ]
+    ]
+  },
+  {
+    "key": "ecommerce-product-data-entry",
+    "name": "eCommerce",
+    "prefix": "ecommerce",
+    "generalUrl": "/ecommerce-product-catalog-management/",
+    "serviceName": "eCommerce Product Data Entry Services",
+    "shortDescription": "eCommerce product data entry services for entering, checking and organizing product information from supplier catalogs, manufacturer files, spreadsheets, PDFs and approved source materials into online stores and marketplaces.",
+    "audience": "Online retailers, wholesalers, distributors, manufacturers, marketplace sellers and eCommerce agencies",
+    "cards": [
+      [
+        "Product information entry",
+        "Enter product names, descriptions, specifications, dimensions, materials, identifiers and other supplied details accurately."
+      ],
+      [
+        "Supplier catalog data processing",
+        "Transfer verified product information from supplier spreadsheets, catalogs, PDFs and approved source documents into structured records."
+      ],
+      [
+        "SKU and attribute data management",
+        "Record SKUs, barcodes, product codes, categories, options and required attributes using the client's data standards."
+      ],
+      [
+        "Spreadsheet cleanup and formatting",
+        "Standardize column names, formats, units and values in Excel or Google Sheets and flag missing or conflicting information."
+      ],
+      [
+        "Data accuracy and quality checks",
+        "Check required fields, duplicates, formatting and source consistency, then provide an exception list and completion report."
+      ]
+    ]
+  },
+  {
+    "key": "ecommerce-catalog-cleanup-optimization",
+    "name": "eCommerce",
+    "prefix": "ecommerce",
+    "generalUrl": "/ecommerce-product-catalog-management/",
+    "serviceName": "eCommerce Product Catalog Cleanup & Optimization Services",
+    "shortDescription": "eCommerce catalog cleanup and optimization services to improve product data consistency, listing completeness and catalog organization through duplicate checks, attribute standardization, content updates, product enrichment and ongoing quality reviews.",
+    "audience": "Established online stores, retailers with large catalogs, marketplace sellers, wholesalers and brands maintaining product data across channels",
+    "cards": [
+      [
+        "Catalog audit and duplicate checks",
+        "Review product records for duplicates, incomplete entries, inconsistent naming and missing information, then prepare a correction list."
+      ],
+      [
+        "Product data standardization",
+        "Standardize product names, categories, attributes, units, SKU formats and other fields according to approved catalog rules."
+      ],
+      [
+        "Product content enrichment",
+        "Add or improve verified product specifications, descriptions, attributes and media references using approved source materials."
+      ],
+      [
+        "Listing SEO and content improvements",
+        "Prepare search-friendly product titles, descriptions and metadata based on relevant keyword research without guaranteeing search rankings."
+      ],
+      [
+        "Catalog quality monitoring",
+        "Maintain update logs, review agreed catalog fields on a schedule and report recurring data issues or channel mismatches."
+      ]
+    ]
   }];
 
 for (const item of keywordExpansion) {
@@ -2694,7 +2849,7 @@ if (fs.existsSync(servicesPath)) {
   ).join("");
   const section = marker +
     '<section class="section"><div class="wrap"><h2>Platform Store and Print-Shop Services — USA &amp; Canada</h2>' +
-    '<p class="lead">Explore Shopify and WordPress virtual assistant services, remote eCommerce operations, store setup, design, development, migration and administration, alongside platform-specific print-shop support, with country-specific pages for the United States and Canada.</p>' +
+    '<p class="lead">Explore eCommerce product catalog management, product listing, bulk upload and data entry services, alongside Shopify, WordPress, WooCommerce and platform-specific store support, with country-specific pages for the United States and Canada.</p>' +
     '<div class="grid">' + cards + '</div></div></section>';
   const markerIndex = services.indexOf(marker);
   if (markerIndex >= 0) {
