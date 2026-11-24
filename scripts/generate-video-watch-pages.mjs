@@ -2,7 +2,6 @@ import fs from "node:fs";
 import path from "node:path";
 const SITE="https://www.fjxstudio.com", PUBLIC=path.resolve("public"), WATCH=path.join(PUBLIC,"watch");
 let videos=[
-{id:"kiAg30RYmDs",slug:"fjx-studio-bookkeeping-administrative-support",title:"FJX Studio Bookkeeping Administrative Support Overview",description:"An overview of FJX Studio bookkeeping and administrative support workflows, including invoice processing, document organization, data entry, routing, and status tracking."},
 {id:"Vj_BSX5GKJo",slug:"inksoft-updated-add-product-workflow",title:"InkSoft Updated Add Product Workflow",description:"An InkSoft tutorial demonstrating the updated add-product workflow for preparing and maintaining products in an InkSoft store catalog."},
 {id:"0PNYIQFbWEo",slug:"inksoft-store-setup-and-configuration",title:"Setting Up and Configuring an InkSoft Store",description:"An InkSoft walkthrough focused on setting up and configuring an online store, with an overview of the storefront setup workflow."},
 {id:"_Eva3P9yD_s",slug:"inksoft-get-started-guide",title:"InkSoft Get Started Guide",description:"An introductory InkSoft guide covering the platform's getting-started workflow for businesses setting up and managing an online store."},
@@ -43,26 +42,8 @@ const htmlFiles=collect(PUBLIC,[]);
 const rootIndex=path.resolve("index.html");
 if(fs.existsSync(rootIndex))htmlFiles.push(rootIndex);
 
-// Discover every YouTube embed across the full static site, not just IDs in the supplied report.
-const known=new Map(videos.map(v=>[v.id,v]));
-function slugify(value){return String(value).toLowerCase().replace(/&amp;/g," and ").replace(/<[^>]*>/g," ").replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"").slice(0,70)||"video";}
-htmlFiles.forEach(file=>{
-  const html=fs.readFileSync(file,"utf8");
-  const pageTitle=(html.match(/<title[^>]*>([\s\S]*?)<\/title>/i)||[])[1]||"FJX Studio Video";
-  const pageDescription=(html.match(/<meta[^>]+name=["']description["'][^>]+content=["']([^"']*)/i)||[])[1]||"Video resource from FJX Studio.";
-  const tags=html.match(/<iframe\b[^>]*>/gi)||[];
-  tags.forEach(tag=>{
-    const src=(tag.match(/\bsrc=["']([^"']+)["']/i)||[])[1]||"";
-    const id=(src.match(/youtube(?:-nocookie)?\.com\/embed\/([A-Za-z0-9_-]{11})/i)||[])[1];
-    if(!id||known.has(id))return;
-    let frameTitle=(tag.match(/\btitle=["']([^"']+)["']/i)||[])[1]||"";
-    if(!frameTitle||/youtube video player/i.test(frameTitle))frameTitle=pageTitle.replace(/<[^>]*>/g," ").trim();
-    const cleanTitle=frameTitle.replace(/&amp;/g,"&").replace(/\s+/g," ").trim();
-    const cleanDescription=pageDescription.replace(/&amp;/g,"&").replace(/\s+/g," ").trim();
-    known.set(id,{id,slug:slugify(cleanTitle)+"-"+id.toLowerCase(),title:cleanTitle,description:cleanDescription});
-  });
-});
-videos=Array.from(known.values());
+// Only explicitly curated videos are promoted to dedicated watch pages.
+// Ordinary embedded videos remain supporting content on their original pages.
 fs.mkdirSync(WATCH,{recursive:true});
 videos.forEach(v=>{const d=path.join(WATCH,v.slug);fs.mkdirSync(d,{recursive:true});fs.writeFileSync(path.join(d,"index.html"),page(v));});
 htmlFiles.forEach(linkPage);
