@@ -70,6 +70,7 @@ function injectVideo(file) {
   const sectionId = "fjx-featured-video-" + VIDEO_ID;
   const existing = new RegExp("<section\\b[^>]*id=[\"']" + sectionId + "[\"'][\\s\\S]*?<\\/section>", "i");
   html = html.replace(existing, "");
+  html = html.replace(/<style>\\s*\\.fjx-featured-video[\\s\\S]*?<\\/style>/i, "");
   const block = `
 <section id="${sectionId}" class="fjx-featured-video" aria-labelledby="fjx-featured-video-title">
   <div class="fjx-featured-video-inner">
