@@ -249,7 +249,8 @@ const servicesPath = path.join(publicDir,"services","index.html");
 if (fs.existsSync(servicesPath)) {
   let services = fs.readFileSync(servicesPath,"utf8");
   const marker = "<!-- online-store-manager-keyword-services -->";
-  const cards = pages.map(page => '<a class="service-card" href="/'+page.slug+'/"><span>'+escapeHtml(page.title)+'</span><span class="arrow" aria-hidden="true">→</span></a>').join("");
+  const excludedDirectorySlugs = new Set(["best-online-store-manager-services-usa-canada", "best-online-store-inventory-management-services-usa-canada", "best-shopping-feed-management-services-usa-canada"]);
+  const cards = pages.filter(page => !excludedDirectorySlugs.has(page.slug)).map(page => '<a class="service-card" href="/'+page.slug+'/"><span>'+escapeHtml(page.title)+'</span><span class="arrow" aria-hidden="true">→</span></a>').join("");
   const section = marker+'<section class="section"><div class="wrap"><h2>Related Online Store Management Services</h2><p class="lead">Explore related support for online store administration, inventory operations and shopping feed management.</p><div class="grid">'+cards+'</div></div></section>';
   const markerIndex = services.indexOf(marker);
   if (markerIndex >= 0) {
