@@ -703,6 +703,116 @@ const keywordExpansion = [
     shortDescription: "Reporting and dashboard setup assistance for operational data organization, recurring views and management reporting requirements.",
     audience: "print shops, screen printers, embroidery businesses and apparel decorators",
     cards: [["Reporting goals", "Confirm the shop questions, metrics and review cadence."], ["Data requirements", "Identify source fields and consistent definitions for requested reports."], ["View preparation", "Assist with available saved views or report setup under client direction."], ["Report review", "Check outputs for completeness and identify data-quality limitations."]]
+  },
+  {
+    key: "inksoft-shipping-pickup", name: "InkSoft", prefix: "inksoft", generalUrl: "/inksoft-store-management/",
+    serviceName: "InkSoft Shipping, Local Delivery & Pickup Setup", shortDescription: "InkSoft shipping, delivery and pickup configuration support for store checkout options, delivery methods and customer-facing fulfillment details.", audience: "apparel decorators, schools, teams and merchandise businesses",
+    cards: [["Shipping methods", "Organize approved shipping options and the order in which they appear at checkout."], ["Local delivery and pickup", "Prepare client-defined delivery areas, pickup instructions and fulfillment details where supported."], ["Checkout presentation", "Review how available delivery choices and related information appear to shoppers."], ["Configuration review", "Check settings against the client’s fulfillment plan and flag tax or policy decisions for the owner."]]
+  },
+  {
+    key: "inksoft-checkout-settings", name: "InkSoft", prefix: "inksoft", generalUrl: "/inksoft-store-management/",
+    serviceName: "InkSoft Checkout & Payment Settings Support", shortDescription: "InkSoft checkout settings assistance for customer payment choices, purchase-order options, gift messages and order submission preferences.", audience: "screen printers, apparel decorators and businesses operating InkSoft stores",
+    cards: [["Checkout requirements", "Document the store owner’s payment, purchase-order and customer-information requirements."], ["Payment option review", "Coordinate available checkout choices with the client’s enabled payment processor."], ["Customer checkout fields", "Review requested gift-message, purchase-order and delivery information options."], ["Pre-launch checkout test", "Check the customer-facing flow and flag payment or tax questions for authorized review."]]
+  },
+  {
+    key: "inksoft-coupons-discounts", name: "InkSoft", prefix: "inksoft", generalUrl: "/inksoft-store-management/",
+    serviceName: "InkSoft Coupons, Discounts & Promotions Setup", shortDescription: "InkSoft coupon and discount setup support for approved promotional codes, automatic discounts and campaign-specific offers.", audience: "apparel decorators, team stores, schools and promotional merchandise businesses",
+    cards: [["Promotion planning", "Document approved discount rules, dates, eligible products and store scope."], ["Coupon configuration", "Prepare coupon names, codes and discount details supplied and approved by the client."], ["Automatic discount review", "Check available automatic-discount settings against the promotion brief."], ["Promotion validation", "Review the shopper-facing coupon flow and flag pricing decisions for client approval."]]
+  },
+  {
+    key: "inksoft-custom-order-fields", name: "InkSoft", prefix: "inksoft", generalUrl: "/inksoft-store-management/",
+    serviceName: "InkSoft Custom Order Fields & Checkout Forms", shortDescription: "InkSoft custom order field setup assistance for collecting customer instructions, event details, personalization data and other required order information.", audience: "screen printers, apparel decorators, schools and organizations",
+    cards: [["Information mapping", "Identify the customer details and instructions required for each product or store."], ["Field preparation", "Prepare field labels, help text and required/optional rules from the client brief."], ["Checkout form setup", "Configure supported custom order fields with the authorized store administrator."], ["Submission review", "Check how collected information appears in order records and flag gaps."]]
+  },
+  {
+    key: "inksoft-product-personalization", name: "InkSoft", prefix: "inksoft", generalUrl: "/inksoft-store-management/",
+    serviceName: "InkSoft Product Personalization & Custom Options Setup", shortDescription: "InkSoft product personalization support for names, numbers, custom fields and shopper-entered product details on supported products.", audience: "team dealers, apparel decorators, schools and branded merchandise sellers",
+    cards: [["Personalization requirements", "Map requested name, number and custom detail options to the relevant products."], ["Option organization", "Prepare field labels, ordering, formats and client-approved instructions."], ["Product configuration", "Assist with supported personalization settings for applicable product types."], ["Shopper experience review", "Check product pages and captured order details for clarity and completeness."]]
+  },
+  {
+    key: "inksoft-store-reports", name: "InkSoft", prefix: "inksoft", generalUrl: "/inksoft-store-management/",
+    serviceName: "InkSoft Store Reports & Sales Data Setup", shortDescription: "InkSoft reporting support for store, order, product, transaction and tax report configuration and recurring data exports.", audience: "apparel decorators, promotional product businesses, schools and team dealers",
+    cards: [["Reporting requirements", "Define the store, order, product or transaction questions the report should answer."], ["Report configuration", "Prepare filters, date ranges and relevant columns in available reports."], ["Export preparation", "Organize approved report exports for spreadsheet review and reconciliation."], ["Data quality checks", "Review report completeness and flag interpretation or tax questions for the client."]]
+  },
+  {
+    key: "ordermygear-purchase-order-store", name: "OrderMyGear (OMG)", prefix: "ordermygear", generalUrl: "/ordermy-gear-website-develop-design/",
+    serviceName: "OrderMyGear Purchase Order Store Setup", shortDescription: "OrderMyGear purchase-order store setup assistance for organization-funded orders, checkout requirements and approved billing information.", audience: "team dealers, schools, leagues and organizations purchasing merchandise for groups",
+    cards: [["PO store requirements", "Confirm who pays, what information is collected and whether customer-facing prices are displayed."], ["Payment configuration", "Prepare approved purchase-order details and checkout settings within available store options."], ["Product and customer setup", "Organize supplied products and required billing or customer information."], ["Store review", "Check the purchase-order checkout flow and flag tax or payment decisions for the organization."]]
+  },
+  {
+    key: "ordermygear-custom-checkout-fields", name: "OrderMyGear (OMG)", prefix: "ordermygear", generalUrl: "/ordermy-gear-website-develop-design/",
+    serviceName: "OrderMyGear Custom Checkout Fields & Data Collection", shortDescription: "OrderMyGear checkout field configuration for collecting employee, player, team, department and other order-specific information.", audience: "team dealers, schools, sports clubs and corporate merchandise programs",
+    cards: [["Data collection plan", "Identify required shopper details and policy confirmations for the store."], ["Field design", "Prepare choice, short-text, long-text and yes/no fields as appropriate."], ["Checkout configuration", "Add approved fields and set required options with authorized account access."], ["Order report checks", "Verify collected fields are available in order records and relevant reports."]]
+  },
+  {
+    key: "ordermygear-order-management", name: "OrderMyGear (OMG)", prefix: "ordermygear", generalUrl: "/ordermy-gear-website-develop-design/",
+    serviceName: "OrderMyGear Global Order Management & Fulfillment Updates", shortDescription: "OrderMyGear order administration support for cross-store order search, status updates, customer communications and fulfillment reporting.", audience: "team dealers, schools, sports organizations and multi-store operators",
+    cards: [["Order search and filters", "Organize order lookup requirements across stores, dates, customers and payment types."], ["Status administration", "Apply client-authorized fulfillment status updates and organize exceptions."], ["Customer communication support", "Prepare approved order notices and organize customer follow-up requirements."], ["Fulfillment exports", "Prepare relevant order and shipping information for the client’s fulfillment process."]]
+  },
+  {
+    key: "ordermygear-store-reports", name: "OrderMyGear (OMG)", prefix: "ordermygear", generalUrl: "/ordermy-gear-website-develop-design/",
+    serviceName: "OrderMyGear Store, Product & Player Reports", shortDescription: "OrderMyGear reporting assistance for product, player, drop-ship, transaction and tax report preparation and export.", audience: "team dealers, schools, leagues and organizations managing group orders",
+    cards: [["Report selection", "Match the client’s questions to the available store and account reports."], ["Report filters", "Prepare date ranges, store selections and custom-field filters."], ["Export preparation", "Organize report outputs for product counts, player orders and fulfillment review."], ["Report quality checks", "Check selected fields and flag missing or inconsistent source information."]]
+  },
+  {
+    key: "ordermygear-shipping-methods", name: "OrderMyGear (OMG)", prefix: "ordermygear", generalUrl: "/ordermy-gear-website-develop-design/",
+    serviceName: "OrderMyGear Shipping Methods & Fulfillment Setup", shortDescription: "OrderMyGear shipping method setup assistance for store delivery choices, shipping information collection and fulfillment requirements.", audience: "team dealers, schools and group-order businesses",
+    cards: [["Delivery requirements", "Document ship-to-home, group delivery, pickup and other client-approved options."], ["Shipping method setup", "Prepare available shipping methods and customer information requirements."], ["Tax and shipping review", "Check configured options and refer tax treatment decisions to the client or tax adviser."], ["Checkout validation", "Review shipping choices and order information from the shopper perspective."]]
+  },
+  {
+    key: "ordermygear-coupons-gift-cards", name: "OrderMyGear (OMG)", prefix: "ordermygear", generalUrl: "/ordermy-gear-website-develop-design/",
+    serviceName: "OrderMyGear Coupons, Rebates & Gift Card Setup", shortDescription: "OrderMyGear promotion setup assistance for approved coupons, rebates, gift cards and store-level redemption requirements.", audience: "team dealers, schools, corporate stores and group merchandise programs",
+    cards: [["Promotion requirements", "Confirm eligible stores, audiences, discount values and redemption rules."], ["Coupon and rebate setup", "Prepare client-approved codes and offer details using supported account settings."], ["Gift card coordination", "Organize supplied gift card information and redemption requirements."], ["Checkout review", "Test the intended shopper flow and flag restrictions or payment dependencies."]]
+  },
+  {
+    key: "chipply-purchasing-vendor-orders", name: "Chipply", prefix: "chipply", generalUrl: "/chipply-store-management/",
+    serviceName: "Chipply Purchasing & Vendor Order Management", shortDescription: "Chipply purchasing administration support for vendor ordering, consolidated purchase orders and client-approved procurement records.", audience: "team dealers, apparel decorators and distributors using Chipply purchasing workflows",
+    cards: [["Purchasing workflow mapping", "Document vendor accounts, purchasing responsibilities and approval steps."], ["Order consolidation", "Organize store and product requirements for consolidated purchasing review."], ["Vendor order preparation", "Prepare approved product quantities and vendor references for authorized purchasing."], ["Purchasing checks", "Review order records and flag substitutions, minimums or vendor questions for the client."]]
+  },
+  {
+    key: "chipply-work-orders-sorting-packing", name: "Chipply", prefix: "chipply", generalUrl: "/chipply-store-management/",
+    serviceName: "Chipply Work Orders, Sorting Lists & Packing Slips", shortDescription: "Chipply production document support for work orders, sorting lists, packing slips and order-to-fulfillment handoffs.", audience: "team dealers, screen printers, apparel decorators and fulfillment teams",
+    cards: [["Document requirements", "Confirm the work order, sorting and packing information required by the production team."], ["Work order preparation", "Organize approved order, decoration and product details for production review."], ["Sorting and packing outputs", "Prepare or review available sorting lists and packing slip data."], ["Handoff verification", "Check selected records for missing quantities, artwork references or fulfillment details."]]
+  },
+  {
+    key: "chipply-order-production-tracking", name: "Chipply", prefix: "chipply", generalUrl: "/chipply-store-management/",
+    serviceName: "Chipply Order & Production Tracking Setup", shortDescription: "Chipply order and production tracking support for status visibility, job labels, process stages and production reporting.", audience: "team dealers, apparel decorators and decorated-goods production teams",
+    cards: [["Status workflow mapping", "Define the client’s item, order and production status conventions."], ["Tracking data setup", "Organize required job, order, process and item references."], ["Label and scan workflow", "Prepare agreed label usage and scanning procedures where available."], ["Production visibility review", "Check status reporting and identify records needing team follow-up."]]
+  },
+  {
+    key: "chipply-promotions-fundraising", name: "Chipply", prefix: "chipply", generalUrl: "/chipply-store-management/",
+    serviceName: "Chipply Store Promotions & Fundraising Setup", shortDescription: "Chipply promotional store administration for approved campaigns, fundraiser information, discount messaging and sales-period content.", audience: "schools, sports teams, clubs, nonprofits and team dealers",
+    cards: [["Campaign planning", "Confirm fundraising goals, audience, products, campaign dates and approved messaging."], ["Promotion content", "Prepare store banners, descriptions and customer-facing campaign information."], ["Fundraiser details", "Organize approved beneficiary, campaign and reporting information."], ["Campaign review", "Check store content and promotion settings against the client’s brief."]]
+  },
+  {
+    key: "chipply-multi-store-management", name: "Chipply", prefix: "chipply", generalUrl: "/chipply-store-management/",
+    serviceName: "Chipply Multi-Store Management & Seasonal Store Updates", shortDescription: "Chipply multi-store administration support for recurring team programs, seasonal updates, store status reviews and reusable store information.", audience: "team dealers, schools, leagues and apparel businesses operating multiple stores",
+    cards: [["Store portfolio review", "Inventory active, scheduled, closed and recurring stores included in the project."], ["Seasonal updates", "Prepare new dates, team details, products and approved campaign information."], ["Bulk administration planning", "Organize repeatable updates and client-approved actions across selected stores."], ["Portfolio handoff", "Provide a store-by-store completion summary and list of outstanding decisions."]]
+  },
+  {
+    key: "printavo-purchase-orders-vendors", name: "Printavo", prefix: "printavo", generalUrl: "/print-shop-quoting-software/",
+    serviceName: "Printavo Purchase Orders & Vendor Management", shortDescription: "Printavo purchase order administration support for vendor records, job line items, goods ordering and purchasing workflow tracking.", audience: "screen printers, embroidery shops and custom apparel production businesses",
+    cards: [["Purchasing workflow review", "Map how job line items move from order status to vendor purchase orders."], ["Vendor and PO preparation", "Organize vendor details, PO notes and approved line items."], ["Goods status tracking", "Maintain authorized ordered, received and outstanding item information."], ["PO reconciliation support", "Review PO-to-job references and flag quantity or vendor discrepancies."]]
+  },
+  {
+    key: "printavo-goods-receiving-inventory", name: "Printavo", prefix: "printavo", generalUrl: "/print-shop-quoting-software/",
+    serviceName: "Printavo Goods Receiving & Inventory Updates", shortDescription: "Printavo goods receiving administration for incoming purchase orders, partial receipts, product status updates and production readiness records.", audience: "screen printers, embroidery shops and apparel decorators",
+    cards: [["Receiving process mapping", "Document how incoming goods are checked, recorded and routed to production."], ["Receipt data entry", "Organize client-confirmed quantities, dates and vendor references."], ["Partial and complete receipts", "Update authorized receiving records and outstanding item information."], ["Production readiness checks", "Flag shortages, discrepancies and jobs awaiting goods."]]
+  },
+  {
+    key: "printavo-shipping-labels-fulfillment", name: "Printavo", prefix: "printavo", generalUrl: "/print-shop-quoting-software/",
+    serviceName: "Printavo Shipping Labels, Tracking & Fulfillment Setup", shortDescription: "Printavo shipping workflow support for shipping settings, label preparation, tracking information and customer delivery updates.", audience: "print shops, screen printers, embroidery businesses and apparel decorators",
+    cards: [["Shipping workflow review", "Confirm carriers, shipping responsibilities and order handoff requirements."], ["Account and settings checklist", "Organize required shipping provider information for the account owner."], ["Label and tracking administration", "Assist with approved label and tracking data workflows where configured."], ["Fulfillment review", "Check order shipping records and flag missing addresses or tracking details."]]
+  },
+  {
+    key: "printavo-calendar-scheduler", name: "Printavo", prefix: "printavo", generalUrl: "/print-shop-quoting-software/",
+    serviceName: "Printavo Calendar & Production Scheduler Setup", shortDescription: "Printavo calendar and production scheduler setup support for job due dates, team assignments, decoration capacity and schedule visibility.", audience: "screen printers, embroidery shops and custom print production teams",
+    cards: [["Scheduling requirements", "Map departments, decoration types, capacity constraints and scheduling roles."], ["Calendar data preparation", "Organize job due dates, task assignments and production milestones."], ["Scheduler configuration", "Assist with available calendar and scheduler settings under client direction."], ["Schedule review", "Identify conflicts, missing dates and jobs needing manager decisions."]]
+  },
+  {
+    key: "printavo-payments-refunds-deposits", name: "Printavo", prefix: "printavo", generalUrl: "/print-shop-quoting-software/",
+    serviceName: "Printavo Payments, Deposits & Refund Workflow Support", shortDescription: "Printavo payment administration support for payment records, deposits, refunds and reconciliation workflows using client-approved financial decisions.", audience: "screen printers, embroidery businesses and custom print shops",
+    cards: [["Payment workflow review", "Document how the shop records deposits, balances, payments and refunds."], ["Record organization", "Prepare client-supplied payment references and transaction details."], ["Administrative updates", "Assist with authorized record updates without making financial decisions."], ["Reconciliation checks", "Compare approved records and flag discrepancies for the shop’s finance contact."]]
   }
 ];
 
