@@ -344,6 +344,366 @@ const keywordExpansion = [
     audience: "screen printers, embroidery businesses, garment decorators and growing print shops",
     cards: [["Current workflow review", "Document existing job stages, information requirements and common administrative bottlenecks."],["Process and data cleanup", "Organize agreed customer, order and job information and identify inconsistent records."],["Production handoff improvements", "Clarify required job notes, status fields and information passed between shop roles."],["Updated workflow guide", "Summarize the agreed administrative process and outstanding items for your team's approval."]]
   }
+  {
+    key: "inksoft-store-setup",
+    name: "InkSoft",
+    prefix: "inksoft",
+    generalUrl: "/inksoft-store-management/",
+    serviceName: "InkSoft Store Setup & Configuration",
+    shortDescription: "Store setup assistance for storefront structure, store details, settings, navigation and launch preparation.",
+    audience: "apparel decorators, screen printers, promotional product businesses and organizations",
+    cards: [["Store structure", "Organize the requested storefront sections, navigation and customer-facing information."], ["Store details", "Prepare approved store names, descriptions, contact details and campaign information."], ["Settings review", "Check available settings against the project brief and flag decisions that require the store owner."], ["Launch checklist", "Review agreed pages and settings before the planned opening."]]
+  },
+  {
+    key: "inksoft-product-catalog-upload",
+    name: "InkSoft",
+    prefix: "inksoft",
+    generalUrl: "/inksoft-store-management/",
+    serviceName: "InkSoft Product Catalog Upload",
+    shortDescription: "Product catalog upload support for supplied product records, descriptions, images, categories and product options.",
+    audience: "screen printers, apparel decorators and branded merchandise businesses",
+    cards: [["Product records", "Prepare product names, descriptions, SKUs and supplied attributes for entry."], ["Catalog organization", "Group listings into client-approved categories and catalog sections."], ["Images and options", "Upload supplied images and organize supported size and color options."], ["Listing review", "Check required fields and flag missing or inconsistent product information."]]
+  },
+  {
+    key: "inksoft-product-updates",
+    name: "InkSoft",
+    prefix: "inksoft",
+    generalUrl: "/inksoft-store-management/",
+    serviceName: "InkSoft Store Product Updates",
+    shortDescription: "Ongoing product listing updates for descriptions, images, options, pricing information and approved catalog changes.",
+    audience: "apparel decorators, schools, teams and promotional product providers",
+    cards: [["Listing edits", "Apply approved changes to product titles, descriptions and specifications."], ["Option maintenance", "Update supplied size, color and variant information where supported."], ["Image replacement", "Replace or reorganize supplied product images and artwork files."], ["Change verification", "Review updated listings and summarize outstanding information."]]
+  },
+  {
+    key: "inksoft-store-design",
+    name: "InkSoft",
+    prefix: "inksoft",
+    generalUrl: "/inksoft-store-management/",
+    serviceName: "InkSoft Store Design & Customization",
+    shortDescription: "Storefront presentation support for approved branding, page content, product presentation and visual updates.",
+    audience: "screen printers, apparel decorators and organizations operating branded merch stores",
+    cards: [["Design brief", "Collect approved brand assets, page priorities and content requirements."], ["Store presentation", "Organize supplied banners, copy and product imagery for the storefront."], ["Content refinement", "Apply approved text and presentation changes within available platform controls."], ["Visual review", "Check agreed pages across common screen sizes and flag layout issues."]]
+  },
+  {
+    key: "inksoft-navigation-categories",
+    name: "InkSoft",
+    prefix: "inksoft",
+    generalUrl: "/inksoft-store-management/",
+    serviceName: "InkSoft Store Navigation & Categories",
+    shortDescription: "Navigation and category organization for clearer product discovery across InkSoft storefronts.",
+    audience: "apparel decorators, schools, teams and merchandise businesses",
+    cards: [["Category plan", "Group products according to the client's product range and customer journeys."], ["Navigation labels", "Prepare concise category and menu labels using approved terminology."], ["Catalog mapping", "Map supplied products to the agreed category structure."], ["Navigation check", "Review links, category placement and product discoverability."]]
+  },
+  {
+    key: "inksoft-artwork-management",
+    name: "InkSoft",
+    prefix: "inksoft",
+    generalUrl: "/inksoft-store-management/",
+    serviceName: "InkSoft Artwork Upload & Management",
+    shortDescription: "Artwork file organization and upload assistance for supplied logos, designs, product imagery and approved storefront assets.",
+    audience: "screen printers, apparel decorators, teams and promotional product businesses",
+    cards: [["Asset collection", "Collect approved artwork, logos and image files with clear naming."], ["File organization", "Sort assets by store, product, team or campaign for easier administration."], ["Artwork placement", "Coordinate uploads and placement according to client instructions and platform controls."], ["Asset review", "Check assigned files and flag format, resolution or version questions."]]
+  },
+  {
+    key: "inksoft-featured-products",
+    name: "InkSoft",
+    prefix: "inksoft",
+    generalUrl: "/inksoft-store-management/",
+    serviceName: "InkSoft Featured Product Setup",
+    shortDescription: "Featured product setup assistance to organize priority listings and approved storefront merchandising.",
+    audience: "merchandise businesses, apparel decorators, schools and team stores",
+    cards: [["Merchandising brief", "Confirm priority products, campaign goals and approved placement."], ["Product selection", "Prepare the supplied product list and verify listing details."], ["Featured placement", "Apply approved featured-product selections where the platform supports them."], ["Display review", "Check featured listings and confirm the intended products appear."]]
+  },
+  {
+    key: "inksoft-pop-up-store",
+    name: "InkSoft",
+    prefix: "inksoft",
+    generalUrl: "/inksoft-store-management/",
+    serviceName: "InkSoft Pop-Up Store Creation",
+    shortDescription: "Pop-up store creation support for campaigns, teams, schools, events and limited-period merchandise programs.",
+    audience: "screen printers, schools, sports teams, event organizers and apparel decorators",
+    cards: [["Campaign requirements", "Confirm audience, dates, products, artwork and ordering instructions."], ["Store content", "Prepare approved campaign copy, banners and customer information."], ["Product setup", "Organize supplied products, options and images for the pop-up store."], ["Pre-launch review", "Check store details and outstanding approvals before opening."]]
+  },
+  {
+    key: "inksoft-store-maintenance",
+    name: "InkSoft",
+    prefix: "inksoft",
+    generalUrl: "/inksoft-store-management/",
+    serviceName: "InkSoft Store Maintenance",
+    shortDescription: "Recurring storefront maintenance for approved content, product information, catalog checks and routine administration.",
+    audience: "apparel decorators, screen printers and businesses operating ongoing InkSoft stores",
+    cards: [["Maintenance schedule", "Agree recurring checks, update windows and escalation contacts."], ["Content updates", "Maintain approved store text, banners and campaign details."], ["Catalog checks", "Review selected product data, images and options for requested changes."], ["Activity summary", "Report completed tasks, exceptions and items awaiting client decisions."]]
+  },
+  {
+    key: "ordermygear-team-store-creation",
+    name: "OrderMyGear (OMG)",
+    prefix: "ordermygear",
+    generalUrl: "/ordermy-gear-website-develop-design/",
+    serviceName: "OrderMyGear Team Store Creation",
+    shortDescription: "Team store creation assistance for organization details, store content, products, ordering dates and launch preparation.",
+    audience: "team dealers, schools, sports clubs and group-order operators",
+    cards: [["Store brief", "Confirm organization, audience, products, ordering dates and required information."], ["Store configuration", "Prepare approved store details, customer fields and content for setup."], ["Product preparation", "Organize supplied product data, images and supported options."], ["Launch review", "Check the store brief against the configured content and flag open items."]]
+  },
+  {
+    key: "ordermygear-group-store-setup",
+    name: "OrderMyGear (OMG)",
+    prefix: "ordermygear",
+    generalUrl: "/ordermy-gear-website-develop-design/",
+    serviceName: "OrderMyGear Group Store Setup",
+    shortDescription: "Group store setup support for multi-team programs, group ordering details, store content and product organization.",
+    audience: "team dealers, schools, leagues and organizations managing group orders",
+    cards: [["Group requirements", "Map participating groups, contacts, dates and ordering requirements."], ["Store content", "Prepare approved group descriptions, instructions and customer-facing details."], ["Product organization", "Arrange supplied products and options for the intended group audience."], ["Setup checks", "Review agreed store details and record items requiring administrator approval."]]
+  },
+  {
+    key: "ordermygear-catalog-store",
+    name: "OrderMyGear (OMG)",
+    prefix: "ordermygear",
+    generalUrl: "/ordermy-gear-website-develop-design/",
+    serviceName: "OrderMyGear Catalog Store Creation",
+    shortDescription: "Catalog-style store creation assistance for product assortment planning, listing organization and customer-facing store content.",
+    audience: "team dealers, apparel businesses and organizations with ongoing merchandise catalogs",
+    cards: [["Catalog scope", "Confirm product range, categories, audiences and store purpose."], ["Store structure", "Organize approved navigation, categories and store information."], ["Listing preparation", "Prepare product descriptions, images and options supplied by the client."], ["Catalog review", "Check listing consistency and identify missing product information."]]
+  },
+  {
+    key: "ordermygear-product-upload",
+    name: "OrderMyGear (OMG)",
+    prefix: "ordermygear",
+    generalUrl: "/ordermy-gear-website-develop-design/",
+    serviceName: "OrderMyGear Product Upload Services",
+    shortDescription: "Product upload assistance for team and group stores, including supplied product details, imagery, sizes, colors and options.",
+    audience: "team dealers, schools, sports organizations and apparel decorators",
+    cards: [["Source data review", "Review product spreadsheets, images, identifiers and required fields."], ["Product entry", "Prepare and enter approved product information for selected stores."], ["Options and imagery", "Organize supported sizes, colors, variants and supplied product images."], ["Upload quality check", "Check selected listings and flag incomplete or conflicting data."]]
+  },
+  {
+    key: "ordermygear-product-variants",
+    name: "OrderMyGear (OMG)",
+    prefix: "ordermygear",
+    generalUrl: "/ordermy-gear-website-develop-design/",
+    serviceName: "OrderMyGear Product Variant Updates",
+    shortDescription: "Product variant maintenance for sizes, colors, options and approved listing changes across OrderMyGear stores.",
+    audience: "team dealers, apparel providers and group-order businesses",
+    cards: [["Variant audit", "Review supplied variant matrices and existing listing details."], ["Option updates", "Organize approved size, color and product option information."], ["Listing alignment", "Check product descriptions and images against the approved variant data."], ["Exception report", "Flag unavailable options, missing data and inconsistencies for client review."]]
+  },
+  {
+    key: "ordermygear-store-template",
+    name: "OrderMyGear (OMG)",
+    prefix: "ordermygear",
+    generalUrl: "/ordermy-gear-website-develop-design/",
+    serviceName: "OrderMyGear Store Template Setup",
+    shortDescription: "Store template setup assistance for repeatable team-store content, layout requirements and consistent campaign information.",
+    audience: "team dealers, schools and organizations creating recurring group stores",
+    cards: [["Template requirements", "Identify reusable content, store fields and brand assets."], ["Content framework", "Prepare approved descriptions, instructions and standard store information."], ["Reusable product structure", "Organize common products and options for the intended store workflow."], ["Template review", "Check the prepared structure with the client's store administrator."]]
+  },
+  {
+    key: "ordermygear-artwork-logo-upload",
+    name: "OrderMyGear (OMG)",
+    prefix: "ordermygear",
+    generalUrl: "/ordermy-gear-website-develop-design/",
+    serviceName: "OrderMyGear Artwork & Logo Upload",
+    shortDescription: "Artwork and logo upload assistance for team identity assets, product images and approved store graphics.",
+    audience: "team dealers, schools, sports clubs and apparel businesses",
+    cards: [["Asset intake", "Collect current logos, artwork versions and approved image files."], ["File preparation", "Organize assets by organization, team, product or campaign."], ["Store asset upload", "Coordinate uploads and placement using available platform controls."], ["Artwork verification", "Check selected store pages and flag asset quality or version issues."]]
+  },
+  {
+    key: "ordermygear-store-redesign",
+    name: "OrderMyGear (OMG)",
+    prefix: "ordermygear",
+    generalUrl: "/ordermy-gear-website-develop-design/",
+    serviceName: "OrderMyGear Store Redesign",
+    shortDescription: "Storefront refresh assistance for team information, product presentation, campaign details and customer-facing content.",
+    audience: "team dealers, schools, sports clubs and group-order operators",
+    cards: [["Current store review", "Review existing content, products and the client's redesign priorities."], ["Content refresh", "Update approved team details, banners, instructions and campaign dates."], ["Product presentation", "Refresh supplied descriptions, images and option information."], ["Redesign handoff", "Review agreed changes and list remaining approvals or content gaps."]]
+  },
+  {
+    key: "ordermygear-shipping-settings",
+    name: "OrderMyGear (OMG)",
+    prefix: "ordermygear",
+    generalUrl: "/ordermy-gear-website-develop-design/",
+    serviceName: "OrderMyGear Shipping & Store Settings Setup",
+    shortDescription: "Administrative setup assistance for shipping methods and store settings based on client-approved requirements and platform options.",
+    audience: "team dealers, schools and organizations operating online group stores",
+    cards: [["Requirements capture", "Document client shipping rules, store settings and applicable exceptions."], ["Settings preparation", "Translate approved requirements into a setup checklist for the authorized administrator."], ["Configuration assistance", "Assist with permitted setting updates under client direction and access."], ["Validation", "Review displayed options and route tax, shipping or policy decisions to the client."]]
+  },
+  {
+    key: "chipply-store-creation",
+    name: "Chipply",
+    prefix: "chipply",
+    generalUrl: "/chipply-store-management/",
+    serviceName: "Chipply Online Store Creation",
+    shortDescription: "Online store creation support for team apparel, school spiritwear, product setup and campaign launch preparation.",
+    audience: "team dealers, schools, sports clubs, leagues and apparel decorators",
+    cards: [["Store planning", "Confirm store audience, products, team details, dates and ordering instructions."], ["Content preparation", "Organize approved store copy, banners and customer information."], ["Product setup", "Prepare supplied product details, images and available options."], ["Launch checks", "Review agreed pages and listings before the store opens."]]
+  },
+  {
+    key: "chipply-team-store-setup",
+    name: "Chipply",
+    prefix: "chipply",
+    generalUrl: "/chipply-store-management/",
+    serviceName: "Chipply Team Store Setup",
+    shortDescription: "Team store setup assistance for team identity, product selection, artwork, store information and ordering periods.",
+    audience: "team dealers, schools, sports clubs and league organizations",
+    cards: [["Team requirements", "Collect team names, approved logos, product range and ordering details."], ["Store content", "Prepare team-specific copy, campaign dates and customer instructions."], ["Product organization", "Arrange supplied apparel listings, sizes, colors and options."], ["Store review", "Check team information and product presentation for completeness."]]
+  },
+  {
+    key: "chipply-catalog-upload",
+    name: "Chipply",
+    prefix: "chipply",
+    generalUrl: "/chipply-store-management/",
+    serviceName: "Chipply Product Catalog Upload",
+    shortDescription: "Product catalog upload support for apparel listings, descriptions, images, options and organized product information.",
+    audience: "team dealers, apparel decorators, schools and spiritwear providers",
+    cards: [["Catalog intake", "Review product data, images, identifiers and required listing fields."], ["Product listing setup", "Prepare approved titles, descriptions and product attributes."], ["Images and options", "Organize supplied images and supported size, color and option details."], ["Catalog review", "Check updated listings and identify missing or inconsistent information."]]
+  },
+  {
+    key: "chipply-artwork-placement",
+    name: "Chipply",
+    prefix: "chipply",
+    generalUrl: "/chipply-store-management/",
+    serviceName: "Chipply Artwork Placement Setup",
+    shortDescription: "Artwork placement coordination for supplied team logos, decoration files and approved product presentation.",
+    audience: "team dealers, schools, sports clubs and apparel decorators",
+    cards: [["Artwork requirements", "Confirm logo versions, decoration locations and product assignments."], ["File organization", "Prepare supplied artwork files and product references for the setup."], ["Placement coordination", "Apply or coordinate approved artwork placement within available platform controls."], ["Placement checks", "Review selected product displays and report any file or positioning concerns."]]
+  },
+  {
+    key: "chipply-product-customization",
+    name: "Chipply",
+    prefix: "chipply",
+    generalUrl: "/chipply-store-management/",
+    serviceName: "Chipply Product Customization Setup",
+    shortDescription: "Product customization setup assistance for supported product options, decoration details and customer-facing instructions.",
+    audience: "team dealers, schools, clubs and apparel businesses",
+    cards: [["Customization brief", "Document required options, decoration choices and customer instructions."], ["Option organization", "Prepare supported selections and product-specific details."], ["Listing updates", "Add approved descriptions and supplied visual assets to relevant products."], ["Customer-view review", "Check product option presentation and flag unclear selections."]]
+  },
+  {
+    key: "chipply-inventory-updates",
+    name: "Chipply",
+    prefix: "chipply",
+    generalUrl: "/chipply-store-management/",
+    serviceName: "Chipply Inventory & Product Updates",
+    shortDescription: "Product and inventory information maintenance using client-approved data, supplied availability updates and catalog changes.",
+    audience: "team dealers, apparel providers, schools and sports organizations",
+    cards: [["Data reconciliation", "Review client-supplied product and availability information."], ["Product updates", "Apply approved changes to listing details and supported inventory fields."], ["Option checks", "Review sizes, colors and product options against supplied source data."], ["Update summary", "Record completed changes and flag stock decisions requiring client approval."]]
+  },
+  {
+    key: "chipply-store-template",
+    name: "Chipply",
+    prefix: "chipply",
+    generalUrl: "/chipply-store-management/",
+    serviceName: "Chipply Store Template Creation",
+    shortDescription: "Reusable store template preparation for recurring team, school and group merchandise campaigns.",
+    audience: "team dealers, schools, leagues and organizations running repeat stores",
+    cards: [["Reusable requirements", "Identify recurring store content, brand assets and product groups."], ["Template content", "Prepare approved standard descriptions, instructions and campaign fields."], ["Product framework", "Organize common product information and supplied artwork references."], ["Template handoff", "Review the prepared framework with the client's authorized Chipply user."]]
+  },
+  {
+    key: "chipply-store-cloning",
+    name: "Chipply",
+    prefix: "chipply",
+    generalUrl: "/chipply-store-management/",
+    serviceName: "Chipply Store Cloning & Reordering Support",
+    shortDescription: "Store cloning and repeat-order administration assistance for recurring campaigns and similar team merchandise programs.",
+    audience: "team dealers, schools, sports clubs and apparel decorators",
+    cards: [["Source store review", "Identify the approved source store and details to carry forward."], ["Repeat campaign setup", "Organize updated dates, team details and requested content changes."], ["Product and artwork check", "Verify carried-over listings and supplied assets against the new brief."], ["Pre-launch review", "Check the new store for outdated information and missing approvals."]]
+  },
+  {
+    key: "chipply-production-workflow",
+    name: "Chipply",
+    prefix: "chipply",
+    generalUrl: "/chipply-store-management/",
+    serviceName: "Chipply Production Workflow Setup",
+    shortDescription: "Administrative workflow setup assistance for order-to-production information, status handoffs and team store operations.",
+    audience: "team dealers, apparel decorators and organizations coordinating team merchandise",
+    cards: [["Workflow mapping", "Document agreed steps from store close through internal production handoff."], ["Information checklist", "Organize required product, decoration and order details for handoff."], ["Status coordination", "Prepare tracking fields and update procedures approved by the client."], ["Process review", "Identify missing handoff information and summarize workflow responsibilities."]]
+  },
+  {
+    key: "printavo-account-setup",
+    name: "Printavo",
+    prefix: "printavo",
+    generalUrl: "/print-shop-quoting-software/",
+    serviceName: "Printavo Account Setup & Configuration",
+    shortDescription: "Printavo account setup assistance for shop information, user workflows, records and agreed administrative configuration.",
+    audience: "screen printers, embroidery shops, apparel decorators and custom print businesses",
+    cards: [["Setup requirements", "Document shop structure, roles, data needs and current processes."], ["Account information", "Organize approved shop details and reference information."], ["Workflow configuration", "Assist with agreed administrative setup within assigned permissions."], ["Configuration review", "Check the agreed setup checklist with the shop administrator."]]
+  },
+  {
+    key: "printavo-quote-invoice",
+    name: "Printavo",
+    prefix: "printavo",
+    generalUrl: "/print-shop-quoting-software/",
+    serviceName: "Printavo Quote & Invoice Setup",
+    shortDescription: "Quote and invoice workflow setup assistance for line-item information, customer records, templates and approval steps.",
+    audience: "screen printers, embroidery shops and custom apparel businesses",
+    cards: [["Quote process review", "Map how quote requests, revisions and approvals move through the shop."], ["Record preparation", "Organize customer, product, quantity and pricing inputs supplied by the shop."], ["Template administration", "Prepare approved reusable wording and record structures where supported."], ["Approval checks", "Verify required information and leave pricing and financial approvals to the client."]]
+  },
+  {
+    key: "printavo-artwork-approval",
+    name: "Printavo",
+    prefix: "printavo",
+    generalUrl: "/print-shop-quoting-software/",
+    serviceName: "Printavo Artwork Approval Workflow Setup",
+    shortDescription: "Artwork approval workflow assistance for proof status, customer review steps, job notes and production readiness handoffs.",
+    audience: "screen printers, embroidery shops and apparel decorators",
+    cards: [["Approval stages", "Define proof preparation, customer review and approval responsibilities."], ["Job record fields", "Organize artwork references, revision notes and required job details."], ["Status tracking", "Prepare agreed status labels and administrative follow-up procedures."], ["Workflow validation", "Check that approval records and production handoffs are clear."]]
+  },
+  {
+    key: "printavo-production-scheduling",
+    name: "Printavo",
+    prefix: "printavo",
+    generalUrl: "/print-shop-quoting-software/",
+    serviceName: "Printavo Production Scheduling Setup",
+    shortDescription: "Production scheduling setup support for job stages, due-date information, assignments and shop-floor handoffs.",
+    audience: "screen printers, embroidery businesses and custom print shops",
+    cards: [["Scheduling review", "Map production stages, capacity inputs and scheduling responsibilities."], ["Job information", "Organize supplied due dates, quantities and production requirements."], ["Schedule administration", "Assist with approved schedule and job record updates."], ["Schedule checks", "Flag missing dates, conflicting information and jobs needing shop review."]]
+  },
+  {
+    key: "printavo-order-management",
+    name: "Printavo",
+    prefix: "printavo",
+    generalUrl: "/print-shop-quoting-software/",
+    serviceName: "Printavo Order Management & Updates",
+    shortDescription: "Order management support for job records, customer information, order changes, status tracking and production notes.",
+    audience: "screen printers, embroidery shops and apparel decorators",
+    cards: [["Order intake", "Review supplied order details, specifications and customer references."], ["Order record updates", "Enter approved quantities, due dates, notes and related job information."], ["Change tracking", "Record authorized changes and organize the relevant handoffs."], ["Order review", "Check record completeness and flag unclear specifications."]]
+  },
+  {
+    key: "printavo-workflow-automation",
+    name: "Printavo",
+    prefix: "printavo",
+    generalUrl: "/print-shop-quoting-software/",
+    serviceName: "Printavo Workflow Automation Setup",
+    shortDescription: "Workflow automation planning and configuration assistance for repeatable job tasks, reminders and administrative process consistency.",
+    audience: "growing screen printing, embroidery and custom print businesses",
+    cards: [["Process mapping", "Identify repetitive tasks, trigger points and approval requirements."], ["Automation requirements", "Document desired actions, exceptions and responsible team members."], ["Configuration support", "Assist with approved workflow settings where supported by the account."], ["Test and document", "Review expected behavior with the shop team and document the process."]]
+  },
+  {
+    key: "printavo-customer-data",
+    name: "Printavo",
+    prefix: "printavo",
+    generalUrl: "/print-shop-quoting-software/",
+    serviceName: "Printavo Customer Data Management",
+    shortDescription: "Customer data organization and maintenance for contact records, account details, job history references and administrative consistency.",
+    audience: "screen printers, embroidery shops and custom merchandise providers",
+    cards: [["Data review", "Review client-supplied customer records and agreed data standards."], ["Record cleanup", "Standardize approved names, contact fields and account information."], ["Ongoing updates", "Apply authorized customer record changes and organize supporting notes."], ["Data quality summary", "Flag duplicates, missing fields and records requiring client confirmation."]]
+  },
+  {
+    key: "printavo-task-job-tracking",
+    name: "Printavo",
+    prefix: "printavo",
+    generalUrl: "/print-shop-quoting-software/",
+    serviceName: "Printavo Task & Job Tracking Setup",
+    shortDescription: "Task and job tracking setup assistance for assignments, job stages, due dates, notes and administrative visibility.",
+    audience: "screen printers, embroidery shops and production teams",
+    cards: [["Tracking requirements", "Define job stages, task ownership and information needed by each role."], ["Task structure", "Organize agreed task names, job notes and due-date conventions."], ["Status administration", "Assist with approved assignment and status updates."], ["Tracking review", "Check open tasks and flag overdue or incomplete information."]]
+  },
+  {
+    key: "printavo-reporting-dashboard",
+    name: "Printavo",
+    prefix: "printavo",
+    generalUrl: "/print-shop-quoting-software/",
+    serviceName: "Printavo Reporting & Dashboard Setup",
+    shortDescription: "Reporting and dashboard setup assistance for operational data organization, recurring views and management reporting requirements.",
+    audience: "print shops, screen printers, embroidery businesses and apparel decorators",
+    cards: [["Reporting goals", "Confirm the shop questions, metrics and review cadence."], ["Data requirements", "Identify source fields and consistent definitions for requested reports."], ["View preparation", "Assist with available saved views or report setup under client direction."], ["Report review", "Check outputs for completeness and identify data-quality limitations."]]
+  }
 ];
 
 for (const item of keywordExpansion) {
