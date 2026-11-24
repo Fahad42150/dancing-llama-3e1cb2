@@ -3273,6 +3273,409 @@ const keywordExpansion = [
       ]
     ]
   }
+  {
+    "key": "bookkeeping-cleanup-catch-up-services",
+    "name": "Bookkeeping",
+    "prefix": "bookkeeping",
+    "generalUrl": "/virtual-assistant-services/",
+    "serviceName": "Bookkeeping Cleanup and Catch-Up Services",
+    "shortDescription": "Bookkeeping cleanup and catch-up support to organize overdue transactions, review uncategorized entries, match receipts, prepare account reconciliations and bring historical records up to date for owner or accountant review.",
+    "audience": "small businesses, self-employed professionals, contractors and owners whose books are behind or disorganized",
+    "cards": [
+      [
+        "Overdue transaction entry",
+        "Enter missing transactions from client-provided statements and source documents for the agreed historical period."
+      ],
+      [
+        "Uncategorized transaction review",
+        "Organize uncategorized items and prepare questions for the client rather than guessing the business purpose."
+      ],
+      [
+        "Duplicate and missing record checks",
+        "Flag possible duplicate entries, missing transactions and incomplete supporting documents."
+      ],
+      [
+        "Historical reconciliation preparation",
+        "Match bank and credit card records to statements and prepare reconciliation workpapers for authorized review."
+      ],
+      [
+        "Catch-up status and handoff",
+        "Summarize completed periods, unresolved questions and records requiring review by the business owner or accountant."
+      ]
+    ]
+  },
+  {
+    "key": "monthly-bookkeeping-month-end-close",
+    "name": "Bookkeeping",
+    "prefix": "bookkeeping",
+    "generalUrl": "/virtual-assistant-services/",
+    "serviceName": "Monthly Bookkeeping and Month-End Close Support",
+    "shortDescription": "Ongoing monthly bookkeeping support for transaction categorization, bank and credit card reconciliation preparation, accounts review, month-end checklists and organized financial reports for small businesses.",
+    "audience": "small businesses, agencies, consultants and growing companies that need consistent monthly records",
+    "cards": [
+      [
+        "Monthly transaction categorization",
+        "Record supplied income and expense transactions using client-approved bookkeeping rules."
+      ],
+      [
+        "Bank and card reconciliation support",
+        "Match recorded activity to statements and identify unmatched or unclear transactions for review."
+      ],
+      [
+        "Month-end close checklist",
+        "Track statement collection, open questions, reconciliation status and agreed monthly close tasks."
+      ],
+      [
+        "Profit and loss and balance sheet preparation",
+        "Organize available reports and supporting schedules from the client's accounting system for review."
+      ],
+      [
+        "Recurring bookkeeping coordination",
+        "Maintain a monthly document request list and coordinate outstanding items with the business owner or accountant."
+      ]
+    ]
+  },
+  {
+    "key": "ecommerce-bookkeeping-payout-reconciliation",
+    "name": "Bookkeeping",
+    "prefix": "bookkeeping",
+    "generalUrl": "/virtual-assistant-services/",
+    "serviceName": "eCommerce Bookkeeping and Payout Reconciliation Support",
+    "shortDescription": "eCommerce bookkeeping support for organizing Shopify, Amazon, Etsy, eBay and payment processor settlements, matching fees and refunds, tracking sales deposits and preparing channel-level records.",
+    "audience": "online store owners, marketplace sellers, direct-to-consumer brands and multichannel retailers",
+    "cards": [
+      [
+        "Marketplace payout tracking",
+        "Organize settlement reports and match payout dates and amounts to bank deposits."
+      ],
+      [
+        "Payment processor fee reconciliation",
+        "Separate available gross sales, platform fees, refunds, chargebacks and net settlements using source reports."
+      ],
+      [
+        "Sales channel records",
+        "Maintain organized sales and payout records by store or marketplace for client review."
+      ],
+      [
+        "Refund and chargeback tracking",
+        "Record supplied refund and dispute information and flag differences between platform reports and deposits."
+      ],
+      [
+        "Inventory and cost record coordination",
+        "Organize client-provided inventory and cost reports for bookkeeping or accountant review without independently valuing stock."
+      ]
+    ]
+  },
+  {
+    "key": "payroll-bookkeeping-recordkeeping-support",
+    "name": "Bookkeeping",
+    "prefix": "bookkeeping",
+    "generalUrl": "/virtual-assistant-services/",
+    "serviceName": "Payroll Bookkeeping and Recordkeeping Support",
+    "shortDescription": "Payroll bookkeeping administration for organizing payroll reports, recording client-approved payroll journal information, tracking payroll liabilities and reconciling payroll-related records with accounting statements.",
+    "audience": "small businesses and employers using an external payroll provider or in-house payroll system",
+    "cards": [
+      [
+        "Payroll report organization",
+        "Collect and file payroll summaries, pay run reports and employer contribution records supplied by the payroll provider."
+      ],
+      [
+        "Payroll journal entry preparation",
+        "Prepare payroll journal information from approved reports for entry or review in the accounting system."
+      ],
+      [
+        "Payroll liability tracking",
+        "Organize available tax, benefit and deduction liability balances and flag items requiring professional review."
+      ],
+      [
+        "Payroll bank transaction matching",
+        "Compare payroll withdrawals and tax payments with payroll reports and bank activity."
+      ],
+      [
+        "Period-end payroll records",
+        "Prepare organized payroll support files for the owner, payroll provider or qualified accountant."
+      ]
+    ]
+  },
+  {
+    "key": "xero-bookkeeping-services",
+    "name": "Xero",
+    "prefix": "xero",
+    "generalUrl": "/virtual-assistant-services/",
+    "serviceName": "Xero Bookkeeping Support Services",
+    "shortDescription": "Xero bookkeeping assistance for bank reconciliation preparation, invoice and bill entry, expense categorization, receipt organization, contact records and monthly bookkeeping administration.",
+    "audience": "small businesses, consultants, agencies and online businesses using Xero accounting software",
+    "cards": [
+      [
+        "Xero transaction categorization",
+        "Review imported bank transactions and categorize items using the client's approved chart of accounts and instructions."
+      ],
+      [
+        "Bank reconciliation support",
+        "Match bank statement activity with Xero transactions and flag unmatched items for clarification."
+      ],
+      [
+        "Sales invoices and supplier bills",
+        "Enter approved invoice and bill details, due dates and reference information."
+      ],
+      [
+        "Expense and receipt organization",
+        "Attach or organize supporting receipts and maintain consistent expense records."
+      ],
+      [
+        "Monthly reports and handoff",
+        "Prepare available Xero reports and outstanding-item notes for owner or accountant review."
+      ]
+    ]
+  },
+  {
+    "key": "quickbooks-bookkeeping-setup-migration",
+    "name": "QuickBooks",
+    "prefix": "quickbooks",
+    "generalUrl": "/virtual-assistant-services/",
+    "serviceName": "QuickBooks Bookkeeping Setup and Data Migration Support",
+    "shortDescription": "QuickBooks Online setup and bookkeeping migration assistance for company information, chart of accounts coordination, customer and vendor lists, opening data imports and organized transition records.",
+    "audience": "new businesses, small business owners and companies moving bookkeeping records into QuickBooks Online",
+    "cards": [
+      [
+        "QuickBooks company file setup assistance",
+        "Coordinate company profile information and settings using details and decisions supplied by the business owner."
+      ],
+      [
+        "Chart of accounts organization",
+        "Prepare account lists and mapping worksheets for owner or accountant approval before import or use."
+      ],
+      [
+        "Customer and vendor list import",
+        "Format and organize customer and supplier records for supported imports, checking required fields and duplicates."
+      ],
+      [
+        "Historical data migration preparation",
+        "Organize source exports and map available transaction fields for an agreed migration workflow."
+      ],
+      [
+        "Post-migration data checks",
+        "Compare imported record counts and sample balances with source files and list discrepancies for review."
+      ]
+    ]
+  },
+  {
+    "key": "tiktok-account-management-services",
+    "name": "Social Media",
+    "prefix": "social-media",
+    "generalUrl": "/virtual-assistant-services/",
+    "serviceName": "TikTok Account Management Services for Businesses",
+    "shortDescription": "TikTok management support for short-form video planning, caption writing, content scheduling, video uploads, profile updates, comment monitoring and TikTok analytics reporting for business accounts.",
+    "audience": "small businesses, creators, ecommerce brands and service providers using TikTok to reach customers",
+    "cards": [
+      [
+        "TikTok content planning",
+        "Build a content calendar around approved topics, campaigns, products and audience questions."
+      ],
+      [
+        "TikTok video editing and formatting",
+        "Prepare client-supplied footage with captions, titles and vertical formatting for review."
+      ],
+      [
+        "TikTok posting and scheduling",
+        "Upload and schedule approved videos with captions, cover images and relevant details."
+      ],
+      [
+        "Comments and community monitoring",
+        "Monitor comments and respond to routine questions using approved brand guidance, escalating sensitive issues."
+      ],
+      [
+        "TikTok analytics reporting",
+        "Summarize available video views, watch time, engagement and profile activity without promising viral results."
+      ]
+    ]
+  },
+  {
+    "key": "linkedin-company-page-management",
+    "name": "Social Media",
+    "prefix": "social-media",
+    "generalUrl": "/virtual-assistant-services/",
+    "serviceName": "LinkedIn Company Page Management Services",
+    "shortDescription": "LinkedIn company page management for business updates, branded posts, employee and company news, content scheduling, follower engagement and LinkedIn page analytics reporting.",
+    "audience": "B2B companies, consultants, professional firms, recruiters and service businesses",
+    "cards": [
+      [
+        "LinkedIn company page updates",
+        "Maintain approved company description, logo, cover image, website link and business details."
+      ],
+      [
+        "Business post writing and publishing",
+        "Prepare company updates, service highlights, case-study summaries and approved industry content."
+      ],
+      [
+        "LinkedIn content calendar",
+        "Plan a consistent schedule for company news, educational posts, hiring updates and announcements."
+      ],
+      [
+        "Comment and follower engagement",
+        "Monitor page interactions and route business inquiries to the appropriate sales or management contact."
+      ],
+      [
+        "LinkedIn page analytics",
+        "Report available impressions, engagement, follower changes and top-performing updates."
+      ]
+    ]
+  },
+  {
+    "key": "youtube-channel-management-services",
+    "name": "Social Media",
+    "prefix": "social-media",
+    "generalUrl": "/virtual-assistant-services/",
+    "serviceName": "YouTube Channel Management Services",
+    "shortDescription": "YouTube channel management support for video uploads, titles, descriptions, thumbnails, playlists, Shorts publishing, channel organization and YouTube Studio analytics reporting.",
+    "audience": "creators, educators, small businesses, podcasts and brands publishing video content",
+    "cards": [
+      [
+        "YouTube video uploads",
+        "Upload approved videos and complete publishing fields using client-provided content and channel access."
+      ],
+      [
+        "Titles descriptions and tags",
+        "Format search-friendly titles, descriptions, chapters and relevant metadata based on the actual video."
+      ],
+      [
+        "Thumbnail and playlist management",
+        "Prepare or upload approved thumbnails and organize videos into useful playlists."
+      ],
+      [
+        "YouTube Shorts publishing",
+        "Format and publish approved vertical short-form videos with suitable titles and descriptions."
+      ],
+      [
+        "YouTube Studio reporting",
+        "Summarize available views, watch time, audience retention and subscriber activity."
+      ]
+    ]
+  },
+  {
+    "key": "pinterest-business-account-management",
+    "name": "Social Media",
+    "prefix": "social-media",
+    "generalUrl": "/virtual-assistant-services/",
+    "serviceName": "Pinterest Business Account Management Services",
+    "shortDescription": "Pinterest business account management for pin design, board organization, keyword-informed pin descriptions, scheduled publishing, destination link checks and Pinterest analytics reporting.",
+    "audience": "ecommerce stores, home and lifestyle brands, creators, publishers and visual businesses",
+    "cards": [
+      [
+        "Pinterest profile and board setup",
+        "Organize business profile details and boards around the client's products, topics and approved categories."
+      ],
+      [
+        "Pin design and formatting",
+        "Prepare branded static pins and simple idea-pin assets from supplied images and content."
+      ],
+      [
+        "Pin titles and descriptions",
+        "Write descriptive titles and keyword-informed descriptions that accurately match each destination page."
+      ],
+      [
+        "Pin scheduling and link checks",
+        "Schedule approved pins and verify destination URLs and tracking links before publishing."
+      ],
+      [
+        "Pinterest analytics reporting",
+        "Summarize available impressions, saves, outbound clicks and top-performing pins."
+      ]
+    ]
+  },
+  {
+    "key": "social-media-audit-strategy-services",
+    "name": "Social Media",
+    "prefix": "social-media",
+    "generalUrl": "/virtual-assistant-services/",
+    "serviceName": "Social Media Audit and Content Strategy Services",
+    "shortDescription": "Social media audit and content strategy support covering profile reviews, competitor content research, audience and platform fit, content pillars, posting cadence and a practical monthly content plan.",
+    "audience": "small businesses, professional services, ecommerce brands and organizations reviewing their social media presence",
+    "cards": [
+      [
+        "Social media profile audit",
+        "Review profile completeness, brand consistency, links, contact details and visible content quality."
+      ],
+      [
+        "Competitor content research",
+        "Review publicly available competitor posts and formats and document useful observations without copying their work."
+      ],
+      [
+        "Audience and platform review",
+        "Organize client-defined audience information and assess which selected platforms align with business goals."
+      ],
+      [
+        "Content pillars and posting plan",
+        "Develop approved themes, formats and a realistic publishing cadence for the selected channels."
+      ],
+      [
+        "Monthly recommendations",
+        "Provide prioritized recommendations and a content calendar for client review and approval."
+      ]
+    ]
+  },
+  {
+    "key": "social-media-community-management-services",
+    "name": "Social Media",
+    "prefix": "social-media",
+    "generalUrl": "/virtual-assistant-services/",
+    "serviceName": "Social Media Community Management Services",
+    "shortDescription": "Social media community management for monitoring comments, replying to routine messages, moderating spam, tracking brand mentions, escalating customer issues and maintaining a consistent response workflow.",
+    "audience": "businesses, ecommerce brands, creators and organizations receiving regular social media interactions",
+    "cards": [
+      [
+        "Comment monitoring and replies",
+        "Monitor assigned social channels and respond to routine comments using approved tone and response guidelines."
+      ],
+      [
+        "Direct message inbox management",
+        "Sort incoming messages, answer common questions and route sales, support or sensitive matters to the client."
+      ],
+      [
+        "Spam and moderation support",
+        "Flag spam, abusive content and suspicious messages and apply only the moderation actions authorized by the account owner."
+      ],
+      [
+        "Brand mention and review tracking",
+        "Record relevant public mentions and customer feedback for the business to review and respond to."
+      ],
+      [
+        "Community activity reporting",
+        "Summarize recurring questions, response volumes and issues requiring changes to FAQs or customer support processes."
+      ]
+    ]
+  },
+  {
+    "key": "social-media-analytics-monthly-reporting",
+    "name": "Social Media",
+    "prefix": "social-media",
+    "generalUrl": "/virtual-assistant-services/",
+    "serviceName": "Social Media Analytics and Monthly Reporting Services",
+    "shortDescription": "Social media analytics and reporting support for collecting platform insights, tracking reach and engagement, comparing post performance, monitoring follower trends and preparing clear monthly reports.",
+    "audience": "small businesses, marketing teams, agencies and brands managing multiple social media accounts",
+    "cards": [
+      [
+        "Monthly social media performance report",
+        "Collect available metrics from connected platform analytics and prepare a consistent monthly summary."
+      ],
+      [
+        "Post and content performance review",
+        "Compare reach, views, saves, clicks and engagement across published content where metrics are available."
+      ],
+      [
+        "Follower and audience trend tracking",
+        "Record follower changes and audience insights supplied by the platforms without treating correlation as causation."
+      ],
+      [
+        "Website clicks and lead tracking coordination",
+        "Organize available link-click and campaign tracking data and flag gaps in measurement."
+      ],
+      [
+        "Actionable reporting notes",
+        "Highlight top-performing formats, underperforming content and practical tests for the next reporting period."
+      ]
+    ]
+  }
 ];
 
 for (const item of keywordExpansion) {
