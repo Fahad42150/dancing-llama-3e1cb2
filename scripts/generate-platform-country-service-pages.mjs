@@ -4074,8 +4074,13 @@ function buildPage(platform, country) {
     '<a href="' + platform.generalUrl + '">' + escapeHtml(platform.name + " general services") + '</a>',
     '<a href="/services/">All FJX Studio services</a>'
   ].join("");
-  const mediaMatch = reference.match(/<div class="hero-media-grid">[\s\S]*?<\/div><\/div>/);
-  if (!mediaMatch) throw new Error("Could not find the reference page hero media block.");
+  const mediaSourcePath = path.join(publicDir, platform.generalUrl.replace(/^\/+|\/+$/g, ""), "index.html");
+  const mediaSource = fs.existsSync(mediaSourcePath) ? fs.readFileSync(mediaSourcePath, "utf8") : reference;
+  const heroImage = mediaSource.match(/<figure class="hero-image">[\s\S]*?<\/figure>/i)?.[0]
+    || mediaSource.match(/<img\b[^>]*class=["']hero-media["'][^>]*>/i)?.[0]
+    || reference.match(/<figure class="hero-image">[\s\S]*?<\/figure>/i)?.[0];
+  if (!heroImage) throw new Error("Could not find a service-relevant hero image for " + platform.name);
+  const mediaBlock = '<div class="hero-media-grid">' + (heroImage.startsWith("<img") ? '<figure class="hero-image">' + heroImage + '</figure>' : heroImage) + '</div>';
 
   const main = [
     '<main>',    '<section class="hero"><div class="wrap">',
@@ -4083,7 +4088,7 @@ function buildPage(platform, country) {
     '<h1>' + escapeHtml(title) + '</h1>',
     '<p class="lead">' + escapeHtml(lead) + '</p>',
     '<a class="cta" href="#contact">Discuss Your Requirements</a>',
-    mediaMatch[0],
+    mediaBlock,
     '</div></section>',
     '<section class="section"><div class="wrap">',
     '<h2>' + escapeHtml(platform.serviceName) + '</h2>',
@@ -4103,7 +4108,7 @@ function buildPage(platform, country) {
     '<section class="section band"><div class="wrap">',
     '<h2>Explore related services</h2><div class="links">' + related + '</div>',
     '</div></section>',
-    '<section aria-label="About FJX Studio" style="padding:44px 0;border-top:1px solid #e6e9e2;background:#fff"><div style="width:min(1100px,calc(100% - 40px));margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:28px;align-items:center"><div><p style="margin:0 0 8px;color:#63831e;font-size:12px;font-weight:800;letter-spacing:.1em;text-transform:uppercase">About FJX Studio</p><h2 style="margin:0 0 12px;color:#202326;font-size:clamp(24px,3vw,32px);line-height:1.2">Practical eCommerce and business support</h2><p style="margin:0;color:#626b70;line-height:1.75">FJX Studio provides remote platform administration, catalog and product data support, and ongoing business operations assistance for businesses serving customers in the United States and Canada. Platform-specific tasks are scoped to the client’s tools, access and approval process.</p></div><div style="display:flex;justify-content:center;align-items:center;min-width:0;padding:12px;border:1px solid #e6e9e2;border-radius:18px;background:#fff;box-shadow:0 12px 32px rgba(32,35,38,.07)"><img src="https://images.pexels.com/photos/41108027/pexels-photo-41108027.jpeg?auto=compress&cs=tinysrgb&w=1000&q=75" alt="FJX Studio eCommerce support" loading="lazy" decoding="async" style="display:block;width:100%;height:auto;max-height:420px;object-fit:contain;object-position:center"></div></div></section>',
+
     '</main>'
   ].join("\n");
 
