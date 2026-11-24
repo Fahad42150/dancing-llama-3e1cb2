@@ -2962,7 +2962,318 @@ const keywordExpansion = [
         "Prepare status summaries, organize documents and route time-sensitive items to the executive for decisions."
       ]
     ]
-  }];
+  },
+  {
+    "key": "small-business-bookkeeping-services",
+    "name": "Bookkeeping",
+    "prefix": "bookkeeping",
+    "generalUrl": "/virtual-assistant-services/",
+    "serviceName": "Small Business Bookkeeping Support Services",
+    "shortDescription": "Remote small business bookkeeping support for recording income and expenses, organizing receipts, maintaining transaction records, preparing monthly bookkeeping files and coordinating records for owner or accountant review.",
+    "audience": "small business owners, independent professionals, consultants and growing companies",
+    "cards": [
+      [
+        "Income and expense tracking",
+        "Record client-provided transactions and categorize entries using the business's approved chart of accounts and bookkeeping rules."
+      ],
+      [
+        "Receipt and expense organization",
+        "Collect, label and organize receipts, bills and supporting documents and flag missing or unclear records."
+      ],
+      [
+        "Monthly bookkeeping records",
+        "Maintain transaction logs and supporting schedules to help keep business records current for review."
+      ],
+      [
+        "Accounts payable and receivable tracking",
+        "Track supplier bills, customer invoices, due dates and payment status without authorizing payments or changing credit terms."
+      ],
+      [
+        "Monthly reports and handoff",
+        "Prepare available bookkeeping summaries and organized records for review by the business owner or qualified accountant."
+      ]
+    ]
+  },
+  {
+    "key": "quickbooks-online-bookkeeping-support",
+    "name": "QuickBooks",
+    "prefix": "quickbooks",
+    "generalUrl": "/virtual-assistant-services/",
+    "serviceName": "QuickBooks Online Bookkeeping Support",
+    "shortDescription": "QuickBooks Online bookkeeping assistance for transaction categorization, bank-feed review, receipt matching, invoice records, expense tracking and month-end file preparation under client-approved accounting procedures.",
+    "audience": "small businesses, contractors, consultants and online sellers using QuickBooks Online",
+    "cards": [
+      [
+        "QuickBooks transaction entry",
+        "Enter and categorize supplied business transactions using the client's existing accounts and bookkeeping instructions."
+      ],
+      [
+        "Bank feed and reconciliation preparation",
+        "Review imported bank-feed items, match supporting records and prepare reconciliation information for authorized review."
+      ],
+      [
+        "Receipt and bill organization",
+        "Attach or organize supplied receipts and vendor bills and flag missing documents or duplicate entries."
+      ],
+      [
+        "Invoice and payment tracking",
+        "Maintain customer invoice records, due dates and payment status and prepare follow-up lists."
+      ],
+      [
+        "Month-end bookkeeping support",
+        "Prepare transaction summaries and supporting schedules for review by the business owner or accounting professional."
+      ]
+    ]
+  },
+  {
+    "key": "bank-reconciliation-bookkeeping-support",
+    "name": "Bookkeeping",
+    "prefix": "bookkeeping",
+    "generalUrl": "/virtual-assistant-services/",
+    "serviceName": "Bank and Credit Card Reconciliation Support",
+    "shortDescription": "Administrative bank and credit card reconciliation support for matching transactions, organizing statements and receipts, identifying discrepancies and preparing reconciliation records for client or accountant review.",
+    "audience": "small businesses, professional practices, contractors and organizations maintaining monthly financial records",
+    "cards": [
+      [
+        "Bank statement matching",
+        "Compare supplied bank statement lines with recorded transactions and identify potential matches."
+      ],
+      [
+        "Credit card transaction review",
+        "Organize card transactions, receipts and expense references for review against the bookkeeping records."
+      ],
+      [
+        "Missing receipt and transaction follow-up",
+        "Prepare lists of unmatched transactions, missing documents and unclear descriptions for the client to resolve."
+      ],
+      [
+        "Discrepancy and duplicate checks",
+        "Flag possible duplicate entries, amount differences and date mismatches without making unsupported adjustments."
+      ],
+      [
+        "Reconciliation preparation",
+        "Prepare reconciliation workpapers and exception notes for approval by the business owner or qualified accounting professional."
+      ]
+    ]
+  },
+  {
+    "key": "accounts-payable-invoice-processing",
+    "name": "Bookkeeping",
+    "prefix": "bookkeeping",
+    "generalUrl": "/virtual-assistant-services/",
+    "serviceName": "Accounts Payable and Invoice Processing Support",
+    "shortDescription": "Accounts payable administration for vendor invoice entry, bill tracking, due-date monitoring, supplier record updates, statement matching and payment preparation lists for business approval.",
+    "audience": "small businesses, agencies, contractors and companies managing recurring supplier invoices",
+    "cards": [
+      [
+        "Vendor invoice data entry",
+        "Enter supplier names, invoice numbers, dates, amounts and due dates from client-provided bills."
+      ],
+      [
+        "Bill tracking and due dates",
+        "Maintain an accounts payable tracker and flag upcoming or overdue bills for the authorized team."
+      ],
+      [
+        "Supplier statement matching",
+        "Compare supplied vendor statements with recorded invoices and list missing or inconsistent items."
+      ],
+      [
+        "Payment run preparation",
+        "Organize approved bills into payment review lists without initiating or authorizing payments."
+      ],
+      [
+        "AP records and reporting",
+        "Maintain vendor files, invoice copies and outstanding-bill summaries for owner or accountant review."
+      ]
+    ]
+  },
+  {
+    "key": "accounts-receivable-invoicing-support",
+    "name": "Bookkeeping",
+    "prefix": "bookkeeping",
+    "generalUrl": "/virtual-assistant-services/",
+    "serviceName": "Accounts Receivable and Invoicing Support",
+    "shortDescription": "Accounts receivable administration for preparing client-approved invoices, tracking customer payments, maintaining aging lists, sending authorized reminders and organizing customer account records.",
+    "audience": "small businesses, consultants, service providers and B2B companies",
+    "cards": [
+      [
+        "Invoice preparation and data entry",
+        "Prepare invoices from approved service, customer, rate and tax details supplied by the business."
+      ],
+      [
+        "Customer payment tracking",
+        "Update invoice records with payment information supplied by the client or connected accounting system."
+      ],
+      [
+        "Overdue invoice follow-ups",
+        "Prepare or send client-approved payment reminders and maintain a record of customer responses."
+      ],
+      [
+        "Accounts receivable aging lists",
+        "Organize open invoices by due date and prepare aging summaries for management review."
+      ],
+      [
+        "Customer account records",
+        "Maintain billing contacts, invoice references and supporting documents while escalating disputes and credit decisions."
+      ]
+    ]
+  },
+  {
+    "key": "instagram-management-services",
+    "name": "Social Media",
+    "prefix": "social-media",
+    "generalUrl": "/virtual-assistant-services/",
+    "serviceName": "Instagram Management Services for Small Businesses",
+    "shortDescription": "Instagram account management support for planning posts, creating captions, scheduling Reels and Stories, organizing hashtags, updating profile information and monitoring comments and direct messages.",
+    "audience": "small businesses, creators, local service providers, online shops and growing brands",
+    "cards": [
+      [
+        "Instagram posts and content scheduling",
+        "Organize approved photos, graphics and captions into a posting calendar and schedule content using authorized tools."
+      ],
+      [
+        "Reels and Stories publishing",
+        "Prepare supplied short-form videos and story assets, format copy and coordinate publishing after client approval."
+      ],
+      [
+        "Captions, hashtags and profile updates",
+        "Draft captions, research relevant hashtags and update approved bio, links, highlights and profile details."
+      ],
+      [
+        "Comments and DM monitoring",
+        "Monitor assigned comments and direct messages, respond to routine questions using approved guidance and escalate sales or sensitive inquiries."
+      ],
+      [
+        "Instagram insights reporting",
+        "Collect available reach, engagement, profile activity and content metrics and summarize performance without guaranteeing growth."
+      ]
+    ]
+  },
+  {
+    "key": "facebook-page-management-services",
+    "name": "Social Media",
+    "prefix": "social-media",
+    "generalUrl": "/virtual-assistant-services/",
+    "serviceName": "Facebook Page Management Services",
+    "shortDescription": "Facebook business page management support for regular posts, photo and video uploads, page information updates, scheduled publishing, comment moderation, Messenger follow-ups and page insights reporting.",
+    "audience": "local businesses, retailers, service companies, nonprofits and organizations using Facebook Pages",
+    "cards": [
+      [
+        "Facebook business page updates",
+        "Maintain approved page details, contact information, service descriptions, cover images and action links."
+      ],
+      [
+        "Facebook posts and scheduling",
+        "Prepare and schedule approved text, image, link and video posts using Meta Business Suite or the client's selected workflow."
+      ],
+      [
+        "Comments and Messenger inbox support",
+        "Monitor assigned comments and messages, answer routine questions from approved templates and route complex requests to the business."
+      ],
+      [
+        "Page content and promotion updates",
+        "Coordinate approved event, offer and announcement posts and maintain consistent page information."
+      ],
+      [
+        "Facebook insights and reporting",
+        "Summarize available reach, engagement, page visits and message activity in a regular report."
+      ]
+    ]
+  },
+  {
+    "key": "social-media-content-creation-post-design",
+    "name": "Social Media",
+    "prefix": "social-media",
+    "generalUrl": "/virtual-assistant-services/",
+    "serviceName": "Social Media Content Creation and Post Design Services",
+    "shortDescription": "Social media content creation support for branded post graphics, carousel layouts, captions, promotional content, content calendars and platform-ready creative assets for business accounts.",
+    "audience": "small businesses, ecommerce brands, creators, agencies and professional service providers",
+    "cards": [
+      [
+        "Social media graphics and post design",
+        "Create branded post graphics from client-provided brand guidelines, images, offers and approved messaging."
+      ],
+      [
+        "Carousel and promotional content",
+        "Prepare multi-slide carousels, product highlights, announcements and promotional layouts for selected platforms."
+      ],
+      [
+        "Captions and calls to action",
+        "Write clear captions and calls to action based on verified business information and the client's preferred tone."
+      ],
+      [
+        "Content calendar planning",
+        "Organize content themes, formats, posting dates and approval deadlines in a monthly calendar."
+      ],
+      [
+        "Creative revisions and asset delivery",
+        "Apply agreed revisions and deliver correctly sized, organized assets ready for client approval and publishing."
+      ]
+    ]
+  },
+  {
+    "key": "reels-short-form-video-editing",
+    "name": "Social Media",
+    "prefix": "social-media",
+    "generalUrl": "/virtual-assistant-services/",
+    "serviceName": "Instagram Reels and Short-Form Video Editing Services",
+    "shortDescription": "Short-form video editing support for Instagram Reels, Facebook Reels, TikTok and YouTube Shorts, including trimming supplied footage, captions, subtitles, simple transitions, branded covers and export formatting.",
+    "audience": "small businesses, creators, coaches, online brands and service providers producing short-form video",
+    "cards": [
+      [
+        "Reels and short video editing",
+        "Edit client-supplied footage into concise vertical videos for the agreed social platforms."
+      ],
+      [
+        "Subtitles and on-screen text",
+        "Add readable captions, titles and callouts based on the supplied script or approved message."
+      ],
+      [
+        "Branded covers and formatting",
+        "Prepare cover images and export videos to platform-appropriate dimensions and file settings."
+      ],
+      [
+        "Content repurposing",
+        "Adapt approved long-form clips or existing assets into shorter platform-specific edits."
+      ],
+      [
+        "Review and publishing handoff",
+        "Organize drafts for client review, apply agreed revisions and deliver final files for authorized publishing."
+      ]
+    ]
+  },
+  {
+    "key": "social-media-posting-scheduling-services",
+    "name": "Social Media",
+    "prefix": "social-media",
+    "generalUrl": "/virtual-assistant-services/",
+    "serviceName": "Social Media Posting and Scheduling Services",
+    "shortDescription": "Social media posting services for uploading approved content, scheduling posts, formatting captions, adding links and hashtags, maintaining publishing calendars and checking scheduled content across business social accounts.",
+    "audience": "small businesses, agencies, creators and brands that need consistent social media posting",
+    "cards": [
+      [
+        "Post uploading and publishing",
+        "Upload approved images, videos and copy to the selected business social accounts."
+      ],
+      [
+        "Post scheduling and calendar management",
+        "Schedule posts using Meta Business Suite or other client-approved publishing tools and maintain the content calendar."
+      ],
+      [
+        "Captions, hashtags and links",
+        "Format approved captions, add relevant hashtags, tag approved accounts and check destination links."
+      ],
+      [
+        "Multi-platform content formatting",
+        "Adapt approved content for Instagram, Facebook, LinkedIn and other agreed channels without changing brand claims."
+      ],
+      [
+        "Publishing checks and status reports",
+        "Check scheduled and published posts, flag errors and provide a simple publishing activity report."
+      ]
+    ]
+  }
+];
 
 for (const item of keywordExpansion) {
   platforms.push({
