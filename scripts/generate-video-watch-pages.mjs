@@ -64,7 +64,7 @@ function discoverVideos(files) {
   for (const file of files) {
     const html = fs.readFileSync(file, "utf8");
     const pageTitle = plain((html.match(/<title\b[^>]*>([\s\S]*?)<\/title>/i) || [])[1]);
-    const pageDescription = plain(metaContent(html, "description"));
+    const pageDescription = plain(metaContent(html, "description") || metaContent(html, "og:description") || metaContent(html, "twitter:description"));
     const relativeDirectory = path.relative(PUBLIC, path.dirname(file));
     const pageUrl = file === rootIndex || relativeDirectory === "." ? SITE + "/" : SITE + "/" + relativeDirectory.split(path.sep).filter(Boolean).join("/") + "/";
     const frames = html.match(/<iframe\b[^>]*>/gi) || [];
@@ -77,7 +77,7 @@ function discoverVideos(files) {
       frameIndex += 1;
       if (found.has(id)) continue;
       const frameTitle = plain(attr(frame, "title"));
-      const usefulFrameTitle = frameTitle && !/^(youtube|video player|embedded content|player)$/i.test(frameTitle);
+      const usefulFrameTitle = frameTitle && !/youtube|video player|embedded content|^player$/i.test(frameTitle);
       const title = (usefulFrameTitle ? frameTitle : pageTitle).slice(0, 100);
       const description = pageDescription.slice(0, 2048);
       if (!title || !description) {
