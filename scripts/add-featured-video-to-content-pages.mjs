@@ -92,8 +92,8 @@ function injectVideo(file) {
 .fjx-featured-video-link a{color:#426d20;font-weight:700;text-underline-offset:3px}
 @media(max-width:640px){.fjx-featured-video{padding:30px 14px;margin:22px 0}.fjx-featured-video-player{border-radius:9px}}
 </style>`;
-  if (/<\/main>/i.test(html)) html = html.replace(/<\/main>/i, block + "\\n</main>");
-  else if (/<\/body>/i.test(html)) html = html.replace(/<\/body>/i, block + "\\n</body>");
+  if (/<\/main>/i.test(html)) html = html.replace(/<\/main>/i, block + "\n</main>");
+  else if (/<\/body>/i.test(html)) html = html.replace(/<\/body>/i, block + "\n</body>");
   else return false;
   fs.writeFileSync(file, html);
   return true;
@@ -102,12 +102,12 @@ function injectVideo(file) {
 const sitemapPath = path.join(PUBLIC, "sitemap.xml");
 if (!fs.existsSync(sitemapPath)) throw new Error("public/sitemap.xml is required before adding the featured video.");
 const sitemap = fs.readFileSync(sitemapPath, "utf8");
-const locs = [...sitemap.matchAll(/<loc>\\s*([^<]+)\\s*<\\/loc>/gi)].map(match => match[1].trim());
+const locs = [...sitemap.matchAll(/<loc>\s*([^<]+)\s*<\/loc>/gi)].map(match => match[1].trim());
 const targetFiles = new Set();
 for (const url of locs) {
   if (!eligiblePageUrl(url)) continue;
   const pathname = new URL(url).pathname;
-  const directory = path.join(PUBLIC, decodeURIComponent(pathname).replace(/^\\/+|\\/+$/g, ""));
+  const directory = path.join(PUBLIC, decodeURIComponent(pathname).replace(/^\/+|\/+$/g, ""));
   const file = path.join(directory, "index.html");
   if (fs.existsSync(file)) targetFiles.add(file);
 }
@@ -122,7 +122,7 @@ for (const file of targetFiles) if (injectVideo(file)) injected++;
 
 let updatedSitemap = fs.readFileSync(sitemapPath, "utf8");
 if (!updatedSitemap.includes(WATCH_URL)) {
-  updatedSitemap = updatedSitemap.replace(/<\\/urlset>/i, "<url><loc>" + WATCH_URL + "</loc></url>\\n</urlset>");
+  updatedSitemap = updatedSitemap.replace(/<\/urlset>/i, "<url><loc>" + WATCH_URL + "</loc></url>\\n</urlset>");
   fs.writeFileSync(sitemapPath, updatedSitemap);
 }
 
@@ -133,16 +133,16 @@ const videoEntry = "<url><loc>" + WATCH_URL + "</loc><video:video><video:thumbna
 if (fs.existsSync(videoSitemapPath)) {
   let videoSitemap = fs.readFileSync(videoSitemapPath, "utf8");
   if (!videoSitemap.includes(WATCH_URL)) {
-    videoSitemap = videoSitemap.replace(/<\\/urlset>/i, videoEntry + "\\n</urlset>");
+    videoSitemap = videoSitemap.replace(/<\/urlset>/i, videoEntry + "\n</urlset>");
     fs.writeFileSync(videoSitemapPath, videoSitemap);
   }
 } else {
-  fs.writeFileSync(videoSitemapPath, "<?xml version='1.0' encoding='UTF-8'?>\\n<urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9' xmlns:video='http://www.google.com/schemas/sitemap-video/1.1'>\\n" + videoEntry + "\\n</urlset>\\n");
+  fs.writeFileSync(videoSitemapPath, "<?xml version='1.0' encoding='UTF-8'?>\\n<urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9' xmlns:video='http://www.google.com/schemas/sitemap-video/1.1'>\n" + videoEntry + "\n</urlset>\n");
 }
 
 const robotsPath = path.join(PUBLIC, "robots.txt");
-let robots = fs.existsSync(robotsPath) ? fs.readFileSync(robotsPath, "utf8") : "User-agent: *\\nAllow: /\\n";
-if (!robots.includes(SITE + "/video-sitemap.xml")) robots = robots.trim() + "\\nSitemap: " + SITE + "/video-sitemap.xml\\n";
+let robots = fs.existsSync(robotsPath) ? fs.readFileSync(robotsPath, "utf8") : "User-agent: *\\nAllow: /\n";
+if (!robots.includes(SITE + "/video-sitemap.xml")) robots = robots.trim() + "\nSitemap: " + SITE + "/video-sitemap.xml\n";
 fs.writeFileSync(robotsPath, robots);
 
 console.log("Added featured video to " + injected + " service/blog/article pages and generated " + WATCH_URL);
