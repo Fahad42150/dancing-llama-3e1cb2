@@ -122,7 +122,7 @@ for (const file of targetFiles) if (injectVideo(file)) injected++;
 
 let updatedSitemap = fs.readFileSync(sitemapPath, "utf8");
 if (!updatedSitemap.includes(WATCH_URL)) {
-  updatedSitemap = updatedSitemap.replace(/<\/urlset>/i, "<url><loc>" + WATCH_URL + "</loc></url>\\n</urlset>");
+  updatedSitemap = updatedSitemap.replace(/<\/urlset>/i, "<url><loc>" + WATCH_URL + "</loc></url>\n</urlset>");
   fs.writeFileSync(sitemapPath, updatedSitemap);
 }
 
@@ -137,11 +137,11 @@ if (fs.existsSync(videoSitemapPath)) {
     fs.writeFileSync(videoSitemapPath, videoSitemap);
   }
 } else {
-  fs.writeFileSync(videoSitemapPath, "<?xml version='1.0' encoding='UTF-8'?>\\n<urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9' xmlns:video='http://www.google.com/schemas/sitemap-video/1.1'>\n" + videoEntry + "\n</urlset>\n");
+  fs.writeFileSync(videoSitemapPath, "<?xml version='1.0' encoding='UTF-8'?>\n<urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9' xmlns:video='http://www.google.com/schemas/sitemap-video/1.1'>\n" + videoEntry + "\n</urlset>\n");
 }
 
 const robotsPath = path.join(PUBLIC, "robots.txt");
-let robots = fs.existsSync(robotsPath) ? fs.readFileSync(robotsPath, "utf8") : "User-agent: *\\nAllow: /\n";
+let robots = fs.existsSync(robotsPath) ? fs.readFileSync(robotsPath, "utf8") : "User-agent: *\nAllow: /\n";
 if (!robots.includes(SITE + "/video-sitemap.xml")) robots = robots.trim() + "\nSitemap: " + SITE + "/video-sitemap.xml\n";
 fs.writeFileSync(robotsPath, robots);
 
