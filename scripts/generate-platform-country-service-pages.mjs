@@ -3676,6 +3676,347 @@ const keywordExpansion = [
       ]
     ]
   }
+  {
+    "key": "digital-marketing-agency-services",
+    "name": "Digital Marketing",
+    "prefix": "digital-marketing",
+    "generalUrl": "/services/",
+    "serviceName": "Digital Marketing Agency Services",
+    "shortDescription": "Digital marketing agency support for businesses seeking coordinated search, paid advertising, social media, content, email and website marketing services with clear campaign goals and reporting.",
+    "audience": "small businesses, professional services, ecommerce brands and growing companies in the USA and Canada",
+    "cards": [
+      [
+        "Digital marketing strategy",
+        "Review business goals, audience, offers and existing channels to prepare a practical marketing plan."
+      ],
+      [
+        "Search engine optimization",
+        "Improve technical foundations, on-page content and search visibility for relevant service and product searches."
+      ],
+      [
+        "Paid advertising management",
+        "Plan and manage approved Google and social advertising campaigns with budget and conversion tracking."
+      ],
+      [
+        "Social media and content marketing",
+        "Coordinate platform-specific content, publishing schedules and audience engagement."
+      ],
+      [
+        "Campaign reporting and optimization",
+        "Review available traffic, lead and conversion data and recommend evidence-based improvements."
+      ]
+    ]
+  },
+  {
+    "key": "seo-agency-services",
+    "name": "SEO",
+    "prefix": "seo",
+    "generalUrl": "/services/",
+    "serviceName": "SEO Agency Services",
+    "shortDescription": "SEO agency services covering keyword research, technical SEO, on-page optimization, content planning, internal linking and performance reporting to improve relevant organic search visibility.",
+    "audience": "local businesses, ecommerce stores, service providers and organizations seeking organic search growth",
+    "cards": [
+      [
+        "SEO audit and keyword research",
+        "Review site structure, search intent, relevant keywords and technical issues to prioritize opportunities."
+      ],
+      [
+        "On-page SEO optimization",
+        "Improve page titles, headings, descriptions, content relevance, image attributes and internal links."
+      ],
+      [
+        "Technical SEO improvements",
+        "Identify crawlability, indexation, canonical, sitemap, structured data and performance issues."
+      ],
+      [
+        "SEO content and service pages",
+        "Plan useful landing pages and supporting content around distinct customer needs and search intent."
+      ],
+      [
+        "SEO monitoring and reporting",
+        "Track available rankings, organic traffic, indexing and conversions and explain progress without guaranteeing positions."
+      ]
+    ]
+  },
+  {
+    "key": "local-seo-google-business-profile-agency",
+    "name": "Local SEO",
+    "prefix": "local-seo",
+    "generalUrl": "/services/",
+    "serviceName": "Local SEO and Google Business Profile Services",
+    "shortDescription": "Local SEO support for Google Business Profile optimization, local landing pages, business information consistency, review workflows and local search performance reporting.",
+    "audience": "local service businesses, clinics, contractors, retailers and multi-location companies",
+    "cards": [
+      [
+        "Google Business Profile optimization",
+        "Organize business categories, service details, hours, photos and profile information supplied and approved by the owner."
+      ],
+      [
+        "Local keyword and location page research",
+        "Identify service-area searches and plan useful location pages that reflect genuine coverage."
+      ],
+      [
+        "Business listing consistency",
+        "Review core business details across relevant directories and document inconsistencies for correction."
+      ],
+      [
+        "Review response and reputation workflow",
+        "Prepare review response drafts and follow the business's approved process for customer feedback."
+      ],
+      [
+        "Local visibility reporting",
+        "Monitor available profile interactions, local search visibility, calls and direction requests."
+      ]
+    ]
+  },
+  {
+    "key": "google-ads-ppc-management-agency",
+    "name": "Google Ads",
+    "prefix": "google-ads",
+    "generalUrl": "/services/",
+    "serviceName": "Google Ads and PPC Management Services",
+    "shortDescription": "Google Ads and pay-per-click management support for campaign setup, keyword planning, ad copy, conversion tracking, budget monitoring and ongoing optimization.",
+    "audience": "small businesses, ecommerce advertisers, local service companies and B2B organizations",
+    "cards": [
+      [
+        "Google Ads account and campaign setup",
+        "Organize campaign structure, locations, networks, goals and settings based on the approved brief."
+      ],
+      [
+        "Keyword and search term research",
+        "Build keyword themes, review search terms and identify negative keyword opportunities."
+      ],
+      [
+        "Ad copy and asset preparation",
+        "Write and organize responsive search ad copy and approved campaign assets."
+      ],
+      [
+        "Conversion tracking coordination",
+        "Configure or review agreed conversion events and coordinate analytics or tag implementation."
+      ],
+      [
+        "PPC optimization and reporting",
+        "Monitor spend, clicks, leads and conversion costs and recommend changes for client approval."
+      ]
+    ]
+  },
+  {
+    "key": "social-media-marketing-agency-services",
+    "name": "Social Media Marketing",
+    "prefix": "social-media-marketing",
+    "generalUrl": "/services/",
+    "serviceName": "Social Media Marketing Agency Services",
+    "shortDescription": "Social media marketing services for business profiles, content planning, creative production, publishing, community engagement, paid social campaigns and performance reporting.",
+    "audience": "small businesses, ecommerce brands, professional services and organizations building social audiences",
+    "cards": [
+      [
+        "Social media strategy",
+        "Select relevant platforms, audience themes, content pillars and measurable goals."
+      ],
+      [
+        "Content creation and design",
+        "Prepare platform-ready graphics, captions, short videos and branded content from approved materials."
+      ],
+      [
+        "Posting and scheduling",
+        "Maintain publishing calendars and schedule approved content across selected channels."
+      ],
+      [
+        "Community management",
+        "Monitor comments and messages, respond to routine questions using approved guidance and escalate sensitive matters."
+      ],
+      [
+        "Social media reporting",
+        "Summarize available reach, views, engagement, clicks and lead activity."
+      ]
+    ]
+  },
+  {
+    "key": "website-design-development-agency",
+    "name": "Web Design",
+    "prefix": "web-design",
+    "generalUrl": "/services/",
+    "serviceName": "Website Design and Development Agency Services",
+    "shortDescription": "Website design and development services for business websites, landing pages and ecommerce experiences, including responsive layouts, content structure, CMS implementation and launch support.",
+    "audience": "small businesses, professional services, ecommerce brands and organizations needing a new or improved website",
+    "cards": [
+      [
+        "Website planning and page structure",
+        "Define key pages, navigation, content hierarchy and user journeys around business goals."
+      ],
+      [
+        "Responsive website design",
+        "Create consistent desktop and mobile layouts with clear calls to action and accessible interaction patterns."
+      ],
+      [
+        "Website development and CMS setup",
+        "Build approved designs in the selected content management system and configure core site functionality."
+      ],
+      [
+        "Website content and SEO foundations",
+        "Implement page content, metadata, headings, image optimization and relevant structured data."
+      ],
+      [
+        "Testing and launch support",
+        "Check forms, links, mobile layouts and key page behavior before coordinated launch."
+      ]
+    ]
+  },
+  {
+    "key": "content-marketing-blog-writing-agency",
+    "name": "Content Marketing",
+    "prefix": "content-marketing",
+    "generalUrl": "/services/",
+    "serviceName": "Content Marketing and Blog Writing Agency Services",
+    "shortDescription": "Content marketing support for keyword-informed blog posts, website copy, service pages, educational resources and editorial calendars aligned with audience questions and business goals.",
+    "audience": "businesses, B2B companies, ecommerce stores and professional service providers",
+    "cards": [
+      [
+        "Content strategy and topic research",
+        "Map customer questions, search intent and subject areas into a practical editorial plan."
+      ],
+      [
+        "Blog writing and editing",
+        "Draft and edit informative articles using verified facts, clear structure and the client's brand guidance."
+      ],
+      [
+        "Website and service page copy",
+        "Prepare clear website copy that explains services, differentiators and next steps."
+      ],
+      [
+        "Content refresh and optimization",
+        "Update existing pages for accuracy, usefulness, internal links and search intent."
+      ],
+      [
+        "Editorial calendar and performance review",
+        "Coordinate publishing deadlines and review available engagement and organic search data."
+      ]
+    ]
+  },
+  {
+    "key": "email-marketing-agency-campaign-automation",
+    "name": "Email Marketing",
+    "prefix": "email-marketing",
+    "generalUrl": "/services/",
+    "serviceName": "Email Marketing and Automation Agency Services",
+    "shortDescription": "Email marketing services for campaign planning, newsletter creation, audience segmentation, automated customer journeys, platform setup and email performance reporting.",
+    "audience": "small businesses, ecommerce stores, B2B teams and organizations with permission-based subscriber lists",
+    "cards": [
+      [
+        "Email marketing platform setup",
+        "Organize approved sender details, lists, templates and account settings in the selected email platform."
+      ],
+      [
+        "Newsletter and campaign creation",
+        "Prepare email copy and layouts for promotions, updates and educational campaigns."
+      ],
+      [
+        "List segmentation and hygiene",
+        "Organize consent-based subscriber segments and flag invalid, duplicate or inactive records."
+      ],
+      [
+        "Email automation workflows",
+        "Configure approved welcome, abandoned-cart, post-purchase or nurture sequences with client-defined rules."
+      ],
+      [
+        "Deliverability and campaign reporting",
+        "Review available delivery, bounce, click and conversion metrics and recommend improvements."
+      ]
+    ]
+  },
+  {
+    "key": "lead-generation-agency-services",
+    "name": "Lead Generation",
+    "prefix": "lead-generation",
+    "generalUrl": "/services/",
+    "serviceName": "Lead Generation Agency Services",
+    "shortDescription": "Lead generation support for landing pages, lead capture forms, paid and organic campaign coordination, CRM handoff and follow-up workflows designed around qualified inquiries.",
+    "audience": "local service businesses, B2B companies, consultants and growing organizations",
+    "cards": [
+      [
+        "Lead generation strategy",
+        "Define target audiences, qualification criteria, offers and lead sources with the business."
+      ],
+      [
+        "Landing pages and lead forms",
+        "Prepare campaign landing pages and forms that capture the information the business needs."
+      ],
+      [
+        "Lead campaign coordination",
+        "Coordinate approved search, social and content campaigns to attract relevant inquiries."
+      ],
+      [
+        "CRM lead capture and follow-up",
+        "Connect or organize lead records and route inquiries into the client's approved follow-up process."
+      ],
+      [
+        "Lead quality and campaign reporting",
+        "Review available lead volume, source, qualification and conversion information."
+      ]
+    ]
+  },
+  {
+    "key": "branding-logo-design-agency-services",
+    "name": "Branding",
+    "prefix": "branding",
+    "generalUrl": "/services/",
+    "serviceName": "Branding and Logo Design Agency Services",
+    "shortDescription": "Branding support for business identity, logo design, visual guidelines, brand messaging and consistent creative assets across websites, social media and marketing materials.",
+    "audience": "startups, small businesses, ecommerce brands and organizations refreshing their identity",
+    "cards": [
+      [
+        "Brand discovery and positioning",
+        "Gather business background, audience, values and competitor context to guide identity decisions."
+      ],
+      [
+        "Logo design and visual identity",
+        "Develop logo concepts and supporting visual elements based on the approved creative brief."
+      ],
+      [
+        "Brand colors and typography",
+        "Document color, type and layout choices for consistent use across channels."
+      ],
+      [
+        "Brand messaging and style guide",
+        "Prepare concise brand voice, messaging and visual usage guidance."
+      ],
+      [
+        "Marketing asset design",
+        "Apply the identity to approved social, presentation, website and promotional assets."
+      ]
+    ]
+  },
+  {
+    "key": "conversion-rate-optimization-agency",
+    "name": "Conversion Rate Optimization",
+    "prefix": "conversion-optimization",
+    "generalUrl": "/services/",
+    "serviceName": "Conversion Rate Optimization Agency Services",
+    "shortDescription": "Conversion rate optimization support for landing page reviews, user journey analysis, form improvements, analytics checks and structured testing to help websites convert more of their existing traffic.",
+    "audience": "ecommerce stores, lead generation websites, SaaS businesses and service companies",
+    "cards": [
+      [
+        "Conversion and funnel review",
+        "Review key user journeys, page behavior and available conversion data to identify friction."
+      ],
+      [
+        "Landing page optimization",
+        "Recommend improvements to page messaging, layout, calls to action and trust information."
+      ],
+      [
+        "Forms and checkout review",
+        "Identify unnecessary fields, confusing steps and usability issues in lead forms or checkout flows."
+      ],
+      [
+        "Analytics and event tracking checks",
+        "Review available analytics events and conversion tracking for measurement gaps."
+      ],
+      [
+        "A/B testing and iteration",
+        "Plan controlled tests where traffic and tooling support them, then summarize observed results."
+      ]
+    ]
+  }
 ];
 
 for (const item of keywordExpansion) {
