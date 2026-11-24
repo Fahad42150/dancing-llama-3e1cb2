@@ -298,13 +298,19 @@ function ensureServicePageRelevance(file) {
     .replace(/<[^>]+>/g, " ").replace(/&amp;/g, "&").replace(/\s+/g, " ").trim();
   const original = html;
 
-  // Remove the repeated generic stock image used as an unrelated "about" image.
+  // Remove the repeated generic stock image and unverified, generic InkSoft video block.
   html = html.replace(/<div class="(?:fjx-service-about-image|about-image)">\s*<img[^>]*41108027[^>]*>\s*<\/div>/gi, "");
+  html = html.replace(/<section id="fjx-inksoft-videos"[\s\S]*?<\/section>\s*<style>[\s\S]*?<\/style>/gi, "");
 
   // Remove the repeated generic virtual-assistant overview video, but retain other embeds.
   html = html.replace(/<div class="(?:hero-video-card|fjx-service-video)">[\s\S]*?<\/div>/gi,
     block => block.includes("kiAg30RYmDs") ? "" : block);
   html = html.replace(/<iframe\b(?=[^>]*kiAg30RYmDs)[^>]*>\s*<\/iframe>/gi, "");
+
+  // Replace boilerplate eCommerce "about" copy with wording that reflects this URL.
+  html = html.replace(/Practical eCommerce and business support/g, "Practical " + escapeHtml(title) + " support");
+  html = html.replace(/FJX Studio provides remote eCommerce store setup, product catalog management and administrative support for businesses in the United States and Canada\. We focus on clear workflows, careful execution and reliable communication\./g,
+    "FJX Studio provides remote support related to " + escapeHtml(title.toLowerCase()) + " for businesses in the United States and Canada. Tasks, tools, quality checks and approval responsibilities are agreed before work begins.");
 
   // Replace a stale design-only CTA on unrelated service pages.
   if (!/design|logo|graphic|creative|branding/i.test(slug + " " + title)) {
