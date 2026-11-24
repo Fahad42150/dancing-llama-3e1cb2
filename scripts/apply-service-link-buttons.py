@@ -7,14 +7,14 @@ STYLE_ID = 'fjx-universal-related-service-buttons'
 DIRECTORY_STYLE_ID = 'fjx-services-directory-button-system'
 STYLE = r"""<style id="fjx-universal-related-service-buttons">
 /* Standard related-service link cards across every standalone service page. */
-.links {
+main .links {
   display: grid !important;
   grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
   grid-auto-rows: 1fr;
   align-items: stretch;
   gap: 14px !important;
 }
-.links a {
+main .links a {
   box-sizing: border-box !important;
   display: flex !important;
   flex-direction: row !important;
@@ -41,7 +41,7 @@ STYLE = r"""<style id="fjx-universal-related-service-buttons">
   box-shadow: 0 2px 8px rgba(32, 35, 38, .045);
   transition: background-color .18s ease, border-color .18s ease, box-shadow .18s ease, transform .18s ease;
 }
-.links a::after {
+main .links a::after {
   content: "→";
   display: inline-flex;
   flex: 0 0 22px;
@@ -53,28 +53,28 @@ STYLE = r"""<style id="fjx-universal-related-service-buttons">
   font-size: 20px;
   line-height: 1;
 }
-.links a:hover {
+main .links a:hover {
   background: #f6faef !important;
   border-color: #9fce79 !important;
   color: #202326 !important;
   box-shadow: 0 8px 20px rgba(32, 35, 38, .09);
   transform: translateY(-2px);
 }
-.links a:focus-visible {
+main .links a:focus-visible {
   outline: 3px solid #679d37 !important;
   outline-offset: 3px;
   box-shadow: 0 0 0 5px rgba(103, 157, 55, .12);
 }
 @media (max-width: 900px) {
-  .links { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; gap: 12px !important; }
+  main main .links { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; gap: 12px !important; }
 }
 @media (max-width: 600px) {
-  .links { grid-template-columns: minmax(0, 1fr) !important; grid-auto-rows: auto; gap: 10px !important; }
-  .links a { min-height: 60px; height: auto; padding: 14px 16px !important; }
+  main main .links { grid-template-columns: minmax(0, 1fr) !important; grid-auto-rows: auto; gap: 10px !important; }
+  main .links a { min-height: 60px; height: auto; padding: 14px 16px !important; }
 }
 @media (prefers-reduced-motion: reduce) {
-  .links a { transition: none; }
-  .links a:hover { transform: none; }
+  main .links a { transition: none; }
+  main .links a:hover { transform: none; }
 }
 </style>
 """
