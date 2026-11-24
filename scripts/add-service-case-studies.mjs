@@ -44,9 +44,9 @@ function walk(dir) {
 function addCaseStudy(file) {
   let html = fs.readFileSync(file, "utf8");
   if (/id=["']fjx-service-case-study["']/.test(html)) {
-    html = html.replace(/(<p class=["']fjx-case-eyebrow["'][^>]*>)[\\s\\S]*?(<\\/p>)/i, "$1ILLUSTRATIVE SERVICE$2");
-    html = html.replace(/(<div class=["']fjx-case-meta["'][^>]*>\\s*<strong>)Example business:?([\\s\\S]*?<\\/strong>)/i, "$1Example business$2");
-    html = html.replace(/<p class=["']fjx-case-disclaimer["'][^>]*>[\\s\\S]*?<\\/p>/i, '<p class="fjx-case-disclaimer">This is a fictional, illustrative example for service explanation. The business name and scenario are not actual clients, completed engagements, testimonials, or measured results.</p>');
+    html = html.replace(/(<p class=["']fjx-case-eyebrow["'][^>]*>)[\s\S]*?(<\/p>)/i, "$1ILLUSTRATIVE SERVICE$2");
+    html = html.replace(/(<div class=["']fjx-case-meta["'][^>]*>\s*<strong>)Example business:?([\s\S]*?<\/strong>)/i, "$1Example business$2");
+    html = html.replace(/<p class=["']fjx-case-disclaimer["'][^>]*>[\s\S]*?<\/p>/i, '<p class="fjx-case-disclaimer">This is a fictional, illustrative example for service explanation. The business name and scenario are not actual clients, completed engagements, testimonials, or measured results.</p>');
     fs.writeFileSync(file, html);
     return;
   }
