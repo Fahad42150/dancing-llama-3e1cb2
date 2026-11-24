@@ -1629,7 +1629,348 @@ const keywordExpansion = [
       ]
     ]
   }
-];
+,
+  {
+    "key": "shopify-collection-management",
+    "name": "Shopify",
+    "prefix": "shopify",
+    "generalUrl": "/shopify-store-management/",
+    "serviceName": "Shopify Collection & Category Management Services",
+    "shortDescription": "Shopify collection management support for product grouping, automated and manual collections, tags, navigation links, sorting, merchandising updates and catalog organization.",
+    "audience": "Shopify store owners, eCommerce brands, online retailers and growing product catalogs",
+    "cards": [
+      [
+        "Collection structure and grouping",
+        "Organize products into clear manual or automated collections using merchant-approved rules, tags and product attributes."
+      ],
+      [
+        "Collection descriptions and metadata",
+        "Prepare collection copy, titles and descriptions from supplied brand information and approved keyword targets."
+      ],
+      [
+        "Tags and product categorization",
+        "Review product tags, types and vendor fields to improve catalog consistency and collection rules."
+      ],
+      [
+        "Navigation and menu updates",
+        "Coordinate approved collection links and menu changes, then check desktop and mobile navigation."
+      ],
+      [
+        "Merchandising quality checks",
+        "Review collection order, featured products, empty collections and outdated links; report recommendations before major changes."
+      ]
+    ]
+  },
+  {
+    "key": "shopify-product-page-seo-optimization",
+    "name": "Shopify",
+    "prefix": "shopify",
+    "generalUrl": "/shopify-store-management/",
+    "serviceName": "Shopify Product Page SEO & Listing Optimization Services",
+    "shortDescription": "Shopify product page optimization support for search-focused titles, product descriptions, meta fields, image alt text, variant details, internal links and catalog quality checks.",
+    "audience": "Shopify merchants, DTC brands, online retailers and stores improving product page quality",
+    "cards": [
+      [
+        "Product title and description updates",
+        "Improve supplied product copy for clarity, useful product details and relevant search language without inventing product claims."
+      ],
+      [
+        "SEO metadata preparation",
+        "Prepare unique page titles and meta descriptions for selected products using merchant-approved keywords."
+      ],
+      [
+        "Image and alt-text organization",
+        "Rename and organize supplied product images where appropriate and add descriptive alt text based on visible product details."
+      ],
+      [
+        "Variant and attribute checks",
+        "Review options, sizes, colors, SKUs and product attributes for consistency across product pages."
+      ],
+      [
+        "On-page quality review",
+        "Check headings, product details, internal links and missing fields, then provide a prioritized update log."
+      ]
+    ]
+  },
+  {
+    "key": "shopify-store-maintenance-content-updates",
+    "name": "Shopify",
+    "prefix": "shopify",
+    "generalUrl": "/shopify-store-management/",
+    "serviceName": "Shopify Store Maintenance & Content Update Services",
+    "shortDescription": "Ongoing Shopify store maintenance support for routine storefront content edits, product and page updates, navigation checks, app review coordination and recurring quality checks.",
+    "audience": "Shopify store owners, eCommerce teams, growing brands and businesses needing ongoing store administration",
+    "cards": [
+      [
+        "Storefront content updates",
+        "Update approved text, images, banners, announcements and page content using the store's available editor."
+      ],
+      [
+        "Routine product and collection upkeep",
+        "Maintain approved product details, collection assignments, seasonal content and merchandising information."
+      ],
+      [
+        "Navigation and link checks",
+        "Review menus, important storefront links and key customer paths after agreed content changes."
+      ],
+      [
+        "App and theme change coordination",
+        "Track requested app or theme changes, document dependencies and escalate technical work outside the agreed admin scope."
+      ],
+      [
+        "Recurring store QA and reports",
+        "Use a scheduled checklist to review key pages and report completed updates, issues and items requiring owner approval."
+      ]
+    ]
+  },
+  {
+    "key": "shopify-theme-storefront-updates",
+    "name": "Shopify",
+    "prefix": "shopify",
+    "generalUrl": "/shopify-store-management/",
+    "serviceName": "Shopify Theme & Storefront Update Services",
+    "shortDescription": "Shopify theme and storefront administration for theme editor changes, section content, banners, navigation, page layouts and visual quality checks using supported theme settings.",
+    "audience": "Shopify merchants, online brands, retailers and store teams maintaining storefront presentation",
+    "cards": [
+      [
+        "Theme editor content changes",
+        "Update supported theme settings, text, images, colors and section content based on approved design instructions."
+      ],
+      [
+        "Homepage and landing page upkeep",
+        "Coordinate homepage sections, promotional banners and landing page content using available theme controls."
+      ],
+      [
+        "Navigation and footer updates",
+        "Maintain approved menus, footer links, policy links and customer information sections."
+      ],
+      [
+        "Responsive storefront checks",
+        "Review key storefront pages on desktop and mobile after updates and document display issues."
+      ],
+      [
+        "Change tracking and escalation",
+        "Record changes and identify requests requiring custom theme code or specialist development before proceeding."
+      ]
+    ]
+  },
+  {
+    "key": "shopify-app-management-configuration",
+    "name": "Shopify",
+    "prefix": "shopify",
+    "generalUrl": "/shopify-store-management/",
+    "serviceName": "Shopify Apps Management & Configuration Support",
+    "shortDescription": "Shopify app administration support for app inventory reviews, routine settings, access coordination, workflow checks, subscription records and integration issue follow-ups.",
+    "audience": "Shopify store owners, eCommerce operations teams and merchants using multiple store apps",
+    "cards": [
+      [
+        "App inventory and access records",
+        "Maintain a list of installed apps, business purpose, account owner and renewal details supplied by the merchant."
+      ],
+      [
+        "Routine app settings",
+        "Complete approved configuration changes using app dashboards and documented instructions."
+      ],
+      [
+        "Integration workflow checks",
+        "Review whether expected product, order or customer data is flowing between connected tools and record exceptions."
+      ],
+      [
+        "Subscription and renewal tracking",
+        "Prepare app cost and renewal summaries for the merchant's review without approving purchases or cancellations."
+      ],
+      [
+        "Vendor support coordination",
+        "Collect screenshots and issue details, open or follow up on support cases where authorized, and track resolution."
+      ]
+    ]
+  },
+  {
+    "key": "shopify-catalog-cleanup-sku-variant-organization",
+    "name": "Shopify",
+    "prefix": "shopify",
+    "generalUrl": "/shopify-store-management/",
+    "serviceName": "Shopify Product Catalog Cleanup & SKU Organization Services",
+    "shortDescription": "Shopify catalog cleanup support for duplicate product checks, SKU consistency, variant organization, missing product fields, tag standardization and catalog audit reports.",
+    "audience": "Shopify stores with growing catalogs, multi-variant products, wholesale brands and eCommerce operations teams",
+    "cards": [
+      [
+        "Catalog audit and data checks",
+        "Review product records for missing fields, duplicate entries, inconsistent naming and incomplete product details."
+      ],
+      [
+        "SKU and barcode organization",
+        "Compare supplied SKU and barcode references with product and variant records and flag conflicts."
+      ],
+      [
+        "Variant and option consistency",
+        "Standardize approved option names and identify duplicate, incomplete or incorrectly grouped variants."
+      ],
+      [
+        "Tags, types and vendor fields",
+        "Apply agreed naming conventions to product tags, product types and vendor fields to support store organization."
+      ],
+      [
+        "Cleanup log and approval review",
+        "Provide a before-and-after change log and flag uncertain records for merchant approval."
+      ]
+    ]
+  },
+  {
+    "key": "wordpress-website-maintenance-updates",
+    "name": "WordPress",
+    "prefix": "wordpress",
+    "generalUrl": "/wordpress-website-management/",
+    "serviceName": "WordPress Website Maintenance & Update Services",
+    "shortDescription": "WordPress website maintenance support for scheduled content checks, core/theme/plugin update coordination, backup verification, uptime follow-ups and post-update quality checks.",
+    "audience": "Small businesses, professional services firms, publishers and organizations using WordPress websites",
+    "cards": [
+      [
+        "WordPress update coordination",
+        "Review available WordPress core, theme and plugin updates and follow the client's approved staging and release process."
+      ],
+      [
+        "Backup checks and records",
+        "Check backup schedules and completion records using the configured backup service and escalate failed or missing backups."
+      ],
+      [
+        "Website content upkeep",
+        "Update approved page text, images, contact details, announcements and other routine website content."
+      ],
+      [
+        "Forms and key page checks",
+        "Test agreed contact forms, navigation links and priority pages after scheduled updates."
+      ],
+      [
+        "Maintenance log and reporting",
+        "Maintain an update log, note exceptions and provide a concise monthly maintenance summary."
+      ]
+    ]
+  },
+  {
+    "key": "wordpress-content-page-updates",
+    "name": "WordPress",
+    "prefix": "wordpress",
+    "generalUrl": "/wordpress-website-management/",
+    "serviceName": "WordPress Website Content & Page Update Services",
+    "shortDescription": "WordPress content management support for page edits, blog publishing, image uploads, formatting, menus, links, media library organization and routine website content updates.",
+    "audience": "WordPress business websites, blogs, publishers, agencies and organizations with recurring content needs",
+    "cards": [
+      [
+        "Page content editing",
+        "Add or revise supplied text, headings, images and calls to action within existing WordPress page layouts."
+      ],
+      [
+        "Blog post formatting and publishing",
+        "Format approved articles, add featured images, assign categories and tags, and schedule or publish with authorization."
+      ],
+      [
+        "Media library organization",
+        "Upload supplied images and documents, use descriptive file names and add relevant alternative text."
+      ],
+      [
+        "Menus and internal links",
+        "Update approved navigation items and internal links, then check for broken or outdated destinations."
+      ],
+      [
+        "Content QA and publishing checklist",
+        "Review formatting, links, mobile presentation and metadata before publishing or handing changes back for approval."
+      ]
+    ]
+  },
+  {
+    "key": "wordpress-plugin-management-configuration",
+    "name": "WordPress",
+    "prefix": "wordpress",
+    "generalUrl": "/wordpress-website-management/",
+    "serviceName": "WordPress Plugin Management & Configuration Support",
+    "shortDescription": "WordPress plugin administration support for plugin inventories, routine settings, update coordination, compatibility checks, license records and troubleshooting follow-ups.",
+    "audience": "WordPress site owners, small businesses, publishers and teams maintaining plugin-based websites",
+    "cards": [
+      [
+        "Plugin inventory and documentation",
+        "Record active plugins, their purpose, license owner, renewal date and business-critical dependencies."
+      ],
+      [
+        "Routine plugin configuration",
+        "Apply client-approved settings using plugin dashboards and documented procedures."
+      ],
+      [
+        "Update and compatibility coordination",
+        "Coordinate plugin updates through the agreed backup and staging workflow and check key site functions afterward."
+      ],
+      [
+        "License and renewal tracking",
+        "Prepare plugin license and renewal summaries for owner review without purchasing or renewing subscriptions independently."
+      ],
+      [
+        "Issue documentation and escalation",
+        "Capture errors, affected pages and reproduction steps, then coordinate with the site developer or plugin vendor."
+      ]
+    ]
+  },
+  {
+    "key": "wordpress-speed-performance-support",
+    "name": "WordPress",
+    "prefix": "wordpress",
+    "generalUrl": "/wordpress-website-management/",
+    "serviceName": "WordPress Website Speed & Performance Support",
+    "shortDescription": "WordPress performance support for image optimization coordination, cache and plugin checks, page speed monitoring, Core Web Vitals review and performance issue reporting.",
+    "audience": "WordPress business websites, content publishers, WooCommerce stores and organizations improving site usability",
+    "cards": [
+      [
+        "Baseline performance review",
+        "Record page speed and Core Web Vitals observations for agreed priority pages using available testing tools."
+      ],
+      [
+        "Image and media optimization",
+        "Identify oversized images and coordinate compression, dimensions and suitable formats while preserving visual quality."
+      ],
+      [
+        "Cache and plugin review",
+        "Review configured caching tools and identify overlapping or unnecessary plugins for technical review."
+      ],
+      [
+        "Page and mobile checks",
+        "Check key pages on mobile and desktop and document slow-loading or layout issues."
+      ],
+      [
+        "Progress reporting",
+        "Compare agreed performance measurements over time and separate administrative improvements from changes requiring developer or hosting access."
+      ]
+    ]
+  },
+  {
+    "key": "woocommerce-product-category-seo",
+    "name": "WordPress / WooCommerce",
+    "prefix": "wordpress",
+    "generalUrl": "/woocommerce-wordpress-store-management/",
+    "serviceName": "WooCommerce Product & Category SEO Support Services",
+    "shortDescription": "WooCommerce SEO administration for product and category titles, descriptions, metadata, image alt text, internal links, product attributes and catalog content quality.",
+    "audience": "WooCommerce merchants, WordPress online stores, product retailers and eCommerce teams",
+    "cards": [
+      [
+        "Product page content optimization",
+        "Prepare clearer product titles and descriptions from verified product information and merchant-approved search terms."
+      ],
+      [
+        "Category and product taxonomy",
+        "Organize product categories, tags and attributes to reflect the store's catalog and customer navigation."
+      ],
+      [
+        "SEO titles and meta descriptions",
+        "Prepare unique metadata for selected products and categories using the site's configured SEO plugin."
+      ],
+      [
+        "Image alt text and media checks",
+        "Add descriptive alt text to supplied product images and flag missing or unclear image information."
+      ],
+      [
+        "On-page review and reporting",
+        "Check internal links, headings, duplicate or thin content signals and provide an update report without promising rankings."
+      ]
+    ]
+  }];
 
 for (const item of keywordExpansion) {
   platforms.push({
@@ -1795,7 +2136,7 @@ if (fs.existsSync(servicesPath)) {
   ).join("");
   const section = marker +
     '<section class="section"><div class="wrap"><h2>Platform Store and Print-Shop Services — USA &amp; Canada</h2>' +
-    '<p class="lead">Explore dedicated platform setup, catalog, store operations and administration services for InkSoft, Chipply, OrderMyGear (OMG) and Printavo, with country-specific pages for the United States and Canada.</p>' +
+    '<p class="lead">Explore dedicated Shopify and WordPress website and eCommerce support, alongside platform-specific store and print-shop administration services, with country-specific pages for the United States and Canada.</p>' +
     '<div class="grid">' + cards + '</div></div></section>';
   const markerIndex = services.indexOf(marker);
   if (markerIndex >= 0) {
