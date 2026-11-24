@@ -1318,6 +1318,316 @@ const keywordExpansion = [
         "Maintain website update lists, coordinate review and approval steps, document completed tasks and flag issues for the site owner or developer."
       ]
     ]
+  },
+  {
+    "key": "shopify-product-upload-catalog-management",
+    "name": "Shopify",
+    "prefix": "shopify",
+    "generalUrl": "/shopify-store-management/",
+    "serviceName": "Shopify Product Upload & Catalog Management Services",
+    "shortDescription": "Shopify product upload services for bulk product listing, CSV imports, product descriptions, images, SKUs, pricing fields, variants, collections and ongoing catalog maintenance.",
+    "audience": "Shopify merchants, eCommerce brands, online retailers and growing direct-to-consumer stores",
+    "cards": [
+      [
+        "Product data preparation",
+        "Organize client-supplied product titles, descriptions, SKUs, prices, vendor details, tags and product types in a consistent import sheet."
+      ],
+      [
+        "Bulk product uploads",
+        "Prepare and upload approved products using Shopify product entry or supported CSV import workflows, with a small test batch where appropriate."
+      ],
+      [
+        "Images and product variants",
+        "Coordinate supplied product images, alt text where supported, options such as size and color, variant SKUs and variant-specific details."
+      ],
+      [
+        "Collections and catalog organization",
+        "Assign approved products to collections, organize tags and categories, and check product visibility and sales-channel selections."
+      ],
+      [
+        "Listing quality checks",
+        "Review product records for missing fields, broken image links, duplicate entries and inconsistencies against the supplied source data."
+      ]
+    ]
+  },
+  {
+    "key": "shopify-order-management-processing",
+    "name": "Shopify",
+    "prefix": "shopify",
+    "generalUrl": "/shopify-store-management/",
+    "serviceName": "Shopify Order Management & Processing Support",
+    "shortDescription": "Shopify order management services for reviewing new orders, updating approved order details, tracking payment and fulfillment statuses, customer follow-ups, draft orders and daily order administration.",
+    "audience": "Shopify stores, online retailers, DTC brands and multi-product eCommerce businesses",
+    "cards": [
+      [
+        "Daily order review",
+        "Review incoming orders, sort by date or status, identify missing information and prepare an actionable order queue."
+      ],
+      [
+        "Order data administration",
+        "Update client-authorized details, notes, tags and order records within the permissions and platform workflow available."
+      ],
+      [
+        "Customer communication coordination",
+        "Prepare or send client-approved order status, address clarification and delivery follow-up messages using the store's communication process."
+      ],
+      [
+        "Draft orders and exceptions",
+        "Assist with draft order preparation and flag cancellations, payment questions, fraud alerts or unusual requests for owner approval."
+      ],
+      [
+        "Order status reporting",
+        "Maintain order trackers and summarize unfulfilled, on-hold, delayed or exception orders for the store team."
+      ]
+    ]
+  },
+  {
+    "key": "shopify-inventory-management-stock-updates",
+    "name": "Shopify",
+    "prefix": "shopify",
+    "generalUrl": "/shopify-store-management/",
+    "serviceName": "Shopify Inventory Management & Stock Updates",
+    "shortDescription": "Shopify inventory management support for stock quantity updates, SKU checks, variant-level inventory, location records, low-stock monitoring, inventory CSV updates and stock discrepancy tracking.",
+    "audience": "Shopify retailers, multi-location merchants, apparel brands and inventory-led eCommerce stores",
+    "cards": [
+      [
+        "Inventory data cleanup",
+        "Organize product and variant SKUs, stock sheets, location references and client-approved inventory source files."
+      ],
+      [
+        "Stock quantity updates",
+        "Enter approved stock quantities through Shopify inventory tools or supported CSV workflows, following a reviewed update process."
+      ],
+      [
+        "Variant and location checks",
+        "Check inventory by product variant and configured location, and flag missing or mismatched SKU and location records."
+      ],
+      [
+        "Low-stock and discrepancy tracking",
+        "Maintain low-stock lists, compare supplied counts with store records and escalate stockout risks or unexplained differences."
+      ],
+      [
+        "Inventory reporting",
+        "Prepare stock summaries, adjustment logs and replenishment follow-up lists without independently deciding purchasing quantities."
+      ]
+    ]
+  },
+  {
+    "key": "shopify-order-fulfillment-shipping-coordination",
+    "name": "Shopify",
+    "prefix": "shopify",
+    "generalUrl": "/shopify-store-management/",
+    "serviceName": "Shopify Order Fulfillment & Shipping Coordination",
+    "shortDescription": "Shopify order fulfillment support for unfulfilled order queues, packing and dispatch information, shipping label administration where authorized, tracking updates, partial fulfillment follow-ups and delivery status coordination.",
+    "audience": "Shopify stores, online retailers, DTC brands and merchants shipping physical products",
+    "cards": [
+      [
+        "Unfulfilled order queue",
+        "Organize paid and ready-to-fulfill orders, identify holds or missing details and prepare dispatch priority lists."
+      ],
+      [
+        "Packing and dispatch data",
+        "Coordinate client-supplied packing requirements, shipping addresses, item quantities and dispatch notes for warehouse handoff."
+      ],
+      [
+        "Shipping label and tracking administration",
+        "Assist with label and tracking workflows available in the store or connected shipping tools, subject to client authorization and carrier setup."
+      ],
+      [
+        "Partial shipment coordination",
+        "Track split shipments, backordered items, fulfillment exceptions and outstanding quantities for the operations team."
+      ],
+      [
+        "Delivery follow-ups",
+        "Monitor available tracking statuses and prepare customer or carrier follow-up tasks for delayed or undelivered parcels."
+      ]
+    ]
+  },
+  {
+    "key": "shopify-returns-refunds-exchanges-administration",
+    "name": "Shopify",
+    "prefix": "shopify",
+    "generalUrl": "/shopify-store-management/",
+    "serviceName": "Shopify Returns, Refunds & Exchanges Administration",
+    "shortDescription": "Shopify returns and refunds administration support for return request tracking, exchange coordination, return status updates, customer communication and client-approved refund record processing.",
+    "audience": "Shopify merchants, online retailers, apparel brands and customer service teams",
+    "cards": [
+      [
+        "Return request tracking",
+        "Log return and exchange requests, order references, reasons and supporting information supplied by customers."
+      ],
+      [
+        "Eligibility information checks",
+        "Organize requests against the merchant's written return policy and flag exceptions for the business owner to decide."
+      ],
+      [
+        "Exchange coordination",
+        "Track replacement product, size or variant requirements and coordinate approved exchange steps with the store team."
+      ],
+      [
+        "Refund administration",
+        "Prepare approved refund tasks and update relevant records only after the merchant authorizes the amount and action."
+      ],
+      [
+        "Customer updates and reporting",
+        "Coordinate client-approved return status messages and report open, completed and escalated cases."
+      ]
+    ]
+  },
+  {
+    "key": "wordpress-woocommerce-product-upload-catalog-management",
+    "name": "WordPress / WooCommerce",
+    "prefix": "wordpress",
+    "generalUrl": "/woocommerce-wordpress-store-management/",
+    "serviceName": "WooCommerce Product Upload & Catalog Management Services",
+    "shortDescription": "WooCommerce product upload services for bulk product imports, CSV product listings, descriptions, images, categories, attributes, SKUs, variable products and ongoing catalog maintenance in WordPress.",
+    "audience": "WooCommerce store owners, WordPress eCommerce businesses, online retailers and small business websites",
+    "cards": [
+      [
+        "WooCommerce product data preparation",
+        "Organize product names, long and short descriptions, SKUs, prices, categories, tags, attributes and shipping details in the supported CSV structure."
+      ],
+      [
+        "Bulk product import and updates",
+        "Prepare and run approved WooCommerce CSV product imports, map columns and test a small sample before larger catalog updates."
+      ],
+      [
+        "Images and product attributes",
+        "Coordinate supplied product images and URLs, product galleries, attributes and variation data, checking media availability."
+      ],
+      [
+        "Categories and variable products",
+        "Organize products into approved categories and configure supplied size, color or other variation data where supported."
+      ],
+      [
+        "Catalog review and cleanup",
+        "Check imported products, image display, SKU consistency, missing attributes and source-data mismatches; flag plugin-specific issues for the site owner."
+      ]
+    ]
+  },
+  {
+    "key": "wordpress-woocommerce-order-management-processing",
+    "name": "WordPress / WooCommerce",
+    "prefix": "wordpress",
+    "generalUrl": "/woocommerce-wordpress-store-management/",
+    "serviceName": "WooCommerce Order Management & Processing Support",
+    "shortDescription": "WooCommerce order management services for order review, status updates, order notes, customer details, payment and fulfillment follow-ups, bulk order administration and daily store operations.",
+    "audience": "WooCommerce store owners, WordPress retailers, online shops and small business eCommerce teams",
+    "cards": [
+      [
+        "Order inbox review",
+        "Review new and pending orders, filter by status and date, and identify orders requiring customer or staff action."
+      ],
+      [
+        "Order record administration",
+        "Maintain client-authorized order details, internal notes, customer notes and order metadata where appropriate."
+      ],
+      [
+        "Customer and payment follow-ups",
+        "Track missing address details, payment questions and customer requests, escalating payment decisions and disputes to the merchant."
+      ],
+      [
+        "Status and exception coordination",
+        "Update statuses only in line with the merchant's workflow and flag cancellations, refunds, failed payments or unusual orders."
+      ],
+      [
+        "Order reporting",
+        "Prepare daily order lists and summaries of processing, on-hold, completed and exception orders for the store owner."
+      ]
+    ]
+  },
+  {
+    "key": "wordpress-woocommerce-inventory-stock-management",
+    "name": "WordPress / WooCommerce",
+    "prefix": "wordpress",
+    "generalUrl": "/woocommerce-wordpress-store-management/",
+    "serviceName": "WooCommerce Inventory & Stock Management Services",
+    "shortDescription": "WooCommerce inventory management support for product stock quantities, SKU and variation checks, stock status updates, low-stock lists, CSV stock imports and inventory data cleanup.",
+    "audience": "WooCommerce merchants, WordPress online stores, product retailers and small eCommerce teams",
+    "cards": [
+      [
+        "Stock data preparation",
+        "Organize supplier or warehouse stock sheets, product IDs, SKUs, variation references and approved quantity updates."
+      ],
+      [
+        "Product and variation stock updates",
+        "Update approved stock quantities and stock-management fields using WooCommerce product editing or compatible CSV workflows."
+      ],
+      [
+        "Low-stock monitoring",
+        "Review low-stock and out-of-stock records using the store's configured thresholds and prepare replenishment follow-up lists."
+      ],
+      [
+        "SKU and catalog reconciliation",
+        "Compare stock files with product and variation records, flag duplicates, missing SKUs and inconsistent stock statuses."
+      ],
+      [
+        "Inventory summaries",
+        "Prepare stock snapshots and discrepancy reports while leaving purchase quantities, supplier orders and inventory valuation decisions to the merchant."
+      ]
+    ]
+  },
+  {
+    "key": "wordpress-woocommerce-order-fulfillment-shipping-coordination",
+    "name": "WordPress / WooCommerce",
+    "prefix": "wordpress",
+    "generalUrl": "/woocommerce-wordpress-store-management/",
+    "serviceName": "WooCommerce Order Fulfillment & Shipping Coordination",
+    "shortDescription": "WooCommerce order fulfillment support for processing queues, packing and dispatch coordination, shipment tracking, partial fulfillment records and shipping status follow-ups.",
+    "audience": "WooCommerce stores, WordPress retailers, physical product businesses and online shops",
+    "cards": [
+      [
+        "Processing order queue",
+        "Organize orders ready for fulfillment and identify payment, stock or address issues requiring merchant review."
+      ],
+      [
+        "Packing and dispatch coordination",
+        "Prepare order pick lists, item quantities, shipping details and warehouse handoff notes from approved order records."
+      ],
+      [
+        "Shipping and tracking updates",
+        "Coordinate tracking references and shipping status updates using WooCommerce features or the store's configured extensions."
+      ],
+      [
+        "Partial fulfillment tracking",
+        "Maintain records of split shipments, outstanding items and backordered products where the store's setup supports them."
+      ],
+      [
+        "Delivery exception follow-ups",
+        "Track delayed, returned or undelivered shipment cases and route carrier or customer questions to the responsible contact."
+      ]
+    ]
+  },
+  {
+    "key": "wordpress-woocommerce-returns-refunds-administration",
+    "name": "WordPress / WooCommerce",
+    "prefix": "wordpress",
+    "generalUrl": "/woocommerce-wordpress-store-management/",
+    "serviceName": "WooCommerce Returns, Refunds & Exchanges Administration",
+    "shortDescription": "WooCommerce returns and refunds administration for return request tracking, customer notes, exchange coordination, refund task preparation and merchant-approved order record updates.",
+    "audience": "WooCommerce store owners, WordPress eCommerce businesses, online retailers and customer support teams",
+    "cards": [
+      [
+        "Return and exchange case logging",
+        "Record order numbers, customer details, return reasons, requested outcomes and supporting information."
+      ],
+      [
+        "Policy and order checks",
+        "Compare requests with the merchant's published policy and order information, escalating eligibility decisions and exceptions."
+      ],
+      [
+        "Exchange coordination",
+        "Track replacement items, product variations, stock availability questions and approved exchange handoffs."
+      ],
+      [
+        "Refund task preparation",
+        "Prepare refund records and action checklists for merchant approval; never independently determine refund amounts or authorize payments."
+      ],
+      [
+        "Customer communication tracking",
+        "Coordinate approved customer updates and maintain open-case, resolution and escalation reports."
+      ]
+    ]
   }
 ];
 
