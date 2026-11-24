@@ -3,6 +3,14 @@
   "outputDirectory": "dist",
   "rewrites": [
     {
+      "source": "/service",
+      "destination": "/services/index.html"
+    },
+    {
+      "source": "/service/",
+      "destination": "/services/index.html"
+    },
+    {
       "source": "/custom-merchandise-store-setup-management",
       "destination": "/custom-merchandise-store-setup-management/index.html"
     },
