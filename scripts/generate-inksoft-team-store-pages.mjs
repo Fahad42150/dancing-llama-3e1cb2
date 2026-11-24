@@ -500,7 +500,7 @@ const chat = extractBetween("<!--Start of Tawk.to Script-->", "<!--End of Tawk.t
 // Use the eCommerce reference's relevant store-management image, not InkSoft-only tutorial media.
 const ecommerceReferencePath = path.join(publicDir, "ecommerce-store-management", "index.html");
 const ecommerceReference = fs.existsSync(ecommerceReferencePath) ? fs.readFileSync(ecommerceReferencePath, "utf8") : reference;
-const heroImage = ecommerceReference.match(/<figure class="hero-image">[\\s\\S]*?<\\/figure>/i)?.[0];
+const heroImage = ecommerceReference.match(/<figure class="hero-image">[\s\S]*?<\/figure>/i)?.[0];
 if (!heroImage) throw new Error("Could not find an eCommerce store-management hero image.");
 const media = '<div class="hero-media-grid">' + heroImage + '</div>';
 if (!styles) throw new Error("Reference page CSS was not found");
