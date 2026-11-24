@@ -249,8 +249,8 @@ const servicesPath = path.join(publicDir,"services","index.html");
 if (fs.existsSync(servicesPath)) {
   let services = fs.readFileSync(servicesPath,"utf8");
   const marker = "<!-- online-store-manager-keyword-services -->";
-  const cards = pages.map(page => '<article class="item"><h3><a href="/'+page.slug+'/">'+escapeHtml(page.title)+'</a></h3><p>'+escapeHtml(page.description)+'</p></article>').join("");
-  const section = marker+'<section class="section"><div class="wrap"><h2>Online Store Management Services for the USA &amp; Canada</h2><p class="lead">Explore focused eCommerce store, inventory and marketplace operations support.</p><div class="grid">'+cards+'</div></div></section>';
+  const cards = pages.map(page => '<a class="service-card" href="/'+page.slug+'/"><span>'+escapeHtml(page.title)+'</span><span class="arrow" aria-hidden="true">→</span></a>').join("");
+  const section = marker+'<section class="section"><div class="wrap"><h2>Related Online Store Management Services</h2><p class="lead">Explore related support for online store administration, inventory operations and shopping feed management.</p><div class="grid">'+cards+'</div></div></section>';
   const markerIndex = services.indexOf(marker);
   if (markerIndex >= 0) {
     const end = services.indexOf("</section>", markerIndex);
