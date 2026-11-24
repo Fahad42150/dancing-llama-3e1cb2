@@ -1256,6 +1256,68 @@ const keywordExpansion = [
         "Maintain task trackers, prepare available job or order reports and summarize exceptions for the shop team."
       ]
     ]
+  },
+  {
+    "key": "shopify-assistant-support-coordinator",
+    "name": "Shopify",
+    "prefix": "shopify",
+    "generalUrl": "/shopify-store-management/",
+    "serviceName": "Shopify Assistant Support Coordinator Services",
+    "shortDescription": "Ongoing Shopify assistant support coordinator services for store administration, product catalog maintenance, customer and order follow-ups, inventory coordination, promotions, task tracking and routine reporting.",
+    "audience": "Shopify merchants, direct-to-consumer brands, online retailers and growing eCommerce businesses",
+    "cards": [
+      [
+        "Store administration",
+        "Maintain approved store content, navigation, collections, pages, settings checklists and routine operational updates."
+      ],
+      [
+        "Product catalog coordination",
+        "Organize product titles, descriptions, images, variants, tags, collections and client-approved listing changes."
+      ],
+      [
+        "Order and customer follow-ups",
+        "Track order questions, customer messages, missing details, returns or exchange requests and follow-up tasks for authorized staff."
+      ],
+      [
+        "Inventory and promotion coordination",
+        "Maintain supplied inventory information, promotion schedules, discount setup requests and campaign checklists subject to client approval."
+      ],
+      [
+        "Reporting and daily operations",
+        "Prepare available order, product or store reports, maintain task trackers and summarize exceptions and pending decisions."
+      ]
+    ]
+  },
+  {
+    "key": "wordpress-assistant-support-coordinator",
+    "name": "WordPress",
+    "prefix": "wordpress",
+    "generalUrl": "/woocommerce-wordpress-store-management/",
+    "serviceName": "WordPress Assistant Support Coordinator Services",
+    "shortDescription": "Ongoing WordPress assistant support coordinator services for website content administration, page and blog updates, media organization, form and inquiry follow-ups, WooCommerce coordination and routine site task tracking.",
+    "audience": "small businesses, professional service firms, publishers, nonprofits and WooCommerce store owners",
+    "cards": [
+      [
+        "Website content administration",
+        "Coordinate approved page edits, blog publishing, menu updates, formatting checks and routine content maintenance."
+      ],
+      [
+        "Media and content organization",
+        "Organize supplied images, documents, links, categories, tags and media-library information for consistent website content."
+      ],
+      [
+        "Forms and inquiry follow-ups",
+        "Track website inquiries, form submissions and pending responses, routing messages to the appropriate client contact."
+      ],
+      [
+        "WooCommerce store coordination",
+        "Where WooCommerce is installed, assist with approved product information, order administration, customer details and catalog updates."
+      ],
+      [
+        "Website task tracking and reporting",
+        "Maintain website update lists, coordinate review and approval steps, document completed tasks and flag issues for the site owner or developer."
+      ]
+    ]
   }
 ];
 
