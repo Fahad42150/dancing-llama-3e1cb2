@@ -247,8 +247,7 @@ const keywordExpansion = [
   {
     key: "inksoft-redesign-store",
     name: "InkSoft",
-    prefix: "inksoft",
-    generalUrl: "/inksoft-store-management/",
+    prefix: "inksoft",    generalUrl: "/inksoft-store-management/",
     serviceName: "InkSoft Store Redesign, Refresh & Optimization",
     shortDescription: "InkSoft store redesign and storefront refresh assistance for layout updates, product presentation, navigation, content, images and mobile-friendly store organization.",
     audience: "screen printers, apparel brands, team dealers, schools and businesses refreshing an existing InkSoft store",
@@ -497,8 +496,7 @@ const keywordExpansion = [
   {
     key: "ordermygear-artwork-logo-upload",
     name: "OrderMyGear (OMG)",
-    prefix: "ordermygear",
-    generalUrl: "/ordermy-gear-website-develop-design/",
+    prefix: "ordermygear",    generalUrl: "/ordermy-gear-website-develop-design/",
     serviceName: "OrderMyGear Artwork & Logo Upload",
     shortDescription: "Artwork and logo upload assistance for team identity assets, product images and approved store graphics.",
     audience: "team dealers, schools, sports clubs and apparel businesses",
@@ -747,8 +745,7 @@ const keywordExpansion = [
   {
     key: "ordermygear-order-management", name: "OrderMyGear (OMG)", prefix: "ordermygear", generalUrl: "/ordermy-gear-website-develop-design/",
     serviceName: "OrderMyGear Global Order Management & Fulfillment Updates", shortDescription: "OrderMyGear order administration support for cross-store order search, status updates, customer communications and fulfillment reporting.", audience: "team dealers, schools, sports organizations and multi-store operators",
-    cards: [["Order search and filters", "Organize order lookup requirements across stores, dates, customers and payment types."], ["Status administration", "Apply client-authorized fulfillment status updates and organize exceptions."], ["Customer communication support", "Prepare approved order notices and organize customer follow-up requirements."], ["Fulfillment exports", "Prepare relevant order and shipping information for the client’s fulfillment process."]]
-  },
+    cards: [["Order search and filters", "Organize order lookup requirements across stores, dates, customers and payment types."], ["Status administration", "Apply client-authorized fulfillment status updates and organize exceptions."], ["Customer communication support", "Prepare approved order notices and organize customer follow-up requirements."], ["Fulfillment exports", "Prepare relevant order and shipping information for the client’s fulfillment process."]]  },
   {
     key: "ordermygear-store-reports", name: "OrderMyGear (OMG)", prefix: "ordermygear", generalUrl: "/ordermy-gear-website-develop-design/",
     serviceName: "OrderMyGear Store, Product & Player Reports", shortDescription: "OrderMyGear reporting assistance for product, player, drop-ship, transaction and tax report preparation and export.", audience: "team dealers, schools, leagues and organizations managing group orders",
@@ -813,6 +810,331 @@ const keywordExpansion = [
     key: "printavo-payments-refunds-deposits", name: "Printavo", prefix: "printavo", generalUrl: "/print-shop-quoting-software/",
     serviceName: "Printavo Payments, Deposits & Refund Workflow Support", shortDescription: "Printavo payment administration support for payment records, deposits, refunds and reconciliation workflows using client-approved financial decisions.", audience: "screen printers, embroidery businesses and custom print shops",
     cards: [["Payment workflow review", "Document how the shop records deposits, balances, payments and refunds."], ["Record organization", "Prepare client-supplied payment references and transaction details."], ["Administrative updates", "Assist with authorized record updates without making financial decisions."], ["Reconciliation checks", "Compare approved records and flag discrepancies for the shop’s finance contact."]]
+  }
+,
+  {
+    "key": "inksoft-pricing-setup",
+    "name": "InkSoft",
+    "prefix": "inksoft",
+    "generalUrl": "/inksoft-store-management/",
+    "serviceName": "InkSoft Product Pricing Setup & Updates",
+    "shortDescription": "InkSoft product pricing administration for client-approved base prices, size upcharges, quantity breaks, markups and catalog price updates.",
+    "audience": "screen printers, apparel decorators, promotional product businesses, schools and team dealers",
+    "cards": [
+      [
+        "Pricing structure review",
+        "Review supplied cost sheets, product lists, price levels and the shop’s approved pricing rules."
+      ],
+      [
+        "Product and variant pricing",
+        "Organize approved base prices, size upcharges and variant-specific price information where supported."
+      ],
+      [
+        "Quantity breaks and markups",
+        "Prepare client-defined quantity tiers and markup inputs without making commercial pricing decisions."
+      ],
+      [
+        "Price update quality checks",
+        "Compare updated listings with the approved source sheet and flag missing or inconsistent values."
+      ]
+    ]
+  },
+  {
+    "key": "inksoft-supplier-size-chart-upload",
+    "name": "InkSoft",
+    "prefix": "inksoft",
+    "generalUrl": "/inksoft-store-management/",
+    "serviceName": "InkSoft Supplier Size Chart Upload & Management",
+    "shortDescription": "InkSoft supplier size chart support for organizing manufacturer measurement references, product-to-chart assignments and customer-facing sizing information.",
+    "audience": "apparel decorators, screen printers, promotional merchandise suppliers, schools and team dealers",
+    "cards": [
+      [
+        "Supplier chart collection",
+        "Collect manufacturer size-chart files, URLs and product references supplied by the client."
+      ],
+      [
+        "Chart formatting and upload",
+        "Prepare supported chart images or information in the format accepted by the client’s InkSoft workflow."
+      ],
+      [
+        "Product-to-chart mapping",
+        "Match approved supplier charts to the relevant garments, styles and product listings."
+      ],
+      [
+        "Sizing review",
+        "Check chart labels and measurements against source materials and flag discrepancies for approval."
+      ]
+    ]
+  },
+  {
+    "key": "inksoft-product-description-updates",
+    "name": "InkSoft",
+    "prefix": "inksoft",
+    "generalUrl": "/inksoft-store-management/",
+    "serviceName": "InkSoft Product Description Writing & Catalog Updates",
+    "shortDescription": "InkSoft product description support for adding, rewriting and maintaining customer-facing product copy, specifications and catalog details.",
+    "audience": "screen printers, apparel decorators, promotional product companies, schools and team stores",
+    "cards": [
+      [
+        "Source information review",
+        "Organize manufacturer specifications, fabric details, fit notes, features and client-approved product facts."
+      ],
+      [
+        "Product copy preparation",
+        "Write or refine clear product titles, short descriptions, full descriptions and key selling details."
+      ],
+      [
+        "Catalog description updates",
+        "Enter approved copy into the relevant product listings and maintain consistent formatting."
+      ],
+      [
+        "Accuracy and SEO checks",
+        "Review terminology, product attributes and keyword use while avoiding unsupported claims."
+      ]
+    ]
+  },
+  {
+    "key": "ordermygear-pricing-setup",
+    "name": "OrderMyGear (OMG)",
+    "prefix": "ordermygear",
+    "generalUrl": "/ordermy-gear-website-develop-design/",
+    "serviceName": "OrderMyGear Product Pricing, Size Upcharges & Quantity Breaks",
+    "shortDescription": "OrderMyGear pricing administration for client-approved product prices, size upcharges, quantity-based price breaks and store catalog updates.",
+    "audience": "team dealers, schools, sports organizations, apparel businesses and group-order operators",
+    "cards": [
+      [
+        "Price source preparation",
+        "Review approved supplier costs, price lists, store requirements and pricing instructions."
+      ],
+      [
+        "Product and size pricing",
+        "Organize base prices and client-defined size upcharges for applicable products."
+      ],
+      [
+        "Quantity pricing tiers",
+        "Prepare quantity breaks and price levels according to the client’s approved commercial rules."
+      ],
+      [
+        "Store price validation",
+        "Compare product and variant prices against source data and flag exceptions before launch."
+      ]
+    ]
+  },
+  {
+    "key": "ordermygear-supplier-size-chart-management",
+    "name": "OrderMyGear (OMG)",
+    "prefix": "ordermygear",
+    "generalUrl": "/ordermy-gear-website-develop-design/",
+    "serviceName": "OrderMyGear Supplier Size Chart Management",
+    "shortDescription": "OrderMyGear supplier sizing support for locating, organizing and matching manufacturer size charts with apparel products and store listings.",
+    "audience": "team dealers, schools, sports clubs, apparel decorators and branded merchandise businesses",
+    "cards": [
+      [
+        "Supplier sizing research",
+        "Identify relevant manufacturer sizing references using supplier names, style numbers and client-provided product data."
+      ],
+      [
+        "Chart and measurement organization",
+        "Organize available size charts, measurement labels, URLs and reference files."
+      ],
+      [
+        "Product matching",
+        "Match the correct supplier chart to the corresponding garment styles and product variants."
+      ],
+      [
+        "Listing review",
+        "Check chart references and product sizing information and flag unavailable or conflicting source data."
+      ]
+    ]
+  },
+  {
+    "key": "ordermygear-product-description-additions",
+    "name": "OrderMyGear (OMG)",
+    "prefix": "ordermygear",
+    "generalUrl": "/ordermy-gear-website-develop-design/",
+    "serviceName": "OrderMyGear Product Description Additions & Updates",
+    "shortDescription": "OrderMyGear product copy services for adding and updating product titles, descriptions, garment features, specifications and customer-facing catalog details.",
+    "audience": "team dealers, schools, leagues, sports organizations and apparel businesses",
+    "cards": [
+      [
+        "Product data collection",
+        "Gather approved manufacturer descriptions, fabric details, fit information and product specifications."
+      ],
+      [
+        "Description writing",
+        "Prepare concise product titles, short descriptions and detailed customer-facing copy."
+      ],
+      [
+        "Catalog entry and formatting",
+        "Add approved descriptions and organize product details consistently across selected listings."
+      ],
+      [
+        "Content quality review",
+        "Check copy against supplier source information and flag missing facts or claims requiring client approval."
+      ]
+    ]
+  },
+  {
+    "key": "chipply-pricing-auto-pricing-tiers",
+    "name": "Chipply",
+    "prefix": "chipply",
+    "generalUrl": "/chipply-store-management/",
+    "serviceName": "Chipply Auto Pricing, Vendor Tiers & Product Price Setup",
+    "shortDescription": "Chipply pricing administration for client-approved vendor costs, auto-pricing inputs, decoration charges, price tiers and product price updates.",
+    "audience": "team dealers, apparel decorators, schools, sports clubs and merchandise distributors",
+    "cards": [
+      [
+        "Vendor price data",
+        "Organize supplier cost sheets, product identifiers and applicable vendor pricing tiers."
+      ],
+      [
+        "Auto-pricing inputs",
+        "Prepare client-approved pricing inputs and markup rules for supported auto-pricing workflows."
+      ],
+      [
+        "Decoration and size charges",
+        "Organize approved decoration costs, size upcharges and product-specific price differences."
+      ],
+      [
+        "Price verification",
+        "Compare store prices with the client’s approved pricing model and flag discrepancies."
+      ]
+    ]
+  },
+  {
+    "key": "chipply-product-size-chart-setup",
+    "name": "Chipply",
+    "prefix": "chipply",
+    "generalUrl": "/chipply-store-management/",
+    "serviceName": "Chipply Product & Supplier Size Chart Setup",
+    "shortDescription": "Chipply size chart setup support for manufacturer sizing references, custom product charts, measurement details and product-level chart presentation.",
+    "audience": "team dealers, schools, sports clubs, apparel decorators and uniform providers",
+    "cards": [
+      [
+        "Supplier chart collection",
+        "Collect approved supplier charts, product style references and measurement information."
+      ],
+      [
+        "Chart preparation",
+        "Prepare supported size chart URLs, images or custom sizing information for the product workflow."
+      ],
+      [
+        "Product chart assignment",
+        "Match the appropriate chart to each garment or custom product listing."
+      ],
+      [
+        "Sizing accuracy review",
+        "Check chart labels and measurements against supplier references and flag inconsistencies."
+      ]
+    ]
+  },
+  {
+    "key": "chipply-product-description-updates",
+    "name": "Chipply",
+    "prefix": "chipply",
+    "generalUrl": "/chipply-store-management/",
+    "serviceName": "Chipply Product Description Writing & Updates",
+    "shortDescription": "Chipply product content support for product titles, short and full descriptions, garment specifications, decoration notes and catalog copy updates.",
+    "audience": "team dealers, schools, sports organizations, apparel decorators and uniform suppliers",
+    "cards": [
+      [
+        "Supplier content review",
+        "Review manufacturer product information, fabric details, fit notes and approved features."
+      ],
+      [
+        "Description preparation",
+        "Write or refine product titles, short descriptions and detailed catalog copy."
+      ],
+      [
+        "Store listing updates",
+        "Add approved product copy and organize key details consistently across selected listings."
+      ],
+      [
+        "Content verification",
+        "Check descriptions against source specifications and flag claims or details requiring client confirmation."
+      ]
+    ]
+  },
+  {
+    "key": "printavo-pricing-matrix-setup",
+    "name": "Printavo",
+    "prefix": "printavo",
+    "generalUrl": "/print-shop-quoting-software/",
+    "serviceName": "Printavo Pricing Matrix Setup, Imports & Quantity Breaks",
+    "shortDescription": "Printavo pricing matrix administration for shop-approved garment costs, decoration pricing, quantity breaks, matrix imports and quote calculation inputs.",
+    "audience": "screen printers, embroidery shops, apparel decorators and custom print businesses",
+    "cards": [
+      [
+        "Pricing matrix audit",
+        "Review current matrix structure, garment costs, decoration methods and quantity tiers."
+      ],
+      [
+        "Source data preparation",
+        "Organize supplier price lists and client-approved pricing inputs for matrix setup or import."
+      ],
+      [
+        "Matrix and tier administration",
+        "Assist with supported pricing matrix configuration, quantity breaks and approved updates."
+      ],
+      [
+        "Quote calculation checks",
+        "Test representative quote scenarios and flag differences for the shop owner to approve."
+      ]
+    ]
+  },
+  {
+    "key": "printavo-garment-size-chart-preparation",
+    "name": "Printavo",
+    "prefix": "printavo",
+    "generalUrl": "/print-shop-quoting-software/",
+    "serviceName": "Printavo Garment Size Chart Preparation & Product Sizing References",
+    "shortDescription": "Printavo garment sizing documentation support for preparing supplier size charts, measurement references and consistent apparel product information for quoting and customer communication.",
+    "audience": "screen printers, embroidery shops, garment decorators and custom apparel businesses",
+    "cards": [
+      [
+        "Supplier chart collection",
+        "Gather manufacturer size charts, style references and garment measurement information."
+      ],
+      [
+        "Sizing reference preparation",
+        "Standardize chart labels, measurement units and supplied sizing notes for shop use."
+      ],
+      [
+        "Product data coordination",
+        "Associate sizing references with the relevant garment styles and quote or product records where appropriate."
+      ],
+      [
+        "Reference quality review",
+        "Check the prepared information against supplier source files and flag missing or conflicting measurements."
+      ]
+    ]
+  },
+  {
+    "key": "printavo-product-description-catalog-updates",
+    "name": "Printavo",
+    "prefix": "printavo",
+    "generalUrl": "/print-shop-quoting-software/",
+    "serviceName": "Printavo Product Descriptions & Catalog Information Updates",
+    "shortDescription": "Printavo product information support for garment names, supplier references, product descriptions, specifications and consistent catalog or quote line-item details.",
+    "audience": "screen printers, embroidery businesses, custom apparel decorators and print shops",
+    "cards": [
+      [
+        "Product information cleanup",
+        "Review supplied garment names, supplier identifiers, colors, sizes and product specifications."
+      ],
+      [
+        "Description preparation",
+        "Write or refine clear garment descriptions and reusable product notes from approved source information."
+      ],
+      [
+        "Catalog and quote data updates",
+        "Organize and enter approved product details in the relevant records and workflows supported by the account."
+      ],
+      [
+        "Consistency checks",
+        "Compare product references and descriptions with supplier data and flag missing details for shop approval."
+      ]
+    ]
   }
 ];
 
