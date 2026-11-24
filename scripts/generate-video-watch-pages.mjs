@@ -28,12 +28,12 @@ function slugify(value) {
     .replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "").slice(0, 72);
 }
 function attr(tag, name) {
-  const escaped = name.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-  const match = tag.match(new RegExp("\\b" + escaped + "\\s*=\\s*(['\"])([\\s\\S]*?)\\1", "i"));
-  return match ? match[2].trim() : "";
+  const attributes = [...tag.matchAll(/([^\\s=]+)\\s*=\\s*(["'])(.*?)\\2/gi)];
+  const match = attributes.find(item => item[1].toLowerCase() === name.toLowerCase());
+  return match ? match[3].trim() : "";
 }
 function metaContent(html, name) {
-  const tags = html.match(/<meta\\b[^>]*>/gi) || [];
+  const tags = html.match(/<meta\b[^>]*>/gi) || [];
   for (const tag of tags) {
     const key = attr(tag, "name") || attr(tag, "property");
     if (key.toLowerCase() === name.toLowerCase()) return attr(tag, "content");
@@ -44,7 +44,7 @@ function plain(value) {
   return String(value || "").replace(/<[^>]*>/g, " ").replace(/&nbsp;/gi, " ")
     .replace(/&amp;/gi, "&").replace(/&#39;|&apos;/gi, "'")
     .replace(/&quot;/gi, '"').replace(/&lt;/gi, "<").replace(/&gt;/gi, ">")
-    .replace(/\\s+/g, " ").trim();
+    .replace(/\s+/g, " ").trim();
 }
 function collect(dir, out = []) {
   if (!fs.existsSync(dir)) return out;
@@ -63,14 +63,14 @@ function discoverVideos(files) {
   const missingMetadata = new Set();
   for (const file of files) {
     const html = fs.readFileSync(file, "utf8");
-    const pageTitle = plain((html.match(/<title\\b[^>]*>([\\s\\S]*?)<\\/title>/i) || [])[1]);
+    const pageTitle = plain((html.match(/<title\b[^>]*>([\s\S]*?)<\/title>/i) || [])[1]);
     const pageDescription = plain(metaContent(html, "description"));
     const pageUrl = SITE + "/" + path.relative(PUBLIC, path.dirname(file)).split(path.sep).filter(Boolean).join("/") + "/";
-    const frames = html.match(/<iframe\\b[^>]*>/gi) || [];
+    const frames = html.match(/<iframe\b[^>]*>/gi) || [];
     let frameIndex = 0;
     for (const frame of frames) {
       const src = attr(frame, "src");
-      const match = src.match(/(?:youtube(?:-nocookie)?\\.com\\/(?:embed|shorts)\\/|youtu\\.be\\/)([A-Za-z0-9_-]{11})/i);
+      const match = src.match(/(?:youtube(?:-nocookie)?\.com\/(?:embed|shorts)\/|youtu\.be\/)([A-Za-z0-9_-]{11})/i);
       if (!match) continue;
       const id = match[1];
       frameIndex += 1;
@@ -113,20 +113,20 @@ function page(video) {
 }
 function addWatchLinks(file, videos) {
   let html = fs.readFileSync(file, "utf8");
-  html = html.replace(/<section\\b[^>]*id=['"]fjx-video-watch-links['"][\\s\\S]*?<\\/section>/i, "");
+  html = html.replace(/<section\b[^>]*id=['"]fjx-video-watch-links['"][\s\S]*?<\/section>/i, "");
   const ids = new Set();
-  const frames = html.match(/<iframe\\b[^>]*>/gi) || [];
+  const frames = html.match(/<iframe\b[^>]*>/gi) || [];
   for (const frame of frames) {
     const src = attr(frame, "src");
-    const match = src.match(/(?:youtube(?:-nocookie)?\\.com\\/(?:embed|shorts)\\/|youtu\\.be\\/)([A-Za-z0-9_-]{11})/i);
+    const match = src.match(/(?:youtube(?:-nocookie)?\.com\/(?:embed|shorts)\/|youtu\.be\/)([A-Za-z0-9_-]{11})/i);
     if (match) ids.add(match[1]);
   }
   const linked = videos.filter(video => ids.has(video.id));
   if (!linked.length) return;
   const links = linked.map(video => "<li><a href='/watch/" + video.slug + "/'>" + esc(video.title) + " — watch on FJX Studio</a></li>").join("");
   const block = "<section id='fjx-video-watch-links' class='fjx-video-watch-links' aria-label='Watch video on FJX Studio'><h2>Watch this video on FJX Studio</h2><ul>" + links + "</ul></section><style>.fjx-video-watch-links{max-width:1100px;margin:24px auto;padding:18px 20px;border:1px solid #e5eadf;border-radius:12px;background:#f7faf3;color:#263126}.fjx-video-watch-links h2{margin:0 0 10px;font-size:16px;line-height:1.35}.fjx-video-watch-links ul{margin:0;padding-left:20px}.fjx-video-watch-links li+li{margin-top:7px}.fjx-video-watch-links a{color:#426d20;font-weight:700;text-decoration:underline;text-underline-offset:3px}@media(max-width:640px){.fjx-video-watch-links{margin:18px 14px;padding:16px}}</style>";
-  if (/<\\/main>/i.test(html)) html = html.replace(/<\\/main>/i, block + "\n</main>");
-  else html = html.replace(/<\\/body>/i, block + "\n</body>");
+  if (/<\/main>/i.test(html)) html = html.replace(/<\/main>/i, block + "\n</main>");
+  else html = html.replace(/<\/body>/i, block + "\n</body>");
   fs.writeFileSync(file, html);
 }
 
@@ -160,7 +160,7 @@ if (fs.existsSync(sitemapPath)) {
   const missing = videos.filter(video => !sitemap.includes(SITE + "/watch/" + video.slug + "/"));
   if (missing.length) {
     const urls = missing.map(video => "<url><loc>" + SITE + "/watch/" + video.slug + "/</loc></url>").join("\n");
-    sitemap = sitemap.replace(/<\\/urlset>/i, urls + "\n</urlset>");
+    sitemap = sitemap.replace(/<\/urlset>/i, urls + "\n</urlset>");
     fs.writeFileSync(sitemapPath, sitemap);
   }
 }
