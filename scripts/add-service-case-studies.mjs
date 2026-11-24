@@ -283,14 +283,6 @@ function ensureInksoftVideos(file) {
   fs.writeFileSync(file, html);
 }
 
-function walkAll(dir) {
-  for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
-    const full = path.join(dir, entry.name);
-    if (entry.isDirectory()) walkAll(full);
-    else if (entry.isFile() && entry.name === "index.html") { ensureResponsiveLayout(full); ensureFooterStyles(full); ensureInksoftVideos(full); }
-  }
-}
-
 function ensureServicePageRelevance(file) {
   let html = fs.readFileSync(file, "utf8");
   const slug = path.basename(path.dirname(file));
@@ -326,6 +318,7 @@ function walkAll(dir) {
     else if (entry.isFile() && entry.name === "index.html") {
       ensureResponsiveLayout(full);
       ensureFooterStyles(full);
+      ensureInksoftVideos(full);
       ensureServicePageRelevance(full);
     }
   }
