@@ -103,7 +103,7 @@ const servicesPath=path.join(publicDir,"services","index.html");
 if (!fs.existsSync(servicesPath)) throw new Error("Existing services index not found: "+servicesPath);
 let servicesIndex=fs.readFileSync(servicesPath,"utf8");
 const marker="<!-- virtual-assistant-website-service-guides -->";
-const cards=keywords.map(k=>{const s=slug(k),t=title(k);return '<article class="item"><h3><a href="/'+s+'/">'+esc(t)+'</a></h3><p>Explore this guide to '+esc(k)+', including platform research, service options, workflow planning and practical considerations.</p><a class="read" href="/'+s+'/">View guide →</a></article>';}).join("");
+const cards=keywords.map(k=>{const s=slug(k),t=title(k),d='Explore this guide to '+esc(k)+', including platform research, service options, workflow planning and practical considerations.';return '<a class="service-card" href="/'+s+'/"><span><strong>'+esc(t)+'</strong><small class="service-card-description">'+d+'</small></span><span class="arrow" aria-hidden="true">→</span></a>';}).join("");
 const section=marker+'<section class="section"><div class="wrap"><h2>Virtual Assistant Websites and Platforms</h2><p class="lead">Explore our guides to virtual assistant websites, freelance platforms, personal assistant sites and website assistant tools.</p><div class="grid">'+cards+'</div></div></section>';
 const existing=servicesIndex.indexOf(marker);
 if(existing>=0){const next=servicesIndex.indexOf("</section>",existing);servicesIndex=servicesIndex.slice(0,existing)+section+servicesIndex.slice(next>=0?next+10:existing+marker.length);}
