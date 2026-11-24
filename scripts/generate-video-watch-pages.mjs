@@ -28,7 +28,7 @@ function slugify(value) {
     .replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "").slice(0, 72);
 }
 function attr(tag, name) {
-  const attributes = [...tag.matchAll(/([^\\s=]+)\\s*=\\s*(["'])(.*?)\\2/gi)];
+  const attributes = [...tag.matchAll(/([^\s=]+)\s*=\s*(["'])(.*?)\2/gi)];
   const match = attributes.find(item => item[1].toLowerCase() === name.toLowerCase());
   return match ? match[3].trim() : "";
 }
