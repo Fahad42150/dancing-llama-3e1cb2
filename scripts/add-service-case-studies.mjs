@@ -131,12 +131,48 @@ pre { max-width: 100%; overflow-x: auto; }
   overflow: hidden;
 }
 .table-wrap { max-width: 100%; overflow-x: auto; }
+/* Global layout normalization for generated service pages at every viewport. */
+:root { overflow-x: clip; }
+*, *::before, *::after { box-sizing: border-box; }
+html, body { width: 100%; max-width: 100%; overflow-x: clip; }
+body { min-width: 320px; }
+main, header, footer, section, nav, article, aside { min-width: 0; max-width: 100%; }
+h1, h2, h3, h4, p, li, a, button, label { overflow-wrap: anywhere; }
+p { max-width: 100%; }
+button, input, select, textarea { max-width: 100%; font: inherit; }
+table { width: 100%; border-collapse: collapse; }
+.table-wrap, pre { max-width: 100%; overflow-x: auto; }
+iframe, video { display: block; max-width: 100%; }
+img { height: auto; }
+.hero, .section, .wrap, .container, .content, .main-content { min-width: 0; }
+.hero-media-grid, .fjx-service-hero-media, .hero-grid, .about-grid, .contact-grid, .fjx-price-wrap, .fjx-service-price-wrap { min-width: 0; }
+.hero-media-grid > *, .fjx-service-hero-media > *, .hero-grid > *, .about-grid > *, .contact-grid > * { min-width: 0; max-width: 100%; }
+.fjx-site-footer, .fjx-site-footer * { min-width: 0; }
+a, button, .cta, .btn, .button { min-height: 42px; }
+@media (max-width: 900px) {
+  .fjx-footer-grid, .fjx-service-footer-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .fjx-price-wrap, .fjx-service-price-wrap { grid-template-columns: minmax(0, 1fr); }
+}
 @media (max-width: 640px) {
-  .hero-media-grid {
-    grid-template-columns: minmax(0, 1fr);
-    width: min(520px, 100%);
-    gap: 16px;
+  .hero-media-grid, .fjx-service-hero-media, .hero-grid, .about-grid,
+  .contact-grid, .fjx-service-contact-grid, .fjx-price-wrap,
+  .fjx-service-price-wrap, .fjx-service-footer-grid {
+    grid-template-columns: minmax(0, 1fr) !important;
   }
+  .hero-media-grid { width: 100%; gap: 16px; }
+  .hero, .section { padding-top: clamp(30px, 8vw, 48px); padding-bottom: clamp(30px, 8vw, 48px); }
+  .hero h1, h1 { font-size: clamp(30px, 8vw, 42px); line-height: 1.12; }
+  h2 { font-size: clamp(24px, 6vw, 32px); line-height: 1.2; }
+  .wrap, .fjx-case-wrap, .fjx-reviews-wrap, .fjx-price-wrap { width: min(100% - 32px, 1100px); }
+  .fjx-footer-wrap { padding: 36px 18px 22px; }
+  .fjx-footer-grid { grid-template-columns: minmax(0, 1fr); gap: 24px; }
+  .fjx-footer-brand { grid-column: auto; }
+  .fjx-footer-bottom { align-items: flex-start; flex-direction: column; }
+  .cta, .button, .btn { max-width: 100%; white-space: normal; text-align: center; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto !important; }
+  *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
 }
 </style>`;
 
@@ -247,14 +283,48 @@ function ensureInksoftVideos(file) {
   fs.writeFileSync(file, html);
 }
 
+function ensureServicePageRelevance(file) {
+  let html = fs.readFileSync(file, "utf8");
+  const slug = path.basename(path.dirname(file));
+  const title = (html.match(/<h1\b[^>]*>([\s\S]*?)<\/h1>/i)?.[1] || slug.replace(/-/g, " "))
+    .replace(/<[^>]+>/g, " ").replace(/&amp;/g, "&").replace(/\s+/g, " ").trim();
+  const original = html;
+
+  // Remove the repeated generic stock image and unverified, generic InkSoft video block.
+  html = html.replace(/<div class="(?:fjx-service-about-image|about-image)">\s*<img[^>]*41108027[^>]*>\s*<\/div>/gi, "");
+  html = html.replace(/<section id="fjx-inksoft-videos"[\s\S]*?<\/section>\s*<style>[\s\S]*?<\/style>/gi, "");
+
+  // Remove the repeated generic virtual-assistant overview video, but retain other embeds.
+  html = html.replace(/<div class="(?:hero-video-card|fjx-service-video)">[\s\S]*?<\/div>/gi,
+    block => block.includes("kiAg30RYmDs") ? "" : block);
+  html = html.replace(/<iframe\b(?=[^>]*kiAg30RYmDs)[^>]*>\s*<\/iframe>/gi, "");
+
+  // Replace boilerplate eCommerce "about" copy with wording that reflects this URL.
+  html = html.replace(/Practical eCommerce and business support/g, "Practical " + escapeHtml(title) + " support");
+  html = html.replace(/FJX Studio provides remote eCommerce store setup, product catalog management and administrative support for businesses in the United States and Canada\. We focus on clear workflows, careful execution and reliable communication\./g,
+    "FJX Studio provides remote support related to " + escapeHtml(title.toLowerCase()) + " for businesses in the United States and Canada. Tasks, tools, quality checks and approval responsibilities are agreed before work begins.");
+
+  // Replace a stale design-only CTA on unrelated service pages.
+  if (!/design|logo|graphic|creative|branding/i.test(slug + " " + title)) {
+    html = html.replace(/Let's Discuss Your Design Project/g, "Let's Discuss Your " + escapeHtml(title) + " Project");
+  }
+  if (html !== original) fs.writeFileSync(file, html);
+}
+
 function walkAll(dir) {
   for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
     const full = path.join(dir, entry.name);
     if (entry.isDirectory()) walkAll(full);
-    else if (entry.isFile() && entry.name === "index.html") { ensureResponsiveLayout(full); ensureFooterStyles(full); ensureInksoftVideos(full); }
+    else if (entry.isFile() && entry.name === "index.html") {
+      ensureResponsiveLayout(full);
+      ensureFooterStyles(full);
+      ensureInksoftVideos(full);
+      ensureServicePageRelevance(full);
+    }
   }
 }
 
+// Apply the cleanup after every generator, because later generators can replace pages.
+walk(root);
 walkAll(root);
 ensureResponsiveLayout(path.resolve("index.html"));
-walk(root);
