@@ -119,6 +119,107 @@ const platforms = [
       ["Is FJX Studio affiliated with Printavo?", "No. FJX Studio is an independent service provider and is not affiliated with, endorsed by or acting on behalf of Printavo."]
     ]
   }
+  ,
+  {
+    key: "inksoft-catalog",
+    name: "InkSoft",
+    slugBase: "inksoft-product-catalog-management-product-data-artwork-usa-canada",
+    generalUrl: "/inksoft-store-management/",
+    serviceName: "InkSoft Product Catalog, Data & Artwork Management",
+    shortDescription: "Dedicated InkSoft catalog support for product data entry, SKU and variant organization, pricing updates, image and artwork coordination, and ongoing listing quality checks.",
+    audience: "screen printers, apparel decorators, promotional product companies, schools, teams and branded merchandise businesses",
+    cards: [
+      ["Product data entry and cleanup", "Enter and standardize product names, descriptions, SKUs, categories and supplied product attributes across your InkSoft catalog."],
+      ["Sizes, colors and variants", "Organize size and color options, variant details and product-level information to make listings consistent and easier to maintain."],
+      ["Images and artwork coordination", "Upload and organize supplied product images and artwork, and coordinate placement or replacement according to approved instructions."],
+      ["Pricing and catalog maintenance", "Apply client-approved pricing and listing changes, review affected products and keep catalog information aligned with current offerings."]
+    ],
+    steps: [
+      ["Audit the catalog requirements", "Review the product list, source spreadsheets, image files, SKU conventions, variants and required approval rules."],
+      ["Prepare and update listings", "Organize supplied data and assets, enter approved product details and flag missing or conflicting information for review."],
+      ["Quality-check catalog changes", "Check agreed fields, options, images and product presentation, then provide a concise update summary."]
+    ],
+    faqs: [
+      ["Can you upload a large number of InkSoft products?", "FJX Studio can assist with catalog projects of an agreed size using client-provided product data and assets. The workflow and delivery schedule are confirmed after reviewing the source files."],
+      ["Can you update SKUs, sizes, colors and pricing?", "Yes. Catalog support can include SKUs, product descriptions, sizes, colors, variants and client-approved pricing updates, subject to available platform fields and permissions."],
+      ["Do you create product artwork or photography?", "This service focuses on organizing and uploading supplied assets and coordinating approved listing updates. New design or photography work would be scoped separately."]
+    ]
+  },
+  {
+    key: "inksoft-operations",
+    name: "InkSoft",
+    slugBase: "inksoft-store-operations-order-admin-maintenance-support",
+    generalUrl: "/inksoft-store-management/",
+    serviceName: "InkSoft Store Operations, Order Administration & Maintenance",
+    shortDescription: "Ongoing InkSoft operations assistance for storefront content maintenance, order-information checks, customer and product data updates, campaign changes and routine administrative follow-through.",
+    audience: "apparel decorators, screen printers, promotional product businesses, schools, teams and organizations running InkSoft stores",
+    cards: [
+      ["Storefront content maintenance", "Update approved banners, store text, product visibility and key storefront information as campaigns and requirements change."],
+      ["Order information administration", "Assist with agreed order-information checks, data organization and administrative handoffs without taking over payment or fulfillment decisions."],
+      ["Campaign and store updates", "Coordinate scheduled store changes, product availability information and client-approved updates around launches and closing dates."],
+      ["Routine checks and reporting", "Review agreed store areas, document exceptions and provide clear summaries of completed work and items needing client input."]
+    ],
+    steps: [
+      ["Map the operating workflow", "Confirm store access, recurring tasks, order touchpoints, campaign dates, escalation contacts and approval responsibilities."],
+      ["Complete scheduled administration", "Handle agreed content and data updates using the client's instructions, access permissions and documented process."],
+      ["Report exceptions and next steps", "Summarize completed tasks, flag incomplete information and route decisions or fulfillment issues to the client's team."]
+    ],
+    faqs: [
+      ["Can you provide ongoing InkSoft store maintenance?", "Yes. Recurring support can be arranged for agreed storefront, product and administrative tasks, with frequency and responsibilities documented in advance."],
+      ["Do you process payments or fulfill orders?", "No. FJX Studio's support is administrative. Payment handling, production, shipping, refunds and final fulfillment decisions remain with the client and its authorized providers."],
+      ["Can you work with seasonal or pop-up stores?", "Yes. Support can be scoped around launches, closing dates and seasonal campaigns, subject to platform access and the client's approval workflow."]
+    ]
+  },
+  {
+    key: "ordermygear-admin",
+    name: "OrderMyGear (OMG)",
+    slugBase: "ordermygear-team-store-administration-campaign-maintenance",
+    generalUrl: "/ordermy-gear-website-develop-design/",
+    serviceName: "OrderMyGear Team Store Administration & Campaign Maintenance",
+    shortDescription: "Dedicated OrderMyGear administrative support for team-store content, group-order campaign updates, product listing maintenance, deadline coordination and routine store checks.",
+    audience: "team dealers, schools, sports organizations, apparel businesses and group-order program operators",
+    cards: [
+      ["Team store content updates", "Maintain approved store descriptions, team details, campaign information, banners and customer-facing content."],
+      ["Campaign and deadline coordination", "Organize store launch and closing dates, requested changes and information needed from team or organization contacts."],
+      ["Product listing maintenance", "Coordinate approved edits to product descriptions, images, options and availability information across active stores."],
+      ["Store checks and issue tracking", "Review agreed store details, record content or data issues and route decisions to the appropriate client contact."]
+    ],
+    steps: [
+      ["Review stores and stakeholders", "Confirm active stores, team contacts, campaign dates, platform permissions and the client's approval process."],
+      ["Maintain campaign information", "Apply approved content and product changes and keep requested updates organized by store or campaign."],
+      ["Check and communicate status", "Review the agreed items, document outstanding questions and provide a clear handoff to the client team."]
+    ],
+    faqs: [
+      ["Can you maintain multiple OrderMyGear team stores?", "FJX Studio can support multiple stores when the scope, access and update process are agreed. Workload and turnaround depend on store count and the complexity of requested changes."],
+      ["Can you coordinate store opening and closing updates?", "Yes. We can organize approved campaign information and scheduled content updates around the dates provided by your team."],
+      ["Does FJX Studio represent or partner with OrderMyGear?", "No. FJX Studio is an independent service provider and is not affiliated with, endorsed by or acting on behalf of OrderMyGear."]
+    ]
+  },
+  {
+    key: "ordermygear-catalog",
+    name: "OrderMyGear (OMG)",
+    slugBase: "ordermygear-product-catalog-upload-variant-data-management",
+    generalUrl: "/ordermy-gear-website-develop-design/",
+    serviceName: "OrderMyGear Product Catalog, Uploads & Variant Data Management",
+    shortDescription: "OrderMyGear catalog assistance for product uploads, descriptions, SKU and variant data, size and color options, supplied images, and approved product updates for team and group stores.",
+    audience: "team dealers, schools, sports clubs, apparel decorators and organizations managing team or group-order catalogs",
+    cards: [
+      ["Product uploads and listing setup", "Prepare product names, descriptions, categories and supplied attributes for accurate team-store listings."],
+      ["Size, color and option data", "Organize product options and variant information from approved spreadsheets or product specifications."],
+      ["Product images and artwork", "Upload and organize supplied images and artwork, coordinating product presentation with the client's instructions."],
+      ["Catalog revisions and checks", "Apply approved changes to product details and review affected listings for consistency and missing information."]
+    ],
+    steps: [
+      ["Collect source product information", "Review spreadsheets, product specifications, image assets, option matrices and required listing conventions."],
+      ["Upload and organize catalog data", "Prepare approved product information and assets, then update listings within the available platform workflow."],
+      ["Validate and report", "Check agreed product fields and variants, flag gaps and share a summary of completed uploads and follow-up items."]
+    ],
+    faqs: [
+      ["Can you upload products to OrderMyGear stores?", "Yes. FJX Studio can assist with product uploads using client-approved descriptions, images, options and product data, subject to platform permissions."],
+      ["Can you manage size and color variants?", "Support can include organizing and entering supplied size, color and other option information where those fields are supported by the store setup."],
+      ["Can you create product descriptions from scratch?", "We can format or refine supplied product information as part of an agreed scope. Product specifications, claims and final approvals must be provided or confirmed by the client."]
+    ]
+  }
 ];
 
 const countries = [
@@ -263,7 +364,7 @@ if (fs.existsSync(servicesPath)) {
   ).join("");
   const section = marker +
     '<section class="section"><div class="wrap"><h2>Platform Store and Print-Shop Services — USA &amp; Canada</h2>' +
-    '<p class="lead">Explore independent setup and administration support for InkSoft, Chipply, OrderMyGear (OMG) and Printavo, with dedicated service pages for the United States and Canada.</p>' +
+    '<p class="lead">Explore dedicated platform setup, catalog, store operations and administration services for InkSoft, Chipply, OrderMyGear (OMG) and Printavo, with country-specific pages for the United States and Canada.</p>' +
     '<div class="grid">' + cards + '</div></div></section>';
   const markerIndex = services.indexOf(marker);
   if (markerIndex >= 0) {
