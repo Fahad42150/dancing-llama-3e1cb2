@@ -3675,7 +3675,7 @@ const keywordExpansion = [
         "Highlight top-performing formats, underperforming content and practical tests for the next reporting period."
       ]
     ]
-  }
+  },
   {
     "key": "digital-marketing-agency-services",
     "name": "Digital Marketing",
