@@ -103,7 +103,9 @@ const footer = extractBetween('<footer class="fjx-site-footer">', "</footer>", "
   .replaceAll('href="/#contact"', 'href="#contact"');
 const floating = extractBetween('<a id="fjx-book-now-sitewide"', "</a>", "floating Book Now CTA");
 const chat = extractBetween("<!--Start of Tawk.to Script-->", "<!--End of Tawk.to Script-->", "Tawk.to live chat");
-const media = extractBetween('<div class="hero-media-grid">', "</div>", "hero image and video");
+const heroImage = reference.match(/<figure class="hero-image">[\s\S]*?<\/figure>/i)?.[0];
+if (!heroImage) throw new Error("Could not find the eCommerce reference hero image.");
+const media = '<div class="hero-media-grid">' + heroImage + '</div>';
 if (!styles) throw new Error("Reference page CSS was not found");
 
 const escapeHtml = (value) => String(value).replaceAll("&", "&amp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;").replaceAll('"', "&quot;");
