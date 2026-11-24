@@ -297,8 +297,7 @@ const keywordExpansion = [
     key: "chipply-upload-products",
     name: "Chipply",
     prefix: "chipply",
-    generalUrl: "/chipply-store-management/",
-    serviceName: "Chipply Product Upload, Catalog Update & Management",
+    generalUrl: "/chipply-store-management/",    serviceName: "Chipply Product Upload, Catalog Update & Management",
     shortDescription: "Chipply product upload and catalog management for apparel listings, team products, descriptions, images, sizes, colors, variants and approved updates.",
     audience: "team dealers, schools, sports organizations, apparel decorators and spiritwear providers",
     cards: [["Product catalog uploads", "Prepare supplied product data and images for new listings in team and group stores."],["Product detail updates", "Maintain approved titles, descriptions, SKUs, categories and product information."],["Size and color variants", "Organize size, color and option details to keep product listings clear and consistent."],["Catalog quality checks", "Review updated listings for missing details, inconsistent options and image issues."]]
@@ -597,8 +596,7 @@ const keywordExpansion = [
     name: "Chipply",
     prefix: "chipply",
     generalUrl: "/chipply-store-management/",
-    serviceName: "Chipply Store Cloning & Reordering Support",
-    shortDescription: "Store cloning and repeat-order administration assistance for recurring campaigns and similar team merchandise programs.",
+    serviceName: "Chipply Store Cloning & Reordering Support",    shortDescription: "Store cloning and repeat-order administration assistance for recurring campaigns and similar team merchandise programs.",
     audience: "team dealers, schools, sports clubs and apparel decorators",
     cards: [["Source store review", "Identify the approved source store and details to carry forward."], ["Repeat campaign setup", "Organize updated dates, team details and requested content changes."], ["Product and artwork check", "Verify carried-over listings and supplied assets against the new brief."], ["Pre-launch review", "Check the new store for outdated information and missing approvals."]]
   },
@@ -897,8 +895,7 @@ const keywordExpansion = [
     "key": "ordermygear-pricing-setup",
     "name": "OrderMyGear (OMG)",
     "prefix": "ordermygear",
-    "generalUrl": "/ordermy-gear-website-develop-design/",
-    "serviceName": "OrderMyGear Product Pricing, Size Upcharges & Quantity Breaks",
+    "generalUrl": "/ordermy-gear-website-develop-design/",    "serviceName": "OrderMyGear Product Pricing, Size Upcharges & Quantity Breaks",
     "shortDescription": "OrderMyGear pricing administration for client-approved product prices, size upcharges, quantity-based price breaks and store catalog updates.",
     "audience": "team dealers, schools, sports organizations, apparel businesses and group-order operators",
     "cards": [
@@ -1135,6 +1132,130 @@ const keywordExpansion = [
         "Compare product references and descriptions with supplier data and flag missing details for shop approval."
       ]
     ]
+  },
+  {
+    "key": "inksoft-assistant-support-coordinator",
+    "name": "InkSoft",
+    "prefix": "inksoft",
+    "generalUrl": "/inksoft-store-management/",
+    "serviceName": "InkSoft Assistant Support Coordinator Services",
+    "shortDescription": "Ongoing InkSoft assistant support coordinator services for store administration, product and catalog updates, order follow-ups, customer information, campaign coordination and routine reporting.",
+    "audience": "screen printers, apparel decorators, team dealers, schools and promotional merchandise businesses",
+    "cards": [
+      [
+        "Store administration coordination",
+        "Help maintain store information, product listings, categories, campaign dates and approved content updates."
+      ],
+      [
+        "Order and customer follow-ups",
+        "Organize order inquiries, customer-provided details, pending information and follow-up lists for the client’s team."
+      ],
+      [
+        "Product and catalog coordination",
+        "Coordinate supplied product details, images, size and color options, descriptions and client-approved listing changes."
+      ],
+      [
+        "Campaign and task tracking",
+        "Track store opening and closing dates, assigned tasks, outstanding approvals and recurring maintenance items."
+      ],
+      [
+        "Reporting and handoffs",
+        "Prepare routine order or store data exports where available and provide concise status reports to the store owner."
+      ]
+    ]
+  },
+  {
+    "key": "ordermygear-assistant-support-coordinator",
+    "name": "OrderMyGear (OMG)",
+    "prefix": "ordermygear",
+    "generalUrl": "/ordermy-gear-website-develop-design/",
+    "serviceName": "OrderMyGear Assistant Support Coordinator Services",
+    "shortDescription": "Ongoing OrderMyGear assistant support coordinator services for team-store administration, order and customer follow-ups, product updates, store deadlines, fulfillment coordination and reporting.",
+    "audience": "team dealers, schools, leagues, sports organizations and group merchandise businesses",
+    "cards": [
+      [
+        "Team-store coordination",
+        "Maintain approved store details, team and organization information, ordering windows and customer-facing instructions."
+      ],
+      [
+        "Order follow-up administration",
+        "Organize order questions, missing information, special requests and follow-up tasks for authorized client staff."
+      ],
+      [
+        "Product and roster information",
+        "Coordinate supplied product details, size and color options, player or participant information and approved updates."
+      ],
+      [
+        "Fulfillment handoff tracking",
+        "Maintain task lists for order close, product counts, shipping or pickup details and outstanding fulfillment questions."
+      ],
+      [
+        "Store reporting and status updates",
+        "Prepare available order or store reports and summarize progress, exceptions and upcoming deadlines."
+      ]
+    ]
+  },
+  {
+    "key": "chipply-assistant-support-coordinator",
+    "name": "Chipply",
+    "prefix": "chipply",
+    "generalUrl": "/chipply-store-management/",
+    "serviceName": "Chipply Assistant Support Coordinator Services",
+    "shortDescription": "Ongoing Chipply assistant support coordinator services for team-store operations, product and artwork coordination, order tracking, purchasing preparation, production handoffs and campaign administration.",
+    "audience": "team dealers, schools, sports clubs, apparel decorators and uniform providers",
+    "cards": [
+      [
+        "Store and campaign coordination",
+        "Track active and upcoming stores, campaign dates, team details, customer instructions and assigned administrative tasks."
+      ],
+      [
+        "Product and artwork follow-ups",
+        "Organize supplier product details, artwork files, decoration references, size and color options and pending approvals."
+      ],
+      [
+        "Order and purchasing administration",
+        "Prepare order summaries, vendor information and purchasing follow-up lists for client review and authorization."
+      ],
+      [
+        "Production handoff coordination",
+        "Track work-order information, sorting or packing requirements, job status updates and questions requiring production-team input."
+      ],
+      [
+        "Progress reporting",
+        "Maintain task trackers and provide store-by-store updates, outstanding items and deadline reminders."
+      ]
+    ]
+  },
+  {
+    "key": "printavo-assistant-support-coordinator",
+    "name": "Printavo",
+    "prefix": "printavo",
+    "generalUrl": "/print-shop-quoting-software/",
+    "serviceName": "Printavo Assistant Support Coordinator Services",
+    "shortDescription": "Ongoing Printavo assistant support coordinator services for print-shop job administration, quote and order follow-ups, customer records, purchasing coordination, production scheduling and workflow tracking.",
+    "audience": "screen printers, embroidery shops, garment decorators and custom print businesses",
+    "cards": [
+      [
+        "Job and order administration",
+        "Organize job records, customer details, quantities, due dates, production notes and approved status updates."
+      ],
+      [
+        "Quote and customer follow-ups",
+        "Track quote requests, pending approvals, missing specifications and client-authorized customer follow-up tasks."
+      ],
+      [
+        "Purchasing and receiving coordination",
+        "Maintain follow-up lists for supplier orders, expected goods, partial receipts and job material questions."
+      ],
+      [
+        "Production schedule coordination",
+        "Track due dates, department handoffs, assigned tasks and jobs requiring shop-manager attention."
+      ],
+      [
+        "Workflow and reporting support",
+        "Maintain task trackers, prepare available job or order reports and summarize exceptions for the shop team."
+      ]
+    ]
   }
 ];
 
@@ -1197,8 +1318,7 @@ function buildPage(platform, country) {
   if (!mediaMatch) throw new Error("Could not find the reference page hero media block.");
 
   const main = [
-    '<main>',
-    '<section class="hero"><div class="wrap">',
+    '<main>',    '<section class="hero"><div class="wrap">',
     '<div class="eyebrow">' + escapeHtml(platform.name + " service support · " + country.label) + '</div>',
     '<h1>' + escapeHtml(title) + '</h1>',
     '<p class="lead">' + escapeHtml(lead) + '</p>',
