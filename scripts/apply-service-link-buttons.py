@@ -76,6 +76,75 @@ main .links a:focus-visible {
   main .links a { transition: none; }
   main .links a:hover { transform: none; }
 }
+
+/* Linked detail cards used by the newer online-store service page generator. */
+main .service-detail-grid {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  grid-auto-rows: 1fr !important;
+  align-items: stretch !important;
+  gap: 18px !important;
+}
+main .service-detail-grid > a.service-detail-link {
+  box-sizing: border-box !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  justify-content: flex-start !important;
+  width: 100% !important;
+  min-width: 0 !important;
+  min-height: 190px !important;
+  height: 100% !important;
+  margin: 0 !important;
+  padding: 24px 58px 24px 24px !important;
+  position: relative !important;
+  border: 1px solid #dfe6d9 !important;
+  border-radius: 16px !important;
+  background: #fff !important;
+  color: #202326 !important;
+  text-align: left !important;
+  text-decoration: none !important;
+  white-space: normal !important;
+  overflow-wrap: anywhere !important;
+  word-break: normal !important;
+  box-shadow: 0 2px 8px rgba(32, 35, 38, .045) !important;
+  transition: background-color .18s ease, border-color .18s ease, box-shadow .18s ease, transform .18s ease !important;
+}
+main .service-detail-grid > a.service-detail-link h3 { color: #202326 !important; margin: 0 0 10px !important; }
+main .service-detail-grid > a.service-detail-link p { color: #687078 !important; margin: 0 !important; line-height: 1.7 !important; }
+main .service-detail-grid > a.service-detail-link::after {
+  content: "→" !important;
+  position: absolute !important;
+  right: 20px !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 24px !important;
+  height: 24px !important;
+  color: #5b8b30 !important;
+  font: 400 24px/1 Arial, sans-serif !important;
+}
+main .service-detail-grid > a.service-detail-link:hover {
+  border-color: #9fce79 !important;
+  background: #f6faef !important;
+  color: #202326 !important;
+  box-shadow: 0 8px 20px rgba(32, 35, 38, .09) !important;
+  transform: translateY(-2px) !important;
+}
+main .service-detail-grid > a.service-detail-link:focus-visible { outline: 3px solid #679d37 !important; outline-offset: 3px !important; }
+@media (max-width: 800px) {
+  main .service-detail-grid { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
+}
+@media (max-width: 600px) {
+  main .service-detail-grid { grid-template-columns: minmax(0, 1fr) !important; grid-auto-rows: auto !important; gap: 12px !important; }
+  main .service-detail-grid > a.service-detail-link { min-height: 150px !important; height: auto !important; padding: 20px 52px 20px 20px !important; }
+}
+@media (prefers-reduced-motion: reduce) {
+  main .service-detail-grid > a.service-detail-link { transition: none !important; }
+  main .service-detail-grid > a.service-detail-link:hover { transform: none !important; }
+}
 </style>
 """
 
@@ -177,7 +246,12 @@ for path in sorted((root / "public").glob("*/index.html")):
             updated += 1
         continue
     # Only target standalone service pages with related-service link collections.
-    if not re.search(r'class=["\'][^"\']*\blinks\b[^"\']*["\']', html, flags=re.IGNORECASE):
+    has_related_links = re.search(r'class=["\'][^"\']*\blinks\b[^"\']*["\']', html, flags=re.IGNORECASE)
+    has_detail_cards = (
+        re.search(r'class=["\'][^"\']*\bservice-detail-grid\b[^"\']*["\']', html, flags=re.IGNORECASE)
+        and re.search(r'class=["\'][^"\']*\bservice-detail-link\b[^"\']*["\']', html, flags=re.IGNORECASE)
+    )
+    if not (has_related_links or has_detail_cards):
         continue
     # Replace any prior version of this exact fix so reruns stay idempotent.
     html = re.sub(
