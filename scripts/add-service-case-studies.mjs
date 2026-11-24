@@ -256,11 +256,17 @@ const videoTargetSlugs = new Set([
 
 function ensureInksoftVideos(file) {
   let html = fs.readFileSync(file, "utf8");
-  if (html.includes('id="fjx-inksoft-videos"')) return;
   const slug = path.basename(path.dirname(file));
-  const heading = html.match(/<h1\b[^>]*>([\s\S]*?)<\/h1>/i)?.[1] || "";
-  const pageTitle = html.match(/<title[^>]*>([\s\S]*?)<\/title>/i)?.[1] || "";
-  if (!/inksoft/i.test(slug + " " + heading + " " + pageTitle)) return;
+  const isInksoftVideoTarget = videoTargetSlugs.has(slug);
+
+  // Only explicitly listed InkSoft/store-integration pages receive these videos.
+  // Remove any previously injected InkSoft block from all unrelated pages.
+  if (!isInksoftVideoTarget) {
+    const cleaned = html.replace(/<section id="fjx-inksoft-videos"[\s\S]*?<\/section>\s*<style>[\s\S]*?<\/style>/gi, "");
+    if (cleaned !== html) fs.writeFileSync(file, cleaned);
+    return;
+  }
+  if (html.includes('id="fjx-inksoft-videos"')) return;
 
   const players = inksoftVideos.map(video =>
     '<article class="fjx-inksoft-video-card">' +
@@ -292,7 +298,9 @@ function ensureServicePageRelevance(file) {
 
   // Remove the repeated generic stock image and unverified, generic InkSoft video block.
   html = html.replace(/<div class="(?:fjx-service-about-image|about-image)">\s*<img[^>]*41108027[^>]*>\s*<\/div>/gi, "");
+  if (!videoTargetSlugs.has(slug)) {
   html = html.replace(/<section id="fjx-inksoft-videos"[\s\S]*?<\/section>\s*<style>[\s\S]*?<\/style>/gi, "");
+  }
 
   // Remove the repeated generic virtual-assistant overview video, but retain other embeds.
   html = html.replace(/<div class="(?:hero-video-card|fjx-service-video)">[\s\S]*?<\/div>/gi,
