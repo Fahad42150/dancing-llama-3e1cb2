@@ -497,21 +497,12 @@ const footer = extractBetween('<footer class="fjx-site-footer">', "</footer>", "
   .replaceAll('href="/#contact"', 'href="#contact"');
 const floating = extractBetween('<a id="fjx-book-now-sitewide"', "</a>", "floating Book Now CTA");
 const chat = extractBetween("<!--Start of Tawk.to Script-->", "<!--End of Tawk.to Script-->", "Tawk.to live chat");
-// Extract the complete media wrapper, including its nested image/video divs.
-const mediaStart = reference.indexOf('<div class="hero-media-grid">');
-if (mediaStart < 0) throw new Error("Hero image/video wrapper is missing from the InkSoft reference page");
-const divTokens = /<div\b[^>]*>|<\/div\s*>/gi;
-divTokens.lastIndex = mediaStart;
-let divDepth = 0;
-let mediaEnd = -1;
-let divToken;
-while ((divToken = divTokens.exec(reference)) !== null) {
-  if (/^<\/div/i.test(divToken[0])) divDepth--;
-  else divDepth++;
-  if (divDepth === 0) { mediaEnd = divTokens.lastIndex; break; }
-}
-if (mediaEnd < 0) throw new Error("Hero image/video wrapper has unbalanced div tags");
-const media = reference.slice(mediaStart, mediaEnd);
+// Use the eCommerce reference's relevant store-management image, not InkSoft-only tutorial media.
+const ecommerceReferencePath = path.join(publicDir, "ecommerce-store-management", "index.html");
+const ecommerceReference = fs.existsSync(ecommerceReferencePath) ? fs.readFileSync(ecommerceReferencePath, "utf8") : reference;
+const heroImage = ecommerceReference.match(/<figure class="hero-image">[\\s\\S]*?<\\/figure>/i)?.[0];
+if (!heroImage) throw new Error("Could not find an eCommerce store-management hero image.");
+const media = '<div class="hero-media-grid">' + heroImage + '</div>';
 if (!styles) throw new Error("Reference page CSS was not found");
 
 const escapeHtml = (value) => String(value).replaceAll("&", "&amp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;").replaceAll('"', "&quot;");
