@@ -343,7 +343,7 @@ const keywordExpansion = [
     shortDescription: "Printavo workflow review and process refresh assistance for print-shop order administration, quote data, job stages, production handoffs and record consistency.",
     audience: "screen printers, embroidery businesses, garment decorators and growing print shops",
     cards: [["Current workflow review", "Document existing job stages, information requirements and common administrative bottlenecks."],["Process and data cleanup", "Organize agreed customer, order and job information and identify inconsistent records."],["Production handoff improvements", "Clarify required job notes, status fields and information passed between shop roles."],["Updated workflow guide", "Summarize the agreed administrative process and outstanding items for your team's approval."]]
-  }
+  },
   {
     key: "inksoft-store-setup",
     name: "InkSoft",
