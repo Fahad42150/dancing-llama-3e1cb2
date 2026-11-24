@@ -3,19 +3,6 @@ import path from "node:path";
 
 const root = path.resolve("public");
 const excluded = new Set(["blog", "articles", "services", "pricing"]);
-const businesses = [
-  ["NorthStar Spirit Wear", "Minneapolis, Minnesota, USA"],
-  ["Maple Ridge Promotions", "Toronto, Ontario, Canada"],
-  ["Cedar Valley Athletics", "Des Moines, Iowa, USA"],
-  ["Harbourview Teamwear", "Vancouver, British Columbia, Canada"],
-  ["Liberty Print & Promo", "Columbus, Ohio, USA"],
-  ["Prairie Oak Outfitters", "Calgary, Alberta, Canada"],
-  ["Summit School Stores", "Denver, Colorado, USA"],
-  ["Bluewater Brand Collective", "Halifax, Nova Scotia, Canada"],
-  ["Redwood Commerce Co.", "Portland, Oregon, USA"],
-  ["Lakeside Business Supply", "Ottawa, Ontario, Canada"]
-];
-
 const playbooks = [
   { test: /quickbooks-cleanup|bookkeeping-cleanup|catch-up-bookkeeping/, label: "Bookkeeping cleanup", challenge: "A small business has months of uncategorized transactions, missing receipts and unreconciled account activity ahead of its reporting deadline.", solution: "FJX Studio organizes source statements and receipts, enters client-approved transaction details, flags duplicates and missing documentation, and prepares an exception list for the client's bookkeeper or accountant.", deliverable: "An organized review pack with categorized source data and clearly flagged items; accounting judgments, tax treatment and final reconciliation approval stay with the client's qualified professional." },
   { test: /quickbooks|xero|bookkeeping|monthly-bookkeeping|month-end|bank-reconciliation|accounts-payable|accounts-receivable|invoice-processing|payroll/, label: "Bookkeeping administration", challenge: "A growing business needs a dependable monthly routine for source documents, transaction records, invoices and reconciliation follow-up.", solution: "FJX Studio organizes receipts and statements, maintains approved bookkeeping records, tracks invoice status and prepares unresolved items for review in the client's accounting workflow.", deliverable: "A repeatable month-end administration checklist and well-organized records ready for review by the client's bookkeeper or accountant." },
@@ -24,6 +11,11 @@ const playbooks = [
   { test: /seo|search-engine-optimization|local-seo/, label: "Search optimization project", challenge: "A service business has pages with overlapping topics, incomplete metadata and unclear internal navigation.", solution: "FJX Studio reviews page intent, maps one primary topic to each URL, prepares unique title and description drafts, checks headings and internal links, and records technical issues for developer review.", deliverable: "A page-level SEO action sheet and revised on-page elements; search rankings and indexing timelines cannot be guaranteed." },
   { test: /wordpress|woocommerce|website-design|website-development|website-maintenance|website-migration/, label: "Website delivery and maintenance", challenge: "A business needs a website update or migration completed without losing track of content, media, redirects and acceptance checks.", solution: "FJX Studio inventories agreed pages and assets, prepares content and media mappings, coordinates approved updates, and checks key navigation and forms in a staging workflow before client sign-off.", deliverable: "A documented change list and acceptance checklist covering the agreed pages and functions." },
   { test: /data-entry|data-cleanup|spreadsheet|crm-data|lead-research|web-research/, label: "Data and research operations", challenge: "A team is working from inconsistent spreadsheets and CRM records with missing fields, duplicates and unclear source notes.", solution: "FJX Studio follows a field map, standardizes supplied records, checks duplicates and required values, captures source references where requested, and returns exceptions for review.", deliverable: "A structured dataset with documented fields, source notes and an exception log; no unverified contact details are invented." },
+  { test: /customer-service|customer-support|live-chat|outsourced-customer-support|phone-answering|call-center/, label: "Customer support operations", challenge: "A service team needs consistent handling of incoming questions, order-status requests and unresolved customer issues across its agreed support channels.", solution: "FJX Studio organizes the approved response library, categorizes incoming requests, records order or account context supplied by the client and escalates refunds, complaints or policy decisions to the designated owner.", deliverable: "A categorized support queue, documented handoff notes and an escalation workflow; response coverage and service levels are confirmed before work begins." },
+  { test: /email-marketing|mailchimp|klaviyo|brevo|constant-contact|campaign-administration/, label: "Email campaign administration", challenge: "A marketing team needs its subscriber data, campaign assets, links and scheduled sends organized for review.", solution: "FJX Studio prepares approved campaign content, checks supplied links and audience segments, organizes send details and records test and approval status before the client authorizes delivery.", deliverable: "A campaign checklist, organized content and a review-ready send record; deliverability and campaign performance are not guaranteed." },
+  { test: /real-estate|property-management|airbnb|rental-management|transaction-coordinator/, label: "Property and real-estate administration", challenge: "A property or real-estate team needs reliable coordination of listing details, inquiry follow-up, appointment records and transaction documents.", solution: "FJX Studio maintains client-approved listing information, organizes inquiry and viewing records, tracks document status and routes negotiations, legal questions and regulated decisions to the responsible professional.", deliverable: "An organized property task tracker, listing update log and transaction handoff; licensed advice and final transaction decisions remain with the client." },
+  { test: /recruiting|human-resources|hr-administrative|payroll-administrative/, label: "HR and recruiting administration", challenge: "A people team needs candidate records, interview schedules, onboarding checklists and employee documents kept organized.", solution: "FJX Studio updates approved tracking records, coordinates interview calendars, prepares onboarding task lists and flags missing documents for the client's HR owner.", deliverable: "An organized candidate or onboarding tracker and outstanding-item list; hiring, employment and payroll decisions remain with the client." },
+  { test: /medical|healthcare|clinic|dental|patient/, label: "Healthcare administrative support", challenge: "A practice needs non-clinical appointment, document and administrative workflows organized with appropriate access controls.", solution: "FJX Studio can assist with non-clinical task coordination using client-approved procedures and only where the required privacy, security and contractual safeguards are in place; clinical questions are escalated to qualified staff.", deliverable: "A non-clinical administrative task log and exception handoff; no clinical advice, triage or treatment is provided." },
   { test: /virtual-assistant|administrative-assistant|executive-assistant|email-management|calendar-management|appointment-setting/, label: "Remote administrative support", challenge: "A small team needs reliable handling of recurring inbox, calendar, document and follow-up tasks without losing approval control.", solution: "FJX Studio works from a documented task list, organizes incoming requests, drafts routine responses from approved guidance, maintains calendar details and escalates decisions that require the client's authority.", deliverable: "A clear task tracker, organized records and an escalation trail for decisions reserved to the client." },
   { test: /shopify|ecommerce|product-catalog|product-listing|bulk-product|inventory|order-management|marketplace/, label: "eCommerce catalog and operations", challenge: "An online seller has inconsistent product attributes, outdated imagery and a backlog of listing or inventory updates across its store.", solution: "FJX Studio maps source data to the store fields, standardizes titles and attributes, organizes supplied images, checks variants and flags stock or order discrepancies for the client's approval.", deliverable: "A reviewed product-data batch, listing exception log and repeatable update checklist; stock, refund and fulfillment decisions remain with the client." },
   { test: /branding|logo|graphic-design|video-edit|content-creation/, label: "Creative production workflow", challenge: "A business needs a consistent set of campaign assets but its source files, brand rules and revision feedback are scattered.", solution: "FJX Studio organizes approved brand assets, prepares scoped design or editing tasks, checks required dimensions and formats, and tracks review comments through client approval.", deliverable: "An organized asset handoff with file formats and revision status recorded." },
@@ -53,23 +45,27 @@ function addCaseStudy(file) {
   const titleMatch = html.match(/<h1\b[^>]*>([\s\S]*?)<\/h1>/i);
   const title = (titleMatch?.[1] || slug.replace(/-/g, " "))
     .replace(/<[^>]+>/g, " ").replace(/&amp;/g, "&").replace(/\s+/g, " ").trim();
-  const playbook = playbooks.find(item => item.test.test(slug)) || playbooks[playbooks.length - 1];
-  const [business, location] = businesses[hash(slug) % businesses.length];
+  const playbook = playbooks.find(item => item.test.test(slug)) || {
+    label: "Service-specific operations",
+    challenge: "A business needs a clear, repeatable workflow for " + title.toLowerCase() + ", with accurate source information and dependable follow-through.",
+    solution: "FJX Studio confirms the required inputs, documents the steps for " + title.toLowerCase() + ", completes agreed administrative tasks and routes exceptions or decisions to the client for approval.",
+    deliverable: "A documented task workflow, organized handoff and exception list for " + title.toLowerCase() + "; final business decisions remain with the client."
+  };
   const cta = slug.match(/inksoft|chipply|ordermygear|deconetwork|printavo|team-store|spirit-wear/) ? "Plan Your Store Setup" : /logo|graphic|design|video/.test(slug) ? "Discuss Your Design Project" : /email|mailchimp|klaviyo|brevo/.test(slug) ? "Plan Your Email Support" : /customer|support|chat/.test(slug) ? "Improve Your Customer Support" : "Discuss Your Project";
   const section = `
 <section id="fjx-service-case-study" class="fjx-case-study" aria-labelledby="fjx-case-title">
   <div class="fjx-case-wrap">
     <p class="fjx-case-eyebrow">ILLUSTRATIVE SERVICE</p>
-    <h2 id="fjx-case-title">How ${escapeHtml(title)} Can Support a Growing Business</h2>
-    <p class="fjx-case-intro">A sample project scenario showing how this service could support a business in the USA or Canada.</p>
-    <div class="fjx-case-meta"><strong>Example business</strong>: ${escapeHtml(business)} <span aria-hidden="true">·</span> ${escapeHtml(location)}</div>
+    <h2 id="fjx-case-title">Illustrative workflow for ${escapeHtml(title)}</h2>
+    <p class="fjx-case-intro">A service-specific example of the tasks, review steps and handoff this engagement could involve.</p>
+    <div class="fjx-case-meta"><strong>Service focus</strong>: ${escapeHtml(title)}</div>
     <div class="fjx-case-grid">
       <article><h3>Business challenge</h3><p>${escapeHtml(playbook.challenge)}</p></article>
       <article><h3>FJX Studio approach</h3><p>${escapeHtml(playbook.solution)}</p></article>
       <article><h3>Potential handoff</h3><p>${escapeHtml(playbook.deliverable)}</p></article>
     </div>
     <a class="fjx-case-cta" href="#contact">${escapeHtml(cta)} <span aria-hidden="true">→</span></a>
-    <p class="fjx-case-disclaimer">This is a fictional, illustrative example for service explanation. The business name and scenario are not actual clients, completed engagements, testimonials, or measured results.</p>
+    <p class="fjx-case-disclaimer">Illustrative workflow only. This is not a client case study, testimonial, completed engagement or measured result.</p>
   </div>
 </section>
 <style>
@@ -228,7 +224,7 @@ function ensureInksoftVideos(file) {
   const slug = path.basename(path.dirname(file));
   const heading = html.match(/<h1\b[^>]*>([\s\S]*?)<\/h1>/i)?.[1] || "";
   const pageTitle = html.match(/<title[^>]*>([\s\S]*?)<\/title>/i)?.[1] || "";
-  if (!videoTargetSlugs.has(slug) && !/inksoft/i.test(slug + " " + heading + " " + pageTitle)) return;
+  if (!/inksoft/i.test(slug + " " + heading + " " + pageTitle)) return;
 
   const players = inksoftVideos.map(video =>
     '<article class="fjx-inksoft-video-card">' +
