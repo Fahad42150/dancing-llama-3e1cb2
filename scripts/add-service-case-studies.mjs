@@ -3,19 +3,6 @@ import path from "node:path";
 
 const root = path.resolve("public");
 const excluded = new Set(["blog", "articles", "services", "pricing"]);
-const businesses = [
-  ["NorthStar Spirit Wear", "Minneapolis, Minnesota, USA"],
-  ["Maple Ridge Promotions", "Toronto, Ontario, Canada"],
-  ["Cedar Valley Athletics", "Des Moines, Iowa, USA"],
-  ["Harbourview Teamwear", "Vancouver, British Columbia, Canada"],
-  ["Liberty Print & Promo", "Columbus, Ohio, USA"],
-  ["Prairie Oak Outfitters", "Calgary, Alberta, Canada"],
-  ["Summit School Stores", "Denver, Colorado, USA"],
-  ["Bluewater Brand Collective", "Halifax, Nova Scotia, Canada"],
-  ["Redwood Commerce Co.", "Portland, Oregon, USA"],
-  ["Lakeside Business Supply", "Ottawa, Ontario, Canada"]
-];
-
 const playbooks = [
   { test: /quickbooks-cleanup|bookkeeping-cleanup|catch-up-bookkeeping/, label: "Bookkeeping cleanup", challenge: "A small business has months of uncategorized transactions, missing receipts and unreconciled account activity ahead of its reporting deadline.", solution: "FJX Studio organizes source statements and receipts, enters client-approved transaction details, flags duplicates and missing documentation, and prepares an exception list for the client's bookkeeper or accountant.", deliverable: "An organized review pack with categorized source data and clearly flagged items; accounting judgments, tax treatment and final reconciliation approval stay with the client's qualified professional." },
   { test: /quickbooks|xero|bookkeeping|monthly-bookkeeping|month-end|bank-reconciliation|accounts-payable|accounts-receivable|invoice-processing|payroll/, label: "Bookkeeping administration", challenge: "A growing business needs a dependable monthly routine for source documents, transaction records, invoices and reconciliation follow-up.", solution: "FJX Studio organizes receipts and statements, maintains approved bookkeeping records, tracks invoice status and prepares unresolved items for review in the client's accounting workflow.", deliverable: "A repeatable month-end administration checklist and well-organized records ready for review by the client's bookkeeper or accountant." },
@@ -53,23 +40,27 @@ function addCaseStudy(file) {
   const titleMatch = html.match(/<h1\b[^>]*>([\s\S]*?)<\/h1>/i);
   const title = (titleMatch?.[1] || slug.replace(/-/g, " "))
     .replace(/<[^>]+>/g, " ").replace(/&amp;/g, "&").replace(/\s+/g, " ").trim();
-  const playbook = playbooks.find(item => item.test.test(slug)) || playbooks[playbooks.length - 1];
-  const [business, location] = businesses[hash(slug) % businesses.length];
+  const playbook = playbooks.find(item => item.test.test(slug)) || {
+    label: "Service-specific operations",
+    challenge: "A business needs a clear, repeatable workflow for " + title.toLowerCase() + ", with accurate source information and dependable follow-through.",
+    solution: "FJX Studio confirms the required inputs, documents the steps for " + title.toLowerCase() + ", completes agreed administrative tasks and routes exceptions or decisions to the client for approval.",
+    deliverable: "A documented task workflow, organized handoff and exception list for " + title.toLowerCase() + "; final business decisions remain with the client."
+  };
   const cta = slug.match(/inksoft|chipply|ordermygear|deconetwork|printavo|team-store|spirit-wear/) ? "Plan Your Store Setup" : /logo|graphic|design|video/.test(slug) ? "Discuss Your Design Project" : /email|mailchimp|klaviyo|brevo/.test(slug) ? "Plan Your Email Support" : /customer|support|chat/.test(slug) ? "Improve Your Customer Support" : "Discuss Your Project";
   const section = `
 <section id="fjx-service-case-study" class="fjx-case-study" aria-labelledby="fjx-case-title">
   <div class="fjx-case-wrap">
     <p class="fjx-case-eyebrow">ILLUSTRATIVE SERVICE</p>
-    <h2 id="fjx-case-title">How ${escapeHtml(title)} Can Support a Growing Business</h2>
-    <p class="fjx-case-intro">A sample project scenario showing how this service could support a business in the USA or Canada.</p>
-    <div class="fjx-case-meta"><strong>Example business</strong>: ${escapeHtml(business)} <span aria-hidden="true">·</span> ${escapeHtml(location)}</div>
+    <h2 id="fjx-case-title">Illustrative workflow for ${escapeHtml(title)}</h2>
+    <p class="fjx-case-intro">A service-specific example of the tasks, review steps and handoff this engagement could involve.</p>
+    <div class="fjx-case-meta"><strong>Service focus</strong>: ${escapeHtml(title)}</div>
     <div class="fjx-case-grid">
       <article><h3>Business challenge</h3><p>${escapeHtml(playbook.challenge)}</p></article>
       <article><h3>FJX Studio approach</h3><p>${escapeHtml(playbook.solution)}</p></article>
       <article><h3>Potential handoff</h3><p>${escapeHtml(playbook.deliverable)}</p></article>
     </div>
     <a class="fjx-case-cta" href="#contact">${escapeHtml(cta)} <span aria-hidden="true">→</span></a>
-    <p class="fjx-case-disclaimer">This is a fictional, illustrative example for service explanation. The business name and scenario are not actual clients, completed engagements, testimonials, or measured results.</p>
+    <p class="fjx-case-disclaimer">Illustrative workflow only. This is not a client case study, testimonial, completed engagement or measured result.</p>
   </div>
 </section>
 <style>
@@ -228,7 +219,7 @@ function ensureInksoftVideos(file) {
   const slug = path.basename(path.dirname(file));
   const heading = html.match(/<h1\b[^>]*>([\s\S]*?)<\/h1>/i)?.[1] || "";
   const pageTitle = html.match(/<title[^>]*>([\s\S]*?)<\/title>/i)?.[1] || "";
-  if (!videoTargetSlugs.has(slug) && !/inksoft/i.test(slug + " " + heading + " " + pageTitle)) return;
+  if (!/inksoft/i.test(slug + " " + heading + " " + pageTitle)) return;
 
   const players = inksoftVideos.map(video =>
     '<article class="fjx-inksoft-video-card">' +
