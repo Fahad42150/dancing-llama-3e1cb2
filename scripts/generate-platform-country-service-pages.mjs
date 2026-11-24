@@ -741,7 +741,7 @@ function replaceMeta(html, regex, value) {
 function buildPage(platform, country) {
   const slug = platform.slugBase + "-" + country.code;
   const url = baseUrl + "/" + slug + "/";
-  const pageTitle = platform.name + " " + (platform.key === "printavo" ? "Print Shop Management" : "Store Setup & Product Management") + " " + country.label + " | FJX Studio";
+  const pageTitle = platform.serviceName + " in " + country.name + " | FJX Studio";
   const description = platform.shortDescription + " Remote service for businesses serving customers in " + country.name + ".";
   const title = platform.serviceName + " in " + country.name;
   const lead = "FJX Studio provides independent, remote " + platform.name + " support for " + platform.audience + " serving customers in " + country.name + ". We can assist with " + platform.cards.map((card) => card[0].toLowerCase()).join(", ") + ", with scope and approvals agreed before work begins.";
