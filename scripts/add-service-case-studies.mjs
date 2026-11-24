@@ -43,7 +43,13 @@ function walk(dir) {
 
 function addCaseStudy(file) {
   let html = fs.readFileSync(file, "utf8");
-  if (/id=["']fjx-service-case-study["']/.test(html)) return;
+  if (/id=["']fjx-service-case-study["']/.test(html)) {
+    html = html.replace(/(<p class=["']fjx-case-eyebrow["'][^>]*>)[\\s\\S]*?(<\\/p>)/i, "$1ILLUSTRATIVE SERVICE$2");
+    html = html.replace(/(<div class=["']fjx-case-meta["'][^>]*>\\s*<strong>)Example business:?([\\s\\S]*?<\\/strong>)/i, "$1Example business$2");
+    html = html.replace(/<p class=["']fjx-case-disclaimer["'][^>]*>[\\s\\S]*?<\\/p>/i, '<p class="fjx-case-disclaimer">This is a fictional, illustrative example for service explanation. The business name and scenario are not actual clients, completed engagements, testimonials, or measured results.</p>');
+    fs.writeFileSync(file, html);
+    return;
+  }
   const slug = path.basename(path.dirname(file));
   const titleMatch = html.match(/<h1\b[^>]*>([\s\S]*?)<\/h1>/i);
   const title = (titleMatch?.[1] || slug.replace(/-/g, " "))
@@ -54,10 +60,10 @@ function addCaseStudy(file) {
   const section = `
 <section id="fjx-service-case-study" class="fjx-case-study" aria-labelledby="fjx-case-title">
   <div class="fjx-case-wrap">
-    <p class="fjx-case-eyebrow">ILLUSTRATIVE SERVICE CASE STUDY · ${escapeHtml(playbook.label)}</p>
+    <p class="fjx-case-eyebrow">ILLUSTRATIVE SERVICE</p>
     <h2 id="fjx-case-title">How ${escapeHtml(title)} Can Support a Growing Business</h2>
     <p class="fjx-case-intro">A sample project scenario showing how this service could support a business in the USA or Canada.</p>
-    <div class="fjx-case-meta"><strong>Example business:</strong> ${escapeHtml(business)} <span aria-hidden="true">·</span> ${escapeHtml(location)}</div>
+    <div class="fjx-case-meta"><strong>Example business</strong>: ${escapeHtml(business)} <span aria-hidden="true">·</span> ${escapeHtml(location)}</div>
     <div class="fjx-case-grid">
       <article><h3>Business challenge</h3><p>${escapeHtml(playbook.challenge)}</p></article>
       <article><h3>FJX Studio approach</h3><p>${escapeHtml(playbook.solution)}</p></article>
