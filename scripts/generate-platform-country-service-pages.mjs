@@ -1970,6 +1970,471 @@ const keywordExpansion = [
         "Check internal links, headings, duplicate or thin content signals and provide an update report without promising rankings."
       ]
     ]
+  },
+  {
+    "key": "shopify-store-setup-configuration",
+    "name": "Shopify",
+    "prefix": "shopify",
+    "generalUrl": "/shopify-store-management/",
+    "serviceName": "Shopify Store Setup & Configuration Services",
+    "shortDescription": "Shopify store setup support for account settings, domain connection coordination, storefront preferences, shipping zones, tax settings, checkout options, policies and launch readiness.",
+    "audience": "New Shopify merchants, product brands, retailers and businesses preparing to launch an online store",
+    "cards": [
+      [
+        "Store foundation and settings",
+        "Review the merchant's requirements and configure approved store details, business information, currency, markets and customer-facing preferences."
+      ],
+      [
+        "Domain and storefront connection",
+        "Coordinate domain records and storefront connection steps with the domain owner and hosting or DNS provider where required."
+      ],
+      [
+        "Shipping and tax configuration",
+        "Prepare shipping zones, rates and tax settings based on merchant-supplied business rules and professional guidance where required."
+      ],
+      [
+        "Checkout, notifications and policies",
+        "Configure available checkout preferences, notification templates and merchant-approved policy content."
+      ],
+      [
+        "Launch readiness review",
+        "Check navigation, key pages, test products and agreed purchase scenarios before the merchant authorizes launch."
+      ]
+    ]
+  },
+  {
+    "key": "shopify-store-design-redesign",
+    "name": "Shopify",
+    "prefix": "shopify",
+    "generalUrl": "/shopify-store-management/",
+    "serviceName": "Shopify Store Design & Redesign Services",
+    "shortDescription": "Shopify store design and redesign services for brand-led storefront layouts, homepage sections, product and collection templates, responsive user experience and conversion-focused navigation.",
+    "audience": "Shopify businesses, established retailers, new brands and merchants refreshing an existing storefront",
+    "cards": [
+      [
+        "Design direction and page structure",
+        "Plan page hierarchy, storefront sections and customer journeys around the merchant's products and brand guidelines."
+      ],
+      [
+        "Homepage and landing page design",
+        "Design and build approved homepage and campaign layouts using the selected Shopify theme and supported sections."
+      ],
+      [
+        "Product and collection templates",
+        "Organize product detail and collection layouts to present product information, variants, imagery and navigation clearly."
+      ],
+      [
+        "Responsive design implementation",
+        "Apply mobile-first styling and review key storefront templates across common screen sizes."
+      ],
+      [
+        "Redesign launch checks",
+        "Review redirects, navigation, key customer paths and content consistency before the approved storefront goes live."
+      ]
+    ]
+  },
+  {
+    "key": "shopify-theme-customization-development",
+    "name": "Shopify",
+    "prefix": "shopify",
+    "generalUrl": "/shopify-store-management/",
+    "serviceName": "Shopify Theme Customization & Development Services",
+    "shortDescription": "Shopify theme customization and development for Online Store 2.0 sections, Liquid templates, theme settings, storefront features, responsive layouts and custom front-end improvements.",
+    "audience": "Shopify merchants, growing brands and businesses needing theme changes or custom storefront functionality",
+    "cards": [
+      [
+        "Theme setup and customization",
+        "Install and configure a suitable theme, then adapt its supported settings and sections to the approved design."
+      ],
+      [
+        "Custom sections and templates",
+        "Build reusable theme sections and page templates for agreed storefront content and merchandising needs."
+      ],
+      [
+        "Liquid and front-end development",
+        "Implement scoped Liquid, HTML, CSS and JavaScript changes with clear documentation and testing."
+      ],
+      [
+        "Responsive and accessibility checks",
+        "Review layout behavior, keyboard interaction, readable content and storefront presentation on mobile and desktop."
+      ],
+      [
+        "Versioning and release support",
+        "Use a preview theme or agreed development workflow, document changes and publish only after merchant approval."
+      ]
+    ]
+  },
+  {
+    "key": "shopify-store-migration",
+    "name": "Shopify",
+    "prefix": "shopify",
+    "generalUrl": "/shopify-store-management/",
+    "serviceName": "Shopify Store Migration Services",
+    "shortDescription": "Shopify store migration support for moving product catalogs, collections, customer records, order history and selected content from another commerce platform with mapping, testing and redirect planning.",
+    "audience": "Retailers moving to Shopify, growing online stores and businesses consolidating eCommerce platforms",
+    "cards": [
+      [
+        "Migration scope and data audit",
+        "Review the source platform, data types, catalog size, integrations and records that the merchant wants to transfer."
+      ],
+      [
+        "Product and catalog migration",
+        "Map product fields, images, variants, SKUs, collections and categories into the Shopify catalog structure."
+      ],
+      [
+        "Customer and order data transfer",
+        "Coordinate eligible customer and order history migration while respecting platform export limits and applicable privacy requirements."
+      ],
+      [
+        "URL mapping and redirects",
+        "Prepare a URL map and configure approved redirects to help preserve useful links and search discovery."
+      ],
+      [
+        "Migration testing and handover",
+        "Compare record counts, sample product pages, customer data and agreed order scenarios before launch approval."
+      ]
+    ]
+  },
+  {
+    "key": "shopify-bug-fixing-troubleshooting",
+    "name": "Shopify",
+    "prefix": "shopify",
+    "generalUrl": "/shopify-store-management/",
+    "serviceName": "Shopify Troubleshooting & Bug Fixing Services",
+    "shortDescription": "Shopify troubleshooting support for theme display problems, storefront errors, app conflicts, product and variant issues, navigation problems and checkout-related issue investigation.",
+    "audience": "Shopify store owners, eCommerce teams and merchants experiencing storefront or theme issues",
+    "cards": [
+      [
+        "Issue review and reproduction",
+        "Collect the affected page, device, steps, screenshots and recent changes to reproduce the reported issue."
+      ],
+      [
+        "Theme and layout troubleshooting",
+        "Investigate supported theme settings, Liquid templates, CSS and JavaScript behavior within the agreed access scope."
+      ],
+      [
+        "App and integration checks",
+        "Review recent app changes and connected workflows to identify likely conflicts or failed data handoffs."
+      ],
+      [
+        "Product and storefront checks",
+        "Test reported product, variant, cart and navigation behavior using safe test scenarios."
+      ],
+      [
+        "Fix validation and escalation",
+        "Document the change and test outcome, escalating platform-side, payment-provider or advanced infrastructure issues to the responsible provider."
+      ]
+    ]
+  },
+  {
+    "key": "shopify-app-integration-automation",
+    "name": "Shopify",
+    "prefix": "shopify",
+    "generalUrl": "/shopify-store-management/",
+    "serviceName": "Shopify App Integration & Workflow Automation Services",
+    "shortDescription": "Shopify app integration support for connecting approved marketing, customer service, shipping, inventory and business tools, configuring data flows and testing operational workflows.",
+    "audience": "Shopify merchants, multi-channel retailers and eCommerce teams connecting store tools",
+    "cards": [
+      [
+        "Integration requirements review",
+        "Map the systems, records and business events that need to move between Shopify and the connected service."
+      ],
+      [
+        "App selection and setup coordination",
+        "Review suitable apps and prerequisites, then configure the merchant-approved solution and permissions."
+      ],
+      [
+        "Product, order and customer data flows",
+        "Set up supported synchronization rules for agreed records and document which system is the source of truth."
+      ],
+      [
+        "Workflow automation configuration",
+        "Configure supported triggers, notifications and routine actions with safeguards for exceptions and duplicate events."
+      ],
+      [
+        "Integration testing and documentation",
+        "Test representative scenarios, record limitations and provide a handover of settings and support contacts."
+      ]
+    ]
+  },
+  {
+    "key": "wordpress-website-setup-configuration",
+    "name": "WordPress",
+    "prefix": "wordpress",
+    "generalUrl": "/wordpress-website-management/",
+    "serviceName": "WordPress Website Setup & Configuration Services",
+    "shortDescription": "WordPress website setup support for installation coordination, domain and hosting connection, SSL checks, theme configuration, essential plugins, page structure and initial site settings.",
+    "audience": "Small businesses, consultants, publishers and organizations launching a WordPress website",
+    "cards": [
+      [
+        "Installation and environment setup",
+        "Coordinate WordPress installation on the client's selected hosting environment and confirm access and backup arrangements."
+      ],
+      [
+        "Domain, DNS and SSL coordination",
+        "Assist with domain connection and SSL verification in coordination with the domain and hosting account owner."
+      ],
+      [
+        "Theme and essential plugin setup",
+        "Configure an appropriate theme and agreed plugins, checking compatibility and avoiding unnecessary extensions."
+      ],
+      [
+        "Core pages and site settings",
+        "Prepare navigation, permalink settings, homepage, contact details and supplied policy or business information."
+      ],
+      [
+        "Launch checks and handover",
+        "Review key pages, forms, mobile layout and administrator access, then provide a basic site handover."
+      ]
+    ]
+  },
+  {
+    "key": "wordpress-website-design-redesign",
+    "name": "WordPress",
+    "prefix": "wordpress",
+    "generalUrl": "/wordpress-website-management/",
+    "serviceName": "WordPress Website Design & Redesign Services",
+    "shortDescription": "WordPress website design and redesign for responsive business websites, page layouts, navigation, landing pages, reusable content sections and refreshed brand presentation.",
+    "audience": "Small businesses, professional services, nonprofits, publishers and organizations updating their websites",
+    "cards": [
+      [
+        "Website goals and sitemap",
+        "Define the audience, primary actions, page list and content hierarchy before visual design begins."
+      ],
+      [
+        "Visual design and page layouts",
+        "Create brand-aligned layouts for homepage, service pages, about, contact and other agreed templates."
+      ],
+      [
+        "WordPress theme and builder implementation",
+        "Build approved layouts with a suitable block theme or supported page builder and reusable components."
+      ],
+      [
+        "Responsive and usability review",
+        "Check mobile and desktop layouts, navigation, forms, readability and key user journeys."
+      ],
+      [
+        "Redesign launch and content handover",
+        "Review page content, metadata, redirects where URLs change and editor instructions before launch."
+      ]
+    ]
+  },
+  {
+    "key": "wordpress-custom-theme-development",
+    "name": "WordPress",
+    "prefix": "wordpress",
+    "generalUrl": "/wordpress-website-management/",
+    "serviceName": "Custom WordPress Theme Development Services",
+    "shortDescription": "Custom WordPress theme development for block themes, reusable templates, custom styling, editor-friendly content sections, responsive layouts and maintainable site presentation.",
+    "audience": "Businesses, publishers, agencies and organizations needing a tailored WordPress design system",
+    "cards": [
+      [
+        "Theme requirements and architecture",
+        "Plan templates, global styles, reusable patterns and editor permissions around the site's content needs."
+      ],
+      [
+        "Custom theme and block development",
+        "Build or adapt theme templates, block patterns and supported custom blocks for the agreed page types."
+      ],
+      [
+        "Responsive front-end implementation",
+        "Implement accessible layouts and consistent typography, spacing and components across common screen sizes."
+      ],
+      [
+        "Editor experience and documentation",
+        "Configure reusable editing patterns and provide instructions so the client's team can update content confidently."
+      ],
+      [
+        "Testing and deployment support",
+        "Test templates, forms, navigation and compatibility in staging before the approved production release."
+      ]
+    ]
+  },
+  {
+    "key": "wordpress-custom-plugin-development",
+    "name": "WordPress",
+    "prefix": "wordpress",
+    "generalUrl": "/wordpress-website-management/",
+    "serviceName": "Custom WordPress Plugin Development Services",
+    "shortDescription": "Custom WordPress plugin development for tailored site features, admin workflows, custom post types, fields, API connections and functionality not adequately covered by existing plugins.",
+    "audience": "Businesses, publishers, agencies and organizations requiring custom WordPress functionality",
+    "cards": [
+      [
+        "Feature and technical requirements",
+        "Define the use case, user roles, data requirements, acceptance criteria and existing plugin dependencies."
+      ],
+      [
+        "Plugin architecture and implementation",
+        "Develop scoped plugin functionality using WordPress APIs and established coding practices."
+      ],
+      [
+        "Admin interfaces and content structures",
+        "Create agreed settings screens, custom post types, fields or workflow interfaces with appropriate permissions."
+      ],
+      [
+        "API and third-party connections",
+        "Implement supported API connections with documented authentication, data handling and error behavior."
+      ],
+      [
+        "Testing, documentation and handover",
+        "Test expected and failure scenarios, document configuration and provide source code handover under the agreed terms."
+      ]
+    ]
+  },
+  {
+    "key": "wordpress-website-migration",
+    "name": "WordPress",
+    "prefix": "wordpress",
+    "generalUrl": "/wordpress-website-management/",
+    "serviceName": "WordPress Website Migration Services",
+    "shortDescription": "WordPress website migration support for moving hosting, domains or CMS platforms, transferring site files and databases, configuring DNS and SSL, mapping URLs and validating the migrated website.",
+    "audience": "Businesses changing hosting providers, domains, web agencies or website platforms",
+    "cards": [
+      [
+        "Migration audit and backup plan",
+        "Review the current website, hosting environment, database, media files, plugins and migration constraints."
+      ],
+      [
+        "Files and database transfer",
+        "Coordinate transfer of WordPress files, database records, uploads and configuration to the approved destination."
+      ],
+      [
+        "Domain, DNS and SSL setup",
+        "Coordinate DNS changes, domain settings and SSL verification with the authorized account owner."
+      ],
+      [
+        "URL mapping and SEO checks",
+        "Prepare redirects for changed URLs and check important metadata, internal links and sitemap references."
+      ],
+      [
+        "Staging validation and launch",
+        "Test pages, forms, login, integrations and agreed WooCommerce purchase scenarios before switching production traffic."
+      ]
+    ]
+  },
+  {
+    "key": "wordpress-bug-fixing-troubleshooting",
+    "name": "WordPress",
+    "prefix": "wordpress",
+    "generalUrl": "/wordpress-website-management/",
+    "serviceName": "WordPress Bug Fixing & Troubleshooting Services",
+    "shortDescription": "WordPress bug fixing support for broken layouts, plugin conflicts, PHP errors, failed forms, admin issues, theme problems and website functionality troubleshooting.",
+    "audience": "WordPress website owners, businesses, publishers and WooCommerce operators experiencing site errors",
+    "cards": [
+      [
+        "Problem assessment",
+        "Collect error messages, affected URLs, recent changes, hosting details and steps to reproduce the issue."
+      ],
+      [
+        "Theme and plugin conflict checks",
+        "Review plugin and theme behavior in a safe staging environment where available."
+      ],
+      [
+        "Forms and site functionality tests",
+        "Check agreed forms, navigation, search, login and key website interactions to isolate failures."
+      ],
+      [
+        "Error investigation and repair",
+        "Apply scoped fixes to supported theme, plugin or configuration issues and document any code changes."
+      ],
+      [
+        "Validation and escalation",
+        "Retest affected functionality and escalate hosting, malware or third-party service issues to the appropriate specialist when needed."
+      ]
+    ]
+  },
+  {
+    "key": "wordpress-security-hardening",
+    "name": "WordPress",
+    "prefix": "wordpress",
+    "generalUrl": "/wordpress-website-management/",
+    "serviceName": "WordPress Security & Website Hardening Services",
+    "shortDescription": "WordPress security hardening support for administrator access review, update practices, backup checks, security plugin configuration, login protection and basic security monitoring coordination.",
+    "audience": "WordPress site owners, small businesses, publishers and organizations responsible for website security",
+    "cards": [
+      [
+        "Access and user-role review",
+        "Review administrator accounts, user roles and access practices with the website owner."
+      ],
+      [
+        "Updates and backup readiness",
+        "Check update status and backup arrangements and document recovery contacts and procedures."
+      ],
+      [
+        "Security configuration",
+        "Configure agreed security settings such as login protection, access restrictions and security plugin options."
+      ],
+      [
+        "Basic vulnerability and malware checks",
+        "Coordinate scans using selected security tools and escalate suspicious findings for specialist incident response."
+      ],
+      [
+        "Security maintenance reporting",
+        "Provide a record of completed checks, outstanding risks and recommended follow-up actions."
+      ]
+    ]
+  },
+  {
+    "key": "wordpress-woocommerce-store-design-setup",
+    "name": "WordPress / WooCommerce",
+    "prefix": "wordpress",
+    "generalUrl": "/woocommerce-wordpress-store-management/",
+    "serviceName": "WooCommerce Store Design & Setup Services",
+    "shortDescription": "WooCommerce store setup and design for product, category, cart and checkout pages, store settings, shipping and payment configuration, catalog structure and responsive shopping experiences.",
+    "audience": "WordPress businesses, online retailers and merchants launching or improving a WooCommerce store",
+    "cards": [
+      [
+        "Store structure and requirements",
+        "Plan product types, categories, attributes, shipping regions, payment options and customer journeys."
+      ],
+      [
+        "WooCommerce installation and configuration",
+        "Configure WooCommerce settings and agreed store pages, email notifications and basic store preferences."
+      ],
+      [
+        "Product and category page design",
+        "Build or customize storefront templates for product details, categories, cart and checkout."
+      ],
+      [
+        "Payment and shipping setup coordination",
+        "Configure compatible gateways and shipping methods after reviewing merchant eligibility and provider requirements."
+      ],
+      [
+        "Test orders and launch handover",
+        "Test product variations, stock changes, checkout, order notifications and approved shipping scenarios before launch."
+      ]
+    ]
+  },
+  {
+    "key": "woocommerce-custom-development-integrations",
+    "name": "WordPress / WooCommerce",
+    "prefix": "wordpress",
+    "generalUrl": "/woocommerce-wordpress-store-management/",
+    "serviceName": "WooCommerce Custom Development & Integrations Services",
+    "shortDescription": "WooCommerce custom development support for checkout changes, product workflows, custom store features, payment and shipping integrations, business system connections and tailored extensions.",
+    "audience": "WooCommerce merchants, online retailers and businesses with specialized eCommerce workflows",
+    "cards": [
+      [
+        "Store workflow discovery",
+        "Document the required customer, product, checkout, order and fulfillment workflows before implementation."
+      ],
+      [
+        "Custom store functionality",
+        "Develop agreed features using supported WooCommerce hooks, templates and extension patterns."
+      ],
+      [
+        "Checkout and payment workflow changes",
+        "Implement scoped checkout improvements and coordinate compatible payment provider connections."
+      ],
+      [
+        "Business system integrations",
+        "Connect supported inventory, shipping, CRM, accounting or ERP systems using approved APIs and data rules."
+      ],
+      [
+        "Testing and technical handover",
+        "Test key order and failure scenarios, document dependencies and provide a maintainable handover."
+      ]
+    ]
   }];
 
 for (const item of keywordExpansion) {
@@ -2136,7 +2601,7 @@ if (fs.existsSync(servicesPath)) {
   ).join("");
   const section = marker +
     '<section class="section"><div class="wrap"><h2>Platform Store and Print-Shop Services — USA &amp; Canada</h2>' +
-    '<p class="lead">Explore dedicated Shopify and WordPress website and eCommerce support, alongside platform-specific store and print-shop administration services, with country-specific pages for the United States and Canada.</p>' +
+    '<p class="lead">Explore dedicated Shopify, WordPress and WooCommerce setup, design, development, migration and store administration services, alongside platform-specific print-shop support, with country-specific pages for the United States and Canada.</p>' +
     '<div class="grid">' + cards + '</div></div></section>';
   const markerIndex = services.indexOf(marker);
   if (markerIndex >= 0) {
