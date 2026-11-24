@@ -47,7 +47,7 @@ function addCaseStudy(file) {
   if (/id=["']fjx-service-case-study["']/.test(html)) {
     // Rebuild existing case studies from the page's own slug/title so stale generic
     // scenarios are not preserved when the service taxonomy is improved.
-    html = html.replace(/<section id=["']fjx-service-case-study["'][\\s\\S]*?<\\/section>\\s*<style>[\\s\\S]*?<\\/style>/i, "");
+    html = html.replace(/<section id=["']fjx-service-case-study["'][\s\S]*?<\/section>\s*<style>[\s\S]*?<\/style>/i, "");
   }
   const slug = path.basename(path.dirname(file));
   const titleMatch = html.match(/<h1\b[^>]*>([\s\S]*?)<\/h1>/i);
