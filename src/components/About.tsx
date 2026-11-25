@@ -18,7 +18,7 @@ export default function About() {
           <div className="relative order-2 lg:order-1">
             <div className="flex w-full items-center justify-center overflow-hidden rounded-3xl border border-charcoal-100 bg-white p-3 shadow-card">
               <img
-                src="https://images.pexels.com/photos/41108027/pexels-photo-41108027.jpeg?auto=compress&cs=tinysrgb&w=1000&q=75"
+                src="https://images.pexels.com/photos/41108027/pexels-photo-41108027.jpeg?auto=compress&cs=tinysrgb&w=640&q=75"
                 alt="FJX Studio supporting eCommerce store operations"
                 className="block h-auto max-h-[520px] w-full object-contain"
                 loading="lazy"
