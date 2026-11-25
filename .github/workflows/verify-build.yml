@@ -1,4 +1,4 @@
-name: Verify production build
+name: Verify production build and responsive layouts
 
 on:
   push:
@@ -6,9 +6,9 @@ on:
   workflow_dispatch:
 
 jobs:
-  build:
+  build-and-responsive-audit:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 60
     steps:
       - name: Check out repository
         uses: actions/checkout@v5
@@ -29,3 +29,25 @@ jobs:
           node --check scripts/generate-virtual-assistant-blogs.mjs
       - name: Run production build
         run: npm run build
+      - name: Install browser test runner
+        run: |
+          npm install --no-save playwright
+          npx playwright install --with-deps chromium
+      - name: Start production preview
+        run: |
+          npm run preview -- --host 127.0.0.1 > /tmp/fjx-preview.log 2>&1 &
+          for i in {1..30}; do
+            if curl --silent --fail http://127.0.0.1:4173/ > /dev/null; then exit 0; fi
+            sleep 2
+          done
+          cat /tmp/fjx-preview.log
+          exit 1
+      - name: Audit every sitemap page at nine viewport widths
+        run: node scripts/audit-responsive-layout.mjs
+      - name: Upload responsive audit report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: fjx-responsive-audit
+          path: artifacts/responsive-audit.json
+          if-no-files-found: warn
