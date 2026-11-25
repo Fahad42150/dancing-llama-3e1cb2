@@ -802,5 +802,18 @@
       "source": "/blog/inksoft-vs-graphicsflow/",
       "destination": "/blog/inksoft-vs-graphicsflow/index.html"
     }
+  ],
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "fjxstudio.com"
+        }
+      ],
+      "destination": "https://www.fjxstudio.com/:path*",
+      "permanent": true
+    }
   ]
 }
