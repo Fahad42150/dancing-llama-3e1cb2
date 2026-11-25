@@ -31,7 +31,7 @@ jobs:
         run: npm run build
       - name: Install browser test runner
         run: |
-          npm install --no-save playwright
+          npm install --no-save --package-lock=false playwright
           npx playwright install --with-deps chromium
       - name: Start production preview
         run: |
@@ -49,5 +49,5 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: fjx-responsive-audit
-          path: artifacts/responsive-audit.json
+          path: artifacts/
           if-no-files-found: warn
