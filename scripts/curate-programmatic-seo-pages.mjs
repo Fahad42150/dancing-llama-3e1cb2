@@ -38,6 +38,14 @@ if (fs.existsSync(sitemapPath)) {
     kept.push(block);
   }
 
+  for (const dir of pageDirs) {
+    const slug = path.basename(dir);
+    const loc = "https://www.fjxstudio.com/" + slug + "/";
+    if (seen.has(loc) || !fs.existsSync(path.join(dir, "index.html"))) continue;
+    seen.add(loc);
+    kept.push("  <url><loc>" + loc + "</loc></url>");
+  }
+
   const rootOpen = sitemap.indexOf("<urlset");
   const rootClose = sitemap.indexOf(">", rootOpen);
   const header = rootOpen >= 0 && rootClose >= 0
