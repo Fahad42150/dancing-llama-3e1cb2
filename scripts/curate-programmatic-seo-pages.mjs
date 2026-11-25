@@ -25,24 +25,24 @@ for (const file of htmlFiles) {
   let html = fs.readFileSync(file, "utf8");
 
   if (isBestLandingPage) {
-    const robotsPattern = /<meta\\b[^>]*name=["']robots["'][^>]*>/i;
+    const robotsPattern = /<meta\b[^>]*name=["']robots["'][^>]*>/i;
     const robotsTag = html.match(robotsPattern)?.[0] || "";
     if (/noindex/i.test(robotsTag)) {
       html = html.replace(robotsPattern, '<meta name="robots" content="index,follow">');
       fs.writeFileSync(file, html, "utf8");
       restoredBestPages += 1;
     } else if (!robotsTag) {
-      html = html.replace(/<\\/head>/i, '<meta name="robots" content="index,follow">\\n</head>');
+      html = html.replace(/<\/head>/i, '<meta name="robots" content="index,follow">\n</head>');
       fs.writeFileSync(file, html, "utf8");
       restoredBestPages += 1;
     }
   }
 
-  const robotsTag = html.match(/<meta\\b[^>]*name=["']robots["'][^>]*>/i)?.[0] || "";
+  const robotsTag = html.match(/<meta\b[^>]*name=["']robots["'][^>]*>/i)?.[0] || "";
   if (/noindex/i.test(robotsTag)) continue;
 
-  const canonical = html.match(/<link\\b[^>]*rel=["']canonical["'][^>]*href=["']([^"']+)["'][^>]*>/i)?.[1]
-    || html.match(/<link\\b[^>]*href=["']([^"']+)["'][^>]*rel=["']canonical["'][^>]*>/i)?.[1];
+  const canonical = html.match(/<link\b[^>]*rel=["']canonical["'][^>]*href=["']([^"']+)["'][^>]*>/i)?.[1]
+    || html.match(/<link\b[^>]*href=["']([^"']+)["'][^>]*rel=["']canonical["'][^>]*>/i)?.[1];
   if (!canonical) continue;
 
   try {
@@ -57,11 +57,11 @@ for (const file of htmlFiles) {
 if (fs.existsSync(sitemapPath)) {
   const sitemap = fs.readFileSync(sitemapPath, "utf8");
   const seen = new Set();
-  const blocks = sitemap.match(/<url\\b[^>]*>[\\s\\S]*?<\\/url>/gi) || [];
+  const blocks = sitemap.match(/<url\b[^>]*>[\s\S]*?<\/url>/gi) || [];
   const kept = [];
 
   for (const block of blocks) {
-    const loc = (block.match(/<loc>([\\s\\S]*?)<\\/loc>/i) || [])[1]?.trim();
+    const loc = (block.match(/<loc>([\s\S]*?)<\/loc>/i) || [])[1]?.trim();
     if (loc && seen.has(loc)) continue;
     if (loc) seen.add(loc);
     kept.push(block);
@@ -79,8 +79,8 @@ if (fs.existsSync(sitemapPath)) {
   const rootClose = sitemap.indexOf(">", rootOpen);
   const header = rootOpen >= 0 && rootClose >= 0
     ? sitemap.slice(0, rootClose + 1)
-    : '<?xml version="1.0" encoding="UTF-8"?>\\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">';
-  fs.writeFileSync(sitemapPath, header + "\\n" + kept.join("\\n") + "\\n</urlset>\\n", "utf8");
+    : '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">';
+  fs.writeFileSync(sitemapPath, header + "\n" + kept.join("\n") + "\n</urlset>\n", "utf8");
   console.log("[seo-curation] sitemap kept " + kept.length + " unique existing/generated URL(s) and added " + added + " canonical page(s)");
 }
 
