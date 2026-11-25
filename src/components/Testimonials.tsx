@@ -232,9 +232,9 @@ function TestimonialCard({
       style={{ transitionDelay: `${index * 70}ms` }}
     >
       <Quote size={32} className="mb-4 text-parrot-400/50" />
-      <div className="mb-4 flex gap-0.5" aria-label={`${testimonial.rating} out of 5 stars`}>
+      <div className="mb-4 flex gap-0.5" role="img" aria-label={`${testimonial.rating} out of 5 stars`}>
         {Array.from({ length: testimonial.rating }).map((_, i) => (
-          <Star key={i} size={16} className="fill-parrot-400 text-parrot-400" />
+          <Star key={i} size={16} aria-hidden="true" className="fill-parrot-400 text-parrot-400" />
         ))}
       </div>
       <p className="text-sm leading-relaxed text-charcoal-200">"{testimonial.text}"</p>
