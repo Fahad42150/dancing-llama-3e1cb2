@@ -33,7 +33,7 @@ try {
       try {
         await page.setViewportSize({ width, height });
         const response = await page.goto(new URL(route, baseUrl).href, { waitUntil: "domcontentloaded" });
-        await page.evaluate(() => document.fonts?.ready);
+        await page.evaluate(() => document.fonts.ready.then(() => true));
         await page.waitForTimeout(180);
         const metrics = await page.evaluate(() => {
           const doc = document.documentElement;
