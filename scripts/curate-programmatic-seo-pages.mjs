@@ -14,11 +14,11 @@ for (const dir of curatedDirs) {
   const file = path.join(dir, "index.html");
   if (!fs.existsSync(file)) continue;
   let html = fs.readFileSync(file, "utf8");
-  const robotsTag = /<meta\\b[^>]*name=["']robots["'][^>]*>/i;
+  const robotsTag = /<meta\b[^>]*name=["']robots["'][^>]*>/i;
   if (robotsTag.test(html)) {
     html = html.replace(robotsTag, '<meta name="robots" content="noindex,follow">');
   } else {
-    html = html.replace(/<\\/head>/i, '<meta name="robots" content="noindex,follow">\\n</head>');
+    html = html.replace(/<\/head>/i, '<meta name="robots" content="noindex,follow">\n</head>');
   }
   fs.writeFileSync(file, html, "utf8");
   noindexed += 1;
@@ -27,13 +27,13 @@ for (const dir of curatedDirs) {
 if (fs.existsSync(sitemapPath)) {
   const sitemap = fs.readFileSync(sitemapPath, "utf8");
   const seen = new Set();
-  const blocks = sitemap.match(/<url\\b[^>]*>[\\s\\S]*?<\\/url>/gi) || [];
+  const blocks = sitemap.match(/<url\b[^>]*>[\s\S]*?<\/url>/gi) || [];
   const kept = [];
   let removedNoindex = 0;
   let removedDuplicates = 0;
 
   for (const block of blocks) {
-    const loc = (block.match(/<loc>([\\s\\S]*?)<\\/loc>/i) || [])[1]?.trim();
+    const loc = (block.match(/<loc>([\s\S]*?)<\/loc>/i) || [])[1]?.trim();
     if (!loc) {
       kept.push(block);
       continue;
@@ -53,14 +53,16 @@ if (fs.existsSync(sitemapPath)) {
     kept.push(block);
   }
 
-  const header = sitemap.slice(0, sitemap.indexOf("<url"));
-  fs.writeFileSync(sitemapPath, header + kept.join("\\n") + "\\n</urlset>\\n", "utf8");
+  const rootOpen = sitemap.indexOf("<urlset");
+  const rootClose = sitemap.indexOf(">", rootOpen);
+  const header = rootOpen >= 0 && rootClose >= 0 ? sitemap.slice(0, rootClose + 1) : '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">';
+  fs.writeFileSync(sitemapPath, header + "\n" + kept.join("\n") + "\n</urlset>\n", "utf8");
   console.log("[seo-curation] sitemap removed " + removedNoindex + " noindex URL(s) and " + removedDuplicates + " duplicate URL(s)");
 }
 
 if (fs.existsSync(servicesPath)) {
   let html = fs.readFileSync(servicesPath, "utf8");
-  html = html.replace(/<!-- virtual-assistant-keyword-pages -->[\\s\\S]*?<\\/section>/i, "");
+  html = html.replace(/<!-- virtual-assistant-keyword-pages -->[\s\S]*?<\/section>/i, "");
   fs.writeFileSync(servicesPath, html, "utf8");
 }
 
