@@ -21,7 +21,7 @@ export default function Hero() {
           <h1 className="font-display text-4xl font-extrabold leading-[1.1] tracking-tight text-charcoal-900 text-balance sm:text-5xl lg:text-6xl">
             InkSoft Store Management &{' '}
             <span className="relative">
-              <span className="relative z-10 text-parrot-500">eCommerce</span>
+              <span className="relative z-10 text-parrot-800">eCommerce</span>
               <span className="absolute bottom-1 left-0 right-0 h-3 -skew-y-1 bg-parrot-100" />
             </span>{' '}
             Operations Support
