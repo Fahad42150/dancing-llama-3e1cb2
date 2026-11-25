@@ -54,3 +54,44 @@ body { min-width: 320px; max-width: 100%; overflow-x: clip; }
 img, picture, video, canvas, svg { max-width: 100%; }
 iframe { max-width: 100%; }
 pre { max-width: 100%; overflow-x: auto; }
+
+
+/* Shared media and reading-layout safeguards for the React app and static pages. */
+:where(main, article, .page-content) {
+  min-width: 0;
+}
+:where(main, article, .page-content) :where(img, picture, video, iframe, svg, canvas) {
+  max-width: 100%;
+}
+:where(main, article, .page-content) img {
+  height: auto;
+}
+:where(main, article, .page-content) iframe {
+  display: block;
+}
+:where(main, article, .page-content) :where(p, li) {
+  overflow-wrap: anywhere;
+}
+:where(main, article, .page-content) :where(h1, h2, h3) {
+  text-wrap: balance;
+}
+:where(main, article, .page-content) :where(p, li) {
+  text-wrap: pretty;
+}
+:where(main, article, .page-content) :where(button, a, input, select, textarea) {
+  max-width: 100%;
+}
+@media (max-width: 640px) {
+  :where(main, article, .page-content) {
+    overflow-wrap: anywhere;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+  }
+}
