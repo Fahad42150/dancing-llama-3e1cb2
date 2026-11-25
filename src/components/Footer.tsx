@@ -35,7 +35,7 @@ export default function Footer() {
               <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-parrot-400 font-display text-sm font-extrabold text-charcoal-900">
                 FJ
               </span>
-              FJX <span className="text-parrot-500">Studio</span>
+              FJX <span className="text-parrot-800">Studio</span>
             </a>
             <p className="mt-4 max-w-sm text-sm leading-relaxed text-charcoal-500">
               We design, build, and manage stunning eCommerce experiences for
