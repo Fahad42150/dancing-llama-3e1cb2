@@ -1,5 +1,4 @@
 import { useEffect, useState, type FormEvent } from 'react';
-import { createClient } from '@supabase/supabase-js';
 import { Star, Quote, Send, CheckCircle2, MessageSquarePlus, X } from 'lucide-react';
 import { testimonials, type TestimonialItem } from '@/data/content';
 import { useReveal } from '@/hooks/useReveal';
@@ -12,11 +11,15 @@ type Review = {
   feedback: string;
 };
 
-const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
-const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
-const supabase = supabaseUrl && supabaseAnonKey
-  ? createClient(supabaseUrl, supabaseAnonKey)
-  : null;
+async function getSupabaseClient() {
+  const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
+  const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
+  if (!supabaseUrl || !supabaseAnonKey) return null;
+
+  // Keep the Supabase SDK out of the initial homepage bundle.
+  const { createClient } = await import('@supabase/supabase-js');
+  return createClient(supabaseUrl, supabaseAnonKey);
+}
 
 function getInitials(name: string) {
   return name
@@ -40,21 +43,22 @@ export default function Testimonials() {
   const [error, setError] = useState('');
 
   useEffect(() => {
-    if (!supabase) return;
+    if (!isVisible) return;
     let active = true;
 
-    supabase
-      .from('reviews')
-      .select('id, name, company, rating, feedback')
-      .eq('status', 'approved')
-      .order('created_at', { ascending: false })
-      .then(({ data, error: fetchError }) => {
-        if (!active || fetchError || !data) return;
-        setReviews(data as Review[]);
-      });
+    getSupabaseClient().then(async (supabase) => {
+      if (!active || !supabase) return;
+      const { data, error: fetchError } = await supabase
+        .from('reviews')
+        .select('id, name, company, rating, feedback')
+        .eq('status', 'approved')
+        .order('created_at', { ascending: false });
+
+      if (active && !fetchError && data) setReviews(data as Review[]);
+    });
 
     return () => { active = false; };
-  }, []);
+  }, [isVisible]);
 
   const visibleTestimonials: TestimonialItem[] = [
     ...testimonials,
@@ -70,13 +74,15 @@ export default function Testimonials() {
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
+    setSubmitting(true);
+    setError('');
+    const supabase = await getSupabaseClient();
     if (!supabase) {
+      setSubmitting(false);
       setError('Reviews are not connected yet. Please contact sales@fjxstudio.com to share your feedback.');
       return;
     }
 
-    setSubmitting(true);
-    setError('');
     const { error: submitError } = await supabase.from('reviews').insert({
       name: name.trim(),
       company: company.trim() || null,
