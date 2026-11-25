@@ -41,7 +41,7 @@ export default function Navbar() {
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-6" aria-label="Main navigation">
         <a href="#home" onClick={(e) => { e.preventDefault(); navigate('#home'); }} className="flex items-center gap-2 text-xl font-display font-extrabold tracking-tight text-charcoal-900">
           <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-parrot-400 font-display text-sm font-extrabold text-charcoal-900">FJ</span>
-          FJX <span className="text-parrot-500">Studio</span>
+          FJX <span className="text-parrot-800">Studio</span>
         </a>
         <div className="hidden items-center gap-1 xl:flex">
           {navLinks.map((link) => (
