@@ -13,7 +13,7 @@ if (!fs.existsSync(sitemapPath)) {
 }
 
 const xml = fs.readFileSync(sitemapPath, "utf8");
-const urls = [...xml.matchAll(/<loc>\\s*([^<]+?)\\s*<\\/loc>/gi)]
+const urls = [...xml.matchAll(/<loc>\s*([^<]+?)\s*<\/loc>/gi)]
   .map((match) => match[1].trim().replaceAll("&amp;", "&"))
   .filter((url) => {
     try { return new URL(url).origin === origin; } catch { return false; }
