@@ -31,45 +31,46 @@ function add(file, code, detail) {
 }
 function count(html, re) { return (html.match(re) || []).length; }
 function attr(tag, name) {
-  const match = tag.match(new RegExp("\\b" + name + "\\s*=\\s*([\"'])(.*?)\\1", "i"));
-  return match ? match[2].trim() : null;
+  const attrs = [...tag.matchAll(/([^\s=]+)\s*=\s*(["'])(.*?)\2/gi)];
+  const match = attrs.find(item => item[1].toLowerCase() === name.toLowerCase());
+  return match ? match[3].trim() : null;
 }
 function plain(html) {
-  return html.replace(/<script[\\s\\S]*?<\\/script>|<style[\\s\\S]*?<\\/style>/gi, " ")
+  return html.replace(/<script[\s\S]*?<\/script>|<style[\s\S]*?<\/style>/gi, " ")
     .replace(/<[^>]+>/g, " ").replace(/&nbsp;|&#160;/gi, " ").replace(/&[a-z0-9#]+;/gi, " ")
-    .replace(/\\s+/g, " ").trim();
+    .replace(/\s+/g, " ").trim();
 }
 function mediaExists(src, file) {
-  if (!src || /^(?:https?:|data:|blob:|#|\\/\\/)/i.test(src)) return true;
+  if (!src || /^(?:https?:|data:|blob:|#|\/\/)/i.test(src)) return true;
   const clean = src.split(/[?#]/)[0];
   const target = clean.startsWith("/")
-    ? path.join(publicDir, clean.replace(/^\\/+/, ""))
+    ? path.join(publicDir, clean.replace(/^\/+/, ""))
     : path.resolve(path.dirname(file), clean);
   return fs.existsSync(target);
 }
 function responsiveVideo(html, iframe) {
   const src = attr(iframe, "src") || "";
-  if (!/youtube|youtu\\.be|vimeo|wistia/i.test(src)) return true;
+  if (!/youtube|youtu\.be|vimeo|wistia/i.test(src)) return true;
   const start = Math.max(0, html.indexOf(iframe) - 900);
   const end = Math.min(html.length, html.indexOf(iframe) + iframe.length + 300);
   const context = html.slice(start, end);
-  return /aspect-ratio\\s*:\\s*16\\s*\\/\\s*9|padding-top\\s*:\\s*56\\.25%|position\\s*:\\s*absolute|width\\s*=\\s*["']100%["']|width\\s*:\\s*100%/i.test(context) ||
-    /aspect-ratio\\s*:\\s*16\\s*\\/\\s*9|padding-top\\s*:\\s*56\\.25%|iframe\\s*\\{[^}]*position\\s*:\\s*absolute/i.test(html);
+  return /aspect-ratio\s*:\s*16\s*\/\s*9|padding-top\s*:\s*56\.25%|position\s*:\s*absolute|width\s*=\s*["']100%["']|width\s*:\s*100%/i.test(context) ||
+    /aspect-ratio\s*:\s*16\s*\/\s*9|padding-top\s*:\s*56\.25%|iframe\s*\{[^}]*position\s*:\s*absolute/i.test(html);
 }
 
 for (const file of files) {
   const html = fs.readFileSync(file, "utf8");
-  const title = (html.match(/<title\\b[^>]*>([\\s\\S]*?)<\\/title>/i) || [])[1] || "";
-  const description = (html.match(/<meta\\b[^>]*(?:name|property)=["'](?:description|og:description)["'][^>]*>/i) || [])[0];
-  const h1 = count(html, /<h1\\b/gi);
-  const ids = [...html.matchAll(/\\bid=["']([^"']+)["']/gi)].map(m => m[1]);
+  const title = (html.match(/<title\b[^>]*>([\s\S]*?)<\/title>/i) || [])[1] || "";
+  const description = (html.match(/<meta\b[^>]*(?:name|property)=["'](?:description|og:description)["'][^>]*>/i) || [])[0];
+  const h1 = count(html, /<h1\b/gi);
+  const ids = [...html.matchAll(/\bid=["']([^"']+)["']/gi)].map(m => m[1]);
   const duplicate = [...new Set(ids.filter((id, i) => ids.indexOf(id) !== i))];
-  const images = [...html.matchAll(/<img\\b[^>]*>/gi)].map(m => m[0]);
-  const iframes = [...html.matchAll(/<iframe\\b[^>]*>/gi)].map(m => m[0]);
-  const text = plain((html.match(/<body\\b[^>]*>([\\s\\S]*?)<\\/body>/i) || [])[1] || html);
+  const images = [...html.matchAll(/<img\b[^>]*>/gi)].map(m => m[0]);
+  const iframes = [...html.matchAll(/<iframe\b[^>]*>/gi)].map(m => m[0]);
+  const text = plain((html.match(/<body\b[^>]*>([\s\S]*?)<\/body>/i) || [])[1] || html);
   const relative = path.relative(root, file).split(path.sep).join("/");
   const isWatch = relative.includes("/watch/");
-  const isService = !isWatch && /public\\//.test(relative) && !/(?:blog|articles|portfolio|watch|services)\\//.test(relative);
+  const isService = !isWatch && /public\//.test(relative) && !/(?:blog|articles|portfolio|watch|services)\//.test(relative);
 
   if (!title.trim()) { totals.missingTitle++; add(file, "missing-title", "Page has no document title."); }
   if (!description || !attr(description, "content")) { totals.missingDescription++; add(file, "missing-meta-description", "Add a unique, useful meta description."); }
@@ -84,7 +85,7 @@ for (const file of files) {
     const src = attr(img, "src");
     const alt = attr(img, "alt");
     if (alt === null) { totals.imagesMissingAlt++; add(file, "image-missing-alt", src || "Image without src"); }
-    if (!/\\bwidth=/i.test(img) || !/\\bheight=/i.test(img)) {
+    if (!/\bwidth=/i.test(img) || !/\bheight=/i.test(img)) {
       totals.imagesMissingDimensions++;
       add(file, "image-missing-dimensions", src || "Image without intrinsic dimensions; review layout shift.");
     }
@@ -96,17 +97,17 @@ for (const file of files) {
     if (!attr(iframe, "loading")) { totals.videosMissingLazy++; add(file, "video-missing-loading", attr(iframe, "src") || "iframe without loading strategy"); }
     if (!responsiveVideo(html, iframe)) { totals.videosWithoutResponsivePattern++; add(file, "video-responsive-wrapper", attr(iframe, "src") || "Video embed may not have a responsive 16:9 wrapper."); }
   }
-  if (/width\\s*:\\s*100vw/i.test(html) && !/overflow-x\\s*:\\s*(?:hidden|clip)/i.test(html)) {
+  if (/width\s*:\s*100vw/i.test(html) && !/overflow-x\s*:\s*(?:hidden|clip)/i.test(html)) {
     totals.pagesWithHorizontalOverflowRisk++;
     add(file, "possible-horizontal-overflow", "100vw layout found without an explicit horizontal overflow safeguard.");
   }
-  if (isService && text.split(/\\s+/).filter(Boolean).length < 220) {
+  if (isService && text.split(/\s+/).filter(Boolean).length < 220) {
     add(file, "short-service-copy", "Service page has fewer than 220 visible words; review whether the page answers buyer questions adequately.");
   }
 }
 
 const report = { generatedAt: new Date().toISOString(), totals, issueCount: issues.length, issues };
 const out = path.join(root, ".page-quality-audit.json");
-fs.writeFileSync(out, JSON.stringify(report, null, 2) + "\\n");
+fs.writeFileSync(out, JSON.stringify(report, null, 2) + "\n");
 console.log("[page-quality-audit] " + JSON.stringify(totals));
 console.log("[page-quality-audit] " + issues.length + " review item(s); full report written to .page-quality-audit.json");
