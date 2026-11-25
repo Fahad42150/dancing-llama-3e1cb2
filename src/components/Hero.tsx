@@ -90,7 +90,11 @@ export default function Hero() {
           <div className="group relative animate-float overflow-hidden rounded-[2rem] border border-white/80 bg-white p-2 shadow-[0_28px_80px_rgba(45,70,25,0.18)] ring-1 ring-[#9FE870]/30">
             <div className="relative aspect-[5/4] overflow-hidden rounded-[1.55rem] bg-parrot-50">
               <img
-                src="https://images.pexels.com/photos/41045670/pexels-photo-41045670.jpeg"
+                src="https://images.pexels.com/photos/41045670/pexels-photo-41045670.jpeg?auto=compress&cs=tinysrgb&w=720&q=75"
+                srcSet="https://images.pexels.com/photos/41045670/pexels-photo-41045670.jpeg?auto=compress&cs=tinysrgb&w=480&q=70 480w, https://images.pexels.com/photos/41045670/pexels-photo-41045670.jpeg?auto=compress&cs=tinysrgb&w=720&q=75 720w, https://images.pexels.com/photos/41045670/pexels-photo-41045670.jpeg?auto=compress&cs=tinysrgb&w=960&q=78 960w"
+                sizes="(max-width: 768px) 100vw, 646px"
+                width="720"
+                height="576"
                 alt="Online store management workspace and eCommerce dashboard"
                 className="h-full min-h-[300px] w-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-[1.035]"
                 loading="eager"
