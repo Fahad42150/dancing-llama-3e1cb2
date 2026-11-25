@@ -70,7 +70,7 @@ const section = `
 <style>
   .fjx-sitewide-video{width:100%;padding:clamp(42px,7vw,76px) 20px;background:#f7faf3;color:#202820}
   .fjx-sitewide-video__inner{width:min(100%,1000px);margin:0 auto;text-align:center}
-  .fjx-sitewide-video__eyebrow{margin:0 0 10px;color:#638d2d;font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase}
+  .fjx-sitewide-video__eyebrow{margin:0 0 10px;color:#3a701f;font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase}
   .fjx-sitewide-video h2{margin:0;font-size:clamp(25px,4vw,38px);font-weight:800;line-height:1.2}
   .fjx-sitewide-video__intro{max-width:650px;margin:14px auto 26px;color:#596458;font-size:clamp(14px,2vw,17px);line-height:1.65}
   .fjx-sitewide-video__frame{position:relative;width:100%;aspect-ratio:16/9;overflow:hidden;border-radius:16px;background:#101510;box-shadow:0 14px 38px rgba(25,40,20,.14)}
