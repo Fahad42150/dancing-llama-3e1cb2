@@ -78,7 +78,7 @@ try {
         if (metrics.documentWidth > width + 2) issues.push({ type: "horizontal-overflow", documentWidth: metrics.documentWidth, viewportWidth: width });
         if (metrics.outsideViewport.length) issues.push({ type: "elements-outside-viewport", elements: metrics.outsideViewport });
         if (metrics.clippedText.length) issues.push({ type: "text-clipping-candidates", elements: metrics.clippedText });
-        results.push({ url, width, status: response?.status() ?? null, issues });
+        if (issues.length) {\n          const safeRoute = route.replace(/[^a-z0-9]+/gi, "-").replace(/^-|-$/g, "") || "home";\n          const screenshotDir = path.resolve("artifacts/screenshots");\n          fs.mkdirSync(screenshotDir, { recursive: true });\n          await page.screenshot({ path: path.join(screenshotDir, safeRoute + "-" + width + ".png"), fullPage: true });\n        }\n        results.push({ url, width, status: response?.status() ?? null, issues });
       } catch (error) {
         results.push({ url, width, status: null, issues: [{ type: "navigation-or-render-error", message: String(error).slice(0, 500) }] });
       }
