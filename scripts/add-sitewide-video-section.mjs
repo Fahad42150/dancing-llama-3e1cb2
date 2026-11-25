@@ -52,7 +52,7 @@ for (const file of files) {
   let html = fs.readFileSync(file, "utf8");
   if (html.includes(marker)) continue;
   if (!/<\/body\s*>/i.test(html)) continue;
-  html = html.replace(/<\/body\s*>/i, section + "\\n</body>");
+  html = html.replace(/<\/body\s*>/i, section + "\n</body>");
   fs.writeFileSync(file, html, "utf8");
   updated += 1;
 }
