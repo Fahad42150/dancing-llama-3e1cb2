@@ -31,6 +31,23 @@ const section = `
       (function () {
         var section = document.getElementById('fjx-sitewide-video');
         if (!section) return;
+
+        // On the React homepage, #root starts empty and is populated by the
+        // deferred module script. Keep this below-root section invisible while
+        // the root's initial render establishes its final document position.
+        // Visibility does not remove its reserved layout space.
+        var root = document.getElementById('root');
+        if (root && !root.firstElementChild) {
+          section.style.visibility = 'hidden';
+          var revealAfterRootRender = new MutationObserver(function () {
+            if (root.firstElementChild) {
+              section.style.visibility = 'visible';
+              revealAfterRootRender.disconnect();
+            }
+          });
+          revealAfterRootRender.observe(root, { childList: true });
+        }
+
         var poster = section.querySelector('[data-fjx-video-id]');
         if (!poster) return;
         poster.addEventListener('click', function () {
