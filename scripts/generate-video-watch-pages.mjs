@@ -15,7 +15,8 @@ const curated = [
   { id: "UNZnBJAXynU", slug: "promotional-products-store-management-overview", title: "Promotional Products Store Management | FJX Studio", description: "An overview of FJX Studio promotional products store management, including branded merchandise catalogs, product uploads, artwork coordination, pricing updates, and store administration." },
   { id: "bErj1J7rQvc", slug: "canva-graphic-design-services-overview", title: "Canva Graphic Design Services | FJX Studio", description: "An overview of FJX Studio Canva graphic design services for branded marketing graphics, business visuals, promotional designs, and editable Canva assets." },
   { id: "Byk9Qkxuk4s", slug: "email-management-virtual-assistant-overview", title: "Email Management Virtual Assistant | FJX Studio", description: "An overview of FJX Studio email management virtual assistant support, including inbox organization, customer email handling, follow-ups, and routine communication administration." },
-  { id: "kiAg30RYmDs", slug: "fjx-studio-bookkeeping-administrative-support", title: "FJX Studio Bookkeeping Administrative Support", description: "A video overview of FJX Studio bookkeeping administrative support, including receipt organization, invoice administration, record preparation and routine financial workflow assistance for small businesses." }
+  { id: "kiAg30RYmDs", slug: "fjx-studio-bookkeeping-administrative-support", title: "FJX Studio Bookkeeping Administrative Support", description: "A video overview of FJX Studio bookkeeping administrative support, including receipt organization, invoice administration, record preparation and routine financial workflow assistance for small businesses." },
+  { id: "U_7eHW9nd8w", slug: "virtual-assistant-services", title: "Virtual Assistant Services | FJX Studio", description: "A video overview related to virtual assistant support for online stores and business operations." }
 ];
 
 function esc(value) {
