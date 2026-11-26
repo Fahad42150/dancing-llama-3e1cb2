@@ -805,6 +805,41 @@
   ],
   "redirects": [
     {
+      "source": "/blog/website-for-virtual-assistant",
+      "destination": "/virtual-assistant-for-website/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/website-for-virtual-assistant/",
+      "destination": "/virtual-assistant-for-website/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/virtual-assistant-freelance-sites",
+      "destination": "/best-virtual-assistant-freelance-sites-services-usa-canada/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/virtual-assistant-freelance-sites/",
+      "destination": "/best-virtual-assistant-freelance-sites-services-usa-canada/",
+      "permanent": true
+    },
+    {
+      "source": "/custom-apparel-store-management",
+      "destination": "/custom-apparel-store-management/",
+      "permanent": true
+    },
+    {
+      "source": "/team-store-management",
+      "destination": "/team-store-management/",
+      "permanent": true
+    },
+    {
+      "source": "/inksoft-store-management",
+      "destination": "/inksoft-store-management/",
+      "permanent": true
+    },
+    {
       "source": "/:path*",
       "has": [
         {
