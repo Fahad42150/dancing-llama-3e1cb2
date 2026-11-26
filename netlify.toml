@@ -1,3 +1,38 @@
+[[redirects]]
+  from = "/blog/website-for-virtual-assistant"
+  to = "/virtual-assistant-for-website/"
+  status = 301
+
+[[redirects]]
+  from = "/blog/website-for-virtual-assistant/"
+  to = "/virtual-assistant-for-website/"
+  status = 301
+
+[[redirects]]
+  from = "/blog/virtual-assistant-freelance-sites"
+  to = "/best-virtual-assistant-freelance-sites-services-usa-canada/"
+  status = 301
+
+[[redirects]]
+  from = "/blog/virtual-assistant-freelance-sites/"
+  to = "/best-virtual-assistant-freelance-sites-services-usa-canada/"
+  status = 301
+
+[[redirects]]
+  from = "/custom-apparel-store-management"
+  to = "/custom-apparel-store-management/"
+  status = 301
+
+[[redirects]]
+  from = "/team-store-management"
+  to = "/team-store-management/"
+  status = 301
+
+[[redirects]]
+  from = "/inksoft-store-management"
+  to = "/inksoft-store-management/"
+  status = 301
+
 [build]
   command = "npm run build"
   publish = "dist"
