@@ -92,13 +92,27 @@ function discoverVideos(files) {
   }
   return { videos: [...found.values()], missingMetadata };
 }
+async function resolveUploadDate(videoId) {
+  try {
+    const response = await fetch("https://www.youtube.com/feeds/videos.xml?video_id=" + encodeURIComponent(videoId));
+    if (!response.ok) return "";
+    const xml = await response.text();
+    const match = xml.match(/<published>([^<]+)<\\/published>/i);
+    if (!match) return "";
+    const date = new Date(match[1]);
+    return Number.isNaN(date.getTime()) ? "" : date.toISOString();
+  } catch {
+    return "";
+  }
+}
+
 function page(video) {
   const url = SITE + "/watch/" + video.slug + "/";
   const player = "https://www.youtube-nocookie.com/embed/" + video.id;
   const thumbnail = "https://i.ytimg.com/vi/" + video.id + "/hqdefault.jpg";
   const title = esc(video.title);
   const description = esc(video.description);
-  const videoSchema = JSON.stringify({
+  const videoSchema = video.uploadDate ? JSON.stringify({
     "@context": "https://schema.org",
     "@type": "VideoObject",
     name: video.title,
@@ -106,8 +120,9 @@ function page(video) {
     thumbnailUrl: [thumbnail],
     embedUrl: player,
     contentUrl: "https://www.youtube.com/watch?v=" + video.id,
+    uploadDate: video.uploadDate,
     publisher: { "@type": "Organization", name: "FJX Studio", url: SITE + "/" }
-  });
+  }) : "";
   const sourceLink = video.sourceUrl
     ? "<p class='watch-source'>Related FJX Studio page: <a href='" + esc(video.sourceUrl) + "'>View the related guide or service page</a></p>"
     : "";
@@ -115,7 +130,7 @@ function page(video) {
     "<!doctype html>", "<html lang='en'><head><meta charset='utf-8'><meta name='viewport' content='width=device-width, initial-scale=1'>",
     "<title>" + title + " | FJX Studio</title><meta name='description' content='" + description + "'><meta name='robots' content='index,follow,max-video-preview:-1'>",
     "<link rel='canonical' href='" + url + "'><meta property='og:type' content='video.other'><meta property='og:title' content='" + title + " | FJX Studio'>",
-    "<script type='application/ld+json'>" + videoSchema + "</script>",
+    videoSchema ? "<script type='application/ld+json'>" + videoSchema + "</script>" : "",
     "<meta property='og:description' content='" + description + "'><meta property='og:url' content='" + url + "'><meta property='og:image' content='" + thumbnail + "'><meta property='og:video' content='" + player + "'><meta property='og:video:type' content='text/html'>",
     "<meta name='twitter:card' content='player'><meta name='twitter:title' content='" + title + " | FJX Studio'><meta name='twitter:description' content='" + description + "'><meta name='twitter:image' content='" + thumbnail + "'><meta name='twitter:player' content='" + player + "'><meta name='twitter:player:width' content='1280'><meta name='twitter:player:height' content='720'>",
     "<style>*{box-sizing:border-box}html{background:#101510}body{margin:0;min-width:320px;background:#101510;color:#f7faf5;font-family:Arial,Helvetica,sans-serif}.watch-shell{width:min(1100px,calc(100% - 40px));margin:0 auto;padding:36px 0 52px}.watch-brand{display:inline-block;margin-bottom:28px;color:#b4ec7c;text-decoration:none;font-size:18px;font-weight:800}.watch-label{margin:0 0 10px;color:#b4ec7c;font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase}h1{max-width:900px;margin:0 0 14px;font-size:clamp(27px,5vw,44px);line-height:1.15}.watch-description{max-width:820px;margin:0 0 24px;color:#c7d0c4;font-size:17px;line-height:1.65}.watch-player{position:relative;width:100%;aspect-ratio:16/9;overflow:hidden;border-radius:16px;background:#000;box-shadow:0 18px 54px rgba(0,0,0,.35)}.watch-player iframe{position:absolute;inset:0;width:100%;height:100%;border:0}.watch-source{margin-top:22px;color:#c7d0c4;font-size:14px}.watch-source a,.watch-footer a{color:#b4ec7c}.watch-footer{display:flex;flex-wrap:wrap;justify-content:space-between;gap:14px;margin-top:24px;padding-top:20px;border-top:1px solid #344034;color:#aeb9aa;font-size:14px}@media(max-width:600px){.watch-shell{width:calc(100% - 28px);padding:24px 0 36px}.watch-player{border-radius:10px}.watch-description{font-size:15px}}</style>",
@@ -150,7 +165,15 @@ if (fs.existsSync(rootIndex)) htmlFiles.push(rootIndex);
 const discovered = discoverVideos(htmlFiles);
 const all = new Map(discovered.videos.map(video => [video.id, video]));
 for (const video of curated) all.set(video.id, { ...video, sourceUrl: all.get(video.id)?.sourceUrl || "" });
-const videos = [...all.values()];
+const videos = await Promise.all([...all.values()].map(async video => ({
+  ...video,
+  uploadDate: await resolveUploadDate(video.id)
+})));
+const videosWithoutUploadDate = videos.filter(video => !video.uploadDate);
+if (videosWithoutUploadDate.length) {
+  console.warn("VideoObject structured data was omitted for " + videosWithoutUploadDate.length +
+    " video(s) because YouTube did not provide a publication date. No placeholder dates were added.");
+}
 
 fs.mkdirSync(WATCH, { recursive: true });
 for (const video of videos) {
