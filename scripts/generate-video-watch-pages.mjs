@@ -97,9 +97,15 @@ async function resolveUploadDate(videoId) {
     const response = await fetch("https://www.youtube.com/feeds/videos.xml?video_id=" + encodeURIComponent(videoId));
     if (!response.ok) return "";
     const xml = await response.text();
-    const match = xml.match(/<published>([^<]+)<\/published>/i);
-    if (!match) return "";
-    const date = new Date(match[1]);
+    const startTag = "<published>";
+    const endTag = "</published>";
+    const start = xml.indexOf(startTag);
+    if (start === -1) return "";
+    const end = xml.indexOf(endTag, start + startTag.length);
+    if (end === -1) return "";
+    const published = xml.slice(start + startTag.length, end).trim();
+    if (!published) return "";
+    const date = new Date(published);
     return Number.isNaN(date.getTime()) ? "" : date.toISOString();
   } catch {
     return "";
