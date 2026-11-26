@@ -14,7 +14,8 @@ const curated = [
   { id: "uSNRXjJ4TN4", slug: "inksoft-product-pricing-guide", title: "InkSoft Product Pricing Guide", description: "An InkSoft tutorial about product pricing setup and pricing-grid workflows for online apparel and merchandise stores." },
   { id: "UNZnBJAXynU", slug: "promotional-products-store-management-overview", title: "Promotional Products Store Management | FJX Studio", description: "An overview of FJX Studio promotional products store management, including branded merchandise catalogs, product uploads, artwork coordination, pricing updates, and store administration." },
   { id: "bErj1J7rQvc", slug: "canva-graphic-design-services-overview", title: "Canva Graphic Design Services | FJX Studio", description: "An overview of FJX Studio Canva graphic design services for branded marketing graphics, business visuals, promotional designs, and editable Canva assets." },
-  { id: "Byk9Qkxuk4s", slug: "email-management-virtual-assistant-overview", title: "Email Management Virtual Assistant | FJX Studio", description: "An overview of FJX Studio email management virtual assistant support, including inbox organization, customer email handling, follow-ups, and routine communication administration." }
+  { id: "Byk9Qkxuk4s", slug: "email-management-virtual-assistant-overview", title: "Email Management Virtual Assistant | FJX Studio", description: "An overview of FJX Studio email management virtual assistant support, including inbox organization, customer email handling, follow-ups, and routine communication administration." },
+  { id: "kiAg30RYmDs", slug: "fjx-studio-bookkeeping-administrative-support", title: "FJX Studio Bookkeeping Administrative Support", description: "A video overview of FJX Studio bookkeeping administrative support, including receipt organization, invoice administration, record preparation and routine financial workflow assistance for small businesses." }
 ];
 
 function esc(value) {
