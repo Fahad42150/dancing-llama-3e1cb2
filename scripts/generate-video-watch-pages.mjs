@@ -97,7 +97,7 @@ async function resolveUploadDate(videoId) {
     const response = await fetch("https://www.youtube.com/feeds/videos.xml?video_id=" + encodeURIComponent(videoId));
     if (!response.ok) return "";
     const xml = await response.text();
-    const match = xml.match(/<published>([^<]+)<\\/published>/i);
+    const match = xml.match(/<published>([^<]+)<\/published>/i);
     if (!match) return "";
     const date = new Date(match[1]);
     return Number.isNaN(date.getTime()) ? "" : date.toISOString();
