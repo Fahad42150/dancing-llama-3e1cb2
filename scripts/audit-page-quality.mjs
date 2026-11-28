@@ -94,7 +94,7 @@ for (const file of files) {
   }
   // Count only truly empty media containers. Populated wrappers may contain
   // nested same-tag elements, so broad non-greedy matching creates false positives.
-  const emptyMediaFrames = [...html.matchAll(/<div\\b(?=[^>]*\\bclass=[\"'][^\"']*(?:video|media|embed)[^\"']*[\"'])[^>]*>\\s*<\\/div>/gi)];
+  const emptyMediaFrames = [...html.matchAll(/<div\b(?=[^>]*\bclass=[\"'][^\"']*(?:video|media|embed)[^\"']*[\"'])[^>]*>\s*<\/div>/gi)];
   for (const frame of emptyMediaFrames) {
     totals.emptyMediaFrames++;
     add(file, "empty-media-frame", frame[0].slice(0, 180));
