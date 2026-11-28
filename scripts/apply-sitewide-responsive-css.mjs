@@ -98,10 +98,10 @@ for (const file of files) {
   const original = fs.readFileSync(file, "utf8");
   if (!/<head\b/i.test(original) || !/<\/head>/i.test(original)) continue;
   const style = '<style id="' + styleId + '">' + css + '</style>';
-  const existing = new RegExp('<style\\b(?=[^>]*\\bid=["\\']' + styleId + '["\\'])[^>]*>[\\s\\S]*?<\\/style>', "i");
+  const existing = /<style id="fjx-sitewide-responsive-css">[\\s\\S]*?<\\/style>/i;
   const next = existing.test(original)
     ? original.replace(existing, style)
-    : original.replace(/<\/head>/i, style + "\\n</head>");
+    : original.replace(/<\\/head>/i, style + "\\n</head>");
   if (next !== original) { fs.writeFileSync(file, next, "utf8"); updated++; }
 }
 console.log("[responsive-css] Applied shared responsive alignment styles to " + updated + " HTML page(s).");
