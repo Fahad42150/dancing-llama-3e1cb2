@@ -2,6 +2,7 @@ import { Mail, MapPin } from 'lucide-react';
 import { useReveal } from '@/hooks/useReveal';
 
 const EMAIL_ADDRESS = 'sales@fjxstudio.com';
+const EMAIL_HREF = 'mailto:sales@fjxstudio.com?subject=Project%20Inquiry%20-%20FJX%20Studio';
 
 export default function Contact() {
   const { ref, isVisible } = useReveal();
@@ -30,8 +31,9 @@ export default function Contact() {
         <div className="grid gap-6 lg:grid-cols-2">
           {/* Email CTA */}
           <a
-            href={`mailto:${EMAIL_ADDRESS}?subject=Project%20Inquiry%20-%20FJX%20Studio`}
-            className="group flex flex-col items-start rounded-3xl border border-charcoal-100 bg-white p-8 shadow-soft transition-all duration-300 hover:shadow-card-hover hover:-translate-y-1 hover:border-parrot-200"
+            href={EMAIL_HREF}
+            aria-label="Email FJX Studio sales at sales@fjxstudio.com"
+            className="group flex flex-col items-start rounded-3xl border border-charcoal-100 bg-white p-8 shadow-soft transition-all duration-300 hover:shadow-card-hover hover:-translate-y-1 hover:border-parrot-200 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-parrot-600"
           >
             <div className="mb-5 flex h-14 w-14 items-center justify-center rounded-2xl bg-charcoal-900 transition-transform group-hover:scale-110">
               <Mail size={26} className="text-white" />
@@ -58,11 +60,17 @@ export default function Contact() {
             </h3>
             <ul className="mt-4 space-y-3 text-sm text-charcoal-600">
               <li className="flex items-center gap-3">
-                <Mail size={18} className="text-parrot-500" />
-                {EMAIL_ADDRESS}
+                <Mail size={18} className="shrink-0 text-parrot-500" />
+                <a
+                  href={EMAIL_HREF}
+                  aria-label="Email FJX Studio sales at sales@fjxstudio.com"
+                  className="break-all underline decoration-charcoal-300 underline-offset-4 transition-colors hover:text-parrot-700 hover:decoration-parrot-600 focus-visible:rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-parrot-600"
+                >
+                  {EMAIL_ADDRESS}
+                </a>
               </li>
               <li className="flex items-center gap-3">
-                <MapPin size={18} className="text-parrot-500" />
+                <MapPin size={18} className="shrink-0 text-parrot-500" />
                 Serving USA & Canadian Markets
               </li>
             </ul>
