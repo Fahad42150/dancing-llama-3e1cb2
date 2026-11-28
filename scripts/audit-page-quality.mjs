@@ -103,9 +103,6 @@ for (const file of files) {
       add(file, "empty-media-frame", frame[1] + " media container has no image, video, iframe, picture or SVG child.");
     }
   }
-      add(file, "empty-media-frame", frame[1] + " media container has no image, video, iframe, picture or SVG child.");
-    }
-  }
   for (const iframe of iframes) {
     totals.videos++;
     if (!attr(iframe, "title")) { totals.videosMissingTitle++; add(file, "video-missing-title", attr(iframe, "src") || "iframe without title"); }
