@@ -58,3 +58,4 @@ User-agent: Bingbot
 Allow: /
 
 Sitemap: https://www.fjxstudio.com/sitemap.xml
+Sitemap: https://www.fjxstudio.com/video-sitemap.xml
