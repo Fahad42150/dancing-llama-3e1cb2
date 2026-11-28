@@ -3,6 +3,12 @@ import path from "node:path";
 
 const PUBLIC = path.resolve("public");
 const SITE = "https://www.fjxstudio.com";
+
+const publicationDates = {
+  "2QzCZ3on6aI": "2026-11-25",
+  "U_7eHW9nd8w": "2026-11-24",
+  "bErj1J7rQvc": "2026-11-16"
+};
 const MARKER = 'id="fjx-topic-video"';
 
 const categories = [
@@ -135,7 +141,8 @@ for (const file of collect(PUBLIC)) {
     thumbnailUrl: ["https://i.ytimg.com/vi/" + category.id + "/hqdefault.jpg"],
     embedUrl: embed,
     contentUrl: "https://www.youtube.com/watch?v=" + category.id,
-    publisher: { "@type": "Organization", name: "FJX Studio", url: SITE + "/" }
+    publisher: { "@type": "Organization", name: "FJX Studio", url: SITE + "/" },
+    ...(publicationDates[category.id] ? { uploadDate: publicationDates[category.id] } : {})
   };
   const schemaTag = '<script type="application/ld+json" data-fjx-topic-video-schema>' + JSON.stringify(videoObject) + '</script>';
   // Insert the JSON-LD block before the closing head tag.
