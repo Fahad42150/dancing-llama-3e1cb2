@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "node scripts/generate-ecommerce-management-pages.mjs && node scripts/generate-online-store-manager-pages.mjs && node scripts/generate-inksoft-team-store-pages.mjs && node scripts/generate-virtual-assistant-website-guides.mjs && node scripts/generate-virtual-assistant-pages.mjs && node scripts/generate-virtual-assistant-blogs.mjs && node scripts/ensure-service-cta-buttons.mjs && python3 scripts/apply-service-link-buttons.py && node scripts/generate-platform-country-service-pages.mjs && node scripts/add-service-case-studies.mjs && node scripts/add-category-service-videos.mjs && node scripts/add-sitewide-video-section.mjs && node scripts/add-youtube-scroll-autoplay.mjs && node scripts/add-service-hero-images.mjs && node scripts/fill-empty-media-containers.mjs && node scripts/generate-video-watch-pages.mjs && node scripts/curate-programmatic-seo-pages.mjs && node scripts/apply-sitewide-responsive-css.mjs && node scripts/audit-page-quality.mjs && vite build",
+    "build": "node scripts/generate-ecommerce-management-pages.mjs && node scripts/generate-online-store-manager-pages.mjs && node scripts/generate-inksoft-team-store-pages.mjs && node scripts/generate-virtual-assistant-website-guides.mjs && node scripts/generate-virtual-assistant-pages.mjs && node scripts/generate-virtual-assistant-blogs.mjs && node scripts/ensure-service-cta-buttons.mjs && python3 scripts/apply-service-link-buttons.py && node scripts/generate-platform-country-service-pages.mjs && node scripts/add-service-case-studies.mjs && node scripts/add-category-service-videos.mjs && node scripts/add-sitewide-video-section.mjs && node scripts/add-youtube-scroll-autoplay.mjs && node scripts/add-service-hero-images.mjs && node scripts/fill-empty-media-containers.mjs && node scripts/generate-video-watch-pages.mjs && node scripts/curate-programmatic-seo-pages.mjs && node scripts/apply-sitewide-responsive-css.mjs && node scripts/audit-page-quality.mjs && node scripts/restore-yandex-verification-file.mjs && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
     "typecheck": "tsc --noEmit -p tsconfig.app.json",
@@ -23,7 +23,7 @@
     "@types/react-dom": "^18.3.0",
     "@vitejs/plugin-react": "^5.1.1",
     "autoprefixer": "^10.4.18",
-    "eslint": "^9.9.1",
+    "eslint": "^9.9.0",
     "eslint-plugin-react-hooks": "^5.1.0-rc.0",
     "eslint-plugin-react-refresh": "^0.4.11",
     "globals": "^15.9.0",
