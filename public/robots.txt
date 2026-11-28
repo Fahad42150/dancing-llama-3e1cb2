@@ -50,6 +50,22 @@ Allow: /
 User-agent: Amzn-SearchBot
 Allow: /
 
+# You.com search indexing
+User-agent: YouBot
+Allow: /
+
+# Apple search, Spotlight, Siri and Safari
+User-agent: Applebot
+Allow: /
+
+# Yandex Search indexing
+User-agent: YandexBot
+Allow: /
+
+# Mojeek Search indexing
+User-agent: MojeekBot
+Allow: /
+
 # Major search-engine crawlers
 User-agent: Googlebot
 Allow: /
