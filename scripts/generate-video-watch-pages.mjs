@@ -5,6 +5,12 @@ const SITE = "https://www.fjxstudio.com";
 const PUBLIC = path.resolve("public");
 const WATCH = path.join(PUBLIC, "watch");
 
+const publicationDates = {
+  "2QzCZ3on6aI": "2026-11-25",
+  "U_7eHW9nd8w": "2026-11-24",
+  "bErj1J7rQvc": "2026-11-16"
+};
+
 // Keep hand-written metadata where it has already been reviewed.
 const curated = [
   { id: "Vj_BSX5GKJo", slug: "inksoft-updated-add-product-workflow", title: "InkSoft Updated Add Product Workflow", description: "An InkSoft tutorial demonstrating the updated add-product workflow for preparing and maintaining products in an InkSoft store catalog." },
@@ -106,7 +112,8 @@ function page(video) {
     thumbnailUrl: [thumbnail],
     embedUrl: player,
     contentUrl: "https://www.youtube.com/watch?v=" + video.id,
-    publisher: { "@type": "Organization", name: "FJX Studio", url: SITE + "/" }
+    publisher: { "@type": "Organization", name: "FJX Studio", url: SITE + "/" },
+    ...(publicationDates[video.id] ? { uploadDate: publicationDates[video.id] } : {})
   });
   const sourceLink = video.sourceUrl
     ? "<p class='watch-source'>Related FJX Studio page: <a href='" + esc(video.sourceUrl) + "'>View the related guide or service page</a></p>"
@@ -163,7 +170,7 @@ htmlFiles.forEach(file => addWatchLinks(file, videos));
 const entries = videos.map(video => {
   const thumbnail = "https://i.ytimg.com/vi/" + video.id + "/hqdefault.jpg";
   const player = "https://www.youtube-nocookie.com/embed/" + video.id;
-  return "<url><loc>" + SITE + "/watch/" + video.slug + "/</loc><video:video><video:thumbnail_loc>" + thumbnail + "</video:thumbnail_loc><video:title><![CDATA[" + cdata(video.title) + "]]></video:title><video:description><![CDATA[" + cdata(video.description) + "]]></video:description><video:player_loc>" + player + "</video:player_loc></video:video></url>";
+  return "<url><loc>" + SITE + "/watch/" + video.slug + "/</loc><video:video><video:thumbnail_loc>" + thumbnail + "</video:thumbnail_loc><video:title><![CDATA[" + cdata(video.title) + "]]></video:title><video:description><![CDATA[" + cdata(video.description) + "]]></video:description><video:player_loc>" + player + "</video:player_loc>" + (publicationDates[video.id] ? "<video:publication_date>" + publicationDates[video.id] + "</video:publication_date>" : "") + "</video:video></url>";
 }).join("\n");
 fs.writeFileSync(path.join(PUBLIC, "video-sitemap.xml"), "<?xml version='1.0' encoding='UTF-8'?>\n<urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9' xmlns:video='http://www.google.com/schemas/sitemap-video/1.1'>\n" + entries + "\n</urlset>\n");
 
