@@ -2,14 +2,20 @@
 User-agent: *
 Allow: /
 
-# AI search crawlers
-User-agent: OAI-SearchBot
-Allow: /
-
+# Anthropic / Claude search and user-requested page retrieval
 User-agent: Claude-SearchBot
 Allow: /
 
 User-agent: Claude-User
+Allow: /
+
+# Anthropic model-training crawler: opt out of training while keeping
+# Claude search indexing and user-requested page retrieval enabled.
+User-agent: ClaudeBot
+Disallow: /
+
+# Other AI search crawlers
+User-agent: OAI-SearchBot
 Allow: /
 
 User-agent: PerplexityBot
