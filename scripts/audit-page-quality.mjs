@@ -94,12 +94,15 @@ for (const file of files) {
   }
   const mediaFrames = [...html.matchAll(/<([a-z][a-z0-9-]*)\b[^>]*class=["'][^"']*(?:video|media|embed)[^"']*["'][^>]*>([\s\S]*?)<\/\1>/gi)];
   for (const frame of mediaFrames) {
+    const inner = frame[2];
     const hasVisibleMedia = /<(?:img|iframe|video|picture|svg)\b/i.test(inner) ||
       /background(?:-image)?\s*:/i.test(frame[0]) ||
-      /background(?:-image)?\\s*:/i.test(frame[0]) ||
       /data-(?:src|poster)=["'][^"']+["']/i.test(inner);
     if (!hasVisibleMedia) {
       totals.emptyMediaFrames++;
+      add(file, "empty-media-frame", frame[1] + " media container has no image, video, iframe, picture or SVG child.");
+    }
+  }
       add(file, "empty-media-frame", frame[1] + " media container has no image, video, iframe, picture or SVG child.");
     }
   }
