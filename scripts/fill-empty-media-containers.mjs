@@ -27,8 +27,8 @@ function escapeAttr(value) {
   return String(value).replace(/&/g, "&amp;").replace(/"/g, "&quot;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 }
 function titleFor(html, file) {
-  const title = (html.match(/<title\\b[^>]*>([\\s\\S]*?)<\\/title>/i) || [])[1] || path.basename(path.dirname(file)).replace(/[-_]+/g, " ");
-  return title.replace(/<[^>]+>/g, " ").replace(/\\s+/g, " ").trim();
+  const title = (html.match(/<title\b[^>]*>([\s\S]*?)<\/title>/i) || [])[1] || path.basename(path.dirname(file)).replace(/[-_]+/g, " ");
+  return title.replace(/<[^>]+>/g, " ").replace(/\s+/g, " ").trim();
 }
 let containersFilled = 0;
 let pagesUpdated = 0;
@@ -36,16 +36,16 @@ for (const file of [...collect(publicDir), path.join(root, "index.html")]) {
   if (!fs.existsSync(file)) continue;
   let html = fs.readFileSync(file, "utf8");
   const pageTitle = titleFor(html, file);
-  const relative = path.relative(root, file).replace(/\\\\/g, "/");
+  const relative = path.relative(root, file).replace(/\\/g, "/");
   const topic = imageByTopic.find(item => item.test.test(relative + " " + pageTitle)) || defaultImage;
   const alt = escapeAttr("FJX Studio " + topic.label + " — " + pageTitle);
   const image = '<img src="' + topic.url + '" alt="' + alt + '" width="1400" height="788" loading="lazy" decoding="async" style="display:block;width:100%;height:100%;object-fit:cover">';
-  const emptyDiv = /<div\\b(?=[^>]*\\bclass=["'][^"']*(?:video|media|embed)[^"']*["'])[^>]*>\\s*<\\/div>/gi;
+  const emptyDiv = /<div\b(?=[^>]*\bclass=["'][^"']*(?:video|media|embed)[^"']*["'])[^>]*>\s*<\/div>/gi;
   const matches = [...html.matchAll(emptyDiv)];
   if (!matches.length) continue;
   html = html.replace(emptyDiv, match => {
     containersFilled += 1;
-    return match.replace(/>\\s*<\\/div>$/, ">" + image + "</div>");
+    return match.replace(/>\s*<\/div>$/, ">" + image + "</div>");
   });
   fs.writeFileSync(file, html, "utf8");
   pagesUpdated += 1;
