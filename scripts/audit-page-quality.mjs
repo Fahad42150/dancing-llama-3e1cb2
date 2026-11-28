@@ -92,15 +92,40 @@ for (const file of files) {
     }
     if (src && !mediaExists(src, file)) { totals.localMediaMissing++; add(file, "missing-local-media", src); }
   }
-  const mediaFrames = [...html.matchAll(/<([a-z][a-z0-9-]*)\b[^>]*class=["'][^"']*(?:video|media|embed)[^"']*["'][^>]*>([\s\S]*?)<\/\1>/gi)];
-  for (const frame of mediaFrames) {
-    const inner = frame[2];
-    const hasVisibleMedia = /<(?:img|iframe|video|picture|svg)\b/i.test(inner) ||
-      /background(?:-image)?\s*:/i.test(frame[0]) ||
-      /data-(?:src|poster)=["'][^"']+["']/i.test(inner);
-    if (!hasVisibleMedia) {
-      totals.emptyMediaFrames++;
-      add(file, "empty-media-frame", frame[1] + " media container has no image, video, iframe, picture or SVG child.");
+  // Walk complete nested elements. A non-greedy regex stops at the first
+  // same-tag closing element and can incorrectly report populated wrappers empty.
+  const mediaStack = [];
+  const voidTags = new Set(["area", "base", "br", "col", "embed", "hr", "img", "input", "link", "meta", "param", "source", "track", "wbr"]);
+  const tagTokens = /<!--[\s\S]*?-->|<\/?([a-z][a-z0-9:-]*)\b[^>]*>/gi;
+  for (const token of html.matchAll(tagTokens)) {
+    if (token[0].startsWith("<!--")) continue;
+    const tagName = token[1].toLowerCase();
+    const closing = token[0].startsWith("</");
+    if (closing) {
+      let index = mediaStack.length - 1;
+      while (index >= 0 && mediaStack[index].tagName !== tagName) index--;
+      if (index < 0) continue;
+      const node = mediaStack[index];
+      if (node.isMediaContainer) {
+        const inner = html.slice(node.innerStart, token.index);
+        const whole = html.slice(node.start, token.index + token[0].length);
+        const hasVisibleMedia = /<(?:img|iframe|video|picture|svg)\b/i.test(inner) ||
+          /background(?:-image)?\s*:/i.test(whole) ||
+          /data-(?:src|poster)=["'][^"']+["']/i.test(inner);
+        if (!hasVisibleMedia) {
+          totals.emptyMediaFrames++;
+          add(file, "empty-media-frame", node.tagName + " media container has no image, video, iframe, picture or SVG child.");
+        }
+      }
+      mediaStack.length = index;
+    } else if (!voidTags.has(tagName) && !/\/\s*>$/.test(token[0])) {
+      const className = attr(token[0], "class") || "";
+      mediaStack.push({
+        tagName,
+        start: token.index,
+        innerStart: token.index + token[0].length,
+        isMediaContainer: /(?:video|media|embed)/i.test(className)
+      });
     }
   }
   for (const iframe of iframes) {
