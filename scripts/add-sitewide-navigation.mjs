@@ -44,10 +44,10 @@ let skipped = 0;
 for (const file of files) {
   let html = fs.readFileSync(file, "utf8");
   if (html.includes('id="' + navId + '"')) { skipped++; continue; }
-  const bodyOpen = html.match(/<body\\b[^>]*>/i);
+  const bodyOpen = html.match(/<body\b[^>]*>/i);
   if (!bodyOpen) continue;
   const insertAt = bodyOpen.index + bodyOpen[0].length;
-  html = html.slice(0, insertAt) + "\\n" + nav + "\\n" + html.slice(insertAt);
+  html = html.slice(0, insertAt) + "\n" + nav + "\n" + html.slice(insertAt);
   fs.writeFileSync(file, html, "utf8");
   updated++;
 }
