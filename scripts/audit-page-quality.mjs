@@ -22,7 +22,7 @@ const totals = {
   pages: files.length, missingTitle: 0, missingDescription: 0, missingViewport: 0,
   missingCanonical: 0, missingH1: 0, multipleH1: 0, duplicateIds: 0,
   images: 0, imagesMissingAlt: 0, imagesMissingDimensions: 0,
-  videos: 0, videosMissingTitle: 0, videosMissingLazy: 0, videosWithoutResponsivePattern: 0,
+  videos: 0, videosMissingTitle: 0, videosMissingLazy: 0, videosWithoutResponsivePattern: 0, emptyMediaFrames: 0, imagesMissingSource: 0,
   localMediaMissing: 0, pagesWithHorizontalOverflowRisk: 0
 };
 
@@ -84,12 +84,24 @@ for (const file of files) {
     totals.images++;
     const src = attr(img, "src");
     const alt = attr(img, "alt");
+    if (!src) { totals.imagesMissingSource++; add(file, "image-missing-source", "Image element has no src attribute."); }
     if (alt === null) { totals.imagesMissingAlt++; add(file, "image-missing-alt", src || "Image without src"); }
     if (!/\bwidth=/i.test(img) || !/\bheight=/i.test(img)) {
       totals.imagesMissingDimensions++;
       add(file, "image-missing-dimensions", src || "Image without intrinsic dimensions; review layout shift.");
     }
     if (src && !mediaExists(src, file)) { totals.localMediaMissing++; add(file, "missing-local-media", src); }
+  }
+  const mediaFrames = [...html.matchAll(/<([a-z][a-z0-9-]*)\\b[^>]*class=["'][^"']*(?:video|media|embed)[^"']*["'][^>]*>([\\s\\S]*?)<\\/\\1>/gi)];
+  for (const frame of mediaFrames) {
+    const inner = frame[2];
+    const hasVisibleMedia = /<(?:img|iframe|video|picture|svg)\\b/i.test(inner) ||
+      /background(?:-image)?\\s*:/i.test(frame[0]) ||
+      /data-(?:src|poster)=["'][^"']+["']/i.test(inner);
+    if (!hasVisibleMedia) {
+      totals.emptyMediaFrames++;
+      add(file, "empty-media-frame", frame[1] + " media container has no image, video, iframe, picture or SVG child.");
+    }
   }
   for (const iframe of iframes) {
     totals.videos++;
