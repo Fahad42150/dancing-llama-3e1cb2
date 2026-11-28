@@ -138,6 +138,7 @@ for (const file of collect(PUBLIC)) {
     publisher: { "@type": "Organization", name: "FJX Studio", url: SITE + "/" }
   };
   const schemaTag = '<script type="application/ld+json" data-fjx-topic-video-schema>' + JSON.stringify(videoObject) + '</script>';
+  // Insert the JSON-LD block before the closing head tag.
   html = html.replace(/<\/head>/i, schemaTag + "\n</head>");
 
   fs.writeFileSync(file, html, "utf8");
