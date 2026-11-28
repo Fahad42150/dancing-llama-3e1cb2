@@ -91,14 +91,14 @@ const section = `
 `;
 
 function findAboutSectionEnd(html) {
-  const about = /<section\\b(?=[^>]*(?:aria-label\\s*=\\s*["']About FJX Studio["']|id\\s*=\\s*["']about["']))[^>]*>/i.exec(html);
+  const about = /<section\b(?=[^>]*(?:aria-label\s*=\s*["']About FJX Studio["']|id\s*=\s*["']about["']))[^>]*>/i.exec(html);
   if (!about) return -1;
-  const tags = /<\\/?section\\b[^>]*>/gi;
+  const tags = /<\/?section\b[^>]*>/gi;
   tags.lastIndex = about.index;
   let depth = 0;
   let tag;
   while ((tag = tags.exec(html))) {
-    if (/^<section\\b/i.test(tag[0])) depth += 1;
+    if (/^<section\b/i.test(tag[0])) depth += 1;
     else depth -= 1;
     if (depth === 0) return tags.lastIndex;
   }
@@ -116,21 +116,21 @@ for (const file of files) {
     const sectionClose = html.indexOf("</section>", existingStart);
     if (sectionClose < 0) continue;
     let blockEnd = sectionClose + "</section>".length;
-    const styleMatch = /^\\s*<style>[\\s\\S]*?<\\/style>/i.exec(html.slice(blockEnd));
+    const styleMatch = /^\s*<style>[\s\S]*?<\/style>/i.exec(html.slice(blockEnd));
     if (styleMatch) blockEnd += styleMatch[0].length;
     videoBlock = html.slice(existingStart, blockEnd);
     html = html.slice(0, existingStart) + html.slice(blockEnd);
   }
-  if (!/<\\/body\\s*>/i.test(html)) continue;
+  if (!/<\/body\s*>/i.test(html)) continue;
 
   const aboutEnd = findAboutSectionEnd(html);
   if (aboutEnd >= 0) {
-    html = html.slice(0, aboutEnd) + "\\n" + videoBlock + html.slice(aboutEnd);
+    html = html.slice(0, aboutEnd) + "\n" + videoBlock + html.slice(aboutEnd);
   } else {
-    html = html.replace(/<\\/body\\s*>/i, videoBlock + "\\n</body>");
+    html = html.replace(/<\/body\s*>/i, videoBlock + "\n</body>");
   }
   fs.writeFileSync(file, html, "utf8");
   updated += 1;
 }
 
-console.log(`Placed the responsive FJX Studio video section immediately after About on ${updated} HTML page(s); the homepage is positioned after React renders its About section.`);
+console.log(\`Placed the responsive FJX Studio video section immediately after About on \${updated} HTML page(s); the homepage is positioned after React renders its About section.\`);
