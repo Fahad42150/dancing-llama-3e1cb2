@@ -1,5 +1,13 @@
-# Public pages are available to search and AI answer-engine crawlers.
+# Public pages are available to search engines and AI answer assistants.
 User-agent: *
+Allow: /
+
+# OpenAI / ChatGPT search
+User-agent: OAI-SearchBot
+Allow: /
+
+# OpenAI user-requested page retrieval
+User-agent: ChatGPT-User
 Allow: /
 
 # Anthropic / Claude search and user-requested page retrieval
@@ -9,16 +17,30 @@ Allow: /
 User-agent: Claude-User
 Allow: /
 
-# Anthropic model-training crawler: opt out of training while keeping
-# Claude search indexing and user-requested page retrieval enabled.
+# Anthropic model-training crawler: opt out of training
 User-agent: ClaudeBot
 Disallow: /
 
-# Other AI search crawlers
-User-agent: OAI-SearchBot
+# Google Gemini and generative AI grounding/training preference
+User-agent: Google-Extended
 Allow: /
 
+# Perplexity search and user-requested page retrieval
 User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+# Mistral search indexing and user-requested page retrieval
+User-agent: MistralAI-Index
+Allow: /
+
+User-agent: MistralAI-User
+Allow: /
+
+# Amazon search experiences, including Alexa
+User-agent: Amzn-SearchBot
 Allow: /
 
 # Major search-engine crawlers
