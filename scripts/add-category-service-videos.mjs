@@ -146,9 +146,9 @@ for (const file of collect(PUBLIC)) {
   };
   const schemaTag = '<script type="application/ld+json" data-fjx-topic-video-schema>' + JSON.stringify(videoObject) + '</script>';
   // Replace the prior generated block so repeated builds never duplicate VideoObject JSON-LD.
-  html = html.replace(/<script\\b[^>]*data-fjx-topic-video-schema[^>]*>[\\s\\S]*?<\\/script>/i, "");
+  html = html.replace(/<script\b[^>]*data-fjx-topic-video-schema[^>]*>[\s\S]*?<\/script>/i, "");
   // Insert the JSON-LD block before the closing head tag.
-  html = html.replace(/<\\/head>/i, schemaTag + "\\n</head>");
+  html = html.replace(/<\/head>/i, schemaTag + "\n</head>");
 
   fs.writeFileSync(file, html, "utf8");
   pagesUpdated++;
