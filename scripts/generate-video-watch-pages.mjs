@@ -106,7 +106,7 @@ function page(video) {
     thumbnailUrl: [thumbnail],
     embedUrl: player,
     contentUrl: "https://www.youtube.com/watch?v=" + video.id,
-    publisher: { "@type": "Organization", name: "FJX Studio", url: SITE + "/" }
+    publisher: { "@id": "https://www.fjxstudio.com/#business" }
   });
   const sourceLink = video.sourceUrl
     ? "<p class='watch-source'>Related FJX Studio page: <a href='" + esc(video.sourceUrl) + "'>View the related guide or service page</a></p>"
