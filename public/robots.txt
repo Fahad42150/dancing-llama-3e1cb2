@@ -50,10 +50,6 @@ Allow: /
 User-agent: Amzn-SearchBot
 Allow: /
 
-# You.com search indexing
-User-agent: YouBot
-Allow: /
-
 # Apple search, Spotlight, Siri and Safari
 User-agent: Applebot
 Allow: /
