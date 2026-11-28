@@ -18,38 +18,48 @@ jobs:
   submit:
     runs-on: ubuntu-latest
     steps:
-      - name: Wait for production deployment and prepare sitemap URLs
+      - name: Verify live key and prepare sitemap URL list
         shell: bash
         run: |
           node <<'NODE'
           const fs = require('node:fs');
+
           const host = 'www.fjxstudio.com';
           const key = 'f7d6a42c08830e4be2e0083dd5e7eeef';
-          const keyLocation = \`https://\${host}/\${key}.txt\`;
-
+          const keyLocation = 'https://' + host + '/' + key + '.txt';
+          const sitemapLocation = 'https://' + host + '/sitemap.xml';
           const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
+
           (async () => {
             let keyVerified = false;
             let sitemapXml = '';
+
+            // Allow time for the Vercel production deployment to finish after a push.
             for (let attempt = 1; attempt <= 24; attempt++) {
               try {
                 const keyResponse = await fetch(keyLocation, { cache: 'no-store' });
                 if (keyResponse.ok && (await keyResponse.text()).trim() === key) {
                   keyVerified = true;
-                  const sitemapResponse = await fetch(\`https://\${host}/sitemap.xml\`, { cache: 'no-store' });
+                  const sitemapResponse = await fetch(sitemapLocation, { cache: 'no-store' });
                   if (sitemapResponse.ok) {
                     sitemapXml = await sitemapResponse.text();
                     break;
                   }
                 }
               } catch (error) {
-                console.log(\`Attempt \${attempt}: \${error.message}\`);
+                console.log('Attempt ' + attempt + ': ' + error.message);
               }
-              console.log(\`Waiting for Vercel production deployment (attempt \${attempt}/24)...\`);
+
+              console.log('Waiting for production files (attempt ' + attempt + '/24)...');
               await sleep(15000);
             }
-            if (!keyVerified) throw new Error('IndexNow key file was not available on the live domain after waiting for deployment.');
-            if (!sitemapXml) throw new Error('Live sitemap was not available after waiting for deployment.');
+
+            if (!keyVerified) {
+              throw new Error('The IndexNow key file is not publicly accessible on the production domain.');
+            }
+            if (!sitemapXml) {
+              throw new Error('The production sitemap was not available after waiting.');
+            }
 
             const urls = [...sitemapXml.matchAll(/<loc>\s*([^<]+?)\s*<\/loc>/gi)]
               .map(match => match[1].trim())
@@ -63,8 +73,12 @@ jobs:
               });
 
             const uniqueUrls = [...new Set(urls)];
-            if (uniqueUrls.length === 0) throw new Error('No eligible URLs found in the sitemap.');
-            if (uniqueUrls.length > 10000) throw new Error('Sitemap contains more than the IndexNow 10,000 URL limit.');
+            if (uniqueUrls.length === 0) {
+              throw new Error('No eligible production URLs were found in sitemap.xml.');
+            }
+            if (uniqueUrls.length > 10000) {
+              throw new Error('The sitemap exceeds IndexNow’s 10,000 URL per request limit.');
+            }
 
             fs.writeFileSync('indexnow-payload.json', JSON.stringify({
               host,
@@ -72,24 +86,32 @@ jobs:
               keyLocation,
               urlList: uniqueUrls
             }));
-            console.log(\`Prepared \${uniqueUrls.length} URLs for IndexNow submission.\`);
+
+            console.log('Prepared ' + uniqueUrls.length + ' unique URLs for IndexNow.');
           })().catch(error => {
             console.error(error);
             process.exit(1);
           });
           NODE
 
-      - name: Notify IndexNow (Bing and participating search engines)
+      - name: Submit URLs to IndexNow
         shell: bash
         run: |
           status=$(curl --silent --show-error --output indexnow-response.txt --write-out "%{http_code}" \
             --request POST "https://api.indexnow.org/indexnow" \
             --header "Content-Type: application/json; charset=utf-8" \
             --data-binary @indexnow-payload.json)
+
           cat indexnow-response.txt
           echo
           echo "IndexNow HTTP status: $status"
+
           case "$status" in
-            200|202) echo "IndexNow accepted the URL notification." ;;
-            *) echo "IndexNow submission was not accepted."; exit 1 ;;
+            200|202)
+              echo "IndexNow accepted the URL notification."
+              ;;
+            *)
+              echo "IndexNow submission was not accepted."
+              exit 1
+              ;;
           esac
