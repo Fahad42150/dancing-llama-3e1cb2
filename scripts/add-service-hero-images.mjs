@@ -32,23 +32,23 @@ function matchingClose(html, openIndex, tagName) {
   let depth = 0, m;
   while ((m = re.exec(html))) {
     if (m[0].startsWith("</")) depth--;
-    else if (!/\\/\\s*>$/.test(m[0])) depth++;
+    else if (!/\/\s*>$/.test(m[0])) depth++;
     if (depth === 0) return { start: m.index, end: re.lastIndex };
   }
   return null;
 }
 function addVisual(html, file) {
-  const heroOpen = /<section\\b[^>]*class=["'][^"']*\\bhero\\b[^"']*["'][^>]*>/i.exec(html);
+  const heroOpen = /<section\b[^>]*class=["'][^"']*\bhero\b[^"']*["'][^>]*>/i.exec(html);
   if (!heroOpen) return null;
   const heroClose = matchingClose(html, heroOpen.index, "section");
   if (!heroClose) return null;
   const hero = html.slice(heroOpen.index, heroClose.end);
-  if (/<img\\b/i.test(hero)) return null;
-  const h1 = (hero.match(/<h1\\b[^>]*>([\\s\\S]*?)<\\/h1>/i) || [,""])[1].replace(/<[^>]+>/g, " ").replace(/\\s+/g, " ").trim();
-  const title = (html.match(/<title\\b[^>]*>([\\s\\S]*?)<\\/title>/i) || [,""])[1].replace(/<[^>]+>/g, " ").trim();
+  if (/<img\b/i.test(hero)) return null;
+  const h1 = (hero.match(/<h1\b[^>]*>([\s\S]*?)<\/h1>/i) || [,""])[1].replace(/<[^>]+>/g, " ").replace(/\s+/g, " ").trim();
+  const title = (html.match(/<title\b[^>]*>([\s\S]*?)<\/title>/i) || [,""])[1].replace(/<[^>]+>/g, " ").trim();
   const context = file + " " + title + " " + h1;
   if (!/(service|virtual assistant|ecommerce|e-commerce|bookkeep|administrative|customer support|real estate|data entry)/i.test(context)) return null;
-  const wrapOpen = /<div\\b[^>]*class=["'][^"']*\\bwrap\\b[^"']*["'][^>]*>/i.exec(hero);
+  const wrapOpen = /<div\b[^>]*class=["'][^"']*\bwrap\b[^"']*["'][^>]*>/i.exec(hero);
   if (!wrapOpen) return null;
   const absoluteWrapOpen = heroOpen.index + wrapOpen.index;
   const wrapClose = matchingClose(html, absoluteWrapOpen, "div");
@@ -57,13 +57,13 @@ function addVisual(html, file) {
   const alt = escapeAttr("FJX Studio " + topic.label + " — " + (h1 || title));
   const visual = '<figure class="fjx-service-hero-visual"><img src="' + topic.url + '" alt="' + alt + '" width="1400" height="1050" loading="eager" fetchpriority="high" decoding="async"></figure>';
   const wrapTag = html.slice(absoluteWrapOpen, html.indexOf(">", absoluteWrapOpen) + 1);
-  const updatedWrapTag = wrapTag.replace(/class=(["'])([^"']*)\\1/i, (all, quote, classes) => 'class=' + quote + classes + ' fjx-hero-grid' + quote);
+  const updatedWrapTag = wrapTag.replace(/class=(["'])([^"']*)\1/i, (all, quote, classes) => 'class=' + quote + classes + ' fjx-hero-grid' + quote);
   let result = html.slice(0, absoluteWrapOpen) + updatedWrapTag + '<div class="fjx-hero-copy">' +
     html.slice(absoluteWrapOpen + wrapTag.length, wrapClose.start) +
     '</div>' + visual + html.slice(wrapClose.start);
   if (!/id=["']fjx-service-hero-visual-styles["']/.test(result)) {
     const styles = '<style id="fjx-service-hero-visual-styles">.fjx-hero-grid{display:grid;grid-template-columns:minmax(0,1.08fr) minmax(280px,.92fr);gap:clamp(28px,5vw,64px);align-items:center}.fjx-hero-copy{min-width:0}.fjx-service-hero-visual{margin:0;min-width:0;overflow:hidden;border:1px solid rgba(32,35,38,.08);border-radius:22px;background:#f3f5f1;box-shadow:0 18px 48px rgba(32,35,38,.12);aspect-ratio:4/3}.fjx-service-hero-visual img{display:block;width:100%;height:100%;object-fit:cover;object-position:center}.hero .fjx-hero-grid{max-width:1120px}@media(max-width:760px){.fjx-hero-grid{grid-template-columns:1fr;gap:24px}.fjx-service-hero-visual{max-height:340px;aspect-ratio:16/10}}</style>';
-    result = result.replace(/<\\/head>/i, styles + "</head>");
+    result = result.replace(/<\/head>/i, styles + "</head>");
   }
   return result;
 }
@@ -71,7 +71,7 @@ let updated = 0;
 const files = [...walk(publicDir), path.join(root, "index.html")].filter(file => fs.existsSync(file));
 for (const file of files) {
   const original = fs.readFileSync(file, "utf8");
-  const result = addVisual(original, path.relative(root, file).replace(/\\\\/g, "/"));
+  const result = addVisual(original, path.relative(root, file).replace(/\\/g, "/"));
   if (result && result !== original) {
     fs.writeFileSync(file, result, "utf8");
     updated++;
