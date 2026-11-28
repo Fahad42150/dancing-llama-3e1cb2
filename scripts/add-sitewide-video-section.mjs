@@ -32,20 +32,31 @@ const section = `
         var section = document.getElementById('fjx-sitewide-video');
         if (!section) return;
 
-        // On the React homepage, #root starts empty and is populated by the
-        // deferred module script. Keep this below-root section invisible while
-        // the root's initial render establishes its final document position.
-        // Visibility does not remove its reserved layout space.
+        // Place the shared video immediately after the About section.
+        // Static pages are positioned at build time; the React homepage is
+        // repositioned once its About component has mounted.
+        function placeAfterAbout() {
+          var about = document.getElementById('about') ||
+            document.querySelector('section[aria-label="About FJX Studio"]');
+          if (!about) return false;
+          if (about.nextElementSibling !== section) {
+            about.insertAdjacentElement('afterend', section);
+          }
+          section.style.visibility = 'visible';
+          return true;
+        }
+
         var root = document.getElementById('root');
-        if (root && !root.firstElementChild) {
-          section.style.visibility = 'hidden';
-          var revealAfterRootRender = new MutationObserver(function () {
-            if (root.firstElementChild) {
-              section.style.visibility = 'visible';
-              revealAfterRootRender.disconnect();
-            }
-          });
-          revealAfterRootRender.observe(root, { childList: true });
+        if (root) {
+          if (!placeAfterAbout()) {
+            section.style.visibility = 'hidden';
+            var revealAfterAbout = new MutationObserver(function () {
+              if (placeAfterAbout()) revealAfterAbout.disconnect();
+            });
+            revealAfterAbout.observe(root, { childList: true, subtree: true });
+          }
+        } else {
+          placeAfterAbout();
         }
 
         var poster = section.querySelector('[data-fjx-video-id]');
@@ -79,16 +90,47 @@ const section = `
 </style>
 `;
 
+function findAboutSectionEnd(html) {
+  const about = /<section\\b(?=[^>]*(?:aria-label\\s*=\\s*["']About FJX Studio["']|id\\s*=\\s*["']about["']))[^>]*>/i.exec(html);
+  if (!about) return -1;
+  const tags = /<\\/?section\\b[^>]*>/gi;
+  tags.lastIndex = about.index;
+  let depth = 0;
+  let tag;
+  while ((tag = tags.exec(html))) {
+    if (/^<section\\b/i.test(tag[0])) depth += 1;
+    else depth -= 1;
+    if (depth === 0) return tags.lastIndex;
+  }
+  return -1;
+}
+
 const files = [...collectHtml(path.resolve("public")), path.resolve("index.html")];
 let updated = 0;
 for (const file of files) {
   if (!fs.existsSync(file)) continue;
   let html = fs.readFileSync(file, "utf8");
-  if (html.includes(marker)) continue;
-  if (!/<\/body\s*>/i.test(html)) continue;
-  html = html.replace(/<\/body\s*>/i, section + "\n</body>");
+  let videoBlock = section;
+  const existingStart = html.indexOf('<section id="fjx-sitewide-video"');
+  if (existingStart >= 0) {
+    const sectionClose = html.indexOf("</section>", existingStart);
+    if (sectionClose < 0) continue;
+    let blockEnd = sectionClose + "</section>".length;
+    const styleMatch = /^\\s*<style>[\\s\\S]*?<\\/style>/i.exec(html.slice(blockEnd));
+    if (styleMatch) blockEnd += styleMatch[0].length;
+    videoBlock = html.slice(existingStart, blockEnd);
+    html = html.slice(0, existingStart) + html.slice(blockEnd);
+  }
+  if (!/<\\/body\\s*>/i.test(html)) continue;
+
+  const aboutEnd = findAboutSectionEnd(html);
+  if (aboutEnd >= 0) {
+    html = html.slice(0, aboutEnd) + "\\n" + videoBlock + html.slice(aboutEnd);
+  } else {
+    html = html.replace(/<\\/body\\s*>/i, videoBlock + "\\n</body>");
+  }
   fs.writeFileSync(file, html, "utf8");
   updated += 1;
 }
 
-console.log(`Added the responsive FJX Studio video section to ${updated} HTML pages.`);
+console.log(`Placed the responsive FJX Studio video section immediately after About on ${updated} HTML page(s); the homepage is positioned after React renders its About section.`);
