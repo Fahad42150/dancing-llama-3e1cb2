@@ -16,6 +16,8 @@ const footerLinks = [
   { label: 'Contact', href: '#contact' },
 ];
 
+const EMAIL_ADDRESS = 'sales@fjxstudio.com';
+
 export default function Footer() {
   const scrollTo = (href: string) => {
     document.querySelector(href)?.scrollIntoView({ behavior: 'smooth' });
@@ -87,7 +89,15 @@ export default function Footer() {
               Get In Touch
             </h4>
             <ul className="mt-4 space-y-3 text-sm text-charcoal-500">
-              <li>sales@fjxstudio.com</li>
+              <li>
+                <a
+                  href="mailto:sales@fjxstudio.com?subject=Project%20Inquiry%20-%20FJX%20Studio"
+                  aria-label="Email FJX Studio sales at sales@fjxstudio.com"
+                  className="break-all underline decoration-charcoal-300 underline-offset-4 transition-colors hover:text-parrot-700 hover:decoration-parrot-600 focus-visible:rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-parrot-600"
+                >
+                  {EMAIL_ADDRESS}
+                </a>
+              </li>
               <li>USA & Canadian Markets</li>
             </ul>
           </div>
