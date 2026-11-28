@@ -119,6 +119,8 @@ for (const file of collect(PUBLIC)) {
 </section>
 `;
 
+  // Remove previously generated VideoObject markup until verified YouTube upload dates are available.
+  html = html.replace(/<script\b[^>]*data-fjx-topic-video-schema[^>]*>[\s\S]*?<\/script>/i, "");
   // Replace any previous generated block, including a stale/empty video container.
   html = html.replace(/<section\b[^>]*id=["']fjx-topic-video["'][\s\S]*?<\/section>/i, "");
   html = html.replace(/<style\b[^>]*id=["']fjx-topic-video-styles["'][\s\S]*?<\/style>/i, "");
@@ -127,18 +129,6 @@ for (const file of collect(PUBLIC)) {
   else if (/<\/body>/i.test(html)) html = html.replace(/<\/body>/i, insertion + "\n</body>");
   else continue;
 
-  const videoObject = {
-    "@context": "https://schema.org",
-    "@type": "VideoObject",
-    name: category.title + " | FJX Studio",
-    description: category.description,
-    thumbnailUrl: ["https://i.ytimg.com/vi/" + category.id + "/hqdefault.jpg"],
-    embedUrl: embed,
-    contentUrl: "https://www.youtube.com/watch?v=" + category.id,
-    publisher: { "@type": "Organization", name: "FJX Studio", url: SITE + "/" }
-  };
-  const schemaTag = '<script type="application/ld+json" data-fjx-topic-video-schema>' + JSON.stringify(videoObject) + '</script>';
-  html = html.replace(/<\/head>/i, schemaTag + "\n</head>");
   fs.writeFileSync(file, html, "utf8");
   pagesUpdated++;
   videosAdded.add(category.id);
