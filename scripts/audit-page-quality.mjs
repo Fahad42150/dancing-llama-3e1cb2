@@ -92,10 +92,10 @@ for (const file of files) {
     }
     if (src && !mediaExists(src, file)) { totals.localMediaMissing++; add(file, "missing-local-media", src); }
   }
-  const mediaFrames = [...html.matchAll(/<([a-z][a-z0-9-]*)\\b[^>]*class=["'][^"']*(?:video|media|embed)[^"']*["'][^>]*>([\\s\\S]*?)<\\/\\1>/gi)];
+  const mediaFrames = [...html.matchAll(/<([a-z][a-z0-9-]*)\b[^>]*class=["'][^"']*(?:video|media|embed)[^"']*["'][^>]*>([\s\S]*?)<\/\1>/gi)];
   for (const frame of mediaFrames) {
-    const inner = frame[2];
-    const hasVisibleMedia = /<(?:img|iframe|video|picture|svg)\\b/i.test(inner) ||
+    const hasVisibleMedia = /<(?:img|iframe|video|picture|svg)\b/i.test(inner) ||
+      /background(?:-image)?\s*:/i.test(frame[0]) ||
       /background(?:-image)?\\s*:/i.test(frame[0]) ||
       /data-(?:src|poster)=["'][^"']+["']/i.test(inner);
     if (!hasVisibleMedia) {
