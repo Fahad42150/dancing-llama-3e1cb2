@@ -39,6 +39,13 @@ Allow: /
 User-agent: MistralAI-User
 Allow: /
 
+# Meta AI search indexing and user-requested page retrieval
+User-agent: meta-webindexer
+Allow: /
+
+User-agent: meta-externalfetcher
+Allow: /
+
 # Amazon search experiences, including Alexa
 User-agent: Amzn-SearchBot
 Allow: /
