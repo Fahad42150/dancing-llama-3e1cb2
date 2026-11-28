@@ -128,7 +128,7 @@ const pages = topics.map(([tail, title, description]) => {
   const schema = {
     "@context": "https://schema.org",
     "@graph": [
-      {"@type":"Service","name":title,"serviceType":title,"description":description,"url":url,"provider":{"@type":"Organization","name":"FJX Studio","url":baseUrl+"/"},"areaServed":[{"@type":"Country","name":"United States"},{"@type":"Country","name":"Canada"}]},
+      {"@type":"Service","@id":url+"#service","name":title,"serviceType":title,"description":description,"url":url,"provider":{"@id":"https://www.fjxstudio.com/#business"},"areaServed":[{"@type":"Country","name":"United States"},{"@type":"Country","name":"Canada"}]},
       {"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":baseUrl+"/"},{"@type":"ListItem","position":2,"name":"Services","item":baseUrl+"/services/"},{"@type":"ListItem","position":3,"name":title,"item":url}]}
     ]
   };

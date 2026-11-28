@@ -529,7 +529,7 @@ const pages = topics.map(([tail, title, description]) => {
   const schema = {
     "@context": "https://schema.org",
     "@graph": [
-      {"@type":"Service","name":title,"serviceType":title,"description":description,"url":url,"provider":{"@type":"Organization","name":"FJX Studio","url":baseUrl+"/"},"areaServed":[{"@type":"Country","name":"United States"},{"@type":"Country","name":"Canada"}]},
+      {"@type":"Service","@id":url+"#service","name":title,"serviceType":title,"description":description,"url":url,"provider":{"@id":"https://www.fjxstudio.com/#business"},"areaServed":[{"@type":"Country","name":"United States"},{"@type":"Country","name":"Canada"}]},
       {"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":baseUrl+"/"},{"@type":"ListItem","position":2,"name":"Services","item":baseUrl+"/services/"},{"@type":"ListItem","position":3,"name":title,"item":url}]},
       {"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does this service include?","acceptedAnswer":{"@type":"Answer","text":description+" Scope, tools and deliverables are confirmed before work begins."}},{"@type":"Question","name":"Can FJX Studio support businesses in the USA and Canada?","acceptedAnswer":{"@type":"Answer","text":"Yes. FJX Studio provides remote support for businesses serving the United States and Canada. Working hours, access and project scope are agreed in advance."}},{"@type":"Question","name":"Which tools and platforms can be supported?","acceptedAnswer":{"@type":"Answer","text":"Tools and platforms depend on the project requirements and client access. The relevant tools are listed in the service description and verified during project scoping."}}]}
     ]
