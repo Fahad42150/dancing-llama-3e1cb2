@@ -133,4 +133,4 @@ for (const file of files) {
   updated += 1;
 }
 
-console.log(\`Placed the responsive FJX Studio video section immediately after About on \${updated} HTML page(s); the homepage is positioned after React renders its About section.\`);
+console.log(`Placed the responsive FJX Studio video section immediately after About on ${updated} HTML page(s); the homepage is positioned after React renders its About section.`);
