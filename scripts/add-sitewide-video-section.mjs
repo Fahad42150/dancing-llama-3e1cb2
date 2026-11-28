@@ -65,7 +65,7 @@ const section = `
           var id = poster.getAttribute('data-fjx-video-id');
           if (!id) return;
           var frame = document.createElement('iframe');
-          frame.src = 'https://www.youtube-nocookie.com/embed/' + encodeURIComponent(id) + '?autoplay=1';
+          frame.src = 'https://www.youtube-nocookie.com/embed/' + encodeURIComponent(id) + '?autoplay=1&mute=1&enablejsapi=1';
           frame.title = 'FJX Studio video';
           frame.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
           frame.allowFullscreen = true;
